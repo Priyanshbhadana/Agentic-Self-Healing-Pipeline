@@ -3085,3 +3085,697 @@
 {"timestamp": "2026-05-09 12:19:37", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Fallback catalogue: 7 entries"}
 {"timestamp": "2026-05-09 12:19:37", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Generating governance report..."}
 {"timestamp": "2026-05-09 12:19:37", "level": "SUCCESS", "component": "B2-LineageGovernance", "message": "[B2] Governance report \u2192 logs/b2_governance_report_16ED26BD.json | GDPR Score: 100% | PII columns: 5 | Lineage nodes: 6"}
+{"timestamp": "2026-05-09 15:59:52", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/custom_upload.csv"}
+{"timestamp": "2026-05-09 15:59:52", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 1062 rows \u00d7 13 columns"}
+{"timestamp": "2026-05-09 15:59:52", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'email' has 27 missing values (2.54%)"}
+{"timestamp": "2026-05-09 15:59:52", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_amount' has 31 missing values (2.92%)"}
+{"timestamp": "2026-05-09 15:59:52", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'quantity' has 3 missing values (0.28%)"}
+{"timestamp": "2026-05-09 15:59:52", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_date' has 21 missing values (1.98%)"}
+{"timestamp": "2026-05-09 15:59:52", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'status' has 7 missing values (0.66%)"}
+{"timestamp": "2026-05-09 15:59:52", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'discount_pct' has 8 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 15:59:52", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 6 issue(s) in 'stress_test_orders.csv'. Types: ['MISSING_VALUES', 'DATA_ANOMALY']"}
+{"timestamp": "2026-05-09 15:59:52", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 6 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 15:59:53", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "[8d4da2e7] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "[37b78737] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "[68b7d1e0] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "[bba6958a] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "[59f889b3] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "[6f272d1a] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 6 classified issue(s)..."}
+{"timestamp": "2026-05-09 15:59:53", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rules."}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "[8d4da2e7] Action: FILL_MODE | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "[37b78737] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "[68b7d1e0] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "[bba6958a] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "[59f889b3] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "DecisionAgent", "message": "[6f272d1a] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 15:59:53", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MODE] on column='email' | issue_id=8d4da2e7"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_amount' | issue_id=37b78737"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='quantity' | issue_id=68b7d1e0"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_date' | issue_id=bba6958a"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='status' | issue_id=59f889b3"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='discount_pct' | issue_id=6f272d1a"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_stress_test_orders_csv.csv (1062 rows \u00d7 13 cols)"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_stress_test_orders_csv.csv (0 rows)"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run ADF67951"}
+{"timestamp": "2026-05-09 15:59:53", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_stress_test_orders_csv.json"}
+{"timestamp": "2026-05-09 15:59:53", "level": "ALERT", "component": "AlertSystem", "message": "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"}
+{"timestamp": "2026-05-09 15:59:53", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udea8 ALERT [INFO]: [Self-Healing Pipeline] SUCCESS \u2014 stress_test_orders.csv"}
+{"timestamp": "2026-05-09 15:59:53", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udce7 Mock Email \u2192 oncall@company.com"}
+{"timestamp": "2026-05-09 15:59:53", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcac Mock Slack \u2192 #data-alerts"}
+{"timestamp": "2026-05-09 15:59:53", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcc4 Body: Run ADF67951 \u2014 Scenario 'stress_test_orders.csv' encountered 1 high-severity issue(s). Final status: SUCCESS. Healed output: data/healed_stress_test_orders_csv.csv"}
+{"timestamp": "2026-05-09 15:59:53", "level": "ALERT", "component": "AlertSystem", "message": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n"}
+{"timestamp": "2026-05-09 15:59:53", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_ADF67951.json"}
+{"timestamp": "2026-05-09 16:00:24", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/custom_upload.csv"}
+{"timestamp": "2026-05-09 16:00:24", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 1062 rows \u00d7 13 columns"}
+{"timestamp": "2026-05-09 16:00:24", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'email' has 27 missing values (2.54%)"}
+{"timestamp": "2026-05-09 16:00:24", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_amount' has 31 missing values (2.92%)"}
+{"timestamp": "2026-05-09 16:00:24", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'quantity' has 3 missing values (0.28%)"}
+{"timestamp": "2026-05-09 16:00:24", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_date' has 21 missing values (1.98%)"}
+{"timestamp": "2026-05-09 16:00:24", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'status' has 7 missing values (0.66%)"}
+{"timestamp": "2026-05-09 16:00:24", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'discount_pct' has 8 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:00:24", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 6 issue(s) in 'stress_test_orders.csv'. Types: ['MISSING_VALUES', 'DATA_ANOMALY']"}
+{"timestamp": "2026-05-09 16:00:24", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 6 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:00:25", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011Carqfc31Q3L4HBpotwJPW'}. Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "[d03577f9] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "[c3d5ac5a] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "[e82a6b3f] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "[a3b1aa6b] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "[4ec53369] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "[df421b4a] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 6 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:00:25", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011Carqfe4oBCVWGaTKny1Bk'}. Using fallback rules."}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "[d03577f9] Action: FILL_MODE | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "[c3d5ac5a] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "[e82a6b3f] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "[a3b1aa6b] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "[4ec53369] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "DecisionAgent", "message": "[df421b4a] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:00:25", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MODE] on column='email' | issue_id=d03577f9"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_amount' | issue_id=c3d5ac5a"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='quantity' | issue_id=e82a6b3f"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_date' | issue_id=a3b1aa6b"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='status' | issue_id=4ec53369"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='discount_pct' | issue_id=df421b4a"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_stress_test_orders_csv.csv (1062 rows \u00d7 13 cols)"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_stress_test_orders_csv.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 39580F97"}
+{"timestamp": "2026-05-09 16:00:25", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_stress_test_orders_csv.json"}
+{"timestamp": "2026-05-09 16:00:25", "level": "ALERT", "component": "AlertSystem", "message": "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"}
+{"timestamp": "2026-05-09 16:00:25", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udea8 ALERT [INFO]: [Self-Healing Pipeline] SUCCESS \u2014 stress_test_orders.csv"}
+{"timestamp": "2026-05-09 16:00:25", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udce7 Mock Email \u2192 oncall@company.com"}
+{"timestamp": "2026-05-09 16:00:25", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcac Mock Slack \u2192 #data-alerts"}
+{"timestamp": "2026-05-09 16:00:25", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcc4 Body: Run 39580F97 \u2014 Scenario 'stress_test_orders.csv' encountered 1 high-severity issue(s). Final status: SUCCESS. Healed output: data/healed_stress_test_orders_csv.csv"}
+{"timestamp": "2026-05-09 16:00:25", "level": "ALERT", "component": "AlertSystem", "message": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n"}
+{"timestamp": "2026-05-09 16:00:25", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_39580F97.json"}
+{"timestamp": "2026-05-09 16:01:23", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/scenario_schema.csv"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/scenario_missing.csv"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 100 rows \u00d7 7 cols | Nulls: 58 (8.29%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:01:28", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarqkGXtZoxpQfQLhZ6rX'} \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 100.0"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] NOT_NULL on 'age': Column 'age' should not contain nulls"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'age': Column 'age' values must be between 19.0 and 64.0"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] NOT_NULL on 'salary': Column 'salary' should not contain nulls"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] RANGE_CHECK on 'salary': Column 'salary' values must be between 30206.0 and 119135.0"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R006] NOT_NULL on 'email': Column 'email' should not contain nulls"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R007] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R008] NOT_NULL on 'score': Column 'score' should not contain nulls"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R009] RANGE_CHECK on 'score': Column 'score' values must be between 0.05 and 99.77"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:01:28", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R002] NULL_VALUES in 'age': 15 null values found in 'age'"}
+{"timestamp": "2026-05-09 16:01:28", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R004] NULL_VALUES in 'salary': 20 null values found in 'salary'"}
+{"timestamp": "2026-05-09 16:01:28", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R006] NULL_VALUES in 'email': 10 null values found in 'email'"}
+{"timestamp": "2026-05-09 16:01:28", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R007] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:01:28", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R008] NULL_VALUES in 'score': 13 null values found in 'score'"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/9 rules passed \u2014 score: 44.4%"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] age: Filled 15 nulls with median=40.0"}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] salary: Filled 20 nulls with median=78954.5"}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] email: Filled 10 nulls with mode='user11@example.com'"}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 100 email addresses"}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] score: Filled 13 nulls with median=51.78"}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_missing_values.csv"}
+{"timestamp": "2026-05-09 16:01:28", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:01:28", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_BF67063C.json | Status: SUCCESS | Score: 44.4%"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/scenario_anomaly.csv"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 60 rows \u00d7 7 cols | Nulls: 0 (0.0%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:01:32", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarqkZmy3XfNzH5Ddu7rf'} \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 60.0"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] RANGE_CHECK on 'age': Column 'age' values must be between -1.0 and 999.0"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'salary': Column 'salary' values must be between -5000.0 and 99999999."}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] RANGE_CHECK on 'score': Column 'score' values must be between -50.0 and 9999.9"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:01:32", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R005] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/5 rules passed \u2014 score: 80.0%"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:01:32", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 60 email addresses"}
+{"timestamp": "2026-05-09 16:01:32", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_data_anomaly.csv"}
+{"timestamp": "2026-05-09 16:01:32", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:01:32", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_37E01BCB.json | Status: SUCCESS | Score: 80.0%"}
+{"timestamp": "2026-05-09 16:01:58", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Parsing SQL / extracting schema structure..."}
+{"timestamp": "2026-05-09 16:01:58", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Auto-generated SQL for table 'scenario_anomaly'"}
+{"timestamp": "2026-05-09 16:01:58", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] SQL parsed: Tables: ['scenario_anomaly', 'source_data', 'cleaned_data', 'aggregated'] | Columns: 7 | CTEs: 3 | Joins: 1 | Filters: 1"}
+{"timestamp": "2026-05-09 16:01:58", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Extracting data lineage via LLM..."}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] LLM lineage failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarqnY4bALc1dXCAgCVSb'} \u2014 using fallback"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Lineage: scenario_anomaly \u2192 SQL transforms \u2192 healed_data_anomaly"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Nodes: 6 | Edges: 5"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Scanning and tagging PII columns..."}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'user_id' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'age' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'salary' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'score' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] 'country' \u2014 no PII detected"}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'email' \u2192 EMAIL [HIGH] \u2192 masked with PARTIAL_MASK"}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'signup_date' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] PII found in 6/7 columns | Critical: 0 | High: 6 | Masked dataset \u2192 data/b2_masked_data_anomaly.csv"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Enriching data catalogue via LLM..."}
+{"timestamp": "2026-05-09 16:01:59", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] LLM catalogue enrichment failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarqnaNFLnwDtUCLThLxQ'} \u2014 using fallback"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Catalogue saved to SQLite (7 entries)"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Fallback catalogue: 7 entries"}
+{"timestamp": "2026-05-09 16:01:59", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Generating governance report..."}
+{"timestamp": "2026-05-09 16:02:00", "level": "SUCCESS", "component": "B2-LineageGovernance", "message": "[B2] Governance report \u2192 logs/b2_governance_report_A22438AD.json | GDPR Score: 100% | PII columns: 6 | Lineage nodes: 6"}
+{"timestamp": "2026-05-09 16:02:41", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/scenario_anomaly.csv"}
+{"timestamp": "2026-05-09 16:02:41", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 60 rows \u00d7 7 columns"}
+{"timestamp": "2026-05-09 16:02:41", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DTYPE_MISMATCH] Column 'age': expected float64, got int64"}
+{"timestamp": "2026-05-09 16:02:41", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DTYPE_MISMATCH] Column 'salary': expected float64, got int64"}
+{"timestamp": "2026-05-09 16:02:41", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'age' has 3 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:02:41", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'salary' has 1 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:02:41", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'score' has 1 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:02:41", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 5 issue(s) in 'data_anomaly'. Types: ['DTYPE_MISMATCH', 'DATA_ANOMALY']"}
+{"timestamp": "2026-05-09 16:02:41", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 5 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:02:42", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarqqiGb54ZHisA7ub38a'}. Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "ClassificationAgent", "message": "[b704def7] \u2192 SCHEMA_ISSUE / Type Mismatch | Confidence: 85%"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "ClassificationAgent", "message": "[bd2c8562] \u2192 SCHEMA_ISSUE / Type Mismatch | Confidence: 85%"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "ClassificationAgent", "message": "[0dddcdec] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "ClassificationAgent", "message": "[6fca6ae1] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "ClassificationAgent", "message": "[7d4dcb07] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 5 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:02:42", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarqqkLrWh3BYhx5M4PR2'}. Using fallback rules."}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "DecisionAgent", "message": "[b704def7] Action: CAST_DTYPE | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "DecisionAgent", "message": "[bd2c8562] Action: CAST_DTYPE | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "DecisionAgent", "message": "[0dddcdec] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "DecisionAgent", "message": "[6fca6ae1] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "DecisionAgent", "message": "[7d4dcb07] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:02:42", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 16/21 passed (76.2%)"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Applying [CAST_DTYPE] on column='age' | issue_id=b704def7"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Cast 'age' to float64"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Applying [CAST_DTYPE] on column='salary' | issue_id=bd2c8562"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Cast 'salary' to float64"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='age' | issue_id=0dddcdec"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 3 outliers in 'age' to [-59.0, 137.0]"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='salary' | issue_id=6fca6ae1"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 1 outliers in 'salary' to [-106388.75, 260505.75]"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='score' | issue_id=7d4dcb07"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 1 outliers in 'score' to [-122.75, 225.94]"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 9/12 passed (75.0%)"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_data_anomaly.csv (60 rows \u00d7 7 cols)"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_data_anomaly.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 9821D360"}
+{"timestamp": "2026-05-09 16:02:42", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_data_anomaly.json"}
+{"timestamp": "2026-05-09 16:02:42", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_9821D360.json"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_missing.csv"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 100 rows \u00d7 7 cols | Nulls: 58 (8.29%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:17:06", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\" \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 100.0"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] NOT_NULL on 'age': Column 'age' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'age': Column 'age' values must be between 19.0 and 64.0"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] NOT_NULL on 'salary': Column 'salary' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] RANGE_CHECK on 'salary': Column 'salary' values must be between 30206.0 and 119135.0"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R006] NOT_NULL on 'email': Column 'email' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R007] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R008] NOT_NULL on 'score': Column 'score' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R009] RANGE_CHECK on 'score': Column 'score' values must be between 0.05 and 99.77"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:17:06", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R002] NULL_VALUES in 'age': 15 null values found in 'age'"}
+{"timestamp": "2026-05-09 16:17:06", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R004] NULL_VALUES in 'salary': 20 null values found in 'salary'"}
+{"timestamp": "2026-05-09 16:17:06", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R006] NULL_VALUES in 'email': 10 null values found in 'email'"}
+{"timestamp": "2026-05-09 16:17:06", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R007] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:17:06", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R008] NULL_VALUES in 'score': 13 null values found in 'score'"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/9 rules passed \u2014 score: 44.4%"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] age: Filled 15 nulls with median=40.0"}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] salary: Filled 20 nulls with median=78954.5"}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] email: Filled 10 nulls with mode='user11@example.com'"}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 100 email addresses"}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] score: Filled 13 nulls with median=51.78"}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_missing_values.csv"}
+{"timestamp": "2026-05-09 16:17:06", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:17:06", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_57868A48.json | Status: SUCCESS | Score: 44.4%"}
+{"timestamp": "2026-05-09 16:17:36", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_missing.csv"}
+{"timestamp": "2026-05-09 16:17:36", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 100 rows \u00d7 7 cols | Nulls: 58 (8.29%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:17:36", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\" \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 100.0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] NOT_NULL on 'age': Column 'age' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'age': Column 'age' values must be between 19.0 and 64.0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] NOT_NULL on 'salary': Column 'salary' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] RANGE_CHECK on 'salary': Column 'salary' values must be between 30206.0 and 119135.0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R006] NOT_NULL on 'email': Column 'email' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R007] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R008] NOT_NULL on 'score': Column 'score' should not contain nulls"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R009] RANGE_CHECK on 'score': Column 'score' values must be between 0.05 and 99.77"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R002] NULL_VALUES in 'age': 15 null values found in 'age'"}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R004] NULL_VALUES in 'salary': 20 null values found in 'salary'"}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R006] NULL_VALUES in 'email': 10 null values found in 'email'"}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R007] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R008] NULL_VALUES in 'score': 13 null values found in 'score'"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/9 rules passed \u2014 score: 44.4%"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] age: Filled 15 nulls with median=40.0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] salary: Filled 20 nulls with median=78954.5"}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] email: Filled 10 nulls with mode='user11@example.com'"}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 100 email addresses"}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] score: Filled 13 nulls with median=51.78"}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_missing_values.csv"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_27F4E81E.json | Status: SUCCESS | Score: 44.4%"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_schema.csv"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_anomaly.csv"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 60 rows \u00d7 7 cols | Nulls: 0 (0.0%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\" \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 60.0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] RANGE_CHECK on 'age': Column 'age' values must be between -1.0 and 999.0"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'salary': Column 'salary' values must be between -5000.0 and 99999999."}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] RANGE_CHECK on 'score': Column 'score' values must be between -50.0 and 9999.9"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R005] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/5 rules passed \u2014 score: 80.0%"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 60 email addresses"}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_data_anomaly.csv"}
+{"timestamp": "2026-05-09 16:17:37", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:17:37", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_7D986151.json | Status: SUCCESS | Score: 80.0%"}
+{"timestamp": "2026-05-09 16:18:51", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_missing.csv"}
+{"timestamp": "2026-05-09 16:18:51", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 100 rows \u00d7 7 cols | Nulls: 58 (8.29%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:18:51", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\" \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 100.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] NOT_NULL on 'age': Column 'age' should not contain nulls"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'age': Column 'age' values must be between 19.0 and 64.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] NOT_NULL on 'salary': Column 'salary' should not contain nulls"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] RANGE_CHECK on 'salary': Column 'salary' values must be between 30206.0 and 119135.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R006] NOT_NULL on 'email': Column 'email' should not contain nulls"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R007] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R008] NOT_NULL on 'score': Column 'score' should not contain nulls"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R009] RANGE_CHECK on 'score': Column 'score' values must be between 0.05 and 99.77"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R002] NULL_VALUES in 'age': 15 null values found in 'age'"}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R004] NULL_VALUES in 'salary': 20 null values found in 'salary'"}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R006] NULL_VALUES in 'email': 10 null values found in 'email'"}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R007] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R008] NULL_VALUES in 'score': 13 null values found in 'score'"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/9 rules passed \u2014 score: 44.4%"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] age: Filled 15 nulls with median=40.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] salary: Filled 20 nulls with median=78954.5"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] email: Filled 10 nulls with mode='user11@example.com'"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 100 email addresses"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MEDIAN] score: Filled 13 nulls with median=51.78"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_missing_values.csv"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_14746431.json | Status: SUCCESS | Score: 44.4%"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_schema.csv"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 80 rows \u00d7 9 cols | Nulls: 0 (0.0%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\" \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'uid': Column 'uid' values must be between 1.0 and 80.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] RANGE_CHECK on 'usr_age': Column 'usr_age' values must be between 18.0 and 68.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'annual_salary': Column 'annual_salary' values must be between 32235.0 and 14"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] PII_DETECTED on 'email_address': Column 'email_address' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] RANGE_CHECK on 'risk_score': Column 'risk_score' values must be between 0.037 and 0.995"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R004] PII_EXPOSURE in 'email_address': Column 'email_address' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/5 rules passed \u2014 score: 80.0%"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email_address: Masked 80 email addresses"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_schema_mismatch.csv"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_3C74F0C4.json | Status: SUCCESS | Score: 80.0%"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: data/scenario_anomaly.csv"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 60 rows \u00d7 7 cols | Nulls: 0 (0.0%) | Duplicates: 0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\" \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] RANGE_CHECK on 'user_id': Column 'user_id' values must be between 1.0 and 60.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] RANGE_CHECK on 'age': Column 'age' values must be between -1.0 and 999.0"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] RANGE_CHECK on 'salary': Column 'salary' values must be between -5000.0 and 99999999."}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] RANGE_CHECK on 'score': Column 'score' values must be between -50.0 and 9999.9"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R005] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 4/5 rules passed \u2014 score: 80.0%"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 60 email addresses"}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_data_anomaly.csv"}
+{"timestamp": "2026-05-09 16:18:52", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:18:52", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_F0400BAD.json | Status: SUCCESS | Score: 80.0%"}
+{"timestamp": "2026-05-09 16:19:08", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: data/scenario_missing.csv"}
+{"timestamp": "2026-05-09 16:19:08", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 100 rows \u00d7 7 columns"}
+{"timestamp": "2026-05-09 16:19:08", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'age' has 15 missing values (15.0%)"}
+{"timestamp": "2026-05-09 16:19:08", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'salary' has 20 missing values (20.0%)"}
+{"timestamp": "2026-05-09 16:19:08", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'email' has 10 missing values (10.0%)"}
+{"timestamp": "2026-05-09 16:19:08", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'score' has 13 missing values (13.0%)"}
+{"timestamp": "2026-05-09 16:19:08", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 4 issue(s) in 'missing_values'. Types: ['MISSING_VALUES']"}
+{"timestamp": "2026-05-09 16:19:08", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 4 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:19:09", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[031bdfb5] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[7205879e] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[0ecc3ec8] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[8644cf4a] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 4 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:19:09", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rules."}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[031bdfb5] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[7205879e] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[0ecc3ec8] Action: FILL_MODE | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[8644cf4a] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 17/21 passed (81.0%)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='age' | issue_id=031bdfb5"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 15 nulls in 'age' with median=40.0"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='salary' | issue_id=7205879e"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 20 nulls in 'salary' with median=78954.5"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MODE] on column='email' | issue_id=0ecc3ec8"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 10 nulls in 'email' with mode='user11@example.com'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='score' | issue_id=8644cf4a"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 13 nulls in 'score' with median=51.78"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 12/12 passed (100.0%)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_missing_values.csv (100 rows \u00d7 7 cols)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_missing_values.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 5369B1C5"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_missing_values.json"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_5369B1C5.json"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: data/scenario_schema.csv"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 80 rows \u00d7 9 columns"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'user_id' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'signup_date' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'score' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'age' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'email' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'country' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_MISSING_COLUMN] Expected column 'salary' is absent from the dataset"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'uid' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'usr_age' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'risk_score' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'email_address' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'registered_on' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'annual_salary' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'geo' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'extra_flag' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [SCHEMA_EXTRA_COLUMN] Unexpected column 'legacy_id' found \u2014 not in schema contract"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 16 issue(s) in 'schema_mismatch'. Types: ['SCHEMA_EXTRA_COLUMN', 'SCHEMA_MISSING_COLUMN']"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 16 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:19:09", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[d6faf0b9] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[43857641] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[fdb7a22e] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[1608555d] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[66db712d] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[a63d1da1] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[fcbf2743] \u2192 SCHEMA_ISSUE / Missing Column | Confidence: 95%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[52af0aaf] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[0574100f] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[5ef4c529] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[36b2471e] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[16450835] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[c56640fb] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[9b640efc] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[0a682b17] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[d358c508] \u2192 SCHEMA_ISSUE / Extra Column | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 16 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:19:09", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rules."}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[d6faf0b9] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[43857641] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[fdb7a22e] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[1608555d] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[66db712d] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[a63d1da1] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[fcbf2743] Action: RENAME_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[52af0aaf] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[0574100f] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[5ef4c529] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[36b2471e] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[16450835] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[c56640fb] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[9b640efc] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[0a682b17] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[d358c508] Action: DROP_COLUMN | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 10/17 passed (58.8%)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='user_id' | issue_id=d6faf0b9"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'user_id' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='signup_date' | issue_id=43857641"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'signup_date' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='score' | issue_id=fdb7a22e"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'score' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='age' | issue_id=1608555d"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'age' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='email' | issue_id=66db712d"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'email' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='country' | issue_id=a63d1da1"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'country' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [RENAME_COLUMN] on column='salary' | issue_id=fcbf2743"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 SKIP: source column 'salary' not found"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='uid' | issue_id=52af0aaf"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'uid'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='usr_age' | issue_id=0574100f"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'usr_age'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='risk_score' | issue_id=5ef4c529"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'risk_score'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='email_address' | issue_id=36b2471e"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'email_address'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='registered_on' | issue_id=16450835"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'registered_on'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='annual_salary' | issue_id=c56640fb"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'annual_salary'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='geo' | issue_id=9b640efc"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'geo'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='extra_flag' | issue_id=0a682b17"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'extra_flag'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [DROP_COLUMN] on column='legacy_id' | issue_id=d358c508"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Dropped extra column 'legacy_id'"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 1/1 passed (100.0%)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_schema_mismatch.csv (80 rows \u00d7 0 cols)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_schema_mismatch.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 61FCDB7D"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_schema_mismatch.json"}
+{"timestamp": "2026-05-09 16:19:09", "level": "ALERT", "component": "AlertSystem", "message": "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"}
+{"timestamp": "2026-05-09 16:19:09", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udea8 ALERT [INFO]: [Self-Healing Pipeline] SUCCESS \u2014 schema_mismatch"}
+{"timestamp": "2026-05-09 16:19:09", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udce7 Mock Email \u2192 oncall@company.com"}
+{"timestamp": "2026-05-09 16:19:09", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcac Mock Slack \u2192 #data-alerts"}
+{"timestamp": "2026-05-09 16:19:09", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcc4 Body: Run 61FCDB7D \u2014 Scenario 'schema_mismatch' encountered 7 high-severity issue(s). Final status: SUCCESS. Healed output: data/healed_schema_mismatch.csv"}
+{"timestamp": "2026-05-09 16:19:09", "level": "ALERT", "component": "AlertSystem", "message": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_61FCDB7D.json"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: data/scenario_anomaly.csv"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 60 rows \u00d7 7 columns"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DTYPE_MISMATCH] Column 'age': expected float64, got int64"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DTYPE_MISMATCH] Column 'salary': expected float64, got int64"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'age' has 3 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'salary' has 1 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'score' has 1 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 5 issue(s) in 'data_anomaly'. Types: ['DATA_ANOMALY', 'DTYPE_MISMATCH']"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 5 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:19:09", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[8863956d] \u2192 SCHEMA_ISSUE / Type Mismatch | Confidence: 85%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[d35538e9] \u2192 SCHEMA_ISSUE / Type Mismatch | Confidence: 85%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[5579af46] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[76602377] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "[7a6c2207] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 5 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:19:09", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\". Using fallback rules."}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[8863956d] Action: CAST_DTYPE | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[d35538e9] Action: CAST_DTYPE | Confidence: 70% | Reason: Fallback rule for SCHEMA_ISSUE"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[5579af46] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[76602377] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "DecisionAgent", "message": "[7a6c2207] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:19:09", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 16/21 passed (76.2%)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [CAST_DTYPE] on column='age' | issue_id=8863956d"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Cast 'age' to float64"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [CAST_DTYPE] on column='salary' | issue_id=d35538e9"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Cast 'salary' to float64"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='age' | issue_id=5579af46"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 3 outliers in 'age' to [-59.0, 137.0]"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='salary' | issue_id=76602377"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 1 outliers in 'salary' to [-106388.75, 260505.75]"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='score' | issue_id=7a6c2207"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 1 outliers in 'score' to [-122.75, 225.94]"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 9/12 passed (75.0%)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_data_anomaly.csv (60 rows \u00d7 7 cols)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_data_anomaly.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 4A257232"}
+{"timestamp": "2026-05-09 16:19:09", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_data_anomaly.json"}
+{"timestamp": "2026-05-09 16:19:09", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_4A257232.json"}
+{"timestamp": "2026-05-09 16:21:13", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/custom_upload.csv"}
+{"timestamp": "2026-05-09 16:21:13", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 1062 rows \u00d7 13 columns"}
+{"timestamp": "2026-05-09 16:21:13", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'email' has 27 missing values (2.54%)"}
+{"timestamp": "2026-05-09 16:21:13", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_amount' has 31 missing values (2.92%)"}
+{"timestamp": "2026-05-09 16:21:13", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'quantity' has 3 missing values (0.28%)"}
+{"timestamp": "2026-05-09 16:21:13", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_date' has 21 missing values (1.98%)"}
+{"timestamp": "2026-05-09 16:21:13", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'status' has 7 missing values (0.66%)"}
+{"timestamp": "2026-05-09 16:21:13", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'discount_pct' has 8 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:21:13", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 6 issue(s) in 'stress_test_orders.csv'. Types: ['MISSING_VALUES', 'DATA_ANOMALY']"}
+{"timestamp": "2026-05-09 16:21:13", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 6 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:21:14", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsFfkZjwqYSbNFrK4Ms'}. Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "[1d917f0a] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "[d244c1b8] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "[df5b0076] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "[4359e78d] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "[a149f595] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "[b9d6f0d1] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 6 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:21:14", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsFhxGfmo9voFF736Xt'}. Using fallback rules."}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "[1d917f0a] Action: FILL_MODE | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "[d244c1b8] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "[df5b0076] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "[4359e78d] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "[a149f595] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "DecisionAgent", "message": "[b9d6f0d1] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:21:14", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MODE] on column='email' | issue_id=1d917f0a"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_amount' | issue_id=d244c1b8"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='quantity' | issue_id=df5b0076"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_date' | issue_id=4359e78d"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='status' | issue_id=a149f595"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='discount_pct' | issue_id=b9d6f0d1"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_stress_test_orders_csv.csv (1062 rows \u00d7 13 cols)"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_stress_test_orders_csv.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 6AAE5FD3"}
+{"timestamp": "2026-05-09 16:21:14", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_stress_test_orders_csv.json"}
+{"timestamp": "2026-05-09 16:21:14", "level": "ALERT", "component": "AlertSystem", "message": "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"}
+{"timestamp": "2026-05-09 16:21:14", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udea8 ALERT [INFO]: [Self-Healing Pipeline] SUCCESS \u2014 stress_test_orders.csv"}
+{"timestamp": "2026-05-09 16:21:14", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udce7 Mock Email \u2192 oncall@company.com"}
+{"timestamp": "2026-05-09 16:21:14", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcac Mock Slack \u2192 #data-alerts"}
+{"timestamp": "2026-05-09 16:21:14", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcc4 Body: Run 6AAE5FD3 \u2014 Scenario 'stress_test_orders.csv' encountered 1 high-severity issue(s). Final status: SUCCESS. Healed output: data/healed_stress_test_orders_csv.csv"}
+{"timestamp": "2026-05-09 16:21:14", "level": "ALERT", "component": "AlertSystem", "message": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n"}
+{"timestamp": "2026-05-09 16:21:14", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_6AAE5FD3.json"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profiling dataset: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/custom_upload.csv"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Profile complete: Dataset: 1062 rows \u00d7 13 cols | Nulls: 89 (0.64%) | Duplicates: 8"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating quality rules via LLM..."}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] LLM rule generation failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsKdWVLJJTJzUXNEWH2'} \u2014 using fallback rules"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R001] NOT_NULL on 'email': Column 'email' should not contain nulls"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R002] PII_DETECTED on 'email': Column 'email' contains PII (EMAIL) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R003] PII_DETECTED on 'phone': Column 'phone' contains PII (PHONE) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R004] NOT_NULL on 'order_amount': Column 'order_amount' should not contain nulls"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R005] NOT_NULL on 'quantity': Column 'quantity' should not contain nulls"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R006] RANGE_CHECK on 'discount_pct': Column 'discount_pct' values must be between -20.0 and 200.0"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R007] NOT_NULL on 'order_date': Column 'order_date' should not contain nulls"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R008] NOT_NULL on 'status': Column 'status' should not contain nulls"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R009] PII_DETECTED on 'product_name': Column 'product_name' contains PII (NAME) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Rule [R010] PII_DETECTED on 'shipping_country': Column 'shipping_country' contains PII (IP) \u2014 must be masked"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validating data against quality rules..."}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R001] NULL_VALUES in 'email': 27 null values found in 'email'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R002] PII_EXPOSURE in 'email': Column 'email' contains unmasked EMAIL data"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R003] PII_EXPOSURE in 'phone': Column 'phone' contains unmasked PHONE data"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R004] NULL_VALUES in 'order_amount': 31 null values found in 'order_amount'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R005] NULL_VALUES in 'quantity': 3 null values found in 'quantity'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R007] NULL_VALUES in 'order_date': 21 null values found in 'order_date'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R008] NULL_VALUES in 'status': 7 null values found in 'status'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R009] PII_EXPOSURE in 'product_name': Column 'product_name' contains unmasked NAME data"}
+{"timestamp": "2026-05-09 16:22:07", "level": "WARN", "component": "B1-IngestionQuality", "message": "[B1] Violation [R010] PII_EXPOSURE in 'shipping_country': Column 'shipping_country' contains unmasked IP data"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Validation: 1/10 rules passed \u2014 score: 10.0%"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Auto-healing violations..."}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] email: Filled 27 nulls with mode='  hulkly.zmmynu70@outlook.com  '"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] email: Masked 1062 email addresses"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] phone: Masked 1062 phone numbers"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] order_amount: Filled 31 nulls with mode='MISSING'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] quantity: Filled 3 nulls with mode='7'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] order_date: Filled 21 nulls with mode='2023-03-16'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [FILL_MODE] status: Filled 7 nulls with mode='Pending'"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] product_name: Masked 1062 names"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] \u2713 [MASK_PII] shipping_country: Hash-masked 1062 PII values"}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Healed data saved \u2192 data/b1_healed_custom_upload.csv"}
+{"timestamp": "2026-05-09 16:22:07", "level": "INFO", "component": "B1-IngestionQuality", "message": "[B1] Generating final ingestion quality report..."}
+{"timestamp": "2026-05-09 16:22:07", "level": "SUCCESS", "component": "B1-IngestionQuality", "message": "[B1] Report saved \u2192 logs/b1_report_23A99F38.json | Status: SUCCESS | Score: 10.0%"}
+{"timestamp": "2026-05-09 16:22:29", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Parsing SQL / extracting schema structure..."}
+{"timestamp": "2026-05-09 16:22:29", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Auto-generated SQL for table 'custom_upload'"}
+{"timestamp": "2026-05-09 16:22:29", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] SQL parsed: Tables: ['custom_upload', 'source_data', 'cleaned_data', 'aggregated'] | Columns: 13 | CTEs: 3 | Joins: 1 | Filters: 1"}
+{"timestamp": "2026-05-09 16:22:29", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Extracting data lineage via LLM..."}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] LLM lineage failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsMGjdaV8kMmsUAUQqA'} \u2014 using fallback"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Lineage: custom_upload \u2192 SQL transforms \u2192 healed_custom_upload"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Nodes: 6 | Edges: 5"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Scanning and tagging PII columns..."}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'order_id' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'customer_id' \u2192 IDENTIFIER [LOW] \u2192 masked with PSEUDONYMIZE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'email' \u2192 EMAIL [HIGH] \u2192 masked with PARTIAL_MASK"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'phone' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'order_amount' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'quantity' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'discount_pct' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'order_date' \u2192 PHONE_NUMBER [HIGH] \u2192 masked with LAST_4_VISIBLE"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] 'status' \u2014 no PII detected"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] 'product_category' \u2014 no PII detected"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'product_name' \u2192 PERSONAL_NAME [HIGH] \u2192 masked with INITIAL_ONLY"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'payment_type' \u2192 FINANCIAL_DATA [HIGH] \u2192 masked with RANGE_BUCKET"}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] PII detected: 'shipping_country' \u2192 IP_ADDRESS [MEDIUM] \u2192 masked with SUBNET_ONLY"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] PII found in 11/13 columns | Critical: 0 | High: 9 | Masked dataset \u2192 data/b2_masked_custom_upload.csv"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Enriching data catalogue via LLM..."}
+{"timestamp": "2026-05-09 16:22:30", "level": "WARN", "component": "B2-LineageGovernance", "message": "[B2] LLM catalogue enrichment failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsMJxafViNALZuX12UN'} \u2014 using fallback"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Catalogue saved to SQLite (13 entries)"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Fallback catalogue: 13 entries"}
+{"timestamp": "2026-05-09 16:22:30", "level": "INFO", "component": "B2-LineageGovernance", "message": "[B2] Generating governance report..."}
+{"timestamp": "2026-05-09 16:22:30", "level": "SUCCESS", "component": "B2-LineageGovernance", "message": "[B2] Governance report \u2192 logs/b2_governance_report_C672F60B.json | GDPR Score: 100% | PII columns: 11 | Lineage nodes: 6"}
+{"timestamp": "2026-05-09 16:23:00", "level": "INFO", "component": "DetectionAgent", "message": "Starting detection on: /Users/priyanshukumar/Desktop/self_healing_pipeline/data/custom_upload.csv"}
+{"timestamp": "2026-05-09 16:23:00", "level": "INFO", "component": "DetectionAgent", "message": "Loaded dataset \u2014 1062 rows \u00d7 13 columns"}
+{"timestamp": "2026-05-09 16:23:00", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'email' has 27 missing values (2.54%)"}
+{"timestamp": "2026-05-09 16:23:00", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_amount' has 31 missing values (2.92%)"}
+{"timestamp": "2026-05-09 16:23:00", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'quantity' has 3 missing values (0.28%)"}
+{"timestamp": "2026-05-09 16:23:00", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'order_date' has 21 missing values (1.98%)"}
+{"timestamp": "2026-05-09 16:23:00", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [MISSING_VALUES] Column 'status' has 7 missing values (0.66%)"}
+{"timestamp": "2026-05-09 16:23:00", "level": "WARN", "component": "DetectionAgent", "message": "Issue detected \u2192 [DATA_ANOMALY] Column 'discount_pct' has 8 outlier(s) outside IQR bounds"}
+{"timestamp": "2026-05-09 16:23:00", "level": "INFO", "component": "DetectionAgent", "message": "Detection summary: Found 6 issue(s) in 'custom_upload'. Types: ['MISSING_VALUES', 'DATA_ANOMALY']"}
+{"timestamp": "2026-05-09 16:23:00", "level": "INFO", "component": "ClassificationAgent", "message": "Classifying 6 detected issue(s) via LLM..."}
+{"timestamp": "2026-05-09 16:23:01", "level": "ERROR", "component": "ClassificationAgent", "message": "LLM classification failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsPYzVVzK4eK7829hBP'}. Using fallback rule-based classification."}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "[695eb86a] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "[ab5b875a] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "[42536060] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "[57ce7ab6] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "[a6c6f01e] \u2192 DATA_QUALITY_ISSUE / Null Values | Confidence: 90%"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "[dbb72575] \u2192 DATA_ANOMALY / Statistical Outlier | Confidence: 80%"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "ClassificationAgent", "message": "Primary failure category: DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "Building fix plan for 6 classified issue(s)..."}
+{"timestamp": "2026-05-09 16:23:01", "level": "ERROR", "component": "DecisionAgent", "message": "LLM decision failed: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CarsPbEvMfTmytGA4dj9P'}. Using fallback rules."}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "[695eb86a] Action: FILL_MODE | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "[ab5b875a] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "[42536060] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "[57ce7ab6] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "[a6c6f01e] Action: FILL_MEDIAN | Confidence: 70% | Reason: Fallback rule for DATA_QUALITY_ISSUE"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "DecisionAgent", "message": "[dbb72575] Action: CLIP_OUTLIERS | Confidence: 70% | Reason: Fallback rule for DATA_ANOMALY"}
+{"timestamp": "2026-05-09 16:23:01", "level": "WARN", "component": "HealingAgent", "message": "GE pre-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MODE] on column='email' | issue_id=695eb86a"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_amount' | issue_id=ab5b875a"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='quantity' | issue_id=42536060"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='order_date' | issue_id=57ce7ab6"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Applying [FILL_MEDIAN] on column='status' | issue_id=a6c6f01e"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Applying [CLIP_OUTLIERS] on column='discount_pct' | issue_id=dbb72575"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "\u2713 Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "GE post-healing: 14/15 passed (93.3%)"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "HealingAgent", "message": "Healed  \u2192 data/healed_custom_upload.csv (1062 rows \u00d7 13 cols)"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Removed \u2192 data/removed_custom_upload.csv (0 rows)"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "MockDB quality score written for run 67DDA9D3"}
+{"timestamp": "2026-05-09 16:23:01", "level": "INFO", "component": "HealingAgent", "message": "Quality report \u2192 data/report_custom_upload.json"}
+{"timestamp": "2026-05-09 16:23:01", "level": "ALERT", "component": "AlertSystem", "message": "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"}
+{"timestamp": "2026-05-09 16:23:01", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udea8 ALERT [INFO]: [Self-Healing Pipeline] SUCCESS \u2014 custom_upload"}
+{"timestamp": "2026-05-09 16:23:01", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udce7 Mock Email \u2192 oncall@company.com"}
+{"timestamp": "2026-05-09 16:23:01", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcac Mock Slack \u2192 #data-alerts"}
+{"timestamp": "2026-05-09 16:23:01", "level": "ALERT", "component": "AlertSystem", "message": "  \ud83d\udcc4 Body: Run 67DDA9D3 \u2014 Scenario 'custom_upload' encountered 1 high-severity issue(s). Final status: SUCCESS. Healed output: data/healed_custom_upload.csv"}
+{"timestamp": "2026-05-09 16:23:01", "level": "ALERT", "component": "AlertSystem", "message": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n"}
+{"timestamp": "2026-05-09 16:23:01", "level": "SUCCESS", "component": "LoggingAgent", "message": "Run report saved \u2192 logs/report_67DDA9D3.json"}

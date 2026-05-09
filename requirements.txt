@@ -10,3 +10,4 @@ streamlit
 plotly
 duckdb
 typing_extensions
+great_expectations

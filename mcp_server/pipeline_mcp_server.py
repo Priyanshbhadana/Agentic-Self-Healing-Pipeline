@@ -142,6 +142,47 @@ TOOLS = [
             },
         },
     },
+    {
+        "name": "run_b1_agent_tool",
+        "description": (
+            "Run the B1 Ingestion Quality Agent. "
+            "Profiles data, generates quality rules via LLM, validates, and auto-heals violations."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "scenario_name": {
+                    "type": "string",
+                    "description": "Scenario name",
+                    "enum": ["missing_values", "schema_mismatch", "data_anomaly"],
+                },
+            },
+            "required": ["scenario_name"],
+        },
+    },
+    {
+        "name": "run_b2_agent_tool",
+        "description": (
+            "Run the B2 Lineage & Governance Agent. "
+            "Parses SQL, extracts lineage, tags PII, enriches catalogue, generates GDPR compliance report."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "scenario_name": {
+                    "type": "string",
+                    "description": "Scenario name",
+                    "enum": ["missing_values", "schema_mismatch", "data_anomaly"],
+                },
+                "sql_query": {
+                    "type": "string",
+                    "description": "Optional SQL query for lineage extraction (auto-generated if blank)",
+                    "default": "",
+                },
+            },
+            "required": ["scenario_name"],
+        },
+    },
 ]
 
 
@@ -254,6 +295,47 @@ def _get_quality_scores_tool(scenario_filter: str = None) -> dict:
     }
 
 
+def _run_b1_agent_tool(scenario_name: str) -> dict:
+    from agents.b1_ingestion_quality_agent import run_b1_pipeline
+    path_map = {
+        "missing_values":  "data/scenario_missing.csv",
+        "schema_mismatch": "data/scenario_schema.csv",
+        "data_anomaly":    "data/scenario_anomaly.csv",
+    }
+    path = path_map.get(scenario_name, f"data/{scenario_name}.csv")
+    result = run_b1_pipeline(scenario_name, path)
+    return {
+        "run_id":     result.get("run_id"),
+        "status":     result.get("final_status"),
+        "rules":      len(result.get("quality_rules", [])),
+        "violations": len(result.get("violations", [])),
+        "heals":      len(result.get("heals_applied", [])),
+        "score":      result.get("validation_score", 0),
+        "healed_path":result.get("healed_data_path"),
+    }
+
+
+def _run_b2_agent_tool(scenario_name: str, sql_query: str = "") -> dict:
+    from agents.b2_lineage_governance_agent import run_b2_pipeline
+    path_map = {
+        "missing_values":  "data/scenario_missing.csv",
+        "schema_mismatch": "data/scenario_schema.csv",
+        "data_anomaly":    "data/scenario_anomaly.csv",
+    }
+    path = path_map.get(scenario_name, f"data/{scenario_name}.csv")
+    result = run_b2_pipeline(scenario_name, path, sql_query=sql_query)
+    gr = result.get("governance_report", {})
+    return {
+        "run_id":       result.get("run_id"),
+        "status":       result.get("final_status"),
+        "pii_columns":  len(result.get("pii_tags", [])),
+        "lineage_nodes":len(result.get("lineage_graph", {}).get("nodes", [])),
+        "catalogue":    len(result.get("data_catalogue", [])),
+        "gdpr_score":   gr.get("gdpr_compliance", {}).get("score", 0),
+        "masked_path":  result.get("masked_data_path"),
+    }
+
+
 # ── MCP Server class ──────────────────────────────────────────
 
 class PipelineMCPServer:
@@ -271,6 +353,8 @@ class PipelineMCPServer:
             "get_issue_stats_tool":   _get_issue_stats_tool,
             "validate_data_tool":     _validate_data_tool,
             "get_quality_scores_tool":_get_quality_scores_tool,
+            "run_b1_agent_tool":      _run_b1_agent_tool,
+            "run_b2_agent_tool":      _run_b2_agent_tool,
         }
 
     def list_tools(self) -> list:

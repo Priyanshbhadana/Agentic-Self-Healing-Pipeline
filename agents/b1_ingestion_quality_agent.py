@@ -74,7 +74,7 @@ def profiler_node(state: B1State) -> B1State:
     profile = {}
     for col in df.columns:
         s = df[col]
-        is_num = pd.api.types.is_numeric_dtype(s)
+        is_num = pd.api.types.is_numeric_dtype(s) and not pd.api.types.is_bool_dtype(s)
         col_profile = {
             "dtype":       str(s.dtype),
             "count":       int(s.count()),
@@ -85,15 +85,16 @@ def profiler_node(state: B1State) -> B1State:
             "sample":      s.dropna().head(3).tolist(),
         }
         if is_num:
+            non_null = s.dropna()
             col_profile.update({
-                "min":    round(float(s.min()), 4) if len(s.dropna()) else None,
-                "max":    round(float(s.max()), 4) if len(s.dropna()) else None,
-                "mean":   round(float(s.mean()), 4) if len(s.dropna()) else None,
-                "median": round(float(s.median()), 4) if len(s.dropna()) else None,
-                "std":    round(float(s.std()), 4) if len(s.dropna()) else None,
-                "q1":     round(float(s.quantile(0.25)), 4) if len(s.dropna()) else None,
-                "q3":     round(float(s.quantile(0.75)), 4) if len(s.dropna()) else None,
-                "skewness": round(float(s.skew()), 4) if len(s.dropna()) > 2 else None,
+                "min":    round(float(non_null.min()), 4) if len(non_null) else None,
+                "max":    round(float(non_null.max()), 4) if len(non_null) else None,
+                "mean":   round(float(non_null.mean()), 4) if len(non_null) else None,
+                "median": round(float(non_null.median()), 4) if len(non_null) else None,
+                "std":    round(float(non_null.std()), 4) if len(non_null) else None,
+                "q1":     round(float(non_null.quantile(0.25)), 4) if len(non_null) else None,
+                "q3":     round(float(non_null.quantile(0.75)), 4) if len(non_null) else None,
+                "skewness": round(float(non_null.skew()), 4) if len(non_null) > 2 else None,
                 "outlier_pct": _iqr_outlier_pct(s),
             })
         else:
@@ -464,7 +465,7 @@ def healer_node(state: B1State) -> B1State:
 
 
 def _mask_pii_column(df: pd.DataFrame, col: str, violation: dict):
-    """Mask PII values based on detected PII type."""
+    """Mask PII values based on detected PII type. Returns (df, message) tuple."""
     import re, hashlib
     pii_type = violation.get("detail","").split("unmasked ")[-1].split(" data")[0]
 
@@ -476,24 +477,24 @@ def _mask_pii_column(df: pd.DataFrame, col: str, violation: dict):
                 return f"{str(parts[0])[:2]}***@{parts[1]}"
             return "***@***.***"
         df[col] = df[col].apply(mask_email)
-        return f"Masked {len(df[col].dropna())} email addresses"
+        return df, f"Masked {len(df[col].dropna())} email addresses"
 
     elif "PHONE" in pii_type:
         df[col] = df[col].apply(lambda v: "***-***-" + str(v)[-4:] if not pd.isna(v) else v)
-        return f"Masked {len(df[col].dropna())} phone numbers"
+        return df, f"Masked {len(df[col].dropna())} phone numbers"
 
     elif "NAME" in pii_type:
         df[col] = df[col].apply(lambda v: str(v)[0] + "***" if not pd.isna(v) and len(str(v)) > 0 else v)
-        return f"Masked {len(df[col].dropna())} names"
+        return df, f"Masked {len(df[col].dropna())} names"
 
     elif "SSN" in pii_type:
         df[col] = df[col].apply(lambda v: "***-**-" + str(v)[-4:] if not pd.isna(v) else v)
-        return f"Masked {len(df[col].dropna())} SSNs"
+        return df, f"Masked {len(df[col].dropna())} SSNs"
 
     else:
         # Generic hash-based masking
         df[col] = df[col].apply(lambda v: "MASKED_" + hashlib.md5(str(v).encode()).hexdigest()[:8] if not pd.isna(v) else v)
-        return f"Hash-masked {len(df[col].dropna())} PII values"
+        return df, f"Hash-masked {len(df[col].dropna())} PII values"
 
 
 # ──────────────────────────────────────────────────────────────

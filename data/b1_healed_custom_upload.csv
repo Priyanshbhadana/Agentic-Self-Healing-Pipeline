@@ -1,0 +1,1063 @@
+order_id,customer_id,email,phone,order_amount,quantity,discount_pct,order_date,status,product_category,product_name,payment_type,shipping_country
+ORD-10000,CUST-8359,  ***@outlook.com  ,***-***-3615,3046.68,9,25,2023-03-09,Pending,Clothing,J***,Debit Card,MASKED_3a52f3c2
+ORD-10001,CUST-6925,cc***@yahoo.com,***-***-1750,-5.86,9,25,2025-07-16,Shipped,Toys,L***,Debit Card,MASKED_76423d83
+ORD-10002,CUST-1916,***@domain.com,***-***-5386,4050.42,6,0,2022-08-05,  Shipped  ,Beauty,P***,Barter,MASKED_0f177369
+ORD-10003,CUST-7916,dd***@gmail.com,***-***-one),--,3,20,2023-03-16,Cancelled,Beauty,M***,Credit Card,MASKED_19d3326f
+ORD-10004,CUST-9689,  ***@company.io,***-***-1319,364712.34,3,0,2023-01-07,delivered,Sports,D***,Credit Card,MASKED_3a52f3c2
+ORD-10005,CUST-9835,  ***@outlook.com  ,***-***-6107,5401.69,7,15,2023-11-19,Pending,Clothing,J***,Bank Transfer,MASKED_19d3326f
+ORD-10006,CUST-3167,gb***@company.io,***-***-4981,-211.35,8,15,2025-08-12,Delivered,Food,O***,Credit Card,MASKED_76423d83
+ORD-10007,CUST-2235,us***@gmail.com,***-***-9856,630677.74,8,0,2023-03-16,  Pending  ,Beauty,L***,gift card,MASKED_0f177369
+ORD-10008,CUST-9883,wx***@enterprise.net,***-***-123,MISSING,4,20,2023-03-16,Cancelled,Food,T***,Debit Card,MASKED_7516fd43
+ORD-10009,CUST-7484,  ***@enterprise.net,***-***-8491,409601.35,6,10,2024-02-09,REFUNDED,CLOTHING,T***,Bank Transfer,MASKED_24d22e03
+ORD-10010,CUST-9666,  ***@outlook.com  ,***-***-2697,2456.4,5,5,2022-09-28,ERROR,Clothing,T***,Cash,MASKED_c86ee0d9
+ORD-10011,CUST-5291,ps***@enterprise.net,***-***-8007,-177.98,3,20,2026-05-01,Pending,Sports,Y***,Debit Card,MASKED_19d3326f
+ORD-10012,CUST-7658,us***@.com,***-***-3662,MISSING,9,5,2024-06-21,  Pending  ,Electronics,L***,Voucher,MASKED_3e8d115e
+ORD-10013,CUST-4164,gu***@outlook.com,***-***-ghij,MISSING,4,10,2023-03-16,Refunded,Beauty,F***,Bank Transfer,MASKED_19d3326f
+ORD-10014,CUST-4114,  ***@gmail.com,***-***-1027,506461.71,2,20,2024-04-05,delivered,Toys,A***,PayPal,MASKED_6cc98ba2
+ORD-10015,CUST-5930,  ***@outlook.com  ,***-***-5700,1482.99,3,5,2023-03-17,ERROR,Clothing,S***,PayPal,MASKED_0f177369
+ORD-10016,CUST-2193,rn***@hotmail.com,***-***-4185,-43.93,8,25,2026-11-12,Delivered,Food,V***,Bank Transfer,MASKED_3a52f3c2
+ORD-10017,CUST-8612,***@***.***,***-***-6198,735.78,2,15,2023-09-20,  Processing  ,Books,C***,Voucher,MASKED_19d3326f
+ORD-10018,CUST-3503,tm***@yahoo.com,***-***--NOW,MISSING,3,10,2023-03-16,Delivered,Food,V***,Credit Card,MASKED_3a52f3c2
+ORD-10019,CUST-8999,  ***@outlook.com,***-***-1475,355187.08,10,15,2022-12-11,refunded,Beauty,S***,Debit Card,MASKED_0f177369
+ORD-10020,CUST-2341,  ***@outlook.com  ,***-***-1853,1438.92,7,10,2022-08-18,dispatched,Books,F***,Credit Card,MASKED_7516fd43
+ORD-10021,CUST-3683,vq***@gmail.com,***-***-6111,-89.44,2,20,2025-07-16,Delivered,Home & Garden,R***,Debit Card,MASKED_76423d83
+ORD-10022,CUST-6934,us***@domain,***-***-8135,699.3,2,5,2024-01-22,  Refunded  ,Home & Garden,P***,gift card,MASKED_19d3326f
+ORD-10023,CUST-4475,lt***@outlook.com,***-***-7890,MISSING,6,20,2023-03-16,Cancelled,Food,O***,Credit Card,MASKED_3a52f3c2
+ORD-10024,CUST-8434,  ***@outlook.com,***-***-2976,585405.42,6,25,2022-07-17,processing,Beauty,M***,Cash,MASKED_c86ee0d9
+ORD-10025,CUST-1745,  ***@outlook.com  ,***-***-3068,950.67,9,25,2024-06-08,Pending,Home & Garden,S***,Credit Card,MASKED_24d22e03
+ORD-10026,CUST-7818,mi***@company.io,***-***-9561,-121.04,2,15,2026-04-09,Delivered,Sports,R***,Cash,MASKED_6cc98ba2
+ORD-10027,CUST-5632,us***@gmail.com,***-***-4824,189.02,1,10,2024-03-17,  Cancelled  ,Sports,T***,Barter,MASKED_6cc98ba2
+ORD-10028,CUST-1653,  ***@enterprise.net  ,***-***-0000,none,8,0,2023-03-16,Processing,Clothing,S***,Cash,MASKED_7516fd43
+ORD-10029,CUST-7561,  ***@company.io,***-***-2442,344363.24,8,10,2022-09-16,PENDING,Sports,Y***,Bank Transfer,MASKED_19d3326f
+ORD-10030,CUST-3594,mb***@company.io,***-***-7684,6404.5,10,0,2022-08-19,Pending,Electronics,T***,Credit Card,MASKED_c86ee0d9
+ORD-10031,CUST-9318,nh***@gmail.com,***-***-5891,4486.38,6,20,2023-08-17,Refunded,Food,V***,Debit Card,MASKED_0f177369
+ORD-10032,CUST-3492,it***@gmail.com,***-***-6439,2183.51,7,0,2024-06-14,Delivered,Food,C***,Cash,MASKED_0f177369
+ORD-10033,CUST-8994,kr***@gmail.com,***-***-4846,3019.86,6,25,2023-12-02,Shipped,Electronics,S***,Credit Card,MASKED_6cc98ba2
+ORD-10034,CUST-3950,ls***@yahoo.com,***-***-7267,5470.3,10,20,2023-12-01,Processing,Clothing,D***,Cash,MASKED_c86ee0d9
+ORD-10035,CUST-8484,ql***@yahoo.com,***-***-8916,3876.6,7,0,2022-08-31,Delivered,Home & Garden,C***,PayPal,MASKED_24d22e03
+ORD-10036,CUST-6772,av***@enterprise.net,***-***-5106,1950.48,4,25,2024-02-13,Refunded,Sports,D***,Credit Card,MASKED_7516fd43
+ORD-10037,CUST-6549,***@***.***,***-***-4696,2992.55,5,25,2024-01-12,Pending,Sports,B***,Cash,MASKED_3e8d115e
+ORD-10038,CUST-8606,an***@outlook.com,***-***-2911,2079.52,4,5,2022-02-16,  Delivered  ,Clothing,J***,Bank Transfer,MASKED_76423d83
+ORD-10039,CUST-4559,xd***@hotmail.com,***-***-6942,553.77,1,0,2023-12-04,Shipped,Clothing,S***,PayPal,MASKED_7516fd43
+ORD-10040,CUST-4817,ed***@yahoo.com,***-***-5542,1766.8,10,5,2022-05-14,ERROR,Beauty,P***,Debit Card,MASKED_76423d83
+ORD-10041,CUST-9408,au***@gmail.com,***-***-4629,4988.16,8,20,2022-02-14,Refunded,Electronics,S***,PayPal,MASKED_0f177369
+ORD-10042,CUST-8433,zw***@company.io,***-***-2874,4267.9,10,25,2023-10-29,Cancelled,Electronics,S***,Bank Transfer,MASKED_0f177369
+ORD-10043,CUST-1982,il***@company.io,***-***-3002,3902.16,6,15,2022-12-29,Refunded,Home & Garden,R***,Credit Card,MASKED_11aedd0e
+ORD-10044,CUST-5381,cn***@yahoo.com,***-***-6062,232.83,9,10,2022-12-26,Pending,Sports,D***,Debit Card,MASKED_24d22e03
+ORD-10045,CUST-1861,dq***@yahoo.com,***-***-1815,4790.0,10,25,2022-03-25,Shipped,Beauty,S***,Bank Transfer,MASKED_0f177369
+ORD-10046,CUST-8055,ht***@yahoo.com,***-***-4770,22.3,2,20,2023-07-27,Refunded,Food,P***,Credit Card,MASKED_6cc98ba2
+ORD-10047,CUST-6928,ax***@hotmail.com,***-***-8138,5331.68,8,20,2023-02-15,Cancelled,Electronics,L***,Bank Transfer,MASKED_11aedd0e
+ORD-10048,CUST-2234,ie***@enterprise.net,***-***-8354,1451.73,3,25,29-09-2023,Cancelled,Toys,R***,PayPal,MASKED_3e8d115e
+ORD-10049,CUST-1672,bl***@company.io,***-***-6267,2610.02,7,20,2023-05-03,Cancelled,Books,S***,Credit Card,MASKED_0f177369
+ORD-10050,CUST-2548,zc***@enterprise.net,***-***-5128,344.4,6,25,2024-05-22,Refunded,Clothing,S***,Debit Card,MASKED_3e8d115e
+ORD-10051,CUST-1298,rx***@outlook.com,***-***-6598,2864.75,7,15,2022-07-16,Processing,Clothing,J***,Debit Card,MASKED_76423d83
+ORD-10052,CUST-6968,no***@enterprise.net,***-***-2345,317.92,8,25,2024-03-13,PENDING,Sports,D***,Cash,MASKED_3a52f3c2
+ORD-10053,CUST-9452,xf***@outlook.com,***-***-3626,6729.84,9,10,2023-04-06,Cancelled,Sports,D***,Bank Transfer,MASKED_76423d83
+ORD-10054,CUST-8740,xy***@yahoo.com,***-***-8685,106.35,3,15,2023-09-23,Pending,Home & Garden,S***,Credit Card,MASKED_11aedd0e
+ORD-10055,CUST-1269,os***@company.io,***-***-3352,3835.28,8,10,2023-03-16,Pending,Home & Garden,C***,PayPal,MASKED_3a52f3c2
+ORD-10056,CUST-6649,rc***@enterprise.net,***-***-2698,3791.22,6,20,2024-01-23,Shipped,Beauty,L***,Credit Card,MASKED_3e8d115e
+ORD-10057,CUST-6170,vr***@company.io,***-***-9897,2836.8,4,15,2022-09-17,Pending,Toys,A***,PayPal,MASKED_3e8d115e
+ORD-10058,CUST-3956,  ***@outlook.com  ,***-***-2311,474.25,7,10,2023-11-08,Shipped,Electronics,H***,Bank Transfer,MASKED_24d22e03
+ORD-10059,CUST-3339,rj***@enterprise.net,***-***-3068,2287.41,3,0,2022-08-30,Refunded,Beauty,P***,PayPal,MASKED_6cc98ba2
+ORD-10060,CUST-8311,dl***@company.io,***-***-9047,3105.5,5,5,2022-05-06,Processing,Electronics,L***,Bank Transfer,MASKED_c86ee0d9
+ORD-10061,CUST-3275,vz***@hotmail.com,***-***-7044,1576.36,2,15,2024-04-02,Cancelled,Food,O***,Cash,MASKED_76423d83
+ORD-10062,CUST-3981,ks***@yahoo.com,***-***-1907,4622.76,9,0,2023-06-15,2,Clothing,J***,Debit Card,MASKED_c86ee0d9
+ORD-10063,CUST-6531,iy***@gmail.com,***-***-1744,5779.0,10,25,02-12-2023,Cancelled,Toys,B***,Debit Card,MASKED_24d22e03
+ORD-10064,CUST-6231,  ***@outlook.com  ,***-***-7070,760.5,3,20,2023-07-30,Pending,Beauty,P***,Debit Card,MASKED_0f177369
+ORD-10065,CUST-6055,ld***@gmail.com,***-***-9281,3385.08,9,15,2022-09-04,Processing,Clothing,S***,PayPal,MASKED_7516fd43
+ORD-10066,CUST-2204,mw***@company.io,***-***-5582,2668.86,6,20,2023-11-28,Cancelled,Electronics,L***,Debit Card,MASKED_76423d83
+ORD-10067,CUST-7438,ui***@enterprise.net,***-***-6511,2582.3,10,20,2024-04-28,  Cancelled  ,Beauty,F***,Bank Transfer,MASKED_24d22e03
+ORD-10068,CUST-7229,vj***@enterprise.net,***-***-2800,4545.72,9,5,2022-01-20,Delivered,Sports,R***,Bank Transfer,MASKED_c86ee0d9
+ORD-10069,CUST-6140,ku***@hotmail.com,***-***-9950,3382.0,8,10,2023-11-24,Refunded,Beauty,P***,Cash,MASKED_0f177369
+ORD-10070,CUST-7464,hh***@yahoo.com,***-***-5712,5019.91,7,25,2022-03-22,Shipped,Home & Garden,R***,PayPal,MASKED_0f177369
+ORD-10071,CUST-3587,vh***@enterprise.net,***-***-4267,27.36,3,10,2022-11-25,Shipped,Home & Garden,S***,Credit Card,MASKED_24d22e03
+ORD-10072,CUST-6489,tw***@hotmail.com,***-***-9590,903.0,10,15,2024-06-29,Processing,Home & Garden,C***,Bank Transfer,MASKED_11aedd0e
+ORD-10073,CUST-7643,it***@company.io,***-***-7567,1472.13,3,25,2022-04-08,Processing,Home & Garden,L***,Bank Transfer,MASKED_3e8d115e
+ORD-10074,CUST-7642,gg***@company.io,***-***-6095,1991.28,8,25,2022-05-01,Refunded,Home & Garden,P***,PayPal,MASKED_24d22e03
+ORD-10075,CUST-6927,ym***@company.io,***-***-0000,3399.2,8,20,2022-07-27,Cancelled,Home & Garden,C***,Debit Card,MASKED_c86ee0d9
+ORD-10076,CUST-1742,lr***@outlook.com,***-***-9866,1859.04,4,0,2022-03-12,Delivered,Toys,L***,PayPal,MASKED_6cc98ba2
+ORD-10077,CUST-9802,tz***@company.io,***-***-4648,MISSING,6,0,2024-02-14,Pending,Books,T***,Bank Transfer,MASKED_19d3326f
+ORD-10078,CUST-1724,jf***@hotmail.com,***-***-4559,199.56,1,0,2022-05-24,Cancelled,Beauty,P***,Debit Card,MASKED_24d22e03
+ORD-10079,CUST-1768,pr***@enterprise.net,***-***-9592,3128.3,7,10,2023-12-15,Delivered,Toys,P***,Debit Card,MASKED_11aedd0e
+ORD-10080,CUST-7079,tm***@company.io,***-***-4120,1476.34,2,0,2022-10-02,Delivered,Beauty,F***,Cash,MASKED_7516fd43
+ORD-10081,CUST-4350,up***@yahoo.com,***-***-5637,5855.84,8,15,2023-04-23,Cancelled,Clothing,J***,PayPal,MASKED_11aedd0e
+ORD-10082,CUST-7841,wm***@yahoo.com,***-***-4768,4654.2,10,15,2023-08-07,Processing,Toys,P***,Cash,MASKED_3e8d115e
+ORD-10083,CUST-7756,zq***@enterprise.net,***-***-3474,612.65,1,0,2022-08-12,Cancelled,Sports,B***,PayPal,MASKED_7516fd43
+ORD-10084,CUST-6807,an***@hotmail.com,***-***-7652,1851.03,9,15,2023-08-02,Processing,Food,O***,PayPal,MASKED_76423d83
+ORD-10085,CUST-8790,kj***@gmail.com,***-***-5593,2886.04,4,20,2023-08-01,Refunded,Electronics,L***,Debit Card,MASKED_3e8d115e
+ORD-10086,CUST-3292,pt***@enterprise.net,***-***-6666,4239.97,7,0,2022-04-11,Delivered,Electronics,S***,Credit Card,MASKED_3e8d115e
+ORD-10087,CUST-3527,ah***@hotmail.com,***-***-2745,638.05,5,0,2022-01-06,Shipped,Beauty,S***,PayPal,MASKED_11aedd0e
+ORD-10088,CUST-7779,cl***@gmail.com,***-***-4977,103.67,7,20,2023-06-18,Processing,Clothing,D***,Debit Card,MASKED_c86ee0d9
+ORD-10089,CUST-7483,  ***@company.io  ,***-***-6399,51.9,5,15,2022-12-09,Delivered,Sports,T***,Debit Card,MASKED_11aedd0e
+ORD-10090,CUST-1440,yf***@hotmail.com,***-***-8183,1640.88,3,10,2024-05-01,Refunded,Toys,L***,Bank Transfer,MASKED_0f177369
+ORD-10091,CUST-2392,***@***.***,***-***-6816,4293.81,9,5,2023-10-25,Cancelled,Books,F***,Cash,MASKED_6cc98ba2
+ORD-10092,CUST-2406,cc***@enterprise.net,***-***-6110,479.74,2,10,2023-04-12,  Delivered  ,Toys,R***,Bank Transfer,MASKED_3e8d115e
+ORD-10093,CUST-8570,ls***@hotmail.com,***-***-4053,3095.64,9,25,2023-11-05,Delivered,Food,V***,Credit Card,MASKED_24d22e03
+ORD-10094,CUST-9019,pk***@enterprise.net,***-***-7367,427.14,2,20,2023-03-16,Cancelled,Home & Garden,S***,PayPal,MASKED_3e8d115e
+ORD-10095,CUST-7931,er***@hotmail.com,***-***-3838,1385.91,3,20,2022-06-20,Delivered,Food,P***,Debit Card,MASKED_c86ee0d9
+ORD-10096,CUST-5729,qw***@hotmail.com,***-***-9115,918.75,5,20,2023-06-08,Pending,Toys,R***,Credit Card,MASKED_11aedd0e
+ORD-10097,CUST-4882,vb***@enterprise.net,***-***-6744,1243.26,2,25,2023-09-17,Refunded,Toys,P***,Debit Card,MASKED_24d22e03
+ORD-10098,CUST-7743,vu***@outlook.com,***-***-3174,225.58,2,5,2022-05-30,Refunded,Books,T***,Debit Card,MASKED_6cc98ba2
+ORD-10099,CUST-6362,pg***@gmail.com,***-***-2526,6083.6,8,25,2023-04-15,Refunded,Food,P***,Credit Card,MASKED_19d3326f
+ORD-10100,CUST-3588,zv***@hotmail.com,***-***-4314,143.52,8,25,2022-05-16,Refunded,Beauty,P***,Debit Card,MASKED_11aedd0e
+ORD-10101,CUST-2975,gj***@enterprise.net,***-***-2160,558.0,1,5,2023-01-28,Pending,Clothing,T***,Credit Card,MASKED_3e8d115e
+ORD-10102,CUST-2420,du***@yahoo.com,***-***-7291,5509.36,8,10,2023-03-16,Shipped,Toys,A***,Debit Card,MASKED_11aedd0e
+ORD-10103,CUST-9185,op***@company.io,***-***-1197,662.41,7,10,2022-11-21,Processing,Clothing,D***,Cash,MASKED_6cc98ba2
+ORD-10104,CUST-7590,rt***@enterprise.net,***-***-3501,2392.18,7,10,2025-06-30,Shipped,Toys,L***,Cash,MASKED_3a52f3c2
+ORD-10105,CUST-3877,ip***@gmail.com,***-***-1185,2672.65,5,5,2023-05-24,Shipped,Books,C***,Cash,MASKED_11aedd0e
+ORD-10106,CUST-3734,du***@yahoo.com,***-***-2685,5505.52,8,20,2023-11-22,Refunded,Books,F***,UNKNOWN,MASKED_19d3326f
+ORD-10107,CUST-5067,wa***@enterprise.net,***-***-2276,1284.43,7,20,2023-01-17,Pending,Electronics,S***,Credit Card,MASKED_c86ee0d9
+ORD-10108,CUST-9083,zy***@yahoo.com,***-***-5016,1495.28,4,5,2022-01-07,Delivered,Home & Garden,S***,Debit Card,MASKED_19d3326f
+ORD-10109,CUST-9515,ya***@enterprise.net,***-***-2391,2873.36,4,20,2026-04-28,Cancelled,Toys,A***,Bank Transfer,MASKED_76423d83
+ORD-10110,CUST-8365,rd***@outlook.com,***-***-9780,267.0,3,10,2024-02-28,Processing,Electronics,T***,PayPal,MASKED_0f177369
+ORD-10111,CUST-3848,cu***@hotmail.com,***-***-5093,3284.85,5,0,2023-04-19,Pending,Sports,D***,Credit Card,MASKED_7516fd43
+ORD-10112,CUST-8552,dv***@yahoo.com,***-***-7471,614.46,6,15,2022-01-31,Delivered,Electronics,T***,Debit Card,MASKED_3e8d115e
+ORD-10113,CUST-7266,hl***@outlook.com,***-***-8940,5732.1,9,10,2023-08-03,Cancelled,Home & Garden,P***,Bank Transfer,MASKED_11aedd0e
+ORD-10114,CUST-2640,  ***@outlook.com  ,***-***-9743,3117.24,4,25,2022-02-27,Processing,Books,C***,Bank Transfer,MASKED_3e8d115e
+ORD-10115,CUST-1920,gi***@company.io,***-***-9625,281.44,8,15,2022-01-01,Shipped,Books,C***,Debit Card,MASKED_c86ee0d9
+ORD-10116,CUST-6514,xv***@outlook.com,***-***-8157,3296.16,7,25,2023-05-14,Refunded,Toys,B***,Debit Card,MASKED_19d3326f
+ORD-10117,CUST-6213 ,rv***@yahoo.com,***-***-2705,307.4,10,15,2022-05-25,Shipped,Toys,L***,Debit Card,MASKED_3e8d115e
+ORD-10118,CUST-8179,qz***@hotmail.com,***-***-9078,43.28,1,15,2022-12-26,Cancelled,Toys,P***,Credit Card,MASKED_0f177369
+ORD-10119,CUST-2525,lu***@company.io,***-***-1507,6783.84,9,15,2023-11-01,Processing,Home & Garden,C***,Bank Transfer,MASKED_c86ee0d9
+ORD-10120,CUST-8869,iz***@gmail.com,***-***-3798,MISSING,2,25,2022-10-26,Pending,Electronics,T***,Credit Card,MASKED_11aedd0e
+ORD-10121,CUST-6632,mr***@hotmail.com,***-***-4727,-170.85,2,20,2022-03-04,Delivered,Beauty,F***,Bank Transfer,MASKED_19d3326f
+ORD-10122,CUST-8133,wm***@enterprise.net,***-***-5225,1581.36,2,10,2024-01-15,Pending,Food,C***,Bank Transfer,MASKED_19d3326f
+ORD-10123,CUST-6633,ih***@outlook.com,***-***-8955,3473.2,5,20,2023-09-16,Delivered,Beauty,M***,Debit Card,MASKED_11aedd0e
+ORD-10124,CUST-4734,qr***@outlook.com,***-***-6257,1556.26,2,10,2024-01-17,Delivered,Beauty,F***,Credit Card,MASKED_3a52f3c2
+ORD-10125,CUST-9589,xk***@gmail.com,***-***-4288,1876.53,3,0,2023-03-16,Pending,Food,V***,Credit Card,MASKED_3e8d115e
+ORD-10126,CUST-7333,jm***@yahoo.com,***-***-4511,463.26,2,5,2023-10-25,Processing,Home & Garden,L***,PayPal,MASKED_6cc98ba2
+ORD-10127,CUST-6713,md***@outlook.com,***-***-5950,5018.37,many,25,2023-06-18,Cancelled,Electronics,T***,Cash,MASKED_76423d83
+ORD-10128,CUST-9475,zz***@yahoo.com,***-***-7620,773.75,5,25,2022-11-24,Refunded,Electronics,S***,Credit Card,MASKED_0f177369
+ORD-10129,CUST-3785,xk***@company.io,***-***-2599,2192.85,9,15,2022-05-12,Refunded,Sports,R***,Cash,MASKED_c86ee0d9
+ORD-10130,CUST-2166,ff***@yahoo.com,***-***-7253,7557.2,10,20,2022-11-02,Delivered,Toys,L***,Debit Card,MASKED_c86ee0d9
+ORD-10131,CUST-4430,ko***@yahoo.com,***-***-3595,-466.77,1,15,2024-03-15,Pending,Home & Garden,L***,Cash,MASKED_6cc98ba2
+ORD-10132,CUST-2069,lm***@outlook.com,***-***-9524,2483.6,10,20,2023-06-21,Shipped,BEAUTY,S***,Debit Card,MASKED_3e8d115e
+ORD-10133,CUST-5190,te***@company.io,***-***-1785,303.28,1,25,2022-04-21,Refunded,Food,C***,Credit Card,MASKED_76423d83
+ORD-10134,CUST-4272,jo***@company.io,***-***-7713,801.4,2,10,2022-06-14,Pending,Beauty,F***,Bank Transfer,MASKED_3a52f3c2
+ORD-10135,CUST-5850,ga***@hotmail.com,***-***-3862,1472.48,4,0,2024-05-22,Shipped,Food,P***,PayPal,MASKED_6cc98ba2
+ORD-10136,CUST-7319,wx***@hotmail.com,***-***-3732,1768.88,8,0,2022-05-16,Refunded,Clothing,T***,Debit Card,MASKED_76423d83
+ORD-10137,CUST-4669,mo***@outlook.com,***-***-2560,5536.71,9,15,2023-11-09,Refunded,Beauty,L***,Bank Transfer,MASKED_3e8d115e
+ORD-10138,CUST-5557,vo***@company.io,***-***-7203,1179.06,6,15,2024-04-16,Processing,Beauty,M***,Bank Transfer,MASKED_0f177369
+ORD-10139,CUST-8474,wl***@outlook.com,***-***-4652,1525.05,9,15,2022-12-06,Cancelled,Food,T***,Cash,MASKED_0f177369
+ORD-10140,CUST-7437,ct***@hotmail.com,***-***-6536,616.4,4,0,2024-02-15,Delivered,Toys,L***,Cash,MASKED_76423d83
+ORD-10141,CUST-6273,ry***@hotmail.com,***-***-5067,4869.0,10,10,2023-03-16,Shipped,food,P***,Bank Transfer,MASKED_c86ee0d9
+ORD-10142,CUST-6281,px***@gmail.com,***-***-8870,1216.8,3,20,2023-08-08,Refunded,Books,B***,Cash,MASKED_11aedd0e
+ORD-10143,CUST-5835,na***@company.io,***-***-8415,554.02,1,0,2023-09-23,Refunded,Beauty,F***,Debit Card,MASKED_19d3326f
+ORD-10144,CUST-8259,nu***@enterprise.net,***-***-7025,6957.4,10,20,2023-07-14,Refunded,Beauty,F***,Debit Card,MASKED_3a52f3c2
+ORD-10145,CUST-5934,er***@company.io,***-***-2194,454.3,10,25,2022-11-22,Cancelled,Sports,D***,Debit Card,MASKED_19d3326f
+ORD-10146,CUST-4994,eo***@enterprise.net,***-***-2857,7352.9,10,15,2022-09-20,Cancelled,Clothing,J***,Credit Card,MASKED_19d3326f
+ORD-10147,CUST-2181,ul***@enterprise.net,***-***-8523,3633.14,7,25,2022-12-06,Pending,Toys,L***,Credit Card,MASKED_7516fd43
+ORD-10148,CUST-2189,oo***@company.io,***-***-5937,562.2,1,20,2022-03-30,Shipped,Books,B***,Bank Transfer,MASKED_6cc98ba2
+ORD-10149,CUST-3316,ef***@gmail.com,***-***-7456,6303.96,9,20,2023-07-15,Pending,Electronics,H***,Debit Card,MASKED_3e8d115e
+ORD-10150,CUST-8982,xw***@outlook.com,***-***-4842,323.9,2,0,2022-10-19,Cancelled,Home & Garden,S***,Debit Card,MASKED_3e8d115e
+ORD-10151,CUST-6432,ir***@hotmail.com,***-***-6004,670.62,6,15,2026-03-01,Pending,Food,O***,Cash,MASKED_76423d83
+ORD-10152,CUST-1600,xf***@outlook.com,***-***-8734,1741.4,10,25,2024-03-04,Processing,Sports,R***,Bank Transfer,MASKED_3a52f3c2
+ORD-10153,CUST-1662,mn***@hotmail.com,***-***-5331,6013.12,8,10,2022-08-28,Pending,Sports,D***,Cash,MASKED_3e8d115e
+ORD-10154,CUST-7165,xw***@company.io,***-***-6653,831.5,2,15,2024-03-22,Delivered,Beauty,F***,Credit Card,MASKED_19d3326f
+ORD-10155,CUST-3641,ec***@hotmail.com,***-***-1706,3086.56,8,5,2023-08-11,Cancelled,Books,S***,Debit Card,MASKED_19d3326f
+ORD-10156,CUST-3979,de***@enterprise.net,***-***-3747,6572.6,10,25,2023-12-04,Shipped,Electronics,T***,Cash,MASKED_24d22e03
+ORD-10157,CUST-9835,jd***@enterprise.net,***-***-9553,4233.76,8,15,2023-01-15,Pending,Clothing,S***,Bank Transfer,MASKED_3a52f3c2
+ORD-10158,CUST-1116,ju***@company.io,***-***-1117,568.77,1,15,2023-11-02,Processing,Food,P***,Bank Transfer,MASKED_3e8d115e
+ORD-10159,CUST-6641,lp***@hotmail.com,***-***-2951,3954.3,5,25,2022-08-24,Delivered,Clothing,J***,Credit Card,MASKED_3a52f3c2
+ORD-10160,CUST-2311,up***@gmail.com,***-***-7564,906.55,5,20,2023-11-03,sHiPpEd,Beauty,P***,Cash,MASKED_7516fd43
+ORD-10161,CUST-7474,lf***@company.io,***-***-1251,2000.18,7,25,2023-12-22,Pending,Books,F***,Cash,MASKED_11aedd0e
+ORD-10162,CUST-9813,zh***@outlook.com,***-***-7178,6890.22,9,20,2023-05-11,unknown,Toys,B***,Bank Transfer,MASKED_0f177369
+ORD-10163,CUST-3924,db***@outlook.com,***-***-5408,392.64,6,5,2024-02-04,Refunded,Electronics,S***,Bank Transfer,MASKED_3a52f3c2
+ORD-10164,CUST-9871,wf***@hotmail.com,***-***-6167,612.57,1,15,2024-06-21,Cancelled,Home & Garden,P***,Bank Transfer,MASKED_c86ee0d9
+ORD-10165,CUST-2650,fo***@outlook.com,***-***-5254,-379.32,4,5,2023-07-16,Shipped,sports,D***,PayPal,MASKED_0f177369
+ORD-10166,CUST-4212,el***@enterprise.net,***-***-1159,4800.39,7,5,2023-03-08,Delivered,Toys,A***,Cash,MASKED_19d3326f
+ORD-10167,CUST-2986,ho***@enterprise.net,***-***-9821,124.62,6,5,2024-03-10,Shipped,Toys,B***,PayPal,MASKED_19d3326f
+ORD-10168,CUST-5773,xj***@outlook.com,***-***-7479,1541.52,6,10,2024-06-27,Delivered,Food,P***,Cash,MASKED_19d3326f
+ORD-10169,CUST-9584,ew***@gmail.com,***-***-3544,617.89,1,0,2023-11-02,Delivered,Food,P***,Debit Card,MASKED_3a52f3c2
+ORD-10170,CUST-8126,qd***@enterprise.net,***-***-6073,4800.8,10,10,2023-05-09,Cancelled,Sports,D***,Credit Card,MASKED_0f177369
+ORD-10171,CUST-4788,ke***@company.io,***-***-7745,4475.66,7,20,2023-03-24,Delivered,Sports,D***,Debit Card,MASKED_6cc98ba2
+ORD-10172,CUST-9060,gk***@outlook.com,***-***-1813,3649.5,10,20,2022-01-23,Processing,Beauty,M***,PayPal,MASKED_11aedd0e
+ORD-10173,CUST-8702,sg***@yahoo.com,***-***-7251,432.25,7,0,2023-03-16,Refunded,Books,S***,Bank Transfer,MASKED_0f177369
+ORD-10174,CUST-9534,ft***@outlook.com,***-***-5895,390044.84,1,5,2023-01-05,Pending,Home & Garden,L***,Credit Card,MASKED_3a52f3c2
+ORD-10175,CUST-3521,au***@company.io,***-***-8992,52.52,1,5,2022-11-21,Cancelled,Beauty,P***,Bank Transfer,MASKED_3a52f3c2
+ORD-10176,CUST-3627,jd***@company.io,***-***-5844,7320.1,10,10,2023-07-09,Shipped,Electronics,T***,Credit Card,MASKED_19d3326f
+ORD-10177,CUST-3525,wq***@outlook.com,***-***-6276,4910.08,8,0,2022-04-09,Cancelled,Beauty,M***,Credit Card,MASKED_c86ee0d9
+ORD-10178,CUST-2310,fm***@enterprise.net,***-***-7814,2105.28,4,10,2024-03-24,Refunded,Books,F***,Cash,MASKED_11aedd0e
+ORD-10179,CUST-3931,vc***@enterprise.net,***-***-2728,1832.68,4,25,2023-08-14,Shipped,Electronics,T***,Bank Transfer,MASKED_76423d83
+ORD-10180,CUST-9939,on***@hotmail.com,***-***-5162,2932.14,6,10,2023-04-09,Delivered,Books,B***,Credit Card,MASKED_7516fd43
+ORD-10181,CUST-5198,ad***@gmail.com,***-***-4562,2036.4,10,25,2022-03-21,Refunded,Sports,R***,Bank Transfer,MASKED_c86ee0d9
+ORD-10182,CUST-7266,  ***@outlook.com  ,***-***-6231,7432.8,10,20,2023-08-02,  Delivered  ,Food,P***,Cash,MASKED_3a52f3c2
+ORD-10183,CUST-7529,us***@gmail.comqih,***-***-3136,1496.11,7,5,2023-05-08,Cancelled,books,S***,Bank Transfer,MASKED_6cc98ba2
+ORD-10184,CUST-8216,qt***@yahoo.com,***-***-7124,4003.44,8,5,2024-02-15,Refunded,Home & Garden,S***,Credit Card,MASKED_7516fd43
+ORD-10185,CUST-3315,yw***@enterprise.net,***-***-7170,5852.9,10,20,2023-11-11,Cancelled,Home & Garden,S***,PayPal,MASKED_c86ee0d9
+ORD-10186,CUST-8940,fs***@company.io,***-***-4258,1447.16,2,20,2023-04-14,Cancelled,Electronics,L***,Credit Card,MASKED_3a52f3c2
+ORD-10187,CUST-7436,mt***@yahoo.com,***-***-7262,502.44,4,20,2023-11-26,Cancelled,Sports,D***,Bank Transfer,MASKED_3a52f3c2
+ORD-10188,CUST-3589,zx***@gmail.com,***-***-2939,1580.1,3,5,2022-11-22,Processing,Books,F***,PayPal,MASKED_6cc98ba2
+ORD-10189,CUST-4783,ly***@yahoo.com,***-***-1427,4558.0,10,10,2022-03-23,Refunded,Beauty,S***,Debit Card,MASKED_19d3326f
+ORD-10190,CUST-2083,ek***@hotmail.com,***-***-6323,2429.72,4,15,2024-06-27,Processing,Food,V***,Voucher,MASKED_7516fd43
+ORD-10191,CUST-7481,  ***@outlook.com  ,***-***-9456,1669.48,4,25,2022-02-20,Processing,Beauty,P***,Bank Transfer,MASKED_6cc98ba2
+ORD-10192,CUST-4308,lk***@gmail.com,***-***-3686,1097.04,3,25,2024-01-21,Pending,Sports,Y***,Credit Card,MASKED_0f177369
+ORD-10193,CUST-3369,nj***@enterprise.net,***-***-6047,401.67,3,10,2024-01-18,Delivered,Toys,B***,Debit Card,MASKED_76423d83
+ORD-10194,CUST-2300,at***@company.io,***-***-9967,2648.56,8,10,2023-09-27,Refunded,Books,C***,Debit Card,MASKED_7516fd43
+ORD-10195,CUST-3906,bj***@enterprise.net,***-***-1587,4599.6,10,0,2024-02-26,Shipped,Books,T***,PayPal,MASKED_6cc98ba2
+ORD-10196,CUST-5705,vb***@company.io,***-***-9608,TBD,2,20,2023-10-01,Shipped,Clothing,J***,Cash,MASKED_24d22e03
+ORD-10197,CUST-4478,sm***@enterprise.net,***-***-5614,5812.2,9,10,2024-03-20,Pending,Food,P***,PayPal,MASKED_19d3326f
+ORD-10198,CUST-1582,ci***@yahoo.com,***-***-8546,5866.8,8,20,2022-12-10,Delivered,Toys,P***,Credit Card,MASKED_19d3326f
+ORD-10199,CUST-4070,si***@gmail.com,***-***-6152,4865.2,10,25,2022-02-02,Shipped,Sports,B***,Credit Card,MASKED_0f177369
+ORD-10200,CUST-8921,ly***@company.io,***-***-6363,1101.56,4,5,2024-02-27,Pending,Home & Garden,C***,Debit Card,MASKED_3a52f3c2
+ORD-10201,CUST-4438,kw***@yahoo.com,***-***-5532,2564.45,5,20,2022-11-23,Delivered,Electronics,L***,PayPal,MASKED_c86ee0d9
+ORD-10202,CUST-1831,cy***@gmail.com,***-***-1826,2608.56,6,0,2023-01-28,Pending,Books,F***,Bank Transfer,MASKED_6cc98ba2
+ORD-10203,CUST-8625,xq***@yahoo.com,***-***-5227,2745.8,5,10,2023-02-06,Processing,Books,T***,PayPal,MASKED_0f177369
+ORD-10204,CUST-2162,bc***@company.io,***-***-7773,MISSING,6,5,2023-09-28,Processing,Food,T***,Debit Card,MASKED_0f177369
+ORD-10205,CUST-8584,iv***@company.io,***-***-8294,767.12,8,5,2022-11-12,Delivered,Beauty,M***,Cash,MASKED_76423d83
+ORD-10206,CUST-5989,mr***@enterprise.net,***-***-1133,2291.85,5,20,2023-06-07,Delivered,Beauty,L***,PayPal,MASKED_7516fd43
+ORD-10207,CUST-6902,za***@yahoo.com,***-***-3056,4728.15,7,5,2022-01-12,Pending,Toys,L***,Debit Card,MASKED_0f177369
+ORD-10208,CUST-4878,cq***@company.io,***-***-9948,464.46,1,20,2023-01-11,Pending,Beauty,M***,Cash,MASKED_0f177369
+ORD-10209,CUST-9834,pz***@outlook.com,***-***-6628,1097.68,2,20,2025-08-31,Pending,Toys,P***,Bank Transfer,MASKED_19d3326f
+ORD-10210,CUST-9283,tk***@outlook.com,***-***-5603,564.8,8,10,2024-05-28,Shipped,Food,C***,Credit Card,MASKED_24d22e03
+ORD-10211,CUST-7765,tr***@hotmail.com,***-***-8211,2012.7,3,25,2023-10-15,Processing,Books,S***,Cash,MASKED_3e8d115e
+ORD-10212,CUST-9687,td***@gmail.com,***-***-6797,3810.8,7,15,2023-09-18,Refunded,Electronics,H***,PayPal,MASKED_11aedd0e
+ORD-10213,CUST-1173,gp***@gmail.com,***-***-7737,762.15,3,0,2023-06-22,Pending,Sports,B***,PayPal,MASKED_3a52f3c2
+ORD-10214,CUST-4018,fa***@outlook.com,***-***-2240,2151.96,3,25,2023-04-10,Shipped,Sports,B***,PayPal,MASKED_11aedd0e
+ORD-10215,CUST-2776,hb***@company.io,***-***-4578,1554.48,3,20,2023-10-21,Pending,Books,B***,PayPal,MASKED_76423d83
+ORD-10216,CUST-9039,bs***@hotmail.com,***-***-2148,79.4,10,20,2022-08-20,Pending,Electronics,T***,Bank Transfer,MASKED_76423d83
+ORD-10217,CUST-5896,rk***@hotmail.com,***-***-6886,3711.96,7,15,2022-03-28,Refunded,Toys,P***,Debit Card,MASKED_c86ee0d9
+ORD-10218,CUST-9570,az***@enterprise.net,***-***-4817,346.56,2,0,2022-02-07,Refunded,Electronics,S***,Bank Transfer,MASKED_7516fd43
+ORD-10219,CUST-4320,bs***@outlook.com,***-***-7586,1803.6,10,10,2022-05-04,Refunded,Food,T***,Cash,MASKED_c86ee0d9
+ORD-10220,CUST-3584,tp***@hotmail.com,***-***-1118,3040.2,10,5,2022-04-02,Refunded,Toys,R***,PayPal,MASKED_6cc98ba2
+ORD-10221,CUST-2925,fq***@gmail.com,***-***-9842,1730.97,9,20,2022-08-13,Delivered,Food,O***,PayPal,MASKED_7516fd43
+ORD-10222,CUST-8424,ur***@gmail.com,***-***-9804,1353.8,5,5,2022-06-11,Pending,Home & Garden,R***,Cash,MASKED_76423d83
+ORD-10223,CUST-8936,sp***@hotmail.com,***-***-8454,-11.8,4,5,2023-02-01,Shipped,Clothing,J***,Bank Transfer,MASKED_3a52f3c2
+ORD-10224,CUST-4763,fd***@hotmail.com,***-***-4546,1393.83,3,101,2023-04-30,Delivered,Toys,B***,Credit Card,MASKED_6cc98ba2
+ORD-10225,CUST-4940,  ***@outlook.com  ,***-***-7662,-28.43,2,5,2022-05-16,Shipped,Home & Garden,P***,Debit Card,MASKED_76423d83
+ORD-10226,CUST-2158,re***@enterprise.net,***-***-1535,689.0,1,10,2023-03-13,Shipped,Electronics,S***,Cash,MASKED_24d22e03
+ORD-10227,CUST-6487,qi***@company.io,***-***-8839,460.12,4,25,2024-02-10,Cancelled,Home & Garden,L***,Debit Card,MASKED_3e8d115e
+ORD-10228,CUST-2075,nk***@hotmail.com,***-***-7400,3989.28,8,5,2022-10-23,Pending,Toys,L***,Debit Card,MASKED_11aedd0e
+ORD-10229,CUST-7745 ,mw***@outlook.com,***-***-6346,4657.59,9,15,2023-08-31,Refunded,Clothing,S***,Cash,MASKED_0f177369
+ORD-10230,CUST-3873,ox***@enterprise.net,***-***-3514,2085.93,9,5,2022-09-01,Pending,Food,C***,PayPal,MASKED_24d22e03
+ORD-10231,CUST-9948,ge***@outlook.com,***-***-5842,25.23,3,-5,2022-10-24,Cancelled,Books,S***,Cash,MASKED_0f177369
+ORD-10232,CUST-4639,tx***@outlook.com,***-***-2369,1875.32,4,20,2024-05-19,Delivered,Toys,L***,Cash,MASKED_6cc98ba2
+ORD-10233,CUST-8278,ip***@hotmail.com,***-***-3683,2334.56,4,25,2023-03-11,Refunded,Home & Garden,R***,Debit Card,MASKED_24d22e03
+ORD-10234,CUST-7254,fm***@company.io,***-***-5947,490.23,3,20,2022-11-08,Delivered,Clothing,S***,Bank Transfer,MASKED_3a52f3c2
+ORD-10235,CUST-5541,eh***@gmail.com,***-***-6927,110.44,4,20,2023/03/19,Cancelled,Electronics,T***,PayPal,MASKED_0f177369
+ORD-10236,CUST-4002,no***@gmail.com,***-***-3738,1431.72,9,20,2022-11-27,Shipped,Clothing,J***,PayPal,MASKED_3e8d115e
+ORD-10237,CUST-9612,pv***@enterprise.net,***-***-2867,4434.12,9,15,2023-04-17,Pending,Clothing,T***,Debit Card,MASKED_7516fd43
+ORD-10238,CUST-4438 ,ij***@gmail.com,***-***-2830,997.64,4,0,2022-01-20,Delivered,Food,V***,Credit Card,MASKED_3a52f3c2
+ORD-10239,CUST-4027,un***@outlook.com,***-***-3384,7214.3,10,25,2022-10-12,Cancelled,Clothing,J***,PayPal,MASKED_c86ee0d9
+ORD-10240,CUST-6813,oc***@hotmail.com,***-***-4728,-422.72,2,15,2022-04-26,  Processing  ,Home & Garden,S***,Bank Transfer,MASKED_76423d83
+ORD-10241,CUST-7020,ts***@gmail.com,***-***-2723,6012.56,many,15,2023-03-25,Cancelled,Books,F***,Credit Card,MASKED_c86ee0d9
+ORD-10242,CUST-5472,sz***@enterprise.net,***-***-8795,3065.15,5,25,2023-09-10,Delivered,Beauty,S***,Cash,MASKED_11aedd0e
+ORD-10243,CUST-2578,cg***@gmail.com,***-***-9518,758.58,6,15,2024-03-22,Delivered,Books,S***,PayPal,MASKED_0f177369
+ORD-10244,CUST-3203,gi***@enterprise.net,***-***-2792,MISSING,3,20,2023-11-23,Delivered,Food,T***,Cash,MASKED_24d22e03
+ORD-10245,CUST-6591,oe***@gmail.com,***-***-6855,613.33,1,15,2022-12-26,Pending,Food,O***,Debit Card,MASKED_3a52f3c2
+ORD-10246,CUST-2601,cr***@gmail.com,***-***-4373,1829.24,7,10,2023-05-24,Cancelled,Sports,R***,Debit Card,MASKED_24d22e03
+ORD-10247,CUST-2552,zf***@outlook.com,***-***-9700,1151.16,2,15,2023-03-14,Processing,Sports,R***,Credit Card,MASKED_11aedd0e
+ORD-10248,CUST-9728,ri***@hotmail.com,***-***-1981,1744.08,8,20,2022-07-25,Shipped,Sports,B***,Debit Card,MASKED_3a52f3c2
+ORD-10249,CUST-6087,vk***@hotmail.com,***-***-7914,108.08,4,25,2022-02-07,Processing,Books,S***,PayPal,MASKED_c86ee0d9
+ORD-10250,CUST-7668,uh***@enterprise.net,***-***-7502,1441.92,2,25,2024-05-12,Processing,Electronics,S***,Credit Card,MASKED_24d22e03
+ORD-10251,CUST-4507,  ***@outlook.com  ,***-***-1916,269.76,3,15,2023-07-01,Shipped,CLOTHING,T***,PayPal,MASKED_19d3326f
+ORD-10252,CUST-4926,rz***@company.io,***-***-6945,554.09,1,25,2022-05-05,Cancelled,Beauty,L***,Bank Transfer,MASKED_6cc98ba2
+ORD-10253,CUST-2312,yx***@hotmail.com,***-***-6451,222.86,1,25,2023-03-09,Pending,Electronics,S***,PayPal,MASKED_19d3326f
+ORD-10254,CUST-3131,ks***@enterprise.net,***-***-6233,5150.52,9,15,2023-05-05,Refunded,Clothing,J***,PayPal,MASKED_c86ee0d9
+ORD-10255,CUST-4248,fk***@enterprise.net,***-***-7570,1558.86,2,20,2023-03-16,Cancelled,Toys,B***,Debit Card,MASKED_76423d83
+ORD-10256,CUST-8066,yd***@company.io,***-***-5636,2470.0,8,25,2023-11-25,Processing,Toys,P***,Debit Card,MASKED_6cc98ba2
+ORD-10257,CUST-7283,  ***@hotmail.com  ,***-***-5198,3857.35,7,0,2022-04-08,Cancelled,Books,F***,Credit Card,MASKED_3e8d115e
+ORD-10258,CUST-5264,xz***@company.io,***-***-8669,466.49,1,5,2022-04-02,Shipped,Home & Garden,C***,Bank Transfer,MASKED_c86ee0d9
+ORD-10259,CUST-8139,iz***@outlook.com,***-***-3478,2079.95,5,20,2024-05-23,Refunded,Sports,B***,Credit Card,MASKED_3a52f3c2
+ORD-10260,CUST-3425,fa***@outlook.com,***-***-5654,1354.88,2,5,2024-05-04,Processing,Books,C***,PayPal,MASKED_24d22e03
+ORD-10261,CUST-2328,za***@enterprise.net,***-***-8439,763.5,6,25,2022-10-03,Cancelled,Home & Garden,S***,PayPal,MASKED_7516fd43
+ORD-10262,CUST-4411,yz***@hotmail.com,***-***-5668,531.3,7,25,2024-02-10,Refunded,Food,O***,Credit Card,MASKED_11aedd0e
+ORD-10263,CUST-4053,tx***@enterprise.net,***-***-1662,4548.18,7,20,2022-12-16,Delivered,Food,O***,Debit Card,MASKED_0f177369
+ORD-10264,CUST-7766,mc***@hotmail.com,***-***-5151,821.94,2,10,2022-09-18,Cancelled,Clothing,T***,Cash,MASKED_7516fd43
+ORD-10265,CUST-5248,ee***@gmail.com,***-***-1293,1197.78,2,0,2023-02-09,Pending,Clothing,T***,Debit Card,MASKED_0f177369
+ORD-10266,CUST-3378,wz***@yahoo.com,***-***-9824,171.34,1,5,04/10/2024,Shipped,Food,V***,Debit Card,MASKED_0f177369
+ORD-10267,CUST-8074,dx***@hotmail.com,***-***-5764,86.62,1,0,2023-05-15,Delivered,Beauty,S***,Cash,MASKED_24d22e03
+ORD-10268,CUST-9317,***@***.***,***-***-8675,2119.8,6,5,2026-10-13,Shipped,Food,V***,Bank Transfer,MASKED_3e8d115e
+ORD-10269,CUST-1770,qh***@outlook.com,***-***-3598,686.0,4,5,2024-04-27,Cancelled,Food,C***,Credit Card,MASKED_3e8d115e
+ORD-10270,CUST-2706,qd***@gmail.com,***-***-8489,4368.69,9,0,2022-04-19,Cancelled,Beauty,F***,Credit Card,MASKED_19d3326f
+ORD-10271,CUST-9274,cq***@gmail.com,***-***-7799,2210.8,8,10,2023-10-07,Refunded,Electronics,S***,Debit Card,MASKED_19d3326f
+ORD-10272,CUST-3692,dl***@gmail.com,***-***-1607,1945.86,6,25,2023-10-19,Processing,Beauty,F***,Credit Card,MASKED_19d3326f
+ORD-10273,CUST-8244,kr***@outlook.com,***-***-4232,6317.3,10,10,2022-03-28,Pending,Sports,T***,PayPal,MASKED_6cc98ba2
+ORD-10274,CUST-1782,zh***@enterprise.net,***-***-5881,2581.29,9,20,2024-01-25,Pending,Books,B***,PayPal,MASKED_3a52f3c2
+ORD-10275,CUST-3130,hr***@yahoo.com,***-***-7050,342.78,1,25,2023-06-23,Delivered,Home & Garden,C***,Cash,MASKED_19d3326f
+ORD-10276,CUST-8461,pq***@gmail.com,***-***-7051,1114.2,2,0,2023-09-09,Delivered,Beauty,M***,Credit Card,MASKED_3e8d115e
+ORD-10277,CUST-9008,nd***@gmail.com,***-***-2106,881.95,5,0,2023-03-04,Delivered,Sports,T***,PayPal,MASKED_24d22e03
+ORD-10278,CUST-7478,us***@.comjus,***-***-8259,1330.63,7,25,2022-10-12,Refunded,Food,C***,Debit Card,MASKED_7516fd43
+ORD-10279,CUST-9741,qq***@outlook.com,***-***-1737,3581.6,10,15,2026-11-30,Pending,Sports,R***,Bank Transfer,MASKED_c86ee0d9
+ORD-10280,CUST-7672,wi***@yahoo.com,***-***-6329,746.7,3,5,2022-01-28,Refunded,Beauty,M***,PayPal,MASKED_6cc98ba2
+ORD-10281,CUST-6215,dx***@company.io,***-***-8932,438.16,2,0,2023-02-22,Refunded,Clothing,J***,Credit Card,MASKED_11aedd0e
+ORD-10282,CUST-8612,tq***@outlook.com,***-***-1008,5.8,1,0,2023-05-09,Shipped,Clothing,S***,PayPal,MASKED_6cc98ba2
+ORD-10283,CUST-6215,pn***@outlook.com,***-***-8417,1961.2,4,10,2022-09-09,Refunded,Toys,B***,PayPal,MASKED_3a52f3c2
+ORD-10284,CUST-6783,ix***@company.io,***-***-3903,4315.52,8,25,2022-01-09,Pending,Food,V***,PayPal,MASKED_3a52f3c2
+ORD-10285,CUST-9074,fa***@enterprise.net,***-***-1116,205.5,6,5,2024-04-20,Refunded,Food,V***,Credit Card,MASKED_11aedd0e
+ORD-10286,CUST-5494,or***@enterprise.net,***-***-9731,2821.6,4,20,2022-09-16,Refunded,Food,T***,Bank Transfer,MASKED_7516fd43
+ORD-10287,CUST-7882,wi***@hotmail.com,***-***-7420,169.36,4,5,2022-12-09,Pending,Beauty,F***,Credit Card,MASKED_3a52f3c2
+ORD-10288,CUST-6465,xf***@yahoo.com,***-***-8184,4001.1,6,150,2023-10-03,Delivered,Beauty,F***,Credit Card,MASKED_76423d83
+ORD-10289,CUST-1914,jx***@gmail.com,***-***-7249,171.9,2,15,2022-04-09,  Delivered  ,Electronics,T***,Debit Card,MASKED_24d22e03
+ORD-10290,CUST-9337,ju***@outlook.com,***-***-8284,1051.6,10,5,2022-09-06,Processing,Electronics,L***,Credit Card,MASKED_c86ee0d9
+ORD-10291,CUST-7915,ly***@yahoo.com,***-***-4297,6189.03,9,0,2022-12-16,Processing,Sports,B***,Bank Transfer,MASKED_24d22e03
+ORD-10292,CUST-6431,oi***@hotmail.com,***-***-4018,4712.0,8,0,2023-01-07,Pending,Toys,L***,PayPal,MASKED_7516fd43
+ORD-10293,CUST-5029,hf***@yahoo.com,***-***-5289,825.45,3,0,2022-01-22,Refunded,Clothing,J***,Bank Transfer,MASKED_76423d83
+ORD-10294,CUST-8037,hg***@yahoo.com,***-***-4098,1546.62,6,20,2022-10-29,Processing,Toys,B***,Debit Card,MASKED_7516fd43
+ORD-10295,CUST-6272,wz***@outlook.com,***-***-8918,3366.81,9,25,2023-05-22,Delivered,Sports,R***,Cash,MASKED_6cc98ba2
+ORD-10296,CUST-1674,ff***@company.io,***-***-7981,1127.94,6,15,2023-04-24,Delivered,Electronics,T***,PayPal,MASKED_0f177369
+ORD-10297,CUST-5096,je***@enterprise.net,***-***-5496,2166.84,4,5,2023-12-24,Cancelled,Toys,A***,Cash,MASKED_11aedd0e
+ORD-10298,CUST-4438,hj***@yahoo.com,***-***-8679,MISSING,7,25,2024-04-13,Delivered,Electronics,H***,Credit Card,MASKED_3e8d115e
+ORD-10299,CUST-7608,us***@enterprise.net,***-***-6342,1352.88,4,20,2022-01-24,Cancelled,Home & Garden,S***,Debit Card,MASKED_c86ee0d9
+ORD-10300,CUST-3910,qp***@enterprise.net,***-***-1439,263.79,3,5,2022-07-23,Pending,Toys,P***,PayPal,MASKED_3a52f3c2
+ORD-10301,CUST-4369,rb***@hotmail.com,***-***-8778,433.2,4,5,2023-09-11,Cancelled,Home & Garden,P***,Cash,MASKED_3a52f3c2
+ORD-10302,CUST-5873,fz***@company.io,***-***-5081,2245.52,8,5,2023-09-25,Refunded,Food,V***,Bank Transfer,MASKED_6cc98ba2
+ORD-10303,CUST-7041,cs***@gmail.com,***-***-6341,912.42,9,15,2023-04-07,Processing,Books,T***,Debit Card,MASKED_19d3326f
+ORD-10304,CUST-2117,aq***@company.io,***-***-8171,MISSING,8,5,2023-04-28,Shipped,Electronics,S***,Debit Card,MASKED_7516fd43
+ORD-10305,CUST-2684,hn***@enterprise.net,***-***-1858,4631.4,9,20,2022-01-05,Pending,Clothing,D***,Debit Card,MASKED_3a52f3c2
+ORD-10306,CUST-4105,fa***@yahoo.com,***-***-8010,1569.18,6,0,2022-08-26,Processing,Toys,L***,PayPal,MASKED_3e8d115e
+ORD-10307,CUST-9185,ki***@enterprise.net,***-***-3809,1327.28,4,10,2022-04-08,Cancelled,Books,T***,Bank Transfer,MASKED_c86ee0d9
+ORD-10308,CUST-3032,qw***@yahoo.com,***-***-4990,189.92,1,20,11/06/2023,Pending,Toys,A***,PayPal,MASKED_0f177369
+ORD-10309,CUST-4752,df***@outlook.com,***-***-4372,3008.45,5,20,2022-02-25,Refunded,Sports,D***,Debit Card,MASKED_24d22e03
+ORD-10310,CUST-8652,  ***@outlook.com  ,***-***-5012,604.26,9,15,2022-06-30,Cancelled,Beauty,L***,PayPal,MASKED_11aedd0e
+ORD-10311,CUST-7249,hu***@gmail.com,***-***-9801,166.0,8,5,2023-07-21,Refunded,Food,O***,PayPal,MASKED_6cc98ba2
+ORD-10312,CUST-7465,lj***@outlook.com,***-***-6043,5186.44,7,25,2023-08-26,Pending,Food,V***,Credit Card,MASKED_76423d83
+ORD-10313,CUST-1462,et***@enterprise.net,***-***-5281,3039.66,6,20,2023-04-12,Refunded,Beauty,L***,PayPal,MASKED_3a52f3c2
+ORD-10314,CUST-7743,dc***@enterprise.net,***-***-6642,3296.51,7,5,2022-10-03,Refunded,Books,S***,Bank Transfer,MASKED_11aedd0e
+ORD-10315,CUST-1966,va***@yahoo.com,***-***-5249,610.32,4,15,2023-03-28,Refunded,Electronics,S***,Credit Card,MASKED_c86ee0d9
+ORD-10316,CUST-9557,cd***@hotmail.com,***-***-5355,81.99,1,15,2023-04-30,Shipped,Clothing,S***,Bank Transfer,MASKED_3e8d115e
+ORD-10317,CUST-3013,zv***@outlook.com,***-***-5072,76.26,3,10,2023-04-08,Cancelled,Toys,P***,Cash,MASKED_6cc98ba2
+ORD-10318,CUST-6707,zy***@hotmail.com,***-***-2645,6362.0,10,25,2023-01-30,Shipped,Home & Garden,C***,Debit Card,MASKED_c86ee0d9
+ORD-10319,CUST-1478,  ***@outlook.com  ,***-***-5593,177.7,2,5,2024-01-07,Shipped,Electronics,T***,Credit Card,MASKED_c86ee0d9
+ORD-10320,CUST-4662,ui***@gmail.com,***-***-2824,4534.04,7,0,2022-12-15,Refunded,Food,T***,Debit Card,MASKED_76423d83
+ORD-10321,CUST-7476,wy***@company.io,***-***-3370,1816.0,10,10,2024-05-07,Processing,Toys,P***,Bank Transfer,MASKED_c86ee0d9
+ORD-10322,CUST-6458,tw***@enterprise.net,***-***-4687,362.32,7,25,2024-01-24,Pending,Sports,D***,Bank Transfer,MASKED_6cc98ba2
+ORD-10323,CUST-1886,***@***.***,***-***-3681,786.36,3,20,2022-05-21,Delivered,Sports,B***,PayPal,MASKED_c86ee0d9
+ORD-10324,CUST-3756,uf***@gmail.com,***-***-3943,3816.12,7,0,2022-05-01,Cancelled,Home & Garden,P***,Cash,MASKED_6cc98ba2
+ORD-10325,CUST-9015,gd***@enterprise.net,***-***-1377,141.4,2,20,2023-08-10,Cancelled,Books,B***,PayPal,MASKED_76423d83
+ORD-10326,CUST-3033,mq***@yahoo.com,***-***-3960,MISSING,10,20,2023-12-13,Processing,Books,F***,Cash,MASKED_0f177369
+ORD-10327,CUST-1001,bo***@outlook.com,***-***-5807,5472.6,7,25,2023-07-01,Delivered,Toys,A***,Cash,MASKED_0f177369
+ORD-10328,CUST-7914,xz***@company.io,***-***-7255,773986.33,6,25,2022-06-17,Delivered,Toys,P***,Credit Card,MASKED_11aedd0e
+ORD-10329,CUST-8104,nb***@gmail.com,***-***-2270,769.53,3,10,2022-05-08,Cancelled,Beauty,M***,Cash,MASKED_6cc98ba2
+ORD-10330,CUST-6022,qj***@hotmail.com,***-***-6716,289.42,2,25,2023-08-09,Shipped,Clothing,S***,PayPal,MASKED_24d22e03
+ORD-10331,CUST-5380,ey***@enterprise.net,***-***-5081,355.26,3,25,2023-09-16,Delivered,Clothing,D***,Debit Card,MASKED_0f177369
+ORD-10332,CUST-4932,nh***@yahoo.com,***-***-2385,131.94,2,25,2022-10-20,Cancelled,Toys,P***,Credit Card,MASKED_6cc98ba2
+ORD-10333,CUST-8350,mr***@enterprise.net,***-***-4687,386.7,10,5,2022-03-18,Shipped,Books,S***,Cash,MASKED_3e8d115e
+ORD-10334,CUST-5994,me***@company.io,***-***-8999,3179.3,10,0,2022-12-31,Pending,Electronics,S***,Bank Transfer,MASKED_3e8d115e
+ORD-10335,CUST-5098,cj***@hotmail.com,***-***-5903,1850.13,3,10,06/28/2022,Processing,Sports,T***,PayPal,MASKED_76423d83
+ORD-10336,CUST-5354,ej***@hotmail.com,***-***-9119,3035.84,4,25,2024-01-02,Processing,Food,P***,Bank Transfer,MASKED_19d3326f
+ORD-10337,CUST-9376,cc***@yahoo.com,***-***-2884,1984.0,4,10,2023-12-19,Processing,Beauty,S***,Debit Card,MASKED_0f177369
+ORD-10338,CUST-4791,pe***@outlook.com,***-***-2005,2956.45,7,20,2023-03-14,Refunded,Clothing,T***,PayPal,MASKED_76423d83
+ORD-10339,CUST-4028,hj***@hotmail.com,***-***-5986,851.1,10,0,2022-04-10,Refunded,Sports,Y***,Cash,MASKED_c86ee0d9
+ORD-10340,CUST-4120,tj***@enterprise.net,***-***-2226,471.32,1,20,2023-09-26,Shipped,Toys,B***,Bank Transfer,MASKED_3a52f3c2
+ORD-10341,CUST-3735,dk***@outlook.com,***-***-5745,MISSING,9,0,2023-08-03,Pending,Books,S***,Bank Transfer,MASKED_0f177369
+ORD-10342,CUST-9602,ln***@outlook.com,***-***-5399,3303.72,9,20,2022-05-02,Processing,Clothing,J***,Credit Card,MASKED_19d3326f
+ORD-10343,CUST-3189,bd***@company.io,***-***-1938,1934.19,9,25,2024-04-15,Pending,Home & Garden,P***,Debit Card,MASKED_11aedd0e
+ORD-10344,CUST-4796,zn***@enterprise.net,***-***-3430,901.11,7,15,2022-04-06,  Delivered  ,Books,S***,Bank Transfer,MASKED_c86ee0d9
+ORD-10345,CUST-7594,oy***@enterprise.net,***-***-1193,5822.08,8,20,2022-04-13,Delivered,Books,B***,Credit Card,MASKED_76423d83
+ORD-10346,CUST-8279,du***@outlook.com,***-***-3531,4871.52,8,5,2022-02-27,Pending,Electronics,H***,Cash,MASKED_76423d83
+ORD-10347,CUST-7303,ch***@enterprise.net,***-***-3778,922.9,5,0,2022-08-18,Pending,Electronics,H***,PayPal,MASKED_76423d83
+ORD-10348,CUST-5702,jy***@gmail.com,***-***-7047,2508.4,?,10,2024-04-10,Refunded,Toys,L***,Credit Card,MASKED_c86ee0d9
+ORD-10349,CUST-7782,dl***@enterprise.net,***-***-5028,2713.34,7,15,2023-03-05,9,Books,B***,Cash,MASKED_19d3326f
+ORD-10350,CUST-3188,nf***@gmail.com,***-***-3283,3435.93,9,10,2023-04-17,Pending,Food,T***,Bank Transfer,MASKED_3a52f3c2
+ORD-10351,CUST-3591,bd***@yahoo.com,***-***-2294,636.5,10,5,2022-03-20,Pending,Home & Garden,C***,Bank Transfer,MASKED_c86ee0d9
+ORD-10352,CUST-5227,tt***@company.io,***-***-4724,3564.4,8,15,2022-06-10,Shipped,Books,F***,Cash,MASKED_6cc98ba2
+ORD-10353,CUST-2776,kb***@gmail.com,***-***-6496,1118.67,7,0,2022-09-03,Shipped,Books,S***,Cash,MASKED_76423d83
+ORD-10354,CUST-6154,pt***@outlook.com,***-***-5626,330.56,8,15,2023-05-28,Processing,Clothing,J***,Bank Transfer,MASKED_3e8d115e
+ORD-10355,CUST-8587,no***@server.tsg,***-***-4794,376.41,3,5,2024-04-06,Refunded,Books,S***,Debit Card,MASKED_19d3326f
+ORD-10356,CUST-6071,ui***@gmail.com,***-***-8451,118.38,1,10,2023-03-16,Shipped,Toys,A***,Credit Card,MASKED_11aedd0e
+ORD-10357,CUST-3113,ce***@outlook.com,***-***-6138,7341.3,10,10,2022-03-27,Refunded,Toys,P***,Cash,MASKED_0f177369
+ORD-10358,CUST-8675,qq***@company.io,***-***-2406,564.82,2,5,2024-01-20,Pending,Sports,B***,Bank Transfer,MASKED_3a52f3c2
+ORD-10359,CUST-6922,bi***@hotmail.com,***-***-4465,382.27,7,0,2024-02-16,Refunded,Beauty,S***,PayPal,MASKED_11aedd0e
+ORD-10360,CUST-5864,dh***@yahoo.com,***-***-8890,4625.28,6,15,2023-07-03,Refunded,Books,S***,Bank Transfer,MASKED_3e8d115e
+ORD-10361,CUST-9182,ox***@gmail.com,***-***-5305,5979.12,8,20,2024-01-10,Pending,Beauty,S***,Debit Card,MASKED_0f177369
+ORD-10362,CUST-6960,fz***@outlook.com,***-***-3043,299.35,1,25,2023-05-27,SHIPPED,Clothing,D***,Bank Transfer,MASKED_6cc98ba2
+ORD-10363,CUST-2625,vl***@gmail.com,***-***-1269,3563.84,7,20,2023-02-26,Pending,Toys,P***,Cash,MASKED_19d3326f
+ORD-10364,CUST-7484,nu***@outlook.com,***-***-5646,2666.24,8,10,2024-06-19,Refunded,Clothing,J***,PayPal,MASKED_6cc98ba2
+ORD-10365,CUST-7412,xk***@company.io,***-***-1845,1380.82,7,20,2023-03-16,Processing,Home & Garden,R***,Debit Card,MASKED_6cc98ba2
+ORD-10366,CUST-9907,eg***@company.io,***-***-3138,1266.7,10,15,2023-10-12,Refunded,Toys,B***,Debit Card,MASKED_3a52f3c2
+ORD-10367,CUST-2817,fv***@company.io,***-***-3323,6942.2,10,10,2022-09-26,Processing,Home & Garden,S***,Credit Card,MASKED_0f177369
+ORD-10368,CUST-3945,km***@gmail.com,***-***-1515,5182.4,8,0,2022-12-18,Shipped,Toys,P***,Cash,MASKED_24d22e03
+ORD-10369,CUST-8890,ng***@gmail.com,***-***-5822,653.19,3,15,2024-02-03,Delivered,Electronics,T***,Cash,MASKED_6cc98ba2
+ORD-10370,CUST-7275,er***@yahoo.com,***-***-7126,905.1,10,25,2024-04-19,Pending,Home & Garden,R***,Debit Card,MASKED_7516fd43
+ORD-10371,CUST-6388,kp***@hotmail.com,***-***-6268,3313.14,6,5,2023-07-30,Pending,Sports,B***,Barter,MASKED_24d22e03
+ORD-10372,CUST-7272,fo***@company.io,***-***-1292,1449.42,3,25,2024-03-13,Cancelled,Home & Garden,S***,Bank Transfer,MASKED_11aedd0e
+ORD-10373,CUST-8447,an***@enterprise.net,***-***-7126,1695.82,7,20,2022-04-16,Pending,Books,S***,Credit Card,MASKED_7516fd43
+ORD-10374,CUST-1860,***@***.***,***-***-5985,-115.77,1,0,2022-09-28,Shipped,Books,C***,Bank Transfer,MASKED_11aedd0e
+ORD-10375,CUST-5322,pd***@outlook.com,***-***-6783,1476.32,8,20,2024-05-05,Processing,Books,S***,Credit Card,MASKED_76423d83
+ORD-10376,CUST-9265,fr***@yahoo.com,***-***-7317,4207.68,8,15,2024-06-07,Cancelled,Food,T***,Debit Card,MASKED_6cc98ba2
+ORD-10377,CUST-2377,he***@hotmail.com,***-***-7503,1296.84,6,20,2023-03-18,cancelled,Home & Garden,P***,Credit Card,MASKED_0f177369
+ORD-10378,CUST-4911,cq***@company.io,***-***-4710,462.31,1,20,2023-03-16,Refunded,Sports,B***,Bank Transfer,MASKED_6cc98ba2
+ORD-10379,CUST-6002,tw***@yahoo.com,***-***-2137,3840.2,10,5,2022-07-11,Shipped,Clothing,D***,Debit Card,MASKED_7516fd43
+ORD-10380,CUST-3741,ie***@yahoo.com,***-***-2638,1690.36,4,10,2024-04-03,Refunded,Food,P***,Bank Transfer,MASKED_0f177369
+ORD-10381,CUST-5003,gm***@enterprise.net,***-***-6888,2404.68,6,5,2024-02-02,Pending,Toys,A***,Bank Transfer,MASKED_76423d83
+ORD-10382,CUST-6685,xl***@gmail.com,***-***-3410,3644.0,8,15,2023-11-29,Processing,Sports,T***,PayPal,MASKED_24d22e03
+ORD-10383,CUST-3256,mb***@outlook.com,***-***-3540,44.67,1,0,2024-01-01,Shipped,BOOKS,S***,Debit Card,MASKED_6cc98ba2
+ORD-10384,CUST-6283,fm***@yahoo.com,***-***-4268,3813.18,7,10,2022-05-19,Delivered,Clothing,S***,Debit Card,MASKED_11aedd0e
+ORD-10385,CUST-7721,hy***@gmail.com,***-***-7896,2714.4,8,0,2024-02-13,Processing,Sports,T***,PayPal,MASKED_3a52f3c2
+ORD-10386,CUST-5426,qx***@gmail.com,***-***-2595,72.3,1,10,2023-08-03,Delivered,Toys,B***,Credit Card,MASKED_76423d83
+ORD-10387,CUST-9516,  ***@outlook.com  ,***-***-8761,7045.2,10,0,2024-05-02,Cancelled,Electronics,T***,Bank Transfer,MASKED_7516fd43
+ORD-10388,CUST-8871,kz***@outlook.com,***-***-9076,1478.52,9,10,2023-11-15,Shipped,Clothing,D***,Bank Transfer,MASKED_76423d83
+ORD-10389,CUST-9244,vd***@outlook.com,***-***-7399,2418.06,6,20,2022-03-06,Processing,Food,O***,PayPal,MASKED_24d22e03
+ORD-10390,CUST-6703,su***@company.io,***-***-1736,7643.8,10,0,2024-05-22,Refunded,Toys,A***,Debit Card,MASKED_76423d83
+ORD-10391,CUST-2194,ym***@outlook.com,***-***-1482,480.05,5,5,2022-11-25,Pending,Clothing,D***,Bank Transfer,MASKED_c86ee0d9
+ORD-10392,CUST-9955,gl***@outlook.com,***-***-9653,3723.84,6,15,2022-07-14,Processing,Home & Garden,C***,Bank Transfer,MASKED_19d3326f
+ORD-10393,CUST-9856,qo***@gmail.com,***-***-5749,1506.48,8,10,2023-02-04,Refunded,Toys,B***,Credit Card,MASKED_c86ee0d9
+ORD-10394,CUST-1528,ng***@hotmail.com,***-***-6481,2621.6,5,0,2022-05-23,Processing,Sports,T***,PayPal,MASKED_7516fd43
+ORD-10395,CUST-4690,by***@outlook.com,***-***-5971,TBD,1,5,2022-01-22,Pending,Home & Garden,S***,Debit Card,MASKED_19d3326f
+ORD-10396,CUST-1949,ob***@yahoo.com,***-***-1164,2112.24,6,5,2023-02-27,1,Beauty,F***,Cash,MASKED_7516fd43
+ORD-10397,CUST-9907,vb***@hotmail.com,***-***-6848,131.44,2,5,2023-03-31,Refunded,Electronics,H***,PayPal,MASKED_19d3326f
+ORD-10398,CUST-7101,ng***@yahoo.com,***-***-8213,unknown,9,25,2024-02-22,Delivered,Sports,Y***,Credit Card,MASKED_0f177369
+ORD-10399,CUST-6698,hj***@company.io,***-***-5301,149.45,5,20,2022-08-10,Pending,Electronics,H***,Cash,MASKED_6cc98ba2
+ORD-10400,CUST-8656,uo***@yahoo.com,***-***-5598,MISSING,3,25,2022-10-08,Pending,Beauty,L***,Cash,MASKED_11aedd0e
+ORD-10401,CUST-1959,kq***@gmail.com,***-***-6145,1603.62,9,0,2023-03-28,Processing,Toys,B***,PayPal,MASKED_11aedd0e
+ORD-10402,CUST-6789,fe***@enterprise.net,***-***-4845,89.05,5,10,2022-04-22,Pending,Food,T***,Bank Transfer,MASKED_76423d83
+ORD-10403,CUST-5817,fo***@gmail.com,***-***-1730,6034.16,8,10,2022-06-03,Cancelled,Clothing,T***,Credit Card,MASKED_24d22e03
+ORD-10404,CUST-9982,nu***@hotmail.com,***-***-2986,7184.34,9,20,2024-03-28,Pending,Home & Garden,C***,Bank Transfer,MASKED_19d3326f
+ORD-10405,CUST-6766,gv***@company.io,***-***-8932,2048.9,7,20,2022-08-24,Delivered,Food,V***,Debit Card,MASKED_24d22e03
+ORD-10406,CUST-7858,gx***@company.io,***-***-2654,137.58,1,5,2024-06-09,Pending,Books,B***,Credit Card,MASKED_c86ee0d9
+ORD-10407,CUST-7699,nn***@hotmail.com,***-***-8138,4561.14,6,10,2024-02-15,Delivered,Clothing,J***,Debit Card,MASKED_24d22e03
+ORD-10408,CUST-9326,xp***@outlook.com,***-***-6219,6465.15,9,5,2022-05-27,Pending,Clothing,J***,Bank Transfer,MASKED_19d3326f
+ORD-10409,CUST-1448,wi***@gmail.com,***-***-4197,5446.08,9,0,591582,Pending,Sports,R***,Debit Card,MASKED_11aedd0e
+ORD-10410,CUST-6359,nv***@company.io,***-***-8429,2333.0,4,25,2024-01-24,Cancelled,Beauty,M***,PayPal,MASKED_7516fd43
+ORD-10411,CUST-4065,yu***@hotmail.com,***-***-4253,1003.12,8,25,2024-06-15,Pending,Beauty,F***,Debit Card,MASKED_7516fd43
+ORD-10412,CUST-9031,mp***@hotmail.com,***-***-9903,2680.2,5,15,2022-10-30,Pending,Beauty,L***,Credit Card,MASKED_11aedd0e
+ORD-10413,CUST-6295,ir***@enterprise.net,***-***-7412,-285.46,7,15,2023-03-12,Delivered,Beauty,P***,Credit Card,MASKED_11aedd0e
+ORD-10414,CUST-1326,iv***@gmail.com,***-***-6460,1457.82,3,10,2024-02-25,Cancelled,Food,C***,Credit Card,MASKED_19d3326f
+ORD-10415,CUST-9627,nz***@company.io,***-***-8944,677.16,many,0,2022-06-10,Shipped,Home & Garden,P***,Credit Card,MASKED_3a52f3c2
+ORD-10416,CUST-9875,hd***@yahoo.com,***-***-7408,147.14,7,5,2024-05-01,Cancelled,Home & Garden,P***,PayPal,MASKED_6cc98ba2
+ORD-10417,CUST-7265,hf***@hotmail.com,***-***-7106,3669.66,9,20,2024-01-02,Pending,Electronics,T***,Debit Card,MASKED_24d22e03
+ORD-10418,CUST-7605,ul***@hotmail.com,***-***-4808,286.76,4,0,2024-02-25,Delivered,Electronics,H***,Bank Transfer,MASKED_11aedd0e
+ORD-10419,CUST-8913,ar***@company.io,***-***-2334,MISSING,6,0,2023-03-12,Refunded,Toys,L***,Bank Transfer,MASKED_c86ee0d9
+ORD-10420,CUST-5820,nd***@enterprise.net,***-***-6281,702.42,2,20,2024-06-29,completed,Electronics,S***,Debit Card,MASKED_c86ee0d9
+ORD-10421,CUST-4074,ru***@enterprise.net,***-***-8513,-91.21,1,10,2022-04-07,Pending,Sports,T***,Bank Transfer,MASKED_24d22e03
+ORD-10422,CUST-5173,jo***@company.io,***-***-4319,6147.6,10,0,2023-08-30,unknown,Books,F***,Debit Card,MASKED_11aedd0e
+ORD-10423,CUST-3400,od***@yahoo.com,***-***-1004,310.44,4,10,2022-03-21,Pending,Books,S***,Cash,MASKED_0f177369
+ORD-10424,CUST-8163,in***@hotmail.com,***-***-5104,2852.6,5,25,2022-05-04,Cancelled,Beauty,S***,PayPal,MASKED_c86ee0d9
+ORD-10425,CUST-6085,wu***@gmail.com,***-***-0000,1439.46,9,0,2023-09-14,Shipped,Electronics,L***,PayPal,MASKED_0f177369
+ORD-10426,CUST-1625,zs***@gmail.com,***-***-7890,5822.19,9,25,2024-01-24,Processing,Beauty,L***,Credit Card,MASKED_6cc98ba2
+ORD-10427,CUST-3772,ls***@enterprise.net,***-***-1232,4312.2,6,25,2023-02-17,  Cancelled  ,Clothing,T***,Credit Card,MASKED_3a52f3c2
+ORD-10428,CUST-2483,cl***@enterprise.net,***-***-6201,194.86,2,20,2023-10-04,dispatched,Books,S***,Credit Card,MASKED_3a52f3c2
+ORD-10429,CUST-5249,cs***@hotmail.com,***-***-9026,2350.59,3,10,2023-08-16,7,Toys,B***,Cash,MASKED_0f177369
+ORD-10430,CUST-5230,  ***@outlook.com  ,***-***-2889,5578.74,9,20,2023-11-06,Refunded,Books,S***,Bank Transfer,MASKED_c86ee0d9
+ORD-10431,CUST-9958,io***@gmail.com,***-***-8478,671.9,5,20,2023-08-13,Refunded,Food,V***,Bank Transfer,MASKED_0f177369
+ORD-10432,CUST-1467,sp***@company.io,***-***-9586,3236.0,10,5,2023-08-05,Processing,Home & Garden,L***,PayPal,MASKED_7516fd43
+ORD-10433,CUST-3525,ud***@company.io,***-***-1081,1161.38,2,15,2022-06-13,  Refunded  ,Clothing,T***,Bank Transfer,MASKED_19d3326f
+ORD-10434,CUST-7956,xr***@hotmail.com,***-***-6683,4313.58,6,15,2023-11-17,Refunded,Beauty,F***,Credit Card,MASKED_3a52f3c2
+ORD-10435,CUST-7292,ji***@yahoo.com,***-***-5668,551.74,7,10,2026-06-10,Refunded,Books,B***,Credit Card,MASKED_11aedd0e
+ORD-10436,CUST-1893,***@***.***,***-***-2899,2385.95,7,20,2024-04-06,Delivered,Beauty,F***,PayPal,MASKED_0f177369
+ORD-10437,CUST-7050,zc***@hotmail.com,***-***-5852,268.86,6,0,2023-07-10,Canceled,Toys,A***,PayPal,MASKED_3e8d115e
+ORD-10438,CUST-4999,lh***@company.io,***-***-1665,-229.86,8,0,2022-12-01,Shipped,Beauty,M***,Debit Card,MASKED_24d22e03
+ORD-10439,CUST-4993,  ***@outlook.com  ,***-***-8748,3902.67,9,5,2024-02-18,Delivered,Clothing,J***,Debit Card,MASKED_11aedd0e
+ORD-10440,CUST-8547,ke***@hotmail.com,***-***-6386,2919.45,5,20,2023-02-03,Delivered,Electronics,S***,Credit Card,MASKED_3e8d115e
+ORD-10441,CUST-5781,us***@gmail.comhna,***-***-8657,2686.59,9,0,2022-06-09,Cancelled,Toys,R***,Debit Card,MASKED_24d22e03
+ORD-10442,CUST-3926,lz***@enterprise.net,***-***-7693,917.48,2,200,2024-02-09,Processing,Toys,P***,Cash,MASKED_11aedd0e
+ORD-10443,CUST-6473,qr***@hotmail.com,***-***-2610,MISSING,5,15,2023-08-18,Refunded,Toys,P***,Bank Transfer,MASKED_6cc98ba2
+ORD-10444,CUST-7378,qd***@company.io,***-***-3644,595.66,1,15,2023-01-13,Refunded,Home & Garden,L***,Debit Card,MASKED_0f177369
+ORD-10445,CUST-2144,db***@enterprise.net,***-***-7657,599.01,3,20,2023-04-27,Delivered,Home & Garden,S***,Bank Transfer,MASKED_11aedd0e
+ORD-10446,CUST-2697,qn***@outlook.com,***-***-2831,4417.0,7,25,2022-06-23,Shipped,Clothing,D***,PayPal,MASKED_c86ee0d9
+ORD-10447,CUST-3425,fc***@outlook.com,***-***-7076,610.25,1,20,2023-01-07,Refunded,Home & Garden,P***,PayPal,MASKED_c86ee0d9
+ORD-10448,CUST-9467,sr***@hotmail.com,***-***-6639,5378.76,9,25,2022-06-09,Cancelled,Sports,T***,PayPal,MASKED_19d3326f
+ORD-10449,CUST-6840,wm***@hotmail.com,***-***-1199,1043.5,2,25,2024-05-16,Cancelled,Toys,A***,Debit Card,MASKED_3e8d115e
+ORD-10450,CUST-3993,qy***@enterprise.net,***-***-8472,3194.15,5,5,2022-02-11,Cancelled,Electronics,H***,Cash,MASKED_11aedd0e
+ORD-10451,CUST-2196,tx***@hotmail.com,***-***--NOW,258.49,1,15,2022-07-22,Pending,Clothing,S***,Cash,MASKED_3a52f3c2
+ORD-10452,CUST-9070,op***@yahoo.com,***-***-8918,3381.56,7,20,2022-10-18,Refunded,Food,P***,PayPal,MASKED_19d3326f
+ORD-10453,CUST-8261,  ***@enterprise.net  ,***-***-3992,1481.22,2,5,2024-03-08,Pending,Home & Garden,L***,Debit Card,MASKED_11aedd0e
+ORD-10454,CUST-7830,***@domain.comdgd,***-***-8732,7065.18,9,10,2023-01-15,Processing,Sports,R***,PayPal,MASKED_3e8d115e
+ORD-10455,CUST-7265,io***@company.io,***-***-4267,2069.16,6,5,2023-09-25,Cancelled,Toys,P***,PayPal,MASKED_76423d83
+ORD-10456,CUST-7144,es***@gmail.com,***-***-6614,910.84,4,10,2023-07-05,Shipped,Clothing,D***,PayPal,MASKED_76423d83
+ORD-10457,CUST-5271,wb***@company.io,***-***-1358,5502.78,9,5,120158,Pending,Food,P***,PayPal,MASKED_0f177369
+ORD-10458,CUST-9657,if***@company.io,***-***-8163,5115.92,8,0,2023-06-01,Shipped,Home & Garden,C***,Bank Transfer,MASKED_11aedd0e
+ORD-10459,CUST-8630,***@***.***,***-***-6413,4585.84,7,0,2022-07-06,ERROR,Toys,R***,PayPal,MASKED_0f177369
+ORD-10460,CUST-4282,kh***@company.io,***-***-3500,2569.38,6,5,2024-03-02,Processing,Beauty,L***,PayPal,MASKED_c86ee0d9
+ORD-10461,CUST-4817,ny***@outlook.com,***-***-8203,5549.95,7,0,2024-05-04,Delivered,Clothing,T***,Bank Transfer,MASKED_3a52f3c2
+ORD-10462,CUST-4434,***@***.***,***-***-6871,268.98,2,25,2022-11-21,Delivered,Beauty,L***,Debit Card,MASKED_76423d83
+ORD-10463,CUST-7384,gc***@gmail.com,***-***-6296,262052.88,2,0,2022-05-25,TBD,Toys,A***,Cash,MASKED_7516fd43
+ORD-10464,CUST-2792,es***@gmail.com,***-***-6014,4223.22,6,15,2023-10-03,Shipped,Books,T***,Cash,MASKED_3e8d115e
+ORD-10465,CUST-2086,ix***@hotmail.com,***-***-9793,677.62,2,15,2022-05-18,Cancelled,Electronics,L***,PayPal,MASKED_0f177369
+ORD-10466,CUST-2724,dr***@yahoo.com,***-***-5933,3550.5,5,10,2023-12-29,6,Food,T***,Cash,MASKED_19d3326f
+ORD-10467,CUST-8877,ij***@outlook.com,***-***-7646,85.86,6,15,2022-08-08,Delivered,Sports,T***,PayPal,MASKED_19d3326f
+ORD-10468,CUST-5306,tr***@outlook.com,***-***-1416,3670.8,6,20,2022-05-10,Pending,Food,O***,Bank Transfer,MASKED_76423d83
+ORD-10469,CUST-4255,sd***@enterprise.net,***-***-3486,2487.4,4,20,2024-05-30,Cancelled,Clothing,S***,Credit Card,MASKED_19d3326f
+ORD-10470,CUST-8667,fy***@yahoo.com,***-***-1005,5008.71,7,0,2022-09-15,Refunded,Toys,R***,PayPal,MASKED_3a52f3c2
+ORD-10471,CUST-5525,td***@hotmail.com,***-***-3487,366.42,6,5,2023-03-31,Processing,Clothing,J***,PayPal,MASKED_7516fd43
+ORD-10472,CUST-8643,ic***@company.io,***-***-8983,MISSING,5,10,2022-08-19,Cancelled,Clothing,T***,Credit Card,MASKED_24d22e03
+ORD-10473,CUST-2656,wr***@hotmail.com,***-***-9109,426.36,6,5,2023-08-29,Delivered,Toys,B***,Credit Card,MASKED_0f177369
+ORD-10474,CUST-7451,ny***@enterprise.net,***-***-8212,3403.5,10,15,2023-08-11,Cancelled,Beauty,M***,Bank Transfer,MASKED_6cc98ba2
+ORD-10475,CUST-5074,oa***@hotmail.com,***-***-8507,1710.84,6,25,2023-10-13,Shipped,Electronics,S***,Debit Card,MASKED_19d3326f
+ORD-10476,CUST-4050,tu***@hotmail.com,***-***-8953,4002.7,10,10,2022-12-12,Delivered,Toys,B***,Debit Card,MASKED_c86ee0d9
+ORD-10477,CUST-3388,cp***@outlook.com,***-***-7500,4777.57,7,5,2023-01-30,Pending,Toys,B***,Cash,MASKED_24d22e03
+ORD-10478,CUST-1340,zl***@hotmail.com,***-***-4149,993.65,5,15,2022-07-10,Cancelled,Clothing,S***,Bank Transfer,MASKED_24d22e03
+ORD-10479,CUST-3109,sz***@company.io,***-***-9771,2549.88,4,10,2022-04-18,Cancelled,Beauty,L***,PayPal,MASKED_19d3326f
+ORD-10480,CUST-6806,gv***@enterprise.net,***-***-5128,167.1,3,200,2022-01-29,Refunded,Home & Garden,C***,Bank Transfer,MASKED_6cc98ba2
+ORD-10481,CUST-2163,fl***@gmail.com,***-***-3641,2832.12,6,25,2022-07-19,Processing,Books,C***,Debit Card,MASKED_c86ee0d9
+ORD-10482,CUST-5268,***@***.***,***-***-2336,617.04,8,10,2023-04-08,Pending,Electronics,S***,PayPal,MASKED_7516fd43
+ORD-10483,CUST-3898,bj***@enterprise.net,***-***-9312,1445.34,3,5,2024-04-13,Delivered,Electronics,L***,none,MASKED_7516fd43
+ORD-10484,CUST-8338,yc***@enterprise.net,***-***-6543,5996.34,9,5,2023-01-10,Processing,Clothing,J***,Bank Transfer,MASKED_3a52f3c2
+ORD-10485,CUST-4292,jx***@outlook.com,***-***-4244,4247.25,7,10,2023-10-04,Delivered,Beauty,S***,Bank Transfer,MASKED_6cc98ba2
+ORD-10486,CUST-1773,ac***@hotmail.com,***-***-9810,429.76,7,0,2024-04-23,Refunded,Clothing,D***,Cash,MASKED_19d3326f
+ORD-10487,CUST-1077,js***@enterprise.net,***-***-7388,1479.66,2,5,2023-01-16,Delivered,Books,F***,Debit Card,MASKED_c86ee0d9
+ORD-10488,CUST-7479,rw***@enterprise.net,***-***-3111,503.1,1,25,2023-12-08,Processing,Home & Garden,S***,Credit Card,MASKED_76423d83
+ORD-10489,CUST-9158,bn***@yahoo.com,***-***-8683,3041.68,4,15,2022-04-22,Pending,BOOKS,S***,Credit Card,MASKED_6cc98ba2
+ORD-10490,CUST-1232,tu***@outlook.com,***-***-6736,238.74,6,15,2022-07-25,Refunded,Books,F***,Bank Transfer,MASKED_6cc98ba2
+ORD-10491,CUST-9753,nf***@company.io,***-***-6270,661.78,2,10,2022-02-09,Processing,Books,F***,Debit Card,MASKED_7516fd43
+ORD-10492,CUST-7325,ov***@enterprise.net,***-***-8367,6000.64,8,25,2022-09-01,Refunded,Beauty,S***,Cash,MASKED_11aedd0e
+ORD-10493,CUST-7590,  ***@outlook.com  ,***-***-7648,6138.81,9,15,2024-06-23,Delivered,Toys,P***,Bank Transfer,MASKED_0f177369
+ORD-10494,CUST-6028,  ***@hotmail.com  ,***-***-2780,2120.86,7,20,2023-10-30,Delivered,Beauty,P***,gift card,MASKED_6cc98ba2
+ORD-10495,CUST-7584,fo***@yahoo.com,***-***-6185,704153.63,10,15,2022-09-09,Refunded,Electronics,S***,Bank Transfer,MASKED_3e8d115e
+ORD-10496,CUST-6039,uc***@outlook.com,***-***-8317,2299.74,3,15,2022-12-13,Refunded,Electronics,S***,PayPal,MASKED_11aedd0e
+ORD-10497,CUST-8813,ew***@gmail.com,***-***-6937,2666.23,7,15,2023-08-22,Cancelled,Clothing,J***,Bank Transfer,MASKED_7516fd43
+ORD-10498,CUST-2361,ii***@company.io,***-***-7844,1424.52,6,5,2023-01-09,Shipped,Food,O***,Cash,MASKED_11aedd0e
+ORD-10499,CUST-1314,ie***@hotmail.com,***-***-7226,134.9,10,15,2022-02-06,Refunded,electronics,H***,Bank Transfer,MASKED_3e8d115e
+ORD-10500,CUST-3105,wu***@gmail.com,***-***-3901,46.58,2,10,2022-03-08,Processing,Toys,R***,Debit Card,MASKED_76423d83
+ORD-10501,CUST-2733,st***@gmail.com,***-***-3272,3779.82,6,5,2024-02-03,Pending,Clothing,J***,Credit Card,MASKED_76423d83
+ORD-10502,CUST-2003,ug***@yahoo.com,***-***-2303,MISSING,10,5,2022-07-22,Shipped,Electronics,S***,Cash,MASKED_24d22e03
+ORD-10503,CUST-5111,sb***@enterprise.net,***-***-1114,892.6,5,25,2024-06-30,Refunded,Home & Garden,P***,PayPal,MASKED_c86ee0d9
+ORD-10504,CUST-2079,bi***@outlook.com,***-***-6227,MISSING,6,15,2023-01-02,Refunded,Clothing,D***,PayPal,MASKED_0f177369
+ORD-10505,CUST-1401,iz***@outlook.com,***-***-3447,2370.06,7,15,2023-01-10,Pending,Sports,B***,Debit Card,MASKED_c86ee0d9
+ORD-10506,CUST-3618,ck***@enterprise.net,***-***-2736,5306.91,7,0,2022-11-28,Refunded,Books,B***,Cash,MASKED_11aedd0e
+ORD-10507,CUST-8758,nm***@gmail.com,***-***-7832,896.43,3,5,2022-08-03,Shipped,Books,S***,PayPal,MASKED_0f177369
+ORD-10508,CUST-9670,iu***@hotmail.com,***-***-5358,2607.2,10,0,2023-04-06,Delivered,Sports,D***,PayPal,MASKED_c86ee0d9
+ORD-10509,CUST-2972,mf***@enterprise.net,***-***-4193,3065.56,4,20,2023-03-16,Cancelled,Toys,B***,Debit Card,MASKED_6cc98ba2
+ORD-10510,CUST-8470,hf***@yahoo.com,***-***-8427,1499.68,2,10,2026-05-01,Cancelled,Beauty,L***,PayPal,MASKED_7516fd43
+ORD-10511,CUST-9383,wo***@enterprise.net,***-***-3160,363.1,10,15,2022-03-07,Pending,Clothing,J***,Debit Card,MASKED_76423d83
+ORD-10512,CUST-9980,cj***@yahoo.com,***-***-2888,3900.4,7,10,2023-03-16,Processing,Books,F***,Cash,MASKED_7516fd43
+ORD-10513,CUST-7798,mb***@gmail.com,***-***-1589,1981.6,5,5,2022-08-24,Cancelled,Electronics,T***,Credit Card,MASKED_3e8d115e
+ORD-10514,CUST-7432,wn***@enterprise.net,***-***-1472,4313.1,6,15,2023-09-10,Refunded,Clothing,S***,Bank Transfer,MASKED_3a52f3c2
+ORD-10515,CUST-6913,bu***@gmail.com,***-***-4765,6552.0,10,20,2024-06-30,Shipped,Books,S***,Cash,MASKED_7516fd43
+ORD-10516,CUST-2757,fe***@gmail.com,***-***-1183,267.0,4,10,2022-01-01,Shipped,Sports,B***,Bank Transfer,MASKED_24d22e03
+ORD-10517,CUST-4353,bf***@enterprise.net,***-***-1497,1841.3,5,15,2022-06-28,Pending,Books,F***,Credit Card,MASKED_3a52f3c2
+ORD-10518,CUST-5601,sh***@outlook.com,***-***-4321,1535.5,2,10,2022-01-25,Refunded,Food,P***,Debit Card,MASKED_3a52f3c2
+ORD-10519,CUST-7115,zb***@outlook.com,***-***-9859,3503.6,8,5,2022-11-25,Refunded,Food,P***,Bank Transfer,MASKED_c86ee0d9
+ORD-10520,CUST-3691,mj***@outlook.com,***-***-3376,6211.17,9,20,2022-12-16,in-transit,Beauty,L***,Cash,MASKED_c86ee0d9
+ORD-10521,CUST-9570,ck***@hotmail.com,***-***-6752,6748.74,9,25,2023-02-22,Refunded,Home & Garden,S***,Debit Card,MASKED_0f177369
+ORD-10522,CUST-2582,sx***@gmail.com,***-***-5846,1743.44,4,0,2026-03-07,Processing,Books,F***,Credit Card,MASKED_11aedd0e
+ORD-10523,CUST-9050,kj***@hotmail.com,***-***-1508,382.9,10,10,2023-12-19,Delivered,Food,V***,Cash,MASKED_76423d83
+ORD-10524,CUST-8688,qj***@outlook.com,***-***-8392,1181.4,6,5,2023-09-21,Delivered,Beauty,M***,Credit Card,MASKED_c86ee0d9
+ORD-10525,CUST-2258,ln***@hotmail.com,***-***-1093,2325.03,3,15,2024-03-05,Refunded,Electronics,S***,Bank Transfer,MASKED_7516fd43
+ORD-10526,CUST-9604,fw***@outlook.com,***-***-2742,149.31,7,15,2023-05-01,Pending,Sports,R***,Bank Transfer,MASKED_19d3326f
+ORD-10527,CUST-9944,bg***@company.io,***-***-2094,1438.6,4,25,2022-07-09,Cancelled,Beauty,S***,Credit Card,MASKED_19d3326f
+ORD-10528,CUST-4091,fh***@hotmail.com,***-***-4508,5135.76,8,0,2022-06-26,Delivered,Electronics,S***,Cash,MASKED_76423d83
+ORD-10529,CUST-5300,wd***@gmail.com,***-***-1703,4502.4,6,10,2024-03-10,Delivered,Books,F***,Debit Card,MASKED_3e8d115e
+ORD-10530,CUST-1654,pw***@outlook.com,***-***-8610,1858.41,3,25,2024-04-06,Shipped,Beauty,P***,Cash,MASKED_24d22e03
+ORD-10531,CUST-2031,wm***@enterprise.net,***-***-5734,4455.09,9,20,2023-06-10,  Shipped  ,Toys,B***,PayPal,MASKED_3a52f3c2
+ORD-10532,CUST-8580,ze***@company.io,***-***-5775,1005.3,6,25,2022-09-10,Processing,Home & Garden,C***,PayPal,MASKED_c86ee0d9
+ORD-10533,CUST-5539,gm***@company.io,***-***-5353,2932.24,8,0,2023-03-14,Refunded,Food,V***,Cash,MASKED_76423d83
+ORD-10534,CUST-1981,kd***@gmail.com,***-***-5541,713.59,1,10,2023-03-17,Processing,Food,O***,Debit Card,MASKED_24d22e03
+ORD-10535,CUST-8528,jg***@yahoo.com,***-***-5578,1264.69,7,0,2022-01-04,Processing,Sports,R***,Bank Transfer,MASKED_24d22e03
+ORD-10536,CUST-7355,***@domain.comvkx,***-***-3367,401.73,1,25,2022-03-21,Cancelled,Beauty,S***,Debit Card,MASKED_6cc98ba2
+ORD-10537,CUST-7241,ik***@hotmail.com,***-***-8296,2794.2,10,15,2022-04-02,Delivered,Home & Garden,P***,PayPal,MASKED_3a52f3c2
+ORD-10538,CUST-2298,xg***@outlook.com,***-***-5803,403.2,9,5,2024-05-29,Delivered,Sports,R***,Debit Card,MASKED_3a52f3c2
+ORD-10539,CUST-3928,eb***@gmail.com,***-***-7044,437.78,2,25,2022-07-03,Processing,Beauty,F***,Debit Card,MASKED_3a52f3c2
+ORD-10540,CUST-5575,wt***@yahoo.com,***-***-2800,2767.32,6,25,2022-09-12,Processing,Electronics,S***,Credit Card,MASKED_76423d83
+ORD-10541,CUST-9576,al***@yahoo.com,***-***-9187,MISSING,7,5,2024-04-04,Pending,Beauty,L***,Credit Card,MASKED_24d22e03
+ORD-10542,CUST-3291,dx***@outlook.com,***-***-3331,6334.7,10,0,2022-08-21,Delivered,Toys,B***,Bank Transfer,MASKED_6cc98ba2
+ORD-10543,CUST-5816,jf***@company.io,***-***-1663,469.77,7,15,2022-03-11,CANCELLED,Food,P***,Debit Card,MASKED_11aedd0e
+ORD-10544,CUST-8541,zd***@company.io,***-***-7028,3838.92,6,0,2024-03-31,Cancelled,Books,C***,Credit Card,MASKED_0f177369
+ORD-10545,CUST-7461,ta***@gmail.com,***-***-1198,3101.9,10,5,2022-07-19,Delivered,Food,T***,Debit Card,MASKED_6cc98ba2
+ORD-10546,CUST-7096,og***@outlook.com,***-***-123,2972.1,6,25,2022-12-05,Refunded,Books,T***,Cash,MASKED_c86ee0d9
+ORD-10547,CUST-5075,ug***@yahoo.com,***-***-9883,2820.76,4,20,2023-01-07,Delivered,Sports,B***,Bank Transfer,MASKED_24d22e03
+ORD-10548,CUST-7068,ce***@outlook.com,***-***-9058,270.36,1,15,2023-08-26,Processing,Toys,P***,Bank Transfer,MASKED_3a52f3c2
+ORD-10549,CUST-2512,  ***@outlook.com  ,***-***-1034,2776.62,7,15,2022-07-01,Pending,Sports,D***,PayPal,MASKED_3e8d115e
+ORD-10550,CUST-9619,ce***@company.io,***-***-2064,2471.35,5,15,2023-09-13,Shipped,Toys,A***,Cash,MASKED_76423d83
+ORD-10551,CUST-4449,fh***@hotmail.com,***-***-3543,2673.35,5,0,2022-03-23,Pending,Food,T***,Credit Card,MASKED_c86ee0d9
+ORD-10552,CUST-6967,ds***@hotmail.com,***-***-2082,4213.28,8,0,2022-02-02,Shipped,Clothing,D***,Wire,MASKED_0f177369
+ORD-10553,CUST-4932,uw***@company.io,***-***-4313,707.95,1,25,2022-07-04,Delivered,Food,C***,Credit Card,MASKED_3e8d115e
+ORD-10554,CUST-9964,ja***@company.io,***-***-1729,366.69,1,10,2022-12-07,refunded,Toys,P***,Cash,MASKED_76423d83
+ORD-10555,CUST-1664,  ***@hotmail.com  ,***-***-1036,426.94,1,15,2022-02-18,Pending,Food,P***,Cash,MASKED_19d3326f
+ORD-10556,CUST-7373,ny***@enterprise.net,***-***-9930,1369.82,2,25,2022-07-25,Pending,Beauty,S***,Credit Card,MASKED_3e8d115e
+ORD-10557,CUST-3548,ad***@gmail.com,***-***-5424,131.2,2,5,2022-04-27,Delivered,Home & Garden,P***,Credit Card,MASKED_19d3326f
+ORD-10558,CUST-3627,dr***@enterprise.net,***-***-8842,362.76,3,25,2022-12-26,Pending,Food,P***,gift card,MASKED_6cc98ba2
+ORD-10559,CUST-6823,uk***@enterprise.net,***-***-6549,1236.16,8,15,2024-02-07,Pending,Clothing,J***,Bank Transfer,MASKED_76423d83
+ORD-10560,CUST-7973,po***@gmail.com,***-***-5918,1012.36,4,25,2024/01/02,Refunded,Books,T***,Bank Transfer,MASKED_c86ee0d9
+ORD-10561,CUST-2559,wz***@outlook.com,***-***-3992,586.42,2,20,2022-08-06,Cancelled,Sports,Y***,Debit Card,MASKED_7516fd43
+ORD-10562,CUST-6460,vo***@enterprise.net,***-***-2126,552.37,7,0,2023-08-26,Pending,Sports,Y***,Bank Transfer,MASKED_7516fd43
+ORD-10563,CUST-3075,kc***@enterprise.net,***-***-4909,2337.44,4,15,2022-01-06,Refunded,Food,T***,PayPal,MASKED_24d22e03
+ORD-10564,CUST-9153,ob***@gmail.com,***-***-4132,2602.15,5,25,2022-09-17,Refunded,Home & Garden,L***,Cash,MASKED_c86ee0d9
+ORD-10565,CUST-3365,db***@enterprise.net,***-***-3019,1014.24,6,10,2022-11-29,Delivered,Clothing,D***,Cash,MASKED_11aedd0e
+ORD-10566,CUST-4339,wd***@gmail.com,***-***-5643,3374.4,8,10,2022-07-01,Delivered,Food,C***,Bank Transfer,MASKED_19d3326f
+ORD-10567,CUST-3370,lh***@outlook.com,***-***-9552,4637.7,9,10,2023-12-08,Pending,Clothing,J***,Cash,MASKED_11aedd0e
+ORD-10568,CUST-9143,by***@gmail.com,***-***-6363,6640.65,9,25,2024-02-28,Cancelled,Beauty,S***,Cash,MASKED_3e8d115e
+ORD-10569,CUST-4951,***@domain.comxuf,***-***-8058,-357.58,6,20,2022-01-17,Refunded,Electronics,L***,Credit Card,MASKED_24d22e03
+ORD-10570,CUST-2586,kb***@outlook.com,***-***-7703,714.72,4,0,2022-10-15,Refunded,Books,C***,Bank Transfer,MASKED_3a52f3c2
+ORD-10571,CUST-9020,yp***@hotmail.com,***-***-2453,741.35,1,20,2023-08-20,Processing,CLOTHING,S***,PayPal,MASKED_7516fd43
+ORD-10572,CUST-2003,yt***@hotmail.com,***-***-3203,718.56,3,101,2022-05-01,Refunded,Beauty,L***,PayPal,MASKED_11aedd0e
+ORD-10573,CUST-3518,rv***@gmail.com,***-***-3722,520.11,3,10,2024-01-01,Cancelled,Beauty,F***,Cash,MASKED_24d22e03
+ORD-10574,CUST-8616,ez***@company.io,***-***-3077,4334.26,7,0,2022-08-24,Pending,Toys,R***,Credit Card,MASKED_19d3326f
+ORD-10575,CUST-6556,xp***@company.io,***-***-5278,3996.54,9,10,2023-07-17,Processing,Food,O***,Credit Card,MASKED_6cc98ba2
+ORD-10576,CUST-1188,du***@enterprise.net,***-***-1497,172.92,6,0,2022-11-27,Processing,Food,T***,Credit Card,MASKED_76423d83
+ORD-10577,CUST-9941,yc***@company.io,***-***-9847,658.1,5,15,139778,Delivered,Home & Garden,C***,Credit Card,MASKED_c86ee0d9
+ORD-10578,CUST-2453,nu***@enterprise.net,***-***-9684,3066.9,6,5,2023-02-19,Delivered,Books,C***,Credit Card,MASKED_3a52f3c2
+ORD-10579,CUST-4938,un***@company.io,***-***-8537,328.35,1,20,2022-12-30,Pending,Beauty,F***,Cash,MASKED_c86ee0d9
+ORD-10580,CUST-3907,bu***@hotmail.com,***-***-9448,3849.55,5,5,2023-01-23,Refunded,Books,S***,Cash,MASKED_76423d83
+ORD-10581,CUST-9656,gr***@yahoo.com,***-***-5126,3475.14,6,0,2023-04-19,Pending,Beauty,S***,PayPal,MASKED_6cc98ba2
+ORD-10582,CUST-5761,yj***@company.io,***-***-1368,4442.97,7,5,2024-01-19,Pending,Books,T***,Debit Card,MASKED_19d3326f
+ORD-10583,CUST-4423,iz***@outlook.com,***-***-9621,2934.44,4,10,2023-08-25,Shipped,Books,F***,Bank Transfer,MASKED_3a52f3c2
+ORD-10584,CUST-3207,cs***@enterprise.net,***-***-1642,1586.4,4,15,2024-05-25,Pending,Books,F***,Credit Card,MASKED_24d22e03
+ORD-10585,CUST-9583,zc***@yahoo.com,***-***-6469,884.08,2,15,2023-10-15,Refunded,Food,V***,PayPal,MASKED_11aedd0e
+ORD-10586,CUST-9834,xw***@yahoo.com,***-***-9681,2330.3,10,15,2022-12-18,Pending,Clothing,S***,Debit Card,MASKED_6cc98ba2
+ORD-10587,CUST-9783,ve***@enterprise.net,***-***-7010,541.95,5,25,2022-01-22,Shipped,Home & Garden,L***,Bank Transfer,MASKED_6cc98ba2
+ORD-10588,CUST-2448,zt***@gmail.com,***-***-8465,1893.12,6,0,2022-11-25,Refunded,Beauty,L***,Credit Card,MASKED_c86ee0d9
+ORD-10589,CUST-1660,xj***@yahoo.com,***-***-1081,1179.35,5,20,2023-04-04,Processing,Home & Garden,P***,PayPal,MASKED_3a52f3c2
+ORD-10590,CUST-5681,tn***@yahoo.com,***-***-8423,1287.22,2,10,2023-08-20,Processing,Food,V***,Cash,MASKED_24d22e03
+ORD-10591,CUST-2686,oj***@gmail.com,***-***-6072,802.89,3,20,2023-09-26,Processing,Beauty,L***,Debit Card,MASKED_76423d83
+ORD-10592,CUST-8490,hd***@hotmail.com,***-***-8241,3597.93,7,5,2023-03-16,Processing,Books,T***,Cash,MASKED_3a52f3c2
+ORD-10593,CUST-8113,rp***@gmail.com,***-***-one),2166.87,3,15,2023-08-28,Shipped,Home & Garden,C***,Debit Card,MASKED_6cc98ba2
+ORD-10594,CUST-3387,uj***@yahoo.com,***-***-6518,1078.5,2,0,2022-09-15,Processing,Sports,R***,Bank Transfer,MASKED_19d3326f
+ORD-10595,CUST-7400,pu***@gmail.com,***-***-7343,3152.07,9,20,11/24/2022,Pending,Books,F***,Debit Card,MASKED_24d22e03
+ORD-10596,CUST-9549,bb***@company.io,***-***-7736,2073.0,3,25,2022-05-28,Pending,Toys,B***,Debit Card,MASKED_11aedd0e
+ORD-10597,CUST-3247,xl***@gmail.com,***-***-2508,3771.32,7,25,2024-06-12,unknown,sports,B***,Bank Transfer,MASKED_7516fd43
+ORD-10598,CUST-3805,sp***@outlook.com,***-***-8654,3440.16,6,20,2022-03-23,sHiPpEd,Books,F***,Debit Card,MASKED_c86ee0d9
+ORD-10599,CUST-4119,pa***@hotmail.com,***-***-9932,1823.4,6,10,2022-11-11,Shipped,Clothing,S***,Credit Card,MASKED_c86ee0d9
+ORD-10600,CUST-7526,dk***@company.io,***-***-8589,3332.2,5,25,2024-03-20,Delivered,Toys,R***,Debit Card,MASKED_c86ee0d9
+ORD-10601,CUST-8175,vq***@hotmail.com,***-***-9836,5028.72,8,5,2024-06-16,Pending,Clothing,S***,Debit Card,MASKED_19d3326f
+ORD-10602,CUST-3400,af***@outlook.com,***-***-7162,MISSING,9,20,2022-05-28,Pending,Toys,A***,Debit Card,MASKED_3a52f3c2
+ORD-10603,CUST-3273,rc***@company.io,***-***-1646,1570.9,2,20,2023-08-28,Cancelled,Toys,B***,Debit Card,MASKED_6cc98ba2
+ORD-10604,CUST-3129,wy***@company.io,***-***-9391,6978.69,9,20,2023-03-16,Pending,Sports,Y***,PayPal,MASKED_3e8d115e
+ORD-10605,CUST-2040,nz***@enterprise.net,***-***-0000,1542.0,2,20,2023-06-29,Delivered,Food,V***,Cash,MASKED_c86ee0d9
+ORD-10606,CUST-7392,mv***@enterprise.net,***-***-8481,291231.7,6,20,2022-02-09,Pending,Beauty,M***,Debit Card,MASKED_11aedd0e
+ORD-10607,CUST-5411,us***@gmail.comcst,***-***-2689,1645.2,3,10,2023-02-19,Processing,Books,T***,Credit Card,MASKED_3e8d115e
+ORD-10608,CUST-7409,ts***@outlook.com,***-***-9022,900.3,2,20,2022-09-27,Delivered,Books,C***,PayPal,MASKED_7516fd43
+ORD-10609,CUST-5409,uh***@gmail.com,***-***-7463,2806.02,6,10,2022-04-01,Shipped,Toys,B***,Bank Transfer,MASKED_76423d83
+ORD-10610,CUST-2427,ff***@outlook.com,***-***-7273,460.74,2,20,kwqhlm,  Processing  ,Toys,R***,Cash,MASKED_0f177369
+ORD-10611,CUST-6315,td***@company.io,***-***-8369,359.8,7,20,2023-03-29,Shipped,Electronics,H***,Debit Card,MASKED_c86ee0d9
+ORD-10612,CUST-2359,nz***@hotmail.com,***-***-3230,7288.4,10,0,2024-06-22,Pending,Food,C***,Debit Card,MASKED_11aedd0e
+ORD-10613,CUST-9548,pw***@enterprise.net,***-***-3984,2322.12,6,25,2022-04-13,Shipped,Toys,B***,PayPal,MASKED_19d3326f
+ORD-10614,CUST-3747 ,pz***@outlook.com,***-***-9615,7091.19,9,5,2024-04-04,Processing,Beauty,F***,Credit Card,MASKED_c86ee0d9
+ORD-10615,CUST-9724,dp***@hotmail.com,***-***-2426,2234.24,8,25,2023-04-12,Processing,Home & Garden,L***,PayPal,MASKED_0f177369
+ORD-10616,CUST-2675,gz***@gmail.com,***-***-3976,1770.03,9,25,2023-03-27,Pending,Food,V***,Debit Card,MASKED_76423d83
+ORD-10617,CUST-4507,fu***@hotmail.com,***-***-7997,7281.7,10,10,2023-11-05,Cancelled,Food,C***,PayPal,MASKED_3a52f3c2
+ORD-10618,CUST-7440,xi***@yahoo.com,***-***-6449,533.76,4,10,2024-06-05,Shipped,Books,C***,Bank Transfer,MASKED_24d22e03
+ORD-10619,CUST-6355,xp***@company.io,***-***-4981,350.64,2,5,2022-06-02,Pending,Clothing,T***,Debit Card,MASKED_3e8d115e
+ORD-10620,CUST-6855,oe***@yahoo.com,***-***-7460,3213.24,6,0,2024-03-28,Pending,Beauty,L***,Credit Card,MASKED_11aedd0e
+ORD-10621,CUST-2533,xq***@yahoo.com,***-***-3743,7193.4,10,25,2023-08-24,Refunded,Sports,R***,Credit Card,MASKED_76423d83
+ORD-10622,CUST-2886,mq***@hotmail.com,***-***-3472,631.04,8,25,2022-06-05,Pending,Sports,D***,Debit Card,MASKED_76423d83
+ORD-10623,CUST-5074,mr***@company.io,***-***-4507,5482.44,9,0,2022-10-28,Cancelled,Food,O***,Bank Transfer,MASKED_6cc98ba2
+ORD-10624,CUST-1143,nr***@enterprise.net,***-***-3459,2213.79,3,20,2026-04-29,Delivered,Toys,A***,Credit Card,MASKED_24d22e03
+ORD-10625,CUST-9135,zj***@gmail.com,***-***-2943,1873.44,3,5,2022-10-10,  Processing  ,Home & Garden,R***,PayPal,MASKED_19d3326f
+ORD-10626,CUST-4781,jh***@hotmail.com,***-***-3725,1337.5,10,20,2023-09-27,Pending,Toys,P***,Credit Card,MASKED_6cc98ba2
+ORD-10627,CUST-1960,  ***@outlook.com  ,***-***-7644,153.7,5,15,2023-08-01,Refunded,Beauty,S***,PayPal,MASKED_6cc98ba2
+ORD-10628,CUST-9424,bl***@gmail.com,***-***-7759,MISSING,2,20,2022-08-24,Pending,sports,B***,Bank Transfer,MASKED_11aedd0e
+ORD-10629,CUST-1695,en***@hotmail.com,***-***-1882,320.82,2,15,2023-12-31,Processing,Clothing,J***,Credit Card,MASKED_7516fd43
+ORD-10630,CUST-8036,zy***@outlook.com,***-***-4351,2161.32,6,0,2023-07-29,  Pending  ,Sports,R***,Debit Card,MASKED_3a52f3c2
+ORD-10631,CUST-5358,vx***@hotmail.com,***-***-6088,30.51,1,10,2023-10-04,Cancelled,Beauty,M***,Credit Card,MASKED_76423d83
+ORD-10632,CUST-2077,pr***@yahoo.com,***-***-9222,1219.14,6,0,2025-07-26,Cancelled,Electronics,H***,Cash,MASKED_0f177369
+ORD-10633,CUST-5067,nm***@yahoo.com,***-***-8158,3671.68,8,5,2022-08-04,1,Beauty,F***,Cash,MASKED_24d22e03
+ORD-10634,CUST-5251,oc***@company.io,***-***-7051,506.51,1,25,08-05-2022,Cancelled,SPORTS,T***,Cash,MASKED_24d22e03
+ORD-10635,CUST-3264,***@domain.comlxt,***-***-9551,1233.85,5,20,2024-01-26,Processing,Food,T***,Bank Transfer,MASKED_19d3326f
+ORD-10636,CUST-9186,yo***@company.io,***-***-3709,MISSING,3,20,2023-11-18,refunded,Toys,R***,Cash,MASKED_c86ee0d9
+ORD-10637,CUST-9099,pz***@enterprise.net,***-***-8987,2067.48,6,10,2023-11-22,Refunded,Food,T***,Cash,MASKED_3a52f3c2
+ORD-10638,CUST-5338,ju***@hotmail.com,***-***-8422,3077.9,7,20,2022-11-16,Processing,Toys,L***,Bank Transfer,MASKED_7516fd43
+ORD-10639,CUST-8141,ik***@outlook.com,***-***-3479,376.6,10,20,2023-04-01,Cancelled,Books,C***,Credit Card,MASKED_6cc98ba2
+ORD-10640,CUST-5073,vc***@outlook.com,***-***-9372,276.67,1,0,2023-02-15,dispatched,Electronics,L***,Debit Card,MASKED_3e8d115e
+ORD-10641,CUST-5238,mg***@company.io,***-***-9955,952.11,9,25,2025-10-14,Cancelled,Sports,T***,Credit Card,MASKED_6cc98ba2
+ORD-10642,CUST-5079,  ***@company.io  ,***-***-8214,4462.56,9,10,2023-06-03,SHIPPED,Food,T***,PayPal,MASKED_76423d83
+ORD-10643,CUST-8773,pz***@hotmail.com,***-***-2013,570.84,6,5,2024-05-02,Cancelled,Toys,R***,Cash,MASKED_6cc98ba2
+ORD-10644,CUST-3226,ik***@company.io,***-***-3931,2444.0,10,0,2022-10-28,Delivered,Home & Garden,R***,PayPal,MASKED_19d3326f
+ORD-10645,CUST-4150,mb***@company.io,***-***-3143,4631.88,6,5,2024-05-27,Shipped,Beauty,P***,Bank Transfer,MASKED_6cc98ba2
+ORD-10646,CUST-8404,ui***@hotmail.com,***-***-8765,744.65,5,10,2023-02-15,Processing,Books,T***,Cash,MASKED_76423d83
+ORD-10647,CUST-9795,ce***@gmail.com,***-***-9458,9.86,1,15,2026-01-22,Refunded,Beauty,S***,Cash,MASKED_c86ee0d9
+ORD-10648,CUST-7963,ep***@yahoo.com,***-***-3697,3414.65,5,0,2022-07-28,Cancelled,Home & Garden,P***,Debit Card,MASKED_0f177369
+ORD-10649,CUST-4810,ls***@outlook.com,***-***-5396,1078.08,2,0,2022-02-02,Refunded,Toys,P***,PayPal,MASKED_11aedd0e
+ORD-10650,CUST-2390,qi***@hotmail.com,***-***-4379,4378.64,8,5,2023-11-12,Shipped,Toys,A***,Bank Transfer,MASKED_c86ee0d9
+ORD-10651,CUST-4184,wo***@hotmail.com,***-***-4760,207.67,1,10,2024-01-07,Cancelled,Electronics,S***,Debit Card,MASKED_11aedd0e
+ORD-10652,CUST-6889,ww***@outlook.com,***-***-9711,1035.05,5,5,2024-04-19,Cancelled,Home & Garden,P***,Credit Card,MASKED_0f177369
+ORD-10653,CUST-7324,so***@company.io,***-***-9645,3499.7,5,20,2024-03-06,Processing,Home & Garden,C***,Credit Card,MASKED_11aedd0e
+ORD-10654,CUST-3867,pd***@yahoo.com,***-***-4709,3988.81,7,20,2023-04-06,  Processing  ,Toys,R***,Debit Card,MASKED_3a52f3c2
+ORD-10655,CUST-4474,zz***@yahoo.com,***-***-2916,570.79,1,0,2022-07-09,Processing,Clothing,J***,Credit Card,MASKED_7516fd43
+ORD-10656,CUST-5740,kl***@enterprise.net,***-***-2393,2874.8,4,20,2023-06-07,Pending,Clothing,D***,PayPal,MASKED_6cc98ba2
+ORD-10657,CUST-1057,ik***@outlook.com,***-***-7212,5132.54,7,15,2024-05-04,Pending,Books,T***,Credit Card,MASKED_7516fd43
+ORD-10658,CUST-9874,zr***@gmail.com,***-***-5405,647.17,1,20,2023-04-26,Pending,Beauty,F***,Cash,MASKED_7516fd43
+ORD-10659,CUST-2938,tl***@company.io,***-***-8951,3765.87,9,20,2022-03-16,Shipped,Toys,L***,PayPal,MASKED_24d22e03
+ORD-10660,CUST-4060,jv***@gmail.com,***-***-1095,4175.64,9,20,2023-01-13,unknown,Beauty,M***,Crypto,MASKED_3e8d115e
+ORD-10661,CUST-8139,iy***@yahoo.com,***-***-8823,5265.89,7,10,qpsttl,Cancelled,Toys,L***,Bank Transfer,MASKED_7516fd43
+ORD-10662,CUST-7015,gd***@gmail.com,***-***-1295,316.29,3,25,2022-02-20,dispatched,Sports,B***,Debit Card,MASKED_3e8d115e
+ORD-10663,CUST-2457,yl***@company.io,***-***-9465,45.1,5,5,2022-06-14,Refunded,Beauty,P***,Bank Transfer,MASKED_3a52f3c2
+ORD-10664,CUST-7091,zb***@company.io,***-***-8599,77.72,1,0,2024-04-15,Refunded,Clothing,T***,PayPal,MASKED_c86ee0d9
+ORD-10665,CUST-8927,tb***@enterprise.net,***-***-9260,-155.8,1,20,2024-03-15,Shipped,Beauty,F***,PayPal,MASKED_11aedd0e
+ORD-10666,CUST-9432,un***@hotmail.com,***-***-6093,6354.6,10,20,2022-03-26,PROCESSING,Home & Garden,S***,Credit Card,MASKED_11aedd0e
+ORD-10667,CUST-3480,du***@company.io,***-***-5472,1092.92,4,20,2023-03-22,Pending,Toys,P***,Bank Transfer,MASKED_3a52f3c2
+ORD-10668,CUST-6420,xy***@gmail.com,***-***-8279,1303.35,3,10,2023-12-23,VOID,Home & Garden,R***,PayPal,MASKED_0f177369
+ORD-10669,CUST-6070,cy***@gmail.com,***-***-2666,4040.08,8,5,2022-04-13,Pending,Toys,L***,Bank Transfer,MASKED_19d3326f
+ORD-10670,CUST-2362,pr***@yahoo.com,***-***-3215,2802.05,5,5,2023-03-25,Shipped,Beauty,F***,PayPal,MASKED_7516fd43
+ORD-10671,CUST-6567,wt***@hotmail.com,***-***-9066,2114.1,10,0,2024-02-23,Delivered,Electronics,S***,Debit Card,MASKED_0f177369
+ORD-10672,CUST-1199,sp***@enterprise.net,***-***-1049,3104.08,4,10,2022-12-23,Processing,Electronics,L***,Debit Card,MASKED_6cc98ba2
+ORD-10673,CUST-7355,pz***@gmail.com,***-***-8977,124.02,3,20,2023-08-15,Pending,Electronics,L***,Bank Transfer,MASKED_24d22e03
+ORD-10674,CUST-7143,bo***@gmail.com,***-***-9040,2334.7,5,15,2023-01-22,Processing,Beauty,P***,PayPal,MASKED_7516fd43
+ORD-10675,CUST-3448,qv***@yahoo.com,***-***-2560,-77.11,3,0,2022-01-16,Refunded,Home & Garden,S***,Cash,MASKED_7516fd43
+ORD-10676,CUST-1106 ,ja***@enterprise.net,***-***-6473,1484.79,3,20,2023-07-24,Cancelled,Beauty,S***,PayPal,MASKED_24d22e03
+ORD-10677,CUST-6795,et***@yahoo.com,***-***-8568,1106.31,3,15,2024-06-30,Pending,Books,C***,Debit Card,MASKED_7516fd43
+ORD-10678,CUST-9556,ci***@hotmail.com,***-***-6997,5666.49,9,20,2022-04-07,9,Food,C***,Credit Card,MASKED_19d3326f
+ORD-10679,CUST-8843,ni***@enterprise.net,***-***-4538,729721.27,6,0,2023-07-15,Delivered,Beauty,F***,Debit Card,MASKED_19d3326f
+ORD-10680,CUST-4502,uh***@outlook.com,***-***-4746,47.91,1,5,2023-11-10,Processing,Food,C***,PayPal,MASKED_76423d83
+ORD-10681,CUST-3073,mh***@enterprise.net,***-***-3090,2249.52,4,0,2023-10-12,Processing,Sports,Y***,PayPal,MASKED_c86ee0d9
+ORD-10682,CUST-7847,dl***@gmail.com,***-***-7485,1215.45,3,5,2026-07-15,  Refunded  ,Home & Garden,S***,PayPal,MASKED_24d22e03
+ORD-10683,CUST-7195,lj***@gmail.com,***-***-9698,756.78,2,5,2022-05-03,Pending,Home & Garden,P***,Debit Card,MASKED_19d3326f
+ORD-10684,CUST-7843,qk***@hotmail.com,***-***-1664,4651.38,6,15,2022-08-28,Refunded,Sports,B***,Debit Card,MASKED_76423d83
+ORD-10685,CUST-7175,jh***@hotmail.com,***-***-3767,70.74,6,15,2022-05-18,Delivered,Beauty,M***,Credit Card,MASKED_11aedd0e
+ORD-10686,CUST-2607,fk***@company.io,***-***-4933,7605.4,10,25,2022-11-15,Refunded,Books,F***,Cash,MASKED_24d22e03
+ORD-10687,CUST-4314,fo***@enterprise.net,***-***-2289,800.76,4,25,2024-05-04,Shipped,Beauty,F***,Bank Transfer,MASKED_6cc98ba2
+ORD-10688,CUST-6906,zg***@hotmail.com,***-***-8736,4547.16,6,10,2023-02-07,Delivered,Electronics,S***,Cash,MASKED_6cc98ba2
+ORD-10689,CUST-7081,fh***@hotmail.com,***-***-8318,785.58,3,5,2022-04-26,Processing,Clothing,T***,Bank Transfer,MASKED_11aedd0e
+ORD-10690,CUST-2906,js***@outlook.com,***-***-1914,2259.18,3,15,2023-08-04,Delivered,Books,S***,Bank Transfer,MASKED_3a52f3c2
+ORD-10691,CUST-4426,aq***@enterprise.net,***-***-3887,1290.4,5,15,2024-06-29,Cancelled,Clothing,D***,PayPal,MASKED_11aedd0e
+ORD-10692,CUST-7663,cf***@yahoo.com,***-***-2826,3830.19,7,10,2022-03-05,Refunded,Food,C***,PayPal,MASKED_c86ee0d9
+ORD-10693,CUST-3022,by***@yahoo.com,***-***-9668,5553.8,10,25,2023-12-12,Pending,Food,V***,Debit Card,MASKED_7516fd43
+ORD-10694,CUST-7119,fq***@outlook.com,***-***-4493,639.72,6,5,2022-06-01,Processing,Home & Garden,L***,Bank Transfer,MASKED_3a52f3c2
+ORD-10695,CUST-8522,pe***@company.io,***-***-9156,1452.76,2,0,2024-02-22,Cancelled,Home & Garden,L***,Debit Card,MASKED_6cc98ba2
+ORD-10696,CUST-5294,ad***@outlook.com,***-***-8839,5171.74,7,5,2022-11-29,Delivered,Electronics,H***,Debit Card,MASKED_c86ee0d9
+ORD-10697,CUST-3527,zz***@enterprise.net,***-***-4016,2702.22,6,5,2024-01-22,Shipped,Home & Garden,R***,Credit Card,MASKED_6cc98ba2
+ORD-10698,CUST-4871,zi***@hotmail.com,***-***-4753,1793.92,8,20,2022-11-09,Pending,Books,C***,PayPal,MASKED_c86ee0d9
+ORD-10699,CUST-1737,fk***@outlook.com,***-***-2191,3168.25,5,5,2023-10-04,Refunded,Electronics,L***,PayPal,MASKED_76423d83
+ORD-10700,CUST-1297,bo***@yahoo.com,***-***-1244,649.91,1,0,2023-09-30,Refunded,Beauty,S***,Credit Card,MASKED_c86ee0d9
+ORD-10701,CUST-4790,hy***@company.io,***-***-3160,5720.72,8,15,2023-10-30,Delivered,Clothing,T***,Bank Transfer,MASKED_3e8d115e
+ORD-10702,CUST-6486,kg***@yahoo.com,***-***-1748,4853.97,9,5,2022-05-04,Cancelled,Food,C***,PayPal,MASKED_7516fd43
+ORD-10703,CUST-8131,uh***@hotmail.com,***-***-8337,2190.4,5,20,2023-04-06,Shipped,Toys,L***,Bank Transfer,MASKED_3a52f3c2
+ORD-10704,CUST-8608,lz***@gmail.com,***-***-6867,1532.4,10,5,2023-08-06,Refunded,Beauty,S***,Debit Card,MASKED_3e8d115e
+ORD-10705,CUST-5751,sp***@company.io,***-***-6495,1366.78,2,20,10-11-2022,Shipped,Home & Garden,P***,Bank Transfer,MASKED_6cc98ba2
+ORD-10706,CUST-8387,zt***@yahoo.com,***-***-7716,1121.25,5,10,2022-01-18,Cancelled,Home & Garden,C***,Debit Card,MASKED_c86ee0d9
+ORD-10707,CUST-8299,pn***@gmail.com,***-***-2886,1548.06,2,15,2024-02-19,Pending,Home & Garden,R***,PayPal,MASKED_11aedd0e
+ORD-10708,CUST-7250,hs***@yahoo.com,***-***-4660,4755.52,7,20,2022-02-25,Pending,Toys,A***,PayPal,MASKED_76423d83
+ORD-10709,CUST-8049,fw***@company.io,***-***-2126,446.52,1,10,2023-12-24,Shipped,Books,C***,PayPal,MASKED_3a52f3c2
+ORD-10710,CUST-5074,kf***@outlook.com,***-***-4000,94.86,3,10,2023-03-16,Processing,Sports,Y***,Credit Card,MASKED_11aedd0e
+ORD-10711,CUST-5597,sk***@company.io,***-***-2469,1372.26,3,25,2023-11-10,Delivered,Home & Garden,R***,PayPal,MASKED_76423d83
+ORD-10712,CUST-6517,ea***@yahoo.com,***-***-3186,1084.56,3,20,2022-06-06,Cancelled,Food,O***,Credit Card,MASKED_c86ee0d9
+ORD-10713,CUST-8008,io***@outlook.com,***-***-7993,MISSING,2,5,2024-03-05,Delivered,Electronics,S***,Cash,MASKED_3e8d115e
+ORD-10714,CUST-5437,xb***@yahoo.com,***-***-9850,-104.89,4,10,2023-04-15,Pending,Toys,R***,Credit Card,MASKED_76423d83
+ORD-10715,CUST-8803,  ***@outlook.com  ,***-***-6261,1332.4,2,10,2023-02-28,Pending,Food,T***,Cash,MASKED_c86ee0d9
+ORD-10716,CUST-6623,kq***@hotmail.com,***-***-5616,368.8,10,25,2022-09-18,Cancelled,Sports,D***,Debit Card,MASKED_0f177369
+ORD-10717,CUST-7814,lu***@company.io,***-***-2211,2236.12,4,15,2023-03-16,Pending,Home & Garden,R***,PayPal,MASKED_7516fd43
+ORD-10718,CUST-5092,dc***@company.io,***-***-3679,4200.07,7,0,2023-01-05,Shipped,Home & Garden,L***,Debit Card,MASKED_76423d83
+ORD-10719,CUST-8255,ji***@outlook.com,***-***-9496,1195.35,5,15,2023-06-05,Cancelled,Beauty,F***,PayPal,MASKED_7516fd43
+ORD-10720,CUST-6186,ae***@yahoo.com,***-***-8411,528.68,4,15,2023-05-01,Shipped,Sports,D***,Debit Card,MASKED_3e8d115e
+ORD-10721,CUST-3484,  ***@outlook.com  ,***-***-7590,1250.2,7,5,2023-03-23,Processing,Books,B***,Debit Card,MASKED_6cc98ba2
+ORD-10722,CUST-3572,***@***.***,***-***-3487,2259.92,4,0,2024-04-28,Processing,Books,F***,PayPal,MASKED_11aedd0e
+ORD-10723,CUST-6067,  ***@yahoo.com  ,***-***-1697,463.5,9,15,08/08/2023,Cancelled,Clothing,S***,Bank Transfer,MASKED_0f177369
+ORD-10724,CUST-3953,vn***@company.io,***-***-8145,961.88,4,5,2022-07-03,Pending,Food,O***,Debit Card,MASKED_7516fd43
+ORD-10725,CUST-8315,be***@hotmail.com,***-***-5549,727302.37,2,20,2023-12-09,Cancelled,Sports,Y***,Debit Card,MASKED_19d3326f
+ORD-10726,CUST-9912,ta***@yahoo.com,***-***-6271,2453.85,9,25,2022-02-17,Shipped,Home & Garden,L***,PayPal,MASKED_3a52f3c2
+ORD-10727,CUST-4388,sy***@company.io,***-***-4339,2027.55,3,5,2024-04-14,Delivered,Home & Garden,R***,Credit Card,MASKED_19d3326f
+ORD-10728,CUST-9287,***@***.***,***-***-3496,513.08,4,0,2023-11-21,Cancelled,Toys,R***,Debit Card,MASKED_3e8d115e
+ORD-10729,CUST-7065,ts***@yahoo.com,***-***-9818,340.88,1,20,2022-04-13,Refunded,Books,T***,Debit Card,MASKED_76423d83
+ORD-10730,CUST-7174,py***@enterprise.net,***-***-7299,1688.07,3,5,2023-09-19,Shipped,Books,C***,Credit Card,MASKED_c86ee0d9
+ORD-10731,CUST-7750,fq***@company.io,***-***-8174,1839.12,3,20,2023-09-26,Delivered,Toys,P***,Credit Card,MASKED_19d3326f
+ORD-10732,CUST-8509,ul***@enterprise.net,***-***-7531,1582.48,8,25,2023-08-19,Cancelled,Electronics,S***,Credit Card,MASKED_6cc98ba2
+ORD-10733,CUST-5749,ng***@company.io,***-***-9918,320.38,1,5,2022-10-05,Cancelled,Sports,R***,PayPal,MASKED_19d3326f
+ORD-10734,CUST-8761,aw***@enterprise.net,***-***-6695,4780.3,10,15,2024-06-05,Processing,Clothing,T***,Debit Card,MASKED_0f177369
+ORD-10735,CUST-4138,bf***@company.io,***-***-5820,TBD,9,15,2023-04-05,Cancelled,Toys,L***,Cash,MASKED_0f177369
+ORD-10736,CUST-5446,ne***@outlook.com,***-***-1708,-314.91,2,15,2023-05-11,Shipped,Electronics,H***,Bank Transfer,MASKED_19d3326f
+ORD-10737,CUST-1129,ey***@yahoo.com,***-***-5831,312.84,3,15,2023-03-16,Pending,Beauty,P***,Bank Transfer,MASKED_11aedd0e
+ORD-10738,CUST-4574,hh***@yahoo.com,***-***-1923,3505.68,6,0,2024-01-29,Processing,Food,V***,Debit Card,MASKED_c86ee0d9
+ORD-10739,CUST-6677,yu***@outlook.com,***-***-6263,5278.95,9,20,2026-06-01,Processing,Clothing,J***,Cash,MASKED_11aedd0e
+ORD-10740,CUST-5411,dw***@yahoo.com,***-***-4519,2928.16,8,10,2024-03-01,Processing,Books,T***,Bank Transfer,MASKED_19d3326f
+ORD-10741,CUST-9681,vv***@hotmail.com,***-***-2124,640.84,4,25,2022-07-25,Processing,Sports,T***,Cash,MASKED_c86ee0d9
+ORD-10742,CUST-3002,nn***@enterprise.net,***-***-6352,508.4,2,25,2022-08-06,Shipped,Beauty,L***,Bank Transfer,MASKED_19d3326f
+ORD-10743,CUST-7512,nw***@gmail.com,***-***-4439,5229.98,7,15,2022-05-20,Cancelled,Electronics,S***,Cash,MASKED_11aedd0e
+ORD-10744,CUST-6576,gx***@gmail.com,***-***-9852,6526.89,9,20,2023-02-24,Refunded,Beauty,F***,PayPal,MASKED_11aedd0e
+ORD-10745,CUST-9518,  ***@outlook.com  ,***-***-1841,2820.8,10,5,2022-05-27,Pending,Books,B***,Cash,MASKED_0f177369
+ORD-10746,CUST-2620,ho***@yahoo.com,***-***-3619,3703.65,5,20,2023-02-05,Cancelled,Clothing,T***,Credit Card,MASKED_c86ee0d9
+ORD-10747,CUST-6514 ,fn***@gmail.com,***-***-3734,615.87,9,0,2023-04-01,Delivered,Home & Garden,C***,Credit Card,MASKED_3e8d115e
+ORD-10748,CUST-1194,ol***@enterprise.net,***-***-3073,6153.12,8,25,2023-02-09,Pending,Toys,L***,Credit Card,MASKED_24d22e03
+ORD-10749,CUST-3015,cg***@outlook.com,***-***-3222,1370.38,2,10,2022-08-06,Refunded,Home & Garden,R***,Debit Card,MASKED_6cc98ba2
+ORD-10750,CUST-1116,yu***@outlook.com,***-***-8048,529.8,10,0,2023-01-11,Refunded,Clothing,J***,Bank Transfer,MASKED_3a52f3c2
+ORD-10751,CUST-9324,wv***@hotmail.com,***-***-8486,529.72,7,0,2024-05-25,Processing,Clothing,S***,Cash,MASKED_6cc98ba2
+ORD-10752,CUST-5351,ax***@outlook.com,***-***-4095,1653.15,5,25,2023-07-28,Cancelled,Beauty,M***,Debit Card,MASKED_0f177369
+ORD-10753,CUST-7746,gm***@gmail.com,***-***-7588,-187.78,4,10,2023-12-13,Refunded,Home & Garden,C***,Credit Card,MASKED_24d22e03
+ORD-10754,CUST-8433,nt***@hotmail.com,***-***-5356,2594.52,6,5,2022-01-22,Refunded,Books,B***,Cash,MASKED_19d3326f
+ORD-10755,CUST-4367,tv***@hotmail.com,***-***-6884,816.54,2,20,2022-08-16,Refunded,Clothing,J***,Debit Card,MASKED_6cc98ba2
+ORD-10756,CUST-3733,lv***@outlook.com,***-***-123,846.6,3,5,2022-03-29,Cancelled,Sports,Y***,PayPal,MASKED_0f177369
+ORD-10757,CUST-6071,at***@enterprise.net,***-***-5539,3887.6,10,20,2023-04-22,Pending,Food,T***,Cash,MASKED_0f177369
+ORD-10758,CUST-2767,zw***@company.io,***-***-4152,1014.84,3,10,2023-01-27,Cancelled,Books,B***,Credit Card,MASKED_6cc98ba2
+ORD-10759,CUST-7784,md***@yahoo.com,***-***-6904,1263.12,4,5,2026-02-10,Cancelled,Home & Garden,C***,Credit Card,MASKED_7516fd43
+ORD-10760,CUST-3812,mi***@gmail.com,***-***-9856,525.21,1,15,2025-09-07,PENDING,Toys,R***,Bank Transfer,MASKED_76423d83
+ORD-10761,CUST-6019,dd***@hotmail.com,***-***-4695,366.56,1,10,2022-10-28,Processing,Beauty,L***,PayPal,MASKED_c86ee0d9
+ORD-10762,CUST-6785,ai***@gmail.com,***-***-8705,1018.29,3,15,2025-07-24,Refunded,Clothing,D***,Cash,MASKED_11aedd0e
+ORD-10763,CUST-8042,hi***@hotmail.com,***-***-5678,281.46,2,25,2023-09-14,Cancelled,Electronics,T***,PayPal,MASKED_0f177369
+ORD-10764,CUST-2794,rd***@gmail.com,***-***-3140,1562.98,2,0,2023-03-24,Shipped,Beauty,M***,Credit Card,MASKED_6cc98ba2
+ORD-10765,CUST-1159,ps***@gmail.com,***-***-9055,1078.42,7,25,2024-01-31,Processing,Home & Garden,S***,PayPal,MASKED_3e8d115e
+ORD-10766,CUST-2474,ta***@outlook.com,***-***-1043,4135.77,9,0,2023-08-17,Pending,Electronics,T***,Cash,MASKED_c86ee0d9
+ORD-10767,CUST-9972,rf***@hotmail.com,***-***-5013,1509.06,2,0,2022-02-21,Pending,Home & Garden,C***,Cash,MASKED_19d3326f
+ORD-10768,CUST-7051,gd***@outlook.com,***-***-3318,4464.6,10,20,2024-04-04,Shipped,Sports,D***,Credit Card,MASKED_3a52f3c2
+ORD-10769,CUST-3429,bf***@gmail.com,***-***-3260,2438.73,7,10,2024-06-21,Refunded,Sports,Y***,Debit Card,MASKED_19d3326f
+ORD-10770,CUST-6873,dd***@yahoo.com,***-***-3617,2531.16,4,5,2022-12-19,Delivered,Clothing,T***,Credit Card,MASKED_11aedd0e
+ORD-10771,CUST-1293,qz***@enterprise.net,***-***-1519,1680.18,6,0,2023-04-21,Cancelled,Clothing,J***,Debit Card,MASKED_7516fd43
+ORD-10772,CUST-7131,kb***@hotmail.com,***-***-8130,3787.35,5,10,2022-08-18,in-transit,Sports,R***,PayPal,MASKED_6cc98ba2
+ORD-10773,CUST-6064,rx***@yahoo.com,***-***-6729,3085.64,4,20,2023-03-08,Pending,Electronics,T***,Bank Transfer,MASKED_19d3326f
+ORD-10774,CUST-7556,  ***@outlook.com  ,***-***-8240,5237.96,7,15,2024-05-22,Cancelled,Books,B***,Cash,MASKED_11aedd0e
+ORD-10775,CUST-6131,mc***@yahoo.com,***-***-6033,314.46,3,25,2023-03-06,Refunded,Sports,B***,Cash,MASKED_c86ee0d9
+ORD-10776,CUST-2440,cu***@gmail.com,***-***-9078,2580.2,5,5,2023-07-14,Cancelled,Clothing,T***,Cash,MASKED_c86ee0d9
+ORD-10777,CUST-7638,ar***@outlook.com,***-***-6690,3022.53,7,0,2024-04-16,Pending,Food,C***,Debit Card,MASKED_76423d83
+ORD-10778,CUST-4927,ir***@yahoo.com,***-***-9277,58.31,7,15,2025-08-14,Pending,Books,S***,Debit Card,MASKED_7516fd43
+ORD-10779,CUST-8779,po***@yahoo.com,***-***-9132,3677.95,5,25,2022-04-12,Cancelled,Home & Garden,R***,Cash,MASKED_6cc98ba2
+ORD-10780,CUST-8645,xt***@outlook.com,***-***-2973,3385.45,5,0,2022-07-30,Delivered,Electronics,H***,Debit Card,MASKED_3e8d115e
+ORD-10781,CUST-1450,ax***@enterprise.net,***-***-8700,623.7,7,5,2022-05-13,Processing,Books,C***,Cash,MASKED_6cc98ba2
+ORD-10782,CUST-6765,us***@.comjcx,***-***-3780,2666.16,9,25,2022-09-21,Refunded,Sports,R***,Debit Card,MASKED_c86ee0d9
+ORD-10783,CUST-2939,ze***@company.io,***-***-3327,346.2,6,0,2022-11-26,Pending,Home & Garden,S***,Bank Transfer,MASKED_11aedd0e
+ORD-10784,CUST-9877,***@***.***,***-***-1386,1138.8,10,0,2022-11-05,Pending,Books,B***,Cash,MASKED_76423d83
+ORD-10785,CUST-1051,wb***@gmail.com,***-***-5524,694.08,9,15,2023-03-07,Shipped,Electronics,S***,Bank Transfer,MASKED_19d3326f
+ORD-10786,CUST-3195,ig***@company.io,***-***-9155,3880.26,6,20,2022-04-11,Shipped,Beauty,P***,PayPal,MASKED_c86ee0d9
+ORD-10787,CUST-1600,tv***@gmail.com,***-***-1447,3020.08,8,15,2022-07-28,Pending,Beauty,F***,Bank Transfer,MASKED_76423d83
+ORD-10788,CUST-2194,ut***@company.io,***-***-8520,1925.76,8,25,292125,Delivered,Toys,L***,Debit Card,MASKED_24d22e03
+ORD-10789,CUST-2107,gt***@yahoo.com,***-***-9986,477.32,4,15,2023-05-03,in-transit,Books,S***,PayPal,MASKED_24d22e03
+ORD-10790,CUST-5255,  ***@outlook.com  ,***-***-9598,3738.3,6,20,2024-03-01,Processing,Books,B***,Debit Card,MASKED_24d22e03
+ORD-10791,CUST-8591,yi***@enterprise.net,***-***-5172,3221.2,8,5,2023-03-23,Pending,Beauty,F***,Credit Card,MASKED_3a52f3c2
+ORD-10792,CUST-2977,vm***@gmail.com,***-***-1937,2748.88,8,10,2022-06-11,Cancelled,Sports,T***,PayPal,MASKED_76423d83
+ORD-10793,CUST-1227,vk***@outlook.com,***-***-7512,6368.0,10,10,2023-05-23,Pending,Sports,Y***,Bank Transfer,MASKED_19d3326f
+ORD-10794,CUST-1539,lw***@company.io,***-***-4026,3298.62,6,15,2024-05-05,Delivered,Electronics,S***,PayPal,MASKED_11aedd0e
+ORD-10795,CUST-3560,fc***@company.io,***-***-6325,1270.74,6,0,2023-12-17,Cancelled,Beauty,L***,Cash,MASKED_3a52f3c2
+ORD-10796,CUST-6425,sz***@hotmail.com,***-***-5976,2553.53,7,10,2022-07-30,Cancelled,Books,B***,PayPal,MASKED_24d22e03
+ORD-10797,CUST-9939,la***@enterprise.net,***-***-3814,139.87,1,20,2022-02-17,Processing,Toys,A***,Credit Card,MASKED_3e8d115e
+ORD-10798,CUST-2101,qh***@yahoo.com,***-***-6429,598.56,3,10,2024-05-23,Pending,Sports,Y***,Cash,MASKED_3a52f3c2
+ORD-10799,CUST-3674,is***@hotmail.com,***-***-2345,1273.28,4,0,2022-12-22,Cancelled,Toys,R***,Debit Card,MASKED_76423d83
+ORD-10800,CUST-8882,tc***@outlook.com,***-***-5552,1137.36,7,5,2022-03-09,Pending,Books,B***,Debit Card,MASKED_24d22e03
+ORD-10801,CUST-4803,ox***@hotmail.com,***-***-5490,775.78,2,15,2022-11-23,Processing,Sports,T***,Bank Transfer,MASKED_11aedd0e
+ORD-10802,CUST-9733,xd***@outlook.com,***-***-2000,1588.74,3,5,2022-06-20,Refunded,Beauty,M***,Credit Card,MASKED_3e8d115e
+ORD-10803,CUST-8552,ji***@yahoo.com,***-***-3078,5874.16,8,10,2023-12-11,Refunded,Home & Garden,P***,Debit Card,MASKED_c86ee0d9
+ORD-10804,CUST-8045,os***@gmail.com,***-***-1936,2429.04,4,5,2022-12-15,Delivered,Clothing,S***,PayPal,MASKED_6cc98ba2
+ORD-10805,CUST-9321,wi***@hotmail.com,***-***-3757,57.9,3,10,2022-11-09,Processing,Sports,R***,PayPal,MASKED_76423d83
+ORD-10806,CUST-7736,oe***@company.io,***-***-3953,1802.7,5,25,2022-01-14,Pending,Beauty,L***,Debit Card,MASKED_3a52f3c2
+ORD-10807,CUST-1862,ho***@outlook.com,***-***-4032,3979.68,6,0,2023-05-04,Shipped,Sports,Y***,Credit Card,MASKED_3a52f3c2
+ORD-10808,CUST-1094,tc***@gmail.com,***-***-9665,1816.4,10,5,2023-04-18,Delivered,Clothing,T***,PayPal,MASKED_6cc98ba2
+ORD-10809,CUST-7941,cr***@hotmail.com,***-***-3402,491.73,3,5,2023-11-21,Pending,Sports,D***,Debit Card,MASKED_6cc98ba2
+ORD-10810,CUST-8600,qu***@enterprise.net,***-***-6931,1482.04,4,15,2023-03-07,Pending,Clothing,D***,Debit Card,MASKED_11aedd0e
+ORD-10811,CUST-4093,qb***@outlook.com,***-***-1674,4943.2,10,5,2022-10-21,Cancelled,Sports,D***,Bank Transfer,MASKED_11aedd0e
+ORD-10812,CUST-3241,cm***@company.io,***-***-5601,1223.64,4,25,2025-10-07,Processing,Sports,D***,Cash,MASKED_6cc98ba2
+ORD-10813,CUST-1532,qz***@yahoo.com,***-***-2272,4847.1,10,10,2023-11-20,Delivered,Sports,Y***,PayPal,MASKED_0f177369
+ORD-10814,CUST-5200,hl***@hotmail.com,***-***-one),4220.28,6,5,2025-07-16,Cancelled,Beauty,M***,PayPal,MASKED_11aedd0e
+ORD-10815,CUST-5752,  ***@outlook.com  ,***-***-8018,2800.08,9,0,2022-12-12,Pending,Clothing,J***,Debit Card,MASKED_0f177369
+ORD-10816,CUST-5607,pg***@company.io,***-***-9386,5835.36,8,15,2023-06-05,Refunded,Sports,T***,Bank Transfer,MASKED_3e8d115e
+ORD-10817,CUST-6159,tr***@outlook.com,***-***-5959,168.98,7,101,2022-05-22,Processing,Home & Garden,S***,Bank Transfer,MASKED_7516fd43
+ORD-10818,CUST-3905,ks***@company.io,***-***-9790,382.28,1,5,2023-05-18,Pending,Sports,T***,Debit Card,MASKED_6cc98ba2
+ORD-10819,CUST-4840,ug***@enterprise.net,***-***-6354,4960.26,9,10,2023-12-05,Refunded,Toys,R***,Credit Card,MASKED_76423d83
+ORD-10820,CUST-5553,up***@yahoo.com,***-***-3403,6573.69,9,25,2023-11-26,in-transit,Sports,Y***,Bank Transfer,MASKED_19d3326f
+ORD-10821,CUST-5138,mw***@company.io,***-***-3325,86.85,1,25,2023-06-08,Pending,Clothing,J***,Credit Card,MASKED_3a52f3c2
+ORD-10822,CUST-3461,cb***@yahoo.com,***-***-3848,1053.36,8,25,2024-06-10,Shipped,Food,P***,Cash,MASKED_3e8d115e
+ORD-10823,CUST-7305,ln***@yahoo.com,***-***-7421,7082.2,10,5,2022-01-16,Cancelled,Electronics,L***,Cash,MASKED_c86ee0d9
+ORD-10824,CUST-6472,ql***@enterprise.net,***-***-2330,1545.99,3,5,2022-01-12,Refunded,Electronics,H***,Debit Card,MASKED_11aedd0e
+ORD-10825,CUST-7172,fp***@hotmail.com,***-***-5811,203.69,1,5,2023-01-20,Shipped,Books,S***,PayPal,MASKED_7516fd43
+ORD-10826,CUST-2947,ft***@enterprise.net,***-***-9165,3957.21,one,5,2023-06-15,Shipped,Toys,B***,Bank Transfer,MASKED_6cc98ba2
+ORD-10827,CUST-1827,yg***@yahoo.com,***-***-7339,336.72,3,5,2022-06-19,Delivered,Books,C***,Cash,MASKED_c86ee0d9
+ORD-10828,CUST-6252,kb***@company.io,***-***--NOW,1819.08,9,20,2023-06-12,Delivered,Electronics,T***,Bank Transfer,MASKED_24d22e03
+ORD-10829,CUST-3065,xl***@gmail.com,***-***-2089,722.9,10,10,2022-11-01,Pending,Books,B***,Bank Transfer,MASKED_c86ee0d9
+ORD-10830,CUST-1543,tr***@company.io,***-***-6361,3408.39,9,25,2023-01-28,Shipped,Clothing,J***,Debit Card,MASKED_11aedd0e
+ORD-10831,CUST-5276,qs***@company.io,***-***-9932,999.6,2,0,2023-10-27,Shipped,Electronics,T***,Cash,MASKED_c86ee0d9
+ORD-10832,CUST-1110,mj***@yahoo.com,***-***-5220,3402.05,5,0,2023-12-29,Processing,Electronics,H***,Debit Card,MASKED_76423d83
+ORD-10833,CUST-3938,ri***@yahoo.com,***-***-2162,6106.3,10,20,2022-07-23,Cancelled,Home & Garden,R***,Debit Card,MASKED_3a52f3c2
+ORD-10834,CUST-9757,et***@yahoo.com,***-***-6164,4808.64,8,0,2024-06-25,Pending,Food,V***,Bank Transfer,MASKED_3e8d115e
+ORD-10835,CUST-5190,bm***@company.io,***-***-6800,1106.77,7,20,2022-01-02,Shipped,Clothing,J***,Cash,MASKED_76423d83
+ORD-10836,CUST-6225,xl***@gmail.com,***-***-1301,574.88,1,5,2023-09-11,processing,Clothing,S***,Debit Card,MASKED_c86ee0d9
+ORD-10837,CUST-6536,af***@hotmail.com,***-***-8165,1825.25,7,25,2023-09-07,Processing,Clothing,J***,Debit Card,MASKED_3e8d115e
+ORD-10838,CUST-9283,fy***@company.io,***-***-1697,2747.29,7,20,2022-06-22,Pending,Beauty,M***,Cash,MASKED_24d22e03
+ORD-10839,CUST-3670,vv***@yahoo.com,***-***-2954,381.6,9,0,2023-09-01,Refunded,Clothing,D***,Credit Card,MASKED_11aedd0e
+ORD-10840,CUST-4222,di***@hotmail.com,***-***-5739,2205.69,3,15,2024-02-03,Pending,Food,T***,Cash,MASKED_3e8d115e
+ORD-10841,CUST-8346,***@***.***,***-***-7574,2349.0,6,0,2022-12-05,Pending,Home & Garden,R***,Debit Card,MASKED_7516fd43
+ORD-10842,CUST-4887,gv***@gmail.com,***-***-3216,155.01,3,0,2023-09-15,Shipped,Beauty,P***,Debit Card,MASKED_3a52f3c2
+ORD-10843,CUST-6270,os***@outlook.com,***-***-3245,5983.04,8,0,2022-11-23,Shipped,Food,T***,Cash,MASKED_11aedd0e
+ORD-10844,CUST-3750,fc***@enterprise.net,***-***-3020,MISSING,7,15,2023-09-24,Delivered,Sports,Y***,PayPal,MASKED_6cc98ba2
+ORD-10845,CUST-7653,gv***@yahoo.com,***-***-2030,1822.29,3,10,2023-06-01,Shipped,Beauty,M***,Credit Card,MASKED_3e8d115e
+ORD-10846,CUST-4427,bf***@company.io,***-***-8247,1226.35,5,20,2022-09-29,Pending,Home & Garden,R***,PayPal,MASKED_3e8d115e
+ORD-10847,CUST-5920,ri***@hotmail.com,***-***-8039,2454.27,7,10,2023-02-02,Pending,Home & Garden,C***,Debit Card,MASKED_3a52f3c2
+ORD-10848,CUST-1097,mq***@gmail.com,***-***-3686,996.35,5,0,519687,7,Toys,P***,Bank Transfer,MASKED_3a52f3c2
+ORD-10849,CUST-8539,wd***@company.io,***-***-4061,5236.98,7,10,2022-06-19,Delivered,Home & Garden,R***,Debit Card,MASKED_24d22e03
+ORD-10850,CUST-3870,sw***@outlook.com,***-***-4480,744.88,4,10,2023-05-22,Refunded,Books,F***,Cash,MASKED_24d22e03
+ORD-10851,CUST-1061,ar***@hotmail.com,***-***-4497,415.32,4,25,2022-06-08,Processing,Books,B***,Debit Card,MASKED_c86ee0d9
+ORD-10852,CUST-1566,mf***@company.io,***-***-9248,1223.48,4,10,2022-05-19,  Pending  ,Food,P***,Credit Card,MASKED_7516fd43
+ORD-10853,CUST-1225,sd***@yahoo.com,***-***-4127,4656.19,7,20,2023-11-10,Shipped,Food,V***,PayPal,MASKED_6cc98ba2
+ORD-10854,CUST-2267,og***@company.io,***-***-8000,5111.19,9,0,2023-08-27,Refunded,Clothing,S***,PayPal,MASKED_3e8d115e
+ORD-10855,CUST-9979,pu***@enterprise.net,***-***-2222,255.51,7,25,2024-06-06,Pending,Electronics,H***,Cash,MASKED_11aedd0e
+ORD-10856,CUST-8554,ga***@company.io,***-***-2052,828.3,3,20,2024-03-03,Cancelled,Toys,R***,UNKNOWN,MASKED_c86ee0d9
+ORD-10857,CUST-5440,no***@gmail.com,***-***-6317,4815.7,10,20,2023-03-15,Refunded,Home & Garden,R***,Cash,MASKED_11aedd0e
+ORD-10858,CUST-1121,wo***@hotmail.com,***-***-6220,2265.34,7,25,2023-04-06,Refunded,Beauty,F***,Bank Transfer,MASKED_11aedd0e
+ORD-10859,CUST-7798,rn***@yahoo.com,***-***-1941,2515.26,6,10,2022-03-15,Delivered,Toys,P***,PayPal,MASKED_11aedd0e
+ORD-10860,CUST-4823,ex***@hotmail.com,***-***-2040,129.57,7,15,2022-01-21,Processing,Toys,P***,Debit Card,MASKED_7516fd43
+ORD-10861,CUST-8098,ef***@gmail.com,***-***-8942,469.19,1,20,2024-06-17,Delivered,Sports,D***,PayPal,MASKED_3e8d115e
+ORD-10862,CUST-1308 ,gf***@company.io,***-***-9986,1842.24,4,0,2022-05-24,Refunded,Books,B***,Credit Card,MASKED_c86ee0d9
+ORD-10863,CUST-8209,dw***@hotmail.com,***-***-9725,185.75,1,15,2025-07-20,Shipped,Sports,T***,PayPal,MASKED_76423d83
+ORD-10864,CUST-5529,nl***@company.io,***-***-5009,3910.06,7,25,2024-02-24,Processing,Sports,D***,Bank Transfer,MASKED_7516fd43
+ORD-10865,CUST-9677,jq***@gmail.com,***-***-9202,MISSING,2,5,2022-10-29,Processing,Toys,P***,PayPal,MASKED_3e8d115e
+ORD-10866,CUST-4735,qp***@enterprise.net,***-***-1588,2123.1,3,25,2024-04-12,Delivered,Sports,R***,PayPal,MASKED_19d3326f
+ORD-10867,CUST-1651,ro***@enterprise.net,***-***-9424,3914.37,9,0,2022-12-28,Cancelled,Food,C***,PayPal,MASKED_0f177369
+ORD-10868,CUST-3472,pj***@company.io,***-***-2782,2575.04,8,5,2022-04-28,Refunded,Electronics,S***,Credit Card,MASKED_3e8d115e
+ORD-10869,CUST-7582,wo***@enterprise.net,***-***-1600,84.8,8,101,2022-02-18,Delivered,Clothing,S***,Debit Card,MASKED_3a52f3c2
+ORD-10870,CUST-7779,pd***@enterprise.net,***-***-6543,2225.34,6,10,2023-12-09,Delivered,Food,C***,Bank Transfer,MASKED_0f177369
+ORD-10871,CUST-1536,tv***@yahoo.com,***-***-9598,2128.68,6,15,2023-09-25,Cancelled,Home & Garden,L***,Cash,MASKED_11aedd0e
+ORD-10872,CUST-4251,bj***@company.io,***-***-6313,4088.46,6,25,2024-02-08,Delivered,Sports,T***,Cash,MASKED_76423d83
+ORD-10873,CUST-8000,qw***@gmail.com,***-***-4570,4073.16,7,5,2023-09-20,Shipped,Electronics,T***,Debit Card,MASKED_0f177369
+ORD-10874,CUST-4414,jy***@gmail.com,***-***-2453,5387.06,7,10,2023-07-27,Shipped,Home & Garden,P***,Debit Card,MASKED_3a52f3c2
+ORD-10875,CUST-7369,hj***@enterprise.net,***-***-6844,4549.36,8,20,2022-10-18,Refunded,Home & Garden,S***,Bank Transfer,MASKED_11aedd0e
+ORD-10876,CUST-1959,  ***@outlook.com  ,***-***-4332,951923.21,8,25,2023-05-14,Delivered,Clothing,J***,Credit Card,MASKED_c86ee0d9
+ORD-10877,CUST-3017,kr***@enterprise.net,***-***-7780,2552.69,7,15,2022-03-21,Pending,Books,S***,PayPal,MASKED_6cc98ba2
+ORD-10878,CUST-1264,ey***@hotmail.com,***-***-2182,2751.98,7,10,2022-06-03,Refunded,Home & Garden,P***,PayPal,MASKED_6cc98ba2
+ORD-10879,CUST-3101,hq***@yahoo.com,***-***-6844,1576.96,4,25,2023-10-21,Delivered,Clothing,S***,PayPal,MASKED_3e8d115e
+ORD-10880,CUST-4412,ml***@outlook.com,***-***-7542,1667.4,6,15,2022-05-25,Processing,Books,C***,Cash,MASKED_3a52f3c2
+ORD-10881,CUST-6190,mg***@gmail.com,***-***-1132,3744.54,9,10,2022-01-15,Cancelled,Electronics,H***,PayPal,MASKED_3a52f3c2
+ORD-10882,CUST-6317,ql***@gmail.com,***-***-8096,MISSING,4,15,2023-07-02,Delivered,Food,O***,Credit Card,MASKED_7516fd43
+ORD-10883,CUST-2181,cl***@outlook.com,***-***-4214,797.16,4,0,2023-02-18,Pending,Food,C***,Debit Card,MASKED_3a52f3c2
+ORD-10884,CUST-2235,yl***@outlook.com,***-***-3321,86.96,1,0,2022-04-08,Delivered,Electronics,T***,Debit Card,MASKED_3a52f3c2
+ORD-10885,CUST-2865,dd***@yahoo.com,***-***-6025,681.02,1,5,2022-08-17,delivered,Books,F***,Debit Card,MASKED_3a52f3c2
+ORD-10886,CUST-5881,ej***@hotmail.com,***-***-1081,1695.61,7,5,2022-09-28,Cancelled,Books,C***,Bank Transfer,MASKED_6cc98ba2
+ORD-10887,CUST-2509,eb***@enterprise.net,***-***-7623,1152.76,4,-20,2024-04-13,Shipped,Home & Garden,C***,Credit Card,MASKED_11aedd0e
+ORD-10888,CUST-3609,yj***@hotmail.com,***-***-7452,5598.9,10,15,2024-01-07,Shipped,Food,O***,PayPal,MASKED_3a52f3c2
+ORD-10889,CUST-2691,tw***@hotmail.com,***-***-8498,1248.3,10,25,2023-12-16,Delivered,BEAUTY,L***,Cash,MASKED_3a52f3c2
+ORD-10890,CUST-2264,fr***@gmail.com,***-***-4679,5678.37,9,25,2023-05-28,Pending,Toys,L***,Bank Transfer,MASKED_19d3326f
+ORD-10891,CUST-1312,cg***@yahoo.com,***-***-5507,6511.95,9,20,2022-08-01,Pending,Home & Garden,L***,Credit Card,MASKED_11aedd0e
+ORD-10892,CUST-4360,ph***@company.io,***-***-3272,3610.62,6,25,2023-08-23,Cancelled,Beauty,P***,Credit Card,MASKED_3a52f3c2
+ORD-10893,CUST-2718,gw***@gmail.com,***-***-1451,932.0,10,0,2023-02-15,Refunded,Beauty,L***,Cash,MASKED_24d22e03
+ORD-10894,CUST-2017 ,  ***@outlook.com  ,***-***-4547,377.25,5,0,2022-03-17,Shipped,Sports,T***,Credit Card,MASKED_76423d83
+ORD-10895,CUST-1633,zp***@company.io,***-***-7835,2146.32,3,15,2022-05-02,Delivered,Beauty,F***,Credit Card,MASKED_76423d83
+ORD-10896,CUST-2633,hd***@company.io,***-***-2308,782.2,2,10,2024-03-17,Delivered,Electronics,L***,Credit Card,MASKED_0f177369
+ORD-10897,CUST-9532,wu***@enterprise.net,***-***-2507,2330.01,3,0,2022-05-16,Cancelled,Clothing,D***,PayPal,MASKED_3e8d115e
+ORD-10898,CUST-2821,yb***@hotmail.com,***-***-5690,768627.19,8,5,2022-09-13,Refunded,Books,S***,Credit Card,MASKED_3e8d115e
+ORD-10899,CUST-5149,bg***@outlook.com,***-***-2345,656.36,2,25,2023-05-24,Refunded,Sports,R***,Credit Card,MASKED_7516fd43
+ORD-10900,CUST-2736,hs***@enterprise.net,***-***-6582,29.35,1,15,2023-04-08,Shipped,Books,B***,Debit Card,MASKED_3e8d115e
+ORD-10901,CUST-4645,hd***@hotmail.com,***-***-7897,467.15,5,5,2022-09-24,Pending,Toys,R***,Bank Transfer,MASKED_76423d83
+ORD-10902,CUST-1126,zz***@hotmail.com,***-***-9216,1294.08,3,25,2022-04-24,Pending,Electronics,H***,Debit Card,MASKED_c86ee0d9
+ORD-10903,CUST-5390,oe***@company.io,***-***-7111,72.04,2,0,2023-12-23,Pending,Home & Garden,L***,PayPal,MASKED_7516fd43
+ORD-10904,CUST-1670,iu***@hotmail.com,***-***-1478,3579.52,8,5,2023-07-08,Pending,Toys,L***,Credit Card,MASKED_11aedd0e
+ORD-10905,CUST-3871,hw***@enterprise.net,***-***-4658,1328.19,3,0,2023-01-30,Processing,Clothing,J***,Bank Transfer,MASKED_19d3326f
+ORD-10906,CUST-6643,mp***@outlook.com,***-***-6014,MISSING,6,25,2024-02-26,Pending,Electronics,S***,PayPal,MASKED_c86ee0d9
+ORD-10907,CUST-2359,pl***@outlook.com,***-***-7789,TBD,8,0,2022-08-17,cancelled,Electronics,S***,Credit Card,MASKED_11aedd0e
+ORD-10908,CUST-1149,jq***@outlook.com,***-***-4938,3858.9,6,25,2022-05-25,Shipped,Electronics,S***,Debit Card,MASKED_11aedd0e
+ORD-10909,CUST-1471,hl***@yahoo.com,***-***-7206,3387.25,5,0,2022-06-16,Shipped,Electronics,S***,PayPal,MASKED_0f177369
+ORD-10910,CUST-3290,zf***@hotmail.com,***-***-2485,227.23,1,15,06/30/2022,Pending,Electronics,T***,PayPal,MASKED_c86ee0d9
+ORD-10911,CUST-1081,ac***@yahoo.com,***-***-6815,1718.8,10,0,2022-08-09,Pending,Books,S***,Cash,MASKED_c86ee0d9
+ORD-10912,CUST-1355,***@***.***,***-***-6596,51.22,1,15,2022-04-12,Delivered,Electronics,S***,Debit Card,MASKED_3e8d115e
+ORD-10913,CUST-4839,sb***@hotmail.com,***-***-8679,454.76,4,15,2024-03-11,Cancelled,Beauty,M***,PayPal,MASKED_3e8d115e
+ORD-10914,CUST-8012,lh***@gmail.com,***-***-8715,5428.57,7,25,2024-02-17,Delivered,Beauty,M***,Debit Card,MASKED_7516fd43
+ORD-10915,CUST-8828,cs***@hotmail.com,***-***-5031,192.88,8,5,2026-10-24,Processing,Books,B***,Credit Card,MASKED_19d3326f
+ORD-10916,CUST-5024,ew***@company.io,***-***-3433,5319.92,8,5,2023-12-21,Refunded,Toys,L***,Debit Card,MASKED_c86ee0d9
+ORD-10917,CUST-9581,ir***@gmail.com,***-***-5502,4301.64,6,25,2024-06-10,Pending,Sports,B***,PayPal,MASKED_c86ee0d9
+ORD-10918,CUST-6144,hl***@hotmail.com,***-***-7729,3238.5,6,10,2023-06-26,Delivered,Beauty,F***,PayPal,MASKED_24d22e03
+ORD-10919,CUST-7861,ev***@hotmail.com,***-***-2799,MISSING,10,5,2024-04-18,Refunded,Beauty,M***,Bank Transfer,MASKED_c86ee0d9
+ORD-10920,CUST-7082,se***@yahoo.com,***-***-4209,1762.4,5,10,2023-05-21,CANCELLED,Food,T***,Credit Card,MASKED_11aedd0e
+ORD-10921,CUST-4163,sm***@enterprise.net,***-***-1919,1861.41,3,20,2023-12-17,Refunded,Toys,B***,PayPal,MASKED_76423d83
+ORD-10922,CUST-5397,ks***@hotmail.com,***-***-9898,2135.52,9,5,2022-07-29,Processing,Beauty,S***,Bank Transfer,MASKED_24d22e03
+ORD-10923,CUST-3180,yn***@company.io,***-***-5586,3565.35,5,20,2024-01-03,Pending,Beauty,M***,Debit Card,MASKED_c86ee0d9
+ORD-10924,CUST-1983,jw***@gmail.com,***-***-9348,5163.66,9,20,2023-10-17,Refunded,Sports,Y***,PayPal,MASKED_11aedd0e
+ORD-10925,CUST-6771,hh***@gmail.com,***-***-ghij,1845.85,5,0,2023-02-17,Cancelled,Clothing,J***,Bank Transfer,MASKED_11aedd0e
+ORD-10926,CUST-2684,mv***@gmail.com,***-***-9453,1558.28,4,15,2023-03-16,Cancelled,Food,V***,Credit Card,MASKED_76423d83
+ORD-10927,CUST-5187,lp***@enterprise.net,***-***-6697,1212.24,4,15,2022-12-02,  Cancelled  ,Food,O***,Cash,MASKED_3e8d115e
+ORD-10928,CUST-2090,yz***@outlook.com,***-***-5385,2699.1,6,15,2023-03-15,Cancelled,Home & Garden,R***,Cash,MASKED_3a52f3c2
+ORD-10929,CUST-7078,au***@enterprise.net,***-***-6241,362.16,6,5,2024-06-14,PENDING,Electronics,H***,PayPal,MASKED_6cc98ba2
+ORD-10930,CUST-8784,ao***@hotmail.com,***-***-2899,2281.05,3,0,2024-06-18,Cancelled,Clothing,J***,Debit Card,MASKED_3e8d115e
+ORD-10931,CUST-9009,qx***@enterprise.net,***-***-8920,2708.65,5,25,2023-11-10,Delivered,Books,B***,Voucher,MASKED_24d22e03
+ORD-10932,CUST-5358,rp***@gmail.com,***-***-7007,639.36,4,5,2022-06-15,Shipped,Beauty,L***,Bank Transfer,MASKED_3e8d115e
+ORD-10933,CUST-6386,qy***@enterprise.net,***-***-1718,958.6,10,0,2023-02-11,Refunded,Home & Garden,L***,Bank Transfer,MASKED_7516fd43
+ORD-10934,CUST-7601,ak***@company.io,***-***-5131,461.06,2,15,2022-09-06,Refunded,Electronics,S***,Bank Transfer,MASKED_6cc98ba2
+ORD-10935,CUST-9160,***@***.***,***-***-1645,2372.58,3,0,2023-12-07,Refunded,Sports,D***,Credit Card,MASKED_19d3326f
+ORD-10936,CUST-2876,cr***@enterprise.net,***-***-1934,1196.79,3,25,2023-12-14,Refunded,Beauty,L***,Debit Card,MASKED_3e8d115e
+ORD-10937,CUST-8264,js***@gmail.com,***-***-6074,1916.6,10,20,2022-02-15,6,Beauty,F***,Debit Card,MASKED_3e8d115e
+ORD-10938,CUST-1405,iw***@gmail.com,***-***-8030,1288.08,3,20,2022-03-10,Shipped,Sports,T***,PayPal,MASKED_0f177369
+ORD-10939,CUST-8337,ww***@company.io,***-***-2550,5954.0,8,20,2023-08-22,Pending,Sports,R***,Debit Card,MASKED_6cc98ba2
+ORD-10940,CUST-4869,zt***@company.io,***-***-6857,1321.16,4,0,2022-03-31,Refunded,Home & Garden,R***,Debit Card,MASKED_0f177369
+ORD-10941,CUST-9810,pe***@gmail.com,***-***-4962,6604.56,9,10,2023-08-03,Cancelled,Beauty,M***,Debit Card,MASKED_3e8d115e
+ORD-10942,CUST-7349,mm***@hotmail.com,***-***-4087,735.52,8,20,2022-03-13,Processing,Toys,R***,PayPal,MASKED_6cc98ba2
+ORD-10943,CUST-3964,nl***@hotmail.com,***-***-9049,639.6,3,10,2023-10-17,pEnDiNg,Toys,L***,Debit Card,MASKED_7516fd43
+ORD-10944,CUST-3968,fd***@yahoo.com,***-***-4454,2789.8,10,0,2023-10-12,Cancelled,Books,F***,Bank Transfer,MASKED_c86ee0d9
+ORD-10945,CUST-8693,um***@enterprise.net,***-***-6351,2351.76,8,15,2024-06-24,Refunded,Electronics,L***,PayPal,MASKED_11aedd0e
+ORD-10946,CUST-9789,jk***@hotmail.com,***-***-9423,496923.35,7,5,2023-11-14,Refunded,Beauty,P***,Cash,MASKED_3a52f3c2
+ORD-10947,CUST-9593,tf***@gmail.com,***-***-5763,MISSING,8,5,2022-06-12,Refunded,sports,B***,Cash,MASKED_19d3326f
+ORD-10948,CUST-1522,hw***@yahoo.com,***-***-7568,292.14,1,15,2022-06-19,Refunded,Home & Garden,S***,Credit Card,MASKED_0f177369
+ORD-10949,CUST-1078,ez***@company.io,***-***-7909,3211.38,6,5,2022-12-10,Cancelled,Home & Garden,P***,Credit Card,MASKED_3e8d115e
+ORD-10950,CUST-9052,rq***@outlook.com,***-***-2647,2641.48,4,0,2022-05-26,Processing,Electronics,H***,Cash,MASKED_7516fd43
+ORD-10951,CUST-6606,ke***@outlook.com,***-***-8067,1692.66,6,0,2024-03-28,Cancelled,Sports,Y***,Cash,MASKED_3a52f3c2
+ORD-10952,CUST-2763,cr***@hotmail.com,***-***-8246,1226.0,8,10,2023-01-30,Pending,Toys,A***,Credit Card,MASKED_3e8d115e
+ORD-10953,CUST-8242,us***@gmail.commdw,***-***-1970,7026.21,9,15,2023-08-08,Processing,Food,C***,Cash,MASKED_6cc98ba2
+ORD-10954,CUST-9844,ug***@yahoo.com,***-***-7861,3469.68,6,15,2022-08-22,Refunded,Home & Garden,S***,Debit Card,MASKED_3a52f3c2
+ORD-10955,CUST-7000,vn***@enterprise.net,***-***-3878,MISSING,4,25,2022-09-01,Pending,Sports,D***,PayPal,MASKED_c86ee0d9
+ORD-10956,CUST-5075,tl***@company.io,***-***-2385,2077.12,4,0,2023-12-04,Refunded,Food,O***,Cash,MASKED_0f177369
+ORD-10957,CUST-9343,rc***@hotmail.com,***-***-2366,2746.0,4,25,2022-02-24,Refunded,Food,T***,Bank Transfer,MASKED_3a52f3c2
+ORD-10958,CUST-8242,co***@outlook.com,***-***-2326,3139.36,8,10,2024-06-03,Processing,Books,F***,PayPal,MASKED_11aedd0e
+ORD-10959,CUST-3786,az***@outlook.com,***-***-8415,4230.0,6,15,2022-02-18,Processing,Toys,L***,PayPal,MASKED_7516fd43
+ORD-10960,CUST-8313,kr***@gmail.com,***-***-6137,4803.3,9,0,2022-09-07,Processing,Home & Garden,P***,Bank Transfer,MASKED_7516fd43
+ORD-10961,CUST-4892,id***@company.io,***-***-2408,4715.69,7,25,2023-12-20,Delivered,Clothing,J***,Bank Transfer,MASKED_24d22e03
+ORD-10962,CUST-8105,tp***@outlook.com,***-***-1451,368.12,1,25,2023-11-19,PROCESSING,Electronics,S***,PayPal,MASKED_76423d83
+ORD-10963,CUST-8743,ln***@company.io,***-***-6544,2034.9,6,15,2024-04-22,6,Books,C***,Debit Card,MASKED_0f177369
+ORD-10964,CUST-8219,cl***@yahoo.com,***-***-6954,5175.17,7,15,2022-08-01,Delivered,Beauty,M***,Debit Card,MASKED_19d3326f
+ORD-10965,CUST-4578,vb***@outlook.com,***-***-2173,1174.67,7,15,2023-03-03,Pending,Food,P***,Debit Card,MASKED_76423d83
+ORD-10966,CUST-7348,hf***@company.io,***-***-4546,MISSING,7,15,2023-07-19,Cancelled,Toys,A***,Credit Card,MASKED_7516fd43
+ORD-10967,CUST-1944,fr***@outlook.com,***-***-5590,1165.89,3,0,2022-02-14,Shipped,Sports,Y***,Bank Transfer,MASKED_c86ee0d9
+ORD-10968,CUST-7561,oe***@gmail.com,***-***-8343,6192.8,10,20,2023-09-20,Refunded,Clothing,S***,PayPal,MASKED_24d22e03
+ORD-10969,CUST-2671,pl***@hotmail.com,***-***-4461,4479.75,9,25,2024-03-31,Refunded,Food,P***,Bank Transfer,MASKED_3a52f3c2
+ORD-10970,CUST-1877,fc***@company.io,***-***-1775,1691.28,4,0,2024-02-21,Processing,Clothing,T***,Bank Transfer,MASKED_76423d83
+ORD-10971,CUST-1600,ju***@gmail.com,***-***-1922,1307.22,6,5,2023-05-03,Refunded,Beauty,L***,Cash,MASKED_3e8d115e
+ORD-10972,CUST-4568,***@***.***,***-***-6278,3996.8,5,10,2022-04-19,Delivered,Sports,R***,Credit Card,MASKED_24d22e03
+ORD-10973,CUST-9880,ow***@yahoo.com,***-***-5278,101.6,1,10,2022-09-22,Pending,Books,S***,Cash,MASKED_11aedd0e
+ORD-10974,CUST-9820,ck***@yahoo.com,***-***-1526,1465.4,5,20,2024-02-07,Cancelled,Toys,R***,Debit Card,MASKED_76423d83
+ORD-10975,CUST-8835,qx***@yahoo.com,***-***-4708,2554.93,7,25,2022-10-28,Pending,Food,O***,PayPal,MASKED_c86ee0d9
+ORD-10976,CUST-6079,ty***@outlook.com,***-***-5435,759.6,9,5,2023-11-17,in-transit,Books,F***,Debit Card,MASKED_11aedd0e
+ORD-10977,CUST-9833,ap***@enterprise.net,***-***-8658,947.76,6,0,2022-11-24,shipped,Home & Garden,L***,PayPal,MASKED_3e8d115e
+ORD-10978,CUST-7262,bx***@hotmail.com,***-***-7937,591.84,3,20,2022-06-27,Processing,Clothing,S***,PayPal,MASKED_3a52f3c2
+ORD-10979,CUST-4077,jo***@hotmail.com,***-***-5913,1237.05,3,25,2023-06-14,Cancelled,Home & Garden,C***,Debit Card,MASKED_3a52f3c2
+ORD-10980,CUST-3188,mc***@outlook.com,***-***-8368,5287.1,7,10,2022-07-29,Shipped,Sports,Y***,Cash,MASKED_3e8d115e
+ORD-10981,CUST-4432,qy***@company.io,***-***-8705,1612.03,7,15,2022-12-03,Pending,Books,T***,Bank Transfer,MASKED_76423d83
+ORD-10982,CUST-9829,ap***@company.io,***-***-1268,2426.27,7,15,2023-12-19,Pending,Home & Garden,R***,Credit Card,MASKED_6cc98ba2
+ORD-10983,CUST-8871,wq***@hotmail.com,***-***-6337,545.38,2,0,28-01-2024,Shipped,Electronics,L***,Cash,MASKED_19d3326f
+ORD-10984,CUST-1272,rj***@outlook.com,***-***-4757,1313.7,5,15,2022-12-18,Shipped,Beauty,M***,Debit Card,MASKED_11aedd0e
+ORD-10985,CUST-3825,lm***@hotmail.com,***-***-2168,none,8,25,2023-02-26,Processing,Books,C***,PayPal,MASKED_24d22e03
+ORD-10986,CUST-6463,ww***@company.io,***-***-1025,-419.29,10,10,2023-10-21,Cancelled,Home & Garden,P***,Debit Card,MASKED_0f177369
+ORD-10987,CUST-7185,nt***@enterprise.net,***-***-4811,1626.8,5,0,2023-07-05,Pending,Food,O***,Debit Card,MASKED_3a52f3c2
+ORD-10988,CUST-8282,rc***@outlook.com,***-***-9346,3019.36,4,20,2023-07-22,Cancelled,Toys,P***,Bank Transfer,MASKED_11aedd0e
+ORD-10989,CUST-4932,pr***@hotmail.com,***-***-8787,770.03,1,200,2022-01-26,Shipped,Food,O***,Credit Card,MASKED_0f177369
+ORD-10990,CUST-5550 ,ji***@gmail.com,***-***-7527,458.93,1,10,2024-01-14,Cancelled,Beauty,L***,Debit Card,MASKED_11aedd0e
+ORD-10991,CUST-1603,gz***@hotmail.com,***-***-2289,690.05,1,0,2022-03-03,Refunded,Sports,D***,PayPal,MASKED_24d22e03
+ORD-10992,CUST-5533,cp***@hotmail.com,***-***-6020,5048.88,8,15,2023-04-05,Delivered,Toys,L***,Cash,MASKED_6cc98ba2
+ORD-10993,CUST-1274,hm***@enterprise.net,***-***-5525,MISSING,10,25,2022-06-18,Refunded,Food,O***,Debit Card,MASKED_7516fd43
+ORD-10994,CUST-6038,sm***@yahoo.com,***-***-2479,250.12,1,10,2023-04-10,Refunded,Books,C***,PayPal,MASKED_c86ee0d9
+ORD-10995,CUST-9141,hh***@outlook.com,***-***-2477,2336.81,7,5,2023-01-11,Pending,Sports,T***,Debit Card,MASKED_7516fd43
+ORD-10996,CUST-2948,nf***@company.io,***-***-ghij,3071.82,6,20,2024-04-06,Cancelled,Books,F***,Cash,MASKED_19d3326f
+ORD-10997,CUST-4367,xz***@company.io,***-***-9724,528.09,3,20,2025-11-03,Cancelled,Sports,Y***,Credit Card,MASKED_3a52f3c2
+ORD-10998,CUST-2664,we***@gmail.com,***-***-3535,673.13,1,15,2022-07-17,Shipped,Clothing,T***,Credit Card,MASKED_11aedd0e
+ORD-10999,CUST-8369,fc***@company.io,***-***-2635,1204.9,one,0,2023-09-24,Refunded,Beauty,S***,PayPal,MASKED_24d22e03
+ORD-11000,CUST-5372,ik***@yahoo.com,***-***-6026,6868.6,10,25,2022-03-26,Cancelled,Sports,Y***,Credit Card,MASKED_6cc98ba2
+ORD-11001,CUST-9179,zj***@enterprise.net,***-***-7242,1653.54,3,20,2023-08-06,Delivered,Clothing,J***,Credit Card,MASKED_19d3326f
+ORD-11002,CUST-8468,mu***@enterprise.net,***-***-0000,1827.75,3,0,2022-02-17,Refunded,Home & Garden,R***,PayPal,MASKED_19d3326f
+ORD-11003,CUST-3415,md***@company.io,***-***-7227,566.67,1,0,2022-10-22,Cancelled,Toys,L***,Debit Card,MASKED_c86ee0d9
+ORD-11004,CUST-9274,kj***@hotmail.com,***-***-5253,1018.96,2,5,2022-02-06,Pending,Sports,B***,PayPal,MASKED_3e8d115e
+ORD-11005,CUST-3096,fo***@company.io,***-***-2600,336.27,1,25,2024-06-07,Processing,Beauty,F***,Bank Transfer,MASKED_7516fd43
+ORD-11006,CUST-5748,vh***@gmail.com,***-***-2999,1801.16,4,10,2023-04-16,Cancelled,Sports,Y***,PayPal,MASKED_3a52f3c2
+ORD-11007,CUST-9662,dg***@hotmail.com,***-***-3445,4568.76,7,20,2022-06-20,Shipped,Sports,T***,Debit Card,MASKED_c86ee0d9
+ORD-11008,CUST-7540,xt***@outlook.com,***-***-8858,3235.12,8,10,2024-01-22,Shipped,Books,C***,PayPal,MASKED_24d22e03
+ORD-11009,CUST-5769,dg***@hotmail.com,***-***-0000,1132.14,2,15,2022-11-27,Pending,Food,C***,Cash,MASKED_24d22e03
+ORD-11010,CUST-4384,gf***@enterprise.net,***-***-4009,454.75,1,0,2024-05-05,Pending,Food,V***,Debit Card,MASKED_7516fd43
+ORD-11011,CUST-1807,  ***@enterprise.net  ,***-***-5498,1757.7,5,0,2024-03-23,Processing,Clothing,J***,Barter,MASKED_19d3326f
+ORD-11012,CUST-1258,vi***@yahoo.com,***-***-7438,1108.45,5,0,2023-09-22,Delivered,Electronics,T***,PayPal,MASKED_6cc98ba2
+ORD-11013,CUST-3515,dq***@outlook.com,***-***-3796,1979.82,6,0,05/12/2024,Shipped,Books,T***,Debit Card,MASKED_19d3326f
+ORD-11014,CUST-8826,rl***@company.io,***-***-7478,2997.7,10,0,2023-04-02,Cancelled,Home & Garden,C***,Credit Card,MASKED_0f177369
+ORD-11015,CUST-6555,rx***@enterprise.net,***-***-5515,6257.0,10,20,2023-07-09,Processing,Toys,R***,Debit Card,MASKED_19d3326f
+ORD-11016,CUST-9071,ml***@outlook.com,***-***-3862,114962.49,7,5,2024-01-14,Pending,Toys,R***,PayPal,MASKED_24d22e03
+ORD-11017,CUST-4747,ky***@outlook.com,***-***-4938,1862.8,5,25,2022-03-15,Refunded,Electronics,H***,UNKNOWN,MASKED_0f177369
+ORD-11018,CUST-7129,jj***@yahoo.com,***-***-6145,2397.6,9,5,2022-09-01,Processing,Books,C***,PayPal,MASKED_3e8d115e
+ORD-11019,CUST-2926,au***@hotmail.com,***-***-4496,2521.6,5,25,2024-01-24,Refunded,Toys,B***,Bank Transfer,MASKED_7516fd43
+ORD-11020,CUST-3039,mg***@outlook.com,***-***-6571,366522.15,4,0,2023-06-15,Refunded,Sports,D***,Bank Transfer,MASKED_11aedd0e
+ORD-11021,CUST-3917 ,al***@outlook.com,***-***-2603,3493.44,8,15,2023-12-22,Processing,Toys,L***,PayPal,MASKED_24d22e03
+ORD-11022,CUST-3098,uy***@company.io,***-***-5425,407.6,8,0,2022-08-07,Processing,Home & Garden,P***,Credit Card,MASKED_3a52f3c2
+ORD-11023,CUST-7783,hb***@gmail.com,***-***-9522,1017.4,4,0,2022-07-20,TBD,Electronics,L***,Credit Card,MASKED_0f177369
+ORD-11024,CUST-5332,ul***@gmail.com,***-***-9570,5190.16,8,15,2023-03-16,Cancelled,Home & Garden,S***,Credit Card,MASKED_c86ee0d9
+ORD-11025,CUST-3404,ue***@company.io,***-***-6217,6457.9,10,15,2022-09-28,Refunded,Books,T***,Bank Transfer,MASKED_3e8d115e
+ORD-11026,CUST-7259,jv***@yahoo.com,***-***-6539,522351.27,6,5,2022-03-01,Processing,Home & Garden,C***,Cash,MASKED_76423d83
+ORD-11027,CUST-4994,vs***@yahoo.com,***-***-1977,2655.95,5,0,2022-04-24,Processing,Home & Garden,R***,Debit Card,MASKED_19d3326f
+ORD-11028,CUST-7898,aa***@hotmail.com,***-***-2076,MISSING,6,25,2023-03-03,Processing,Home & Garden,S***,Bank Transfer,MASKED_c86ee0d9
+ORD-11029,CUST-2788,ov***@company.io,***-***-1606,MISSING,7,10,2024-01-06,Refunded,Electronics,S***,Cash,MASKED_7516fd43
+ORD-11030,CUST-3021,uo***@gmail.com,***-***-7123,4381.84,8,20,2023-08-11,Pending,Beauty,L***,Bank Transfer,MASKED_19d3326f
+ORD-11031,CUST-1410,ky***@enterprise.net,***-***-7010,5893.0,10,10,2023-06-11,processing,Books,S***,Cash,MASKED_3a52f3c2
+ORD-11032,CUST-6538,ot***@hotmail.com,***-***-6655,773.22,2,0,2022-01-27,Processing,Home & Garden,S***,PayPal,MASKED_7516fd43
+ORD-11033,CUST-1439,xg***@gmail.com,***-***-9197,1372.66,2,15,2022-02-28,Cancelled,Clothing,J***,Credit Card,MASKED_c86ee0d9
+ORD-11034,CUST-8136,***@***.***,***-***-4677,2581.04,7,10,2022-11-29,Refunded,Sports,T***,Bank Transfer,MASKED_3a52f3c2
+ORD-11035,CUST-9738,tb***@company.io,***-***-8189,2182.8,5,25,2024-04-01,Processing,Clothing,T***,Cash,MASKED_76423d83
+ORD-11036,CUST-8744,ai***@outlook.com,***-***-5750,389.87,1,25,2024-02-01,Shipped,Toys,P***,PayPal,MASKED_0f177369
+ORD-11037,CUST-6715,ol***@hotmail.com,***-***-0000,2975.7,7,15,2024-01-11,Cancelled,Books,C***,Debit Card,MASKED_6cc98ba2
+ORD-11038,CUST-4650,ny***@hotmail.com,***-***-8275,838.11,7,0,2023-11-18,Pending,Clothing,T***,Bank Transfer,MASKED_3a52f3c2
+ORD-11039,CUST-4155,dp***@yahoo.com,***-***-3344,541.4,4,5,2023-09-24,Cancelled,Toys,A***,PayPal,MASKED_11aedd0e
+ORD-11040,CUST-9809,uv***@outlook.com,***-***-6005,1104.44,4,0,2022-05-20,Cancelled,Beauty,P***,Debit Card,MASKED_0f177369
+ORD-11041,CUST-5193,uw***@outlook.com,***-***-3345,5649.57,9,20,2024-04-01,Pending,Electronics,H***,Debit Card,MASKED_0f177369
+ORD-11042,CUST-2231,zj***@gmail.com,***-***-6341,406.08,2,20,2023-02-15,Delivered,Beauty,L***,Cash,MASKED_24d22e03
+ORD-11043,CUST-7427,vo***@outlook.com,***-***-1136,5863.92,8,5,2022-07-19,Processing,Books,C***,Cash,MASKED_19d3326f
+ORD-11044,CUST-9013,ai***@outlook.com,***-***-2094,1159.82,2,15,2026-05-22,Cancelled,Electronics,T***,Cash,MASKED_c86ee0d9
+ORD-11045,CUST-1832,wg***@enterprise.net,***-***-8885,1121.2,5,20,2024-02-25,Shipped,Clothing,J***,Cash,MASKED_3a52f3c2
+ORD-11046,CUST-6498,oj***@company.io,***-***-3204,1384.44,two,15,2023-05-13,Pending,Home & Garden,P***,Cash,MASKED_3e8d115e
+ORD-11047,CUST-3447,qa***@hotmail.com,***-***-5401,741.36,4,20,2023-10-25,Processing,Clothing,D***,Cash,MASKED_3e8d115e
+ORD-11048,CUST-8528,xi***@enterprise.net,***-***-6075,2165.84,8,5,2022-11-03,Cancelled,Books,B***,Debit Card,MASKED_24d22e03
+ORD-11049,CUST-4860,  ***@enterprise.net  ,***-***-8554,4667.68,8,15,2022-06-25,Shipped,Beauty,P***,Debit Card,MASKED_11aedd0e
+ORD-10050,CUST-2548,zc***@enterprise.net,***-***-5128,344.4,6,25,2024-05-22,Refunded,Clothing,S***,Debit Card,MASKED_3e8d115e
+ORD-10051,CUST-1298,rx***@outlook.com,***-***-6598,2864.75,7,15,2022-07-16,Processing,Clothing,J***,Debit Card,MASKED_76423d83
+ORD-10052,CUST-6968,no***@enterprise.net,***-***-2345,313.76,8,25,2024-03-13,PENDING,Sports,D***,Cash,MASKED_3a52f3c2
+ORD-10053,CUST-9452,xf***@outlook.com,***-***-3626,6839.85,9,10,2023-04-06,Cancelled,Sports,D***,Bank Transfer,MASKED_76423d83
+ORD-10054,CUST-8740,xy***@yahoo.com,***-***-8685,106.35,3,15,2023-09-23,Pending,Home & Garden,S***,Credit Card,MASKED_11aedd0e
+ORD-10055,CUST-1269,os***@company.io,***-***-3352,3835.28,8,10,2023-03-16,Pending,Home & Garden,C***,PayPal,MASKED_3a52f3c2
+ORD-10056,CUST-6649,rc***@enterprise.net,***-***-2698,3791.22,6,20,2024-01-23,Shipped,Beauty,L***,Credit Card,MASKED_3e8d115e
+ORD-10057,CUST-6170,vr***@company.io,***-***-9897,2836.8,4,15,2022-09-17,Pending,Toys,A***,PayPal,MASKED_3e8d115e
+ORD-10058,CUST-3956,  ***@outlook.com  ,***-***-2311,474.25,7,10,2023-11-08,Shipped,Electronics,H***,Bank Transfer,MASKED_24d22e03
+ORD-10059,CUST-3339,rj***@enterprise.net,***-***-3068,2287.41,3,0,2022-08-30,Refunded,Beauty,P***,PayPal,MASKED_6cc98ba2
+ORD-10060,CUST-8311,dl***@company.io,***-***-9047,3196.04,5,5,2022-05-06,Processing,Electronics,L***,Bank Transfer,MASKED_c86ee0d9
+ORD-10061,CUST-3275,vz***@hotmail.com,***-***-7044,1621.16,2,15,2024-04-02,Cancelled,Food,O***,Cash,MASKED_76423d83

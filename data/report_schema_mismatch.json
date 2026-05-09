@@ -1,0 +1,279 @@
+{
+  "run_id": "61FCDB7D",
+  "scenario": "schema_mismatch",
+  "generated_at": "2026-05-09T16:19:09.265633",
+  "original_shape": {
+    "rows": 80,
+    "cols": 9
+  },
+  "healed_shape": {
+    "rows": 80,
+    "cols": 0
+  },
+  "removed_rows": 0,
+  "null_before": 0,
+  "null_after": 0,
+  "fixes_applied": [
+    {
+      "issue_id": "d6faf0b9",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'user_id' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "43857641",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'signup_date' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "fdb7a22e",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'score' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "1608555d",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'age' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "66db712d",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'email' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a63d1da1",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'country' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "fcbf2743",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'salary' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "52af0aaf",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'uid'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "0574100f",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'usr_age'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "5ef4c529",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'risk_score'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "36b2471e",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'email_address'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "16450835",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'registered_on'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "c56640fb",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'annual_salary'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "9b640efc",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'geo'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "0a682b17",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'extra_flag'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "d358c508",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'legacy_id'",
+      "status": "SUCCESS"
+    }
+  ],
+  "ge_pre_validation": {
+    "suite": "pre_healing_schema_mismatch",
+    "total": 17,
+    "passed": 10,
+    "failed": 7,
+    "success_pct": 58.8,
+    "evaluated_at": "2026-05-09T16:19:09.236970",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "80",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "user_id",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'user_id' is absent"
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "age",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'age' is absent"
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "salary",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'salary' is absent"
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "email",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'email' is absent"
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "score",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'score' is absent"
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "country",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'country' is absent"
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "signup_date",
+        "passed": false,
+        "observed": "missing",
+        "expected": "present",
+        "detail": "Required column 'signup_date' is absent"
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "uid",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "usr_age",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "annual_salary",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "email_address",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "risk_score",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "geo",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "registered_on",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "extra_flag",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "legacy_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      }
+    ]
+  },
+  "ge_post_validation": {
+    "suite": "post_healing_schema_mismatch",
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "success_pct": 100.0,
+    "evaluated_at": "2026-05-09T16:19:09.249312",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "80",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      }
+    ]
+  },
+  "column_profiles": {}
+}

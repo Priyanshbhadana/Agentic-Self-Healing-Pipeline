@@ -1,0 +1,175 @@
+{
+  "run_id": "BF67063C",
+  "scenario": "missing_values",
+  "generated_at": "2026-05-09T16:01:28.533606",
+  "profile_summary": "Dataset: 100 rows \u00d7 7 cols | Nulls: 58 (8.29%) | Duplicates: 0",
+  "rules_generated": 9,
+  "violations_found": 5,
+  "validation_score": 44.4,
+  "heals_applied": 5,
+  "heals_ok": 5,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_missing_values.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "user_id",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 1.0,
+        "max": 100.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'user_id' values must be between 1.0 and 100.0"
+    },
+    {
+      "rule_id": "R002",
+      "column": "age",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'age' should not contain nulls"
+    },
+    {
+      "rule_id": "R003",
+      "column": "age",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 19.0,
+        "max": 64.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'age' values must be between 19.0 and 64.0"
+    },
+    {
+      "rule_id": "R004",
+      "column": "salary",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'salary' should not contain nulls"
+    },
+    {
+      "rule_id": "R005",
+      "column": "salary",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 30206.0,
+        "max": 119135.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'salary' values must be between 30206.0 and 119135.0"
+    },
+    {
+      "rule_id": "R006",
+      "column": "email",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'email' should not contain nulls"
+    },
+    {
+      "rule_id": "R007",
+      "column": "email",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "EMAIL"
+      },
+      "severity": "HIGH",
+      "description": "Column 'email' contains PII (EMAIL) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R008",
+      "column": "score",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'score' should not contain nulls"
+    },
+    {
+      "rule_id": "R009",
+      "column": "score",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.05,
+        "max": 99.77
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'score' values must be between 0.05 and 99.77"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R002",
+      "column": "age",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 15,
+      "detail": "15 null values found in 'age'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R004",
+      "column": "salary",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 20,
+      "detail": "20 null values found in 'salary'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R006",
+      "column": "email",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 10,
+      "detail": "10 null values found in 'email'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R007",
+      "column": "email",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 90,
+      "detail": "Column 'email' contains unmasked EMAIL data",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R008",
+      "column": "score",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 13,
+      "detail": "13 null values found in 'score'",
+      "severity": "MEDIUM"
+    }
+  ],
+  "heals": [
+    {
+      "column": "age",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 15 nulls with median=40.0",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "salary",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 20 nulls with median=78954.5",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "email",
+      "action": "FILL_MODE",
+      "result": "Filled 10 nulls with mode='user11@example.com'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "email",
+      "action": "MASK_PII",
+      "result": "Masked 100 email addresses",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "score",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 13 nulls with median=51.78",
+      "status": "SUCCESS"
+    }
+  ]
+}

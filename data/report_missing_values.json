@@ -1,0 +1,398 @@
+{
+  "run_id": "5369B1C5",
+  "scenario": "missing_values",
+  "generated_at": "2026-05-09T16:19:09.140514",
+  "original_shape": {
+    "rows": 100,
+    "cols": 7
+  },
+  "healed_shape": {
+    "rows": 100,
+    "cols": 7
+  },
+  "removed_rows": 0,
+  "null_before": 58,
+  "null_after": 0,
+  "fixes_applied": [
+    {
+      "issue_id": "031bdfb5",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 15 nulls in 'age' with median=40.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "7205879e",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 20 nulls in 'salary' with median=78954.5",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "0ecc3ec8",
+      "action": "FILL_MODE",
+      "result": "Filled 10 nulls in 'email' with mode='user11@example.com'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "8644cf4a",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 13 nulls in 'score' with median=51.78",
+      "status": "SUCCESS"
+    }
+  ],
+  "ge_pre_validation": {
+    "suite": "pre_healing_missing_values",
+    "total": 21,
+    "passed": 17,
+    "failed": 4,
+    "success_pct": 81.0,
+    "evaluated_at": "2026-05-09T16:19:09.103818",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "100",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "user_id",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "age",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "salary",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "email",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "score",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "country",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_to_exist",
+        "column": "signup_date",
+        "passed": true,
+        "observed": "present",
+        "expected": "present",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "user_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "age",
+        "passed": "False",
+        "observed": "15.0% null",
+        "expected": "\u22640.0% null",
+        "detail": "Found 15.0% nulls \u2014 exceeds threshold"
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "salary",
+        "passed": "False",
+        "observed": "20.0% null",
+        "expected": "\u22640.0% null",
+        "detail": "Found 20.0% nulls \u2014 exceeds threshold"
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "email",
+        "passed": "False",
+        "observed": "10.0% null",
+        "expected": "\u22640.0% null",
+        "detail": "Found 10.0% nulls \u2014 exceeds threshold"
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "score",
+        "passed": "False",
+        "observed": "13.0% null",
+        "expected": "\u22640.0% null",
+        "detail": "Found 13.0% nulls \u2014 exceeds threshold"
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "country",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "signup_date",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22640.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "age",
+        "passed": true,
+        "observed": "min=19.0, max=64.0",
+        "expected": "[0, 120]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "salary",
+        "passed": true,
+        "observed": "min=30206.0, max=119135.0",
+        "expected": "[0, 1000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "score",
+        "passed": true,
+        "observed": "min=0.05, max=99.77",
+        "expected": "[0, 100]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_of_type",
+        "column": "age",
+        "passed": true,
+        "observed": "float64",
+        "expected": "float",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_of_type",
+        "column": "salary",
+        "passed": true,
+        "observed": "float64",
+        "expected": "float",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_of_type",
+        "column": "score",
+        "passed": true,
+        "observed": "float64",
+        "expected": "float",
+        "detail": ""
+      }
+    ]
+  },
+  "ge_post_validation": {
+    "suite": "post_healing_missing_values",
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "success_pct": 100.0,
+    "evaluated_at": "2026-05-09T16:19:09.118823",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "100",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "user_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "age",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "salary",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "email",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "score",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "country",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "signup_date",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u22645.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "age",
+        "passed": true,
+        "observed": "min=19.0, max=64.0",
+        "expected": "[0, 120]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "salary",
+        "passed": true,
+        "observed": "min=30206.0, max=119135.0",
+        "expected": "[0, 1000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "score",
+        "passed": true,
+        "observed": "min=0.05, max=99.77",
+        "expected": "[0, 100]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_unique",
+        "column": "user_id",
+        "passed": "True",
+        "observed": "0 duplicates",
+        "expected": "0 duplicates",
+        "detail": ""
+      }
+    ]
+  },
+  "column_profiles": {
+    "user_id": {
+      "dtype": "int64",
+      "null_count": 0,
+      "unique": 100,
+      "sample": [
+        1,
+        2,
+        3
+      ]
+    },
+    "age": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 41,
+      "sample": [
+        40.0,
+        56.0,
+        46.0
+      ]
+    },
+    "salary": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 81,
+      "sample": [
+        78954.5,
+        39268.0,
+        116807.0
+      ]
+    },
+    "email": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 90,
+      "sample": [
+        "user11@example.com",
+        "user1@example.com",
+        "user2@example.com"
+      ]
+    },
+    "score": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 86,
+      "sample": [
+        51.78,
+        12.21,
+        35.63
+      ]
+    },
+    "country": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 5,
+      "sample": [
+        "IN",
+        "US",
+        "UK"
+      ]
+    },
+    "signup_date": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 100,
+      "sample": [
+        "2023-01-01",
+        "2023-01-04",
+        "2023-01-07"
+      ]
+    }
+  }
+}

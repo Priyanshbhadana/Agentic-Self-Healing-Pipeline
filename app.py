@@ -150,7 +150,7 @@ with st.sidebar:
     st.markdown("""
 <div style='text-align:center;padding:8px 0 4px'>
   <div style='font-size:22px;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent'>🔧 Pipeline Agent</div>
-  <div style='font-size:10px;color:#6b7280;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px'>v3 · LangGraph · Claude · MCP</div>
+  <div style='font-size:10px;color:#6b7280;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px'>v4 · B1+B2+B3 · LangGraph · Claude · MCP</div>
 </div>""", unsafe_allow_html=True)
 
     _dot = '🟢' if DB_AVAILABLE else '🔴'
@@ -204,11 +204,16 @@ with st.sidebar:
     st.markdown("""
 <div style='background:rgba(15,20,35,0.5);border-radius:12px;border:1px solid rgba(99,130,255,0.08);padding:14px;font-size:12px;line-height:2.2'>
   <div style='color:#9ca3af;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px'>Tech Stack</div>
-  <div style='color:#60a5fa'>🔍 LangGraph 5-node graph</div>
+  <div style='color:#60a5fa'>🔗 LangGraph 15-node orchestration</div>
   <div style='color:#a78bfa'>🧠 Claude LLM reasoning</div>
   <div style='color:#fbbf24'>🗄️ DuckDB MockDB warehouse</div>
   <div style='color:#34d399'>✅ Great Expectations GE</div>
-  <div style='color:#c084fc'>🔌 MCP tool server</div>
+  <div style='color:#c084fc'>🔌 MCP tool server (8 tools)</div>
+  <div style='margin-top:8px;font-size:11px;color:#6b7280'>
+    <b style='color:#93c5fd'>B1</b> Ingestion Quality ·
+    <b style='color:#c4b5fd'>B2</b> Lineage & Governance ·
+    <b style='color:#6ee7b7'>B3</b> Self-Healing
+  </div>
 </div>""", unsafe_allow_html=True)
 
 
@@ -219,7 +224,7 @@ st.markdown("""
 <div style='padding:8px 0 4px'>
   <h1 style='font-size:28px;font-weight:800;margin-bottom:2px;letter-spacing:-0.5px'>
     <span style='background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent'>Self-Healing Data Pipeline</span>
-    <span style='font-size:11px;background:linear-gradient(135deg,#1e3a5f,#2e1065);color:#93c5fd;padding:4px 12px;border-radius:20px;margin-left:10px;font-weight:600;vertical-align:middle'>v3 · MCP + MockDB + GE</span>
+    <span style='font-size:11px;background:linear-gradient(135deg,#1e3a5f,#2e1065);color:#93c5fd;padding:4px 12px;border-radius:20px;margin-left:10px;font-weight:600;vertical-align:middle'>v4 · B1+B2+B3 · MCP + MockDB + GE</span>
   </h1>
   <p style='color:#6b7280;font-size:13px;margin-top:6px'>
     <span style='color:#60a5fa;font-weight:500'>LangGraph</span> · 
@@ -247,11 +252,12 @@ st.divider()
 # ═══════════════════════════════════════════════════════════════
 (tab_preview, tab_run, tab_results, tab_ge,
  tab_db, tab_mcp, tab_outputs, tab_history,
- tab_b1, tab_b2) = st.tabs([
+ tab_b1, tab_b2, tab_b3, tab_arch, tab_runlog) = st.tabs([
     "📊 Data Preview","▶️ Run Pipeline","📈 Results",
     "✅ Great Expectations","🗄️ MockDB","🔌 MCP Server",
     "📦 Outputs","🕐 History",
     "🔬 B1 · Ingestion Quality","🏛️ B2 · Lineage & Governance",
+    "🔧 B3 · Self-Healing","🏗️ Architecture","📜 Run Log",
 ])
 
 
@@ -875,13 +881,17 @@ with tab_b1:
     # Controls
     b1c1, b1c2 = st.columns([2,1])
     with b1c1:
-        b1_scenario = st.selectbox("Dataset for B1", [
-            "missing_values","schema_mismatch","data_anomaly"
-        ], format_func=lambda x:{
+        b1_options = ["missing_values","schema_mismatch","data_anomaly"]
+        b1_format = {
             "missing_values":"Scenario 1 — Missing Values",
             "schema_mismatch":"Scenario 2 — Schema Mismatch",
             "data_anomaly":"Scenario 3 — Data Anomaly",
-        }[x], key="b1_scenario_sel")
+        }
+        if st.session_state.uploaded_df is not None:
+            b1_options.append("custom_upload")
+            b1_format["custom_upload"] = f"📁 Uploaded — {st.session_state.upload_name}"
+        b1_scenario = st.selectbox("Dataset for B1", b1_options,
+            format_func=lambda x: b1_format[x], key="b1_scenario_sel")
     with b1c2:
         b1_run_btn = st.button("🔬 Run B1 Agent", type="primary",
                                use_container_width=True, key="b1_run")
@@ -890,6 +900,7 @@ with tab_b1:
         "missing_values":  os.path.join(ROOT,"data","scenario_missing.csv"),
         "schema_mismatch": os.path.join(ROOT,"data","scenario_schema.csv"),
         "data_anomaly":    os.path.join(ROOT,"data","scenario_anomaly.csv"),
+        "custom_upload":   st.session_state.get("uploaded_path", ""),
     }
 
     if b1_run_btn:
@@ -1066,13 +1077,17 @@ with tab_b2:
 
     b2c1, b2c2 = st.columns([2,1])
     with b2c1:
-        b2_scenario = st.selectbox("Dataset for B2", [
-            "missing_values","schema_mismatch","data_anomaly"
-        ], format_func=lambda x:{
+        b2_options = ["missing_values","schema_mismatch","data_anomaly"]
+        b2_format = {
             "missing_values":"Scenario 1 — Missing Values",
             "schema_mismatch":"Scenario 2 — Schema Mismatch",
             "data_anomaly":"Scenario 3 — Data Anomaly",
-        }[x], key="b2_scenario_sel")
+        }
+        if st.session_state.uploaded_df is not None:
+            b2_options.append("custom_upload")
+            b2_format["custom_upload"] = f"📁 Uploaded — {st.session_state.upload_name}"
+        b2_scenario = st.selectbox("Dataset for B2", b2_options,
+            format_func=lambda x: b2_format[x], key="b2_scenario_sel")
     with b2c2:
         b2_run_btn = st.button("🏛️ Run B2 Agent", type="primary",
                                use_container_width=True, key="b2_run")
@@ -1089,6 +1104,7 @@ with tab_b2:
         "missing_values":  os.path.join(ROOT,"data","scenario_missing.csv"),
         "schema_mismatch": os.path.join(ROOT,"data","scenario_schema.csv"),
         "data_anomaly":    os.path.join(ROOT,"data","scenario_anomaly.csv"),
+        "custom_upload":   st.session_state.get("uploaded_path", ""),
     }
 
     if b2_run_btn:
@@ -1383,3 +1399,344 @@ padding:14px 18px;margin-bottom:10px'>
 - `lineage_*.json` — Lineage graph
 - `b2_catalogue_*.csv` — Data catalogue
 - SQLite `data_catalogue` table""")
+
+
+# ─── TAB 11: B3 SELF-HEALING PIPELINE AGENT ───────────────────
+with tab_b3:
+    st.markdown("""
+<h2 style='font-size:22px;font-weight:700;margin-bottom:4px'>
+  🔧 B3 · Self-Healing Pipeline Agent
+</h2>
+<p style='color:#6b7280;font-size:13px'>
+  <b style='color:#60a5fa'>Detect Failure</b> →
+  <b style='color:#a78bfa'>Classify (LLM)</b> →
+  <b style='color:#fbbf24'>Decide Fix (LLM)</b> →
+  <b style='color:#34d399'>Auto-Heal + GE</b> →
+  <b style='color:#c084fc'>Alert & Log</b>
+</p>
+""", unsafe_allow_html=True)
+
+    if "b3_results" not in st.session_state: st.session_state.b3_results = {}
+    if "b3_ran" not in st.session_state: st.session_state.b3_ran = False
+
+    b3c1, b3c2 = st.columns([2,1])
+    with b3c1:
+        b3_options = ["missing_values","schema_mismatch","data_anomaly"]
+        b3_format = {
+            "missing_values":"Scenario 1 — Missing Values",
+            "schema_mismatch":"Scenario 2 — Schema Mismatch",
+            "data_anomaly":"Scenario 3 — Data Anomaly",
+        }
+        if st.session_state.uploaded_df is not None:
+            b3_options.append("custom_upload")
+            b3_format["custom_upload"] = f"📁 Uploaded — {st.session_state.upload_name}"
+        b3_scenario = st.selectbox("Dataset for B3", b3_options,
+            format_func=lambda x: b3_format[x], key="b3_scenario_sel")
+    with b3c2:
+        b3_run_btn = st.button("🔧 Run B3 Agent", type="primary",
+                               use_container_width=True, key="b3_run")
+
+    PATH_MAP_B3 = {
+        "missing_values":  os.path.join(ROOT,"data","scenario_missing.csv"),
+        "schema_mismatch": os.path.join(ROOT,"data","scenario_schema.csv"),
+        "data_anomaly":    os.path.join(ROOT,"data","scenario_anomaly.csv"),
+        "custom_upload":   st.session_state.get("uploaded_path", ""),
+    }
+
+    if b3_run_btn:
+        data_path = PATH_MAP_B3[b3_scenario]
+        t0 = time.time()
+        with st.status(f"🔧 Running B3 on **{b3_scenario}**...", expanded=True) as b3_status:
+            st.write("🔍 Node 1/5 — Detection Agent scanning dataset...")
+            st.write("🏷️ Node 2/5 — Classification Agent (LLM reasoning)...")
+            st.write("🧠 Node 3/5 — Decision Agent (LLM fix planning)...")
+            st.write("🔨 Node 4/5 — Healing Agent + GE validation...")
+            st.write("📋 Node 5/5 — Logging & Alert Agent...")
+            try:
+                b3_result, b3_logs = run_single_scenario(b3_scenario, data_path)
+                dur = round(time.time()-t0,1)
+                b3_status.update(label=f"✅ B3 complete in {dur}s | {b3_result.get('final_status','?')}",
+                                 state="complete", expanded=False)
+                st.session_state.b3_results[b3_scenario] = b3_result
+                st.session_state.b3_ran = True
+            except Exception as e:
+                import traceback
+                st.error(f"B3 error: {e}"); st.code(traceback.format_exc())
+                b3_status.update(label="❌ B3 failed", state="error")
+                b3_result = {}; b3_logs = []; dur = 0
+
+        if b3_result:
+            issues = b3_result.get("issues_detected",[])
+            fixes  = b3_result.get("fixes_applied",[])
+            n_i, n_f = len(issues), len(fixes)
+            df_o = safe_read_csv(data_path)
+            df_h = safe_read_csv(b3_result.get("healed_data_path",""))
+            qs = quality_score(df_o, df_h, n_i, n_f)
+
+            m1,m2,m3,m4,m5 = st.columns(5)
+            m1.metric("Status", b3_result.get("final_status","?"))
+            m2.metric("Duration", f"{dur}s")
+            m3.metric("Issues", n_i)
+            m4.metric("Fixes", n_f)
+            m5.metric("Quality", f"{qs}/100")
+
+            # LangGraph node breakdown
+            st.markdown("#### 🔗 LangGraph Node Execution")
+            node_data = [
+                ("🔍 Detection", "DetectionAgent", len(issues), f"{len(issues)} issues found"),
+                ("🏷️ Classification", "ClassificationAgent", len(b3_result.get("classifications",[])), b3_result.get("primary_category","—")),
+                ("🧠 Decision", "DecisionAgent", len(b3_result.get("fix_plan",[])), b3_result.get("decision_rationale","—")[:80]),
+                ("🔨 Healing", "HealingAgent", n_f, f"{sum(1 for f in fixes if f.get('status')=='SUCCESS')}/{n_f} succeeded"),
+                ("📋 Logging", "LoggingAgent", 1, b3_result.get("final_status","?")),
+            ]
+            for icon_name, agent, count, detail in node_data:
+                st.markdown(f"""<div style='background:linear-gradient(135deg,rgba(30,37,53,0.8),rgba(20,28,45,0.5));
+                border:1px solid rgba(99,130,255,0.12);border-radius:12px;padding:12px 18px;margin-bottom:8px;
+                display:flex;align-items:center;justify-content:space-between'>
+                <div><span style='font-size:14px;font-weight:600;color:#e2e8f0'>{icon_name}</span>
+                <span style='font-size:12px;color:#8b95a8;margin-left:8px'>{agent}</span></div>
+                <div style='text-align:right'><span style='font-size:13px;color:#93c5fd;font-weight:500'>{count}</span>
+                <div style='font-size:11px;color:#6b7280;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>{detail}</div></div>
+                </div>""", unsafe_allow_html=True)
+
+            # Sub-tabs
+            b3t1,b3t2,b3t3,b3t4 = st.tabs(["⚠️ Issues","🔧 Fix Plan","📊 Before vs After","✅ GE Validation"])
+            with b3t1:
+                if issues:
+                    df_i = pd.DataFrame([{"Type":i.get("type",""),"Column":i.get("column","—"),
+                        "Severity":i.get("severity",""),"Detail":i.get("detail","")} for i in issues])
+                    st.dataframe(df_i, use_container_width=True, hide_index=True)
+                else:
+                    st.success("No issues detected!")
+            with b3t2:
+                fp = b3_result.get("fix_plan",[])
+                if fp:
+                    df_fp = pd.DataFrame([{"Action":f.get("action",""),"Confidence":f.get("confidence",0),
+                        "Rationale":f.get("rationale","")} for f in fp])
+                    st.dataframe(df_fp, use_container_width=True, hide_index=True,
+                                column_config={"Confidence":st.column_config.ProgressColumn("Confidence",min_value=0,max_value=1,format="%.0%")})
+                else:
+                    st.info("No fix plan generated.")
+            with b3t3:
+                if df_o is not None and df_h is not None:
+                    oc,hc = st.columns(2)
+                    with oc:
+                        st.caption("🔴 Original"); st.dataframe(df_o.head(8).style.highlight_null(color="#4c0519").format(precision=2),use_container_width=True,height=200)
+                    with hc:
+                        st.caption("✅ Healed"); st.dataframe(df_h.head(8).style.format(precision=2),use_container_width=True,height=200)
+            with b3t4:
+                pre = b3_result.get("ge_pre_results",{}); post = b3_result.get("ge_post_results",{})
+                if pre or post:
+                    gc1,gc2 = st.columns(2)
+                    gc1.metric("GE Pre", f"{pre.get('passed',0)}/{pre.get('total',0)} ({pre.get('success_pct',0)}%)")
+                    gc2.metric("GE Post", f"{post.get('passed',0)}/{post.get('total',0)} ({post.get('success_pct',0)}%)")
+                else:
+                    st.info("No GE results available.")
+
+            # Logs
+            if b3_logs:
+                with st.expander("📋 B3 Autonomous Run Log"):
+                    st.markdown(f'<div class="log-block">{"".join(log_html(l) for l in b3_logs)}</div>',
+                                unsafe_allow_html=True)
+    else:
+        st.info("👈 Select a dataset and click **🔧 Run B3 Agent**.")
+        st.markdown("""
+#### B3 Pipeline — LangGraph 5-Node Graph:
+| Node | Agent | What it does |
+|------|-------|--------------| 
+| 1 | **Detection Agent** | Statistical + structural scanning (nulls, schema, outliers) |
+| 2 | **Classification Agent** | LLM classifies each issue (DATA_QUALITY, SCHEMA, ANOMALY, SYSTEM_FAILURE) |
+| 3 | **Decision Agent** | LLM decides optimal fix action per issue with confidence scores |
+| 4 | **Healing Agent** | Executes fixes + runs GE pre/post validation + MockDB snapshots |
+| 5 | **Logging Agent** | Structured report + alerts for HIGH severity issues |
+""")
+
+
+# ─── TAB 12: ARCHITECTURE DIAGRAM ─────────────────────────────
+with tab_arch:
+    st.markdown("""
+<h2 style='font-size:22px;font-weight:700;margin-bottom:4px'>
+  🏗️ System Architecture
+</h2>
+<p style='color:#6b7280;font-size:13px'>
+  Multi-agent agentic DE automation with LangGraph, MCP, DuckDB, and Great Expectations
+</p>
+""", unsafe_allow_html=True)
+
+    # Overall system architecture
+    st.markdown("""
+<div style='background:linear-gradient(135deg,rgba(15,20,35,0.8),rgba(10,14,26,0.6));
+border:1px solid rgba(99,130,255,0.15);border-radius:20px;padding:28px;margin-bottom:24px'>
+  <div style='text-align:center;font-size:16px;font-weight:700;color:#e2e8f0;margin-bottom:20px'>
+    🏗️ Agentic DE Automation — System Architecture
+  </div>
+  <div style='display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px'>
+    <div style='background:linear-gradient(135deg,#1e3a5f,#1a365d);border:1px solid rgba(59,130,246,0.3);border-radius:14px;padding:16px 20px;text-align:center;min-width:180px'>
+      <div style='font-size:24px'>🔬</div>
+      <div style='color:#93c5fd;font-weight:600;font-size:13px'>B1 — Ingestion Quality</div>
+      <div style='color:#6b7280;font-size:11px;margin-top:4px'>5 LangGraph nodes</div>
+      <div style='color:#4b5563;font-size:10px;margin-top:2px'>Profile → Rules → Validate → Heal → Report</div>
+    </div>
+    <div style='background:linear-gradient(135deg,#2e1065,#4c1d95);border:1px solid rgba(139,92,246,0.3);border-radius:14px;padding:16px 20px;text-align:center;min-width:180px'>
+      <div style='font-size:24px'>🏛️</div>
+      <div style='color:#c4b5fd;font-weight:600;font-size:13px'>B2 — Lineage & Governance</div>
+      <div style='color:#6b7280;font-size:11px;margin-top:4px'>5 LangGraph nodes</div>
+      <div style='color:#4b5563;font-size:10px;margin-top:2px'>SQL → Lineage → PII → Catalogue → GDPR</div>
+    </div>
+    <div style='background:linear-gradient(135deg,#022c22,#064e3b);border:1px solid rgba(16,185,129,0.3);border-radius:14px;padding:16px 20px;text-align:center;min-width:180px'>
+      <div style='font-size:24px'>🔧</div>
+      <div style='color:#6ee7b7;font-weight:600;font-size:13px'>B3 — Self-Healing Pipeline</div>
+      <div style='color:#6b7280;font-size:11px;margin-top:4px'>5 LangGraph nodes</div>
+      <div style='color:#4b5563;font-size:10px;margin-top:2px'>Detect → Classify → Decide → Heal → Log</div>
+    </div>
+  </div>
+  <div style='text-align:center;color:#4b5563;font-size:18px;margin:8px 0'>⬇ ⬇ ⬇</div>
+  <div style='display:flex;justify-content:center;gap:12px;flex-wrap:wrap'>
+    <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
+      <div style='font-size:13px;font-weight:600;color:#fbbf24'>🗄️ DuckDB MockDB</div>
+      <div style='font-size:10px;color:#6b7280'>Simulates Snowflake DW</div>
+    </div>
+    <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
+      <div style='font-size:13px;font-weight:600;color:#34d399'>✅ Great Expectations</div>
+      <div style='font-size:10px;color:#6b7280'>Pre/Post validation suites</div>
+    </div>
+    <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
+      <div style='font-size:13px;font-weight:600;color:#c084fc'>🔌 MCP Server</div>
+      <div style='font-size:10px;color:#6b7280'>6 callable tools</div>
+    </div>
+    <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
+      <div style='font-size:13px;font-weight:600;color:#60a5fa'>🧠 Claude LLM</div>
+      <div style='font-size:10px;color:#6b7280'>Classification + Decision</div>
+    </div>
+    <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
+      <div style='font-size:13px;font-weight:600;color:#fb7185'>🗃️ SQLite</div>
+      <div style='font-size:10px;color:#6b7280'>Permanent export storage</div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+    # Agent detail cards
+    st.markdown("#### Agent Node Details")
+    arch_t1, arch_t2, arch_t3 = st.tabs(["🔬 B1 Nodes","🏛️ B2 Nodes","🔧 B3 Nodes"])
+    with arch_t1:
+        b1_nodes = [
+            ("1. Profiler","profiler_node","Stats per column: dtype, nulls, IQR outliers, PII heuristics","📊","#3b82f6"),
+            ("2. Rule Generator","rule_generator_node","Claude LLM generates NOT_NULL, RANGE, OUTLIER, PII rules from profile","📋","#8b5cf6"),
+            ("3. Validator","validator_node","Checks every row against generated rules, flags violations","✅","#f59e0b"),
+            ("4. Healer","healer_node","Auto-fills nulls, clips ranges, masks PII, removes duplicates","🔨","#10b981"),
+            ("5. Report","b1_report_node","Generates validation score and JSON report","📄","#ef4444"),
+        ]
+        for name,func,desc,icon,color in b1_nodes:
+            st.markdown(f"<div style='background:linear-gradient(135deg,rgba(30,37,53,0.8),rgba(20,28,45,0.5));border-left:3px solid {color};border-radius:0 12px 12px 0;padding:12px 18px;margin-bottom:8px'><div style='font-size:14px;font-weight:600;color:#e2e8f0'>{icon} {name}</div><div style='font-size:11px;color:#6b7280;font-family:monospace'>{func}</div><div style='font-size:12px;color:#8b95a8;margin-top:4px'>{desc}</div></div>", unsafe_allow_html=True)
+    with arch_t2:
+        b2_nodes = [
+            ("1. SQL Parser","sql_parser_node","Parses SQL or auto-generates from CSV schema; extracts tables, CTEs, joins","🔍","#3b82f6"),
+            ("2. Lineage Extractor","lineage_extractor_node","Claude LLM builds full lineage graph: sources → transforms → sinks","🕸️","#8b5cf6"),
+            ("3. PII Tagger","pii_tagger_node","Detects 11 PII types, assigns GDPR articles, applies 9 masking strategies","🔴","#ef4444"),
+            ("4. Catalogue Enricher","catalogue_enricher_node","Claude LLM writes business descriptions, stewardship, quality SLAs","📚","#10b981"),
+            ("5. Governance Report","governance_report_node","GDPR compliance scoring, policy recommendations, full audit trail","📋","#f59e0b"),
+        ]
+        for name,func,desc,icon,color in b2_nodes:
+            st.markdown(f"<div style='background:linear-gradient(135deg,rgba(30,37,53,0.8),rgba(20,28,45,0.5));border-left:3px solid {color};border-radius:0 12px 12px 0;padding:12px 18px;margin-bottom:8px'><div style='font-size:14px;font-weight:600;color:#e2e8f0'>{icon} {name}</div><div style='font-size:11px;color:#6b7280;font-family:monospace'>{func}</div><div style='font-size:12px;color:#8b95a8;margin-top:4px'>{desc}</div></div>", unsafe_allow_html=True)
+    with arch_t3:
+        b3_nodes = [
+            ("1. Detection","detection_agent","Scans for nulls, schema mismatches, dtype errors, IQR outliers","🔍","#3b82f6"),
+            ("2. Classification","classification_agent","Claude LLM classifies issues into DATA_QUALITY / SCHEMA / ANOMALY / SYSTEM_FAILURE","🏷️","#8b5cf6"),
+            ("3. Decision","decision_agent","Claude LLM decides optimal fix: FILL_MEDIAN, CLIP_OUTLIERS, DROP_COLUMN, etc.","🧠","#f59e0b"),
+            ("4. Healing","healing_agent","Executes 11 fix actions, runs GE pre/post, writes MockDB snapshots","🔨","#10b981"),
+            ("5. Logging","logging_agent","Structured summary, JSON report, mock alerts for HIGH severity","📋","#ef4444"),
+        ]
+        for name,func,desc,icon,color in b3_nodes:
+            st.markdown(f"<div style='background:linear-gradient(135deg,rgba(30,37,53,0.8),rgba(20,28,45,0.5));border-left:3px solid {color};border-radius:0 12px 12px 0;padding:12px 18px;margin-bottom:8px'><div style='font-size:14px;font-weight:600;color:#e2e8f0'>{icon} {name}</div><div style='font-size:11px;color:#6b7280;font-family:monospace'>{func}</div><div style='font-size:12px;color:#8b95a8;margin-top:4px'>{desc}</div></div>", unsafe_allow_html=True)
+
+    # Tech stack summary
+    st.markdown("#### Tech Stack")
+    tc1,tc2,tc3 = st.columns(3)
+    with tc1:
+        st.markdown("""**🔗 Orchestration**
+- LangGraph (15 total nodes)
+- 3 separate StateGraph pipelines
+- Conditional routing (B3)
+- TypedDict state schemas""")
+    with tc2:
+        st.markdown("""**🧠 LLM Integration**
+- Claude claude-sonnet-4-20250514 (Anthropic)
+- Classification + Decision + Rules
+- Lineage + Catalogue enrichment
+- Rule-based fallback if no API key""")
+    with tc3:
+        st.markdown("""**🗄️ Data Layer**
+- DuckDB (MockDB — Snowflake sim)
+- SQLite (permanent export)
+- Great Expectations validation
+- MCP Server (6 tools)""")
+
+
+# ─── TAB 13: AUTONOMOUS RUN LOG ───────────────────────────────
+with tab_runlog:
+    st.markdown("""
+<h2 style='font-size:22px;font-weight:700;margin-bottom:4px'>
+  📜 Autonomous Run Log
+</h2>
+<p style='color:#6b7280;font-size:13px'>
+  Full JSONL log of all agent actions — timestamped, color-coded, filterable
+</p>
+""", unsafe_allow_html=True)
+
+    log_file = os.path.join(ROOT, "logs", "pipeline_run.jsonl")
+    if os.path.exists(log_file) and os.path.getsize(log_file) > 0:
+        try:
+            with open(log_file, "r") as f:
+                log_entries = [json.loads(line) for line in f if line.strip()]
+        except Exception:
+            log_entries = []
+
+        if log_entries:
+            # Filters
+            fc1,fc2,fc3 = st.columns(3)
+            with fc1:
+                all_components = sorted(set(e.get("component","?") for e in log_entries))
+                sel_comp = st.multiselect("Filter by component", all_components, default=all_components, key="log_comp_filter")
+            with fc2:
+                all_levels = sorted(set(e.get("level","?") for e in log_entries))
+                sel_levels = st.multiselect("Filter by level", all_levels, default=all_levels, key="log_level_filter")
+            with fc3:
+                max_entries = st.slider("Max entries", 10, min(500,len(log_entries)), min(100,len(log_entries)), key="log_max")
+
+            filtered = [e for e in log_entries
+                        if e.get("component","?") in sel_comp and e.get("level","?") in sel_levels]
+            filtered = filtered[-max_entries:]
+
+            # Stats
+            s1,s2,s3,s4 = st.columns(4)
+            s1.metric("Total entries", len(log_entries))
+            s2.metric("Shown", len(filtered))
+            s3.metric("Components", len(all_components))
+            s4.metric("Errors", sum(1 for e in log_entries if e.get("level")=="ERROR"))
+
+            # Render log
+            log_html_parts = []
+            level_css = {"INFO":"log-info","WARN":"log-warn","SUCCESS":"log-ok","ERROR":"log-err","ALERT":"log-alert"}
+            for entry in reversed(filtered):
+                ts = entry.get("timestamp","")
+                lvl = entry.get("level","INFO")
+                comp = entry.get("component","?")
+                msg = entry.get("message","").replace("<","&lt;").replace(">","&gt;")
+                css = level_css.get(lvl, "log-info")
+                log_html_parts.append(
+                    f'<div class="{css}"><span style="color:#4b5563;font-size:10px">{ts}</span> '
+                    f'<span style="font-weight:600">[{lvl}]</span> '
+                    f'<span style="color:#6b7280">[{comp}]</span> {msg}</div>'
+                )
+            st.markdown(f'<div class="log-block">{"".join(log_html_parts)}</div>', unsafe_allow_html=True)
+
+            # Download
+            st.download_button("⬇️ Download full log (JSONL)",
+                data=open(log_file,"rb").read(),
+                file_name="pipeline_run.jsonl", mime="application/jsonl",
+                use_container_width=True)
+        else:
+            st.info("Log file exists but is empty. Run a pipeline to generate logs.")
+    else:
+        st.info("No log file found. Run any pipeline (B1, B2, or B3) to generate autonomous run logs.")
