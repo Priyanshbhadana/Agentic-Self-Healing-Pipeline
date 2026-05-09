@@ -1,0 +1,475 @@
+{
+  "run_id": "4CCFEE84",
+  "scenario": "schema_mismatch",
+  "start_time": "2026-05-05T15:35:52.392491",
+  "end_time": "2026-05-05T15:35:53.508409",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "6bb62ed7",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "salary",
+      "severity": "HIGH",
+      "detail": "Expected column 'salary' is absent from the dataset"
+    },
+    {
+      "issue_id": "e8de00a6",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "email",
+      "severity": "HIGH",
+      "detail": "Expected column 'email' is absent from the dataset"
+    },
+    {
+      "issue_id": "b5d30ffa",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "age",
+      "severity": "HIGH",
+      "detail": "Expected column 'age' is absent from the dataset"
+    },
+    {
+      "issue_id": "a84e732d",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "score",
+      "severity": "HIGH",
+      "detail": "Expected column 'score' is absent from the dataset"
+    },
+    {
+      "issue_id": "2c272673",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "country",
+      "severity": "HIGH",
+      "detail": "Expected column 'country' is absent from the dataset"
+    },
+    {
+      "issue_id": "f7cdca94",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "user_id",
+      "severity": "HIGH",
+      "detail": "Expected column 'user_id' is absent from the dataset"
+    },
+    {
+      "issue_id": "18d09932",
+      "type": "SCHEMA_MISSING_COLUMN",
+      "column": "signup_date",
+      "severity": "HIGH",
+      "detail": "Expected column 'signup_date' is absent from the dataset"
+    },
+    {
+      "issue_id": "b2470a06",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "usr_age",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'usr_age' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "8842f148",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "geo",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'geo' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "5e365262",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "email_address",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'email_address' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "bc4846ae",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "uid",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'uid' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "89bf13a0",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "risk_score",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'risk_score' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "a930994d",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "annual_salary",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'annual_salary' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "20013216",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "legacy_id",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'legacy_id' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "093dd2a9",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "extra_flag",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'extra_flag' found \u2014 not in schema contract"
+    },
+    {
+      "issue_id": "ebf97951",
+      "type": "SCHEMA_EXTRA_COLUMN",
+      "column": "registered_on",
+      "severity": "MEDIUM",
+      "detail": "Unexpected column 'registered_on' found \u2014 not in schema contract"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "6bb62ed7",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "e8de00a6",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "b5d30ffa",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "a84e732d",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "2c272673",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "f7cdca94",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "18d09932",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Missing Column",
+      "confidence": 0.95,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_MISSING_COLUMN"
+    },
+    {
+      "issue_id": "b2470a06",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "8842f148",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "5e365262",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "bc4846ae",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "89bf13a0",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "a930994d",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "20013216",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "093dd2a9",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    },
+    {
+      "issue_id": "ebf97951",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Extra Column",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type SCHEMA_EXTRA_COLUMN"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "6bb62ed7",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "salary",
+        "new": "salary"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "e8de00a6",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "email",
+        "new": "email"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "b5d30ffa",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "age",
+        "new": "age"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "a84e732d",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "score",
+        "new": "score"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "2c272673",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "country",
+        "new": "country"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "f7cdca94",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "user_id",
+        "new": "user_id"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "18d09932",
+      "action": "RENAME_COLUMN",
+      "params": {
+        "old": "signup_date",
+        "new": "signup_date"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "b2470a06",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "8842f148",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "5e365262",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "bc4846ae",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "89bf13a0",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "a930994d",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "20013216",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "093dd2a9",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "ebf97951",
+      "action": "DROP_COLUMN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "6bb62ed7",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'salary' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "e8de00a6",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'email' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "b5d30ffa",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'age' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a84e732d",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'score' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "2c272673",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'country' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "f7cdca94",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'user_id' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "18d09932",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'signup_date' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "b2470a06",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'usr_age'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "8842f148",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'geo'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "5e365262",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'email_address'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "bc4846ae",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'uid'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "89bf13a0",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'risk_score'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a930994d",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'annual_salary'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "20013216",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'legacy_id'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "093dd2a9",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'extra_flag'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "ebf97951",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'registered_on'",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_schema_mismatch.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 16 issue(s) in 'schema_mismatch'. Types: ['SCHEMA_MISSING_COLUMN', 'SCHEMA_EXTRA_COLUMN']",
+    "[ClassificationAgent] Classified 16 issues. Primary: SCHEMA_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 6bb62ed7: RENAME_COLUMN | e8de00a6: RENAME_COLUMN | b5d30ffa: RENAME_COLUMN | a84e732d: RENAME_COLUMN | 2c272673: RENAME_COLUMN | f7cdca94: RENAME_COLUMN | 18d09932: RENAME_COLUMN | b2470a06: DROP_COLUMN | 8842f148: DROP_COLUMN | 5e365262: DROP_COLUMN | bc4846ae: DROP_COLUMN | 89bf13a0: DROP_COLUMN | a930994d: DROP_COLUMN | 20013216: DROP_COLUMN | 093dd2a9: DROP_COLUMN | ebf97951: DROP_COLUMN",
+    "[HealingAgent] Applied 16/16 fixes. Output: data/healed_schema_mismatch.csv"
+  ]
+}

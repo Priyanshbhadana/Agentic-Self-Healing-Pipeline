@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "n_src",
+      "name": "scenario_missing",
+      "type": "SOURCE",
+      "description": "Raw ingestion source",
+      "system": "CSV / Database"
+    },
+    {
+      "id": "n_cte_0",
+      "name": "source_data",
+      "type": "TRANSFORMATION",
+      "description": "CTE transformation: source_data",
+      "system": "SQL Engine"
+    },
+    {
+      "id": "n_cte_1",
+      "name": "cleaned_data",
+      "type": "TRANSFORMATION",
+      "description": "CTE transformation: cleaned_data",
+      "system": "SQL Engine"
+    },
+    {
+      "id": "n_cte_2",
+      "name": "aggregated",
+      "type": "TRANSFORMATION",
+      "description": "CTE transformation: aggregated",
+      "system": "SQL Engine"
+    },
+    {
+      "id": "n_join_0",
+      "name": "JOIN aggregated",
+      "type": "TRANSFORMATION",
+      "description": "LEFT JOIN JOIN",
+      "system": "SQL Engine"
+    },
+    {
+      "id": "n_sink",
+      "name": "healed_missing_values",
+      "type": "SINK",
+      "description": "Cleaned output dataset",
+      "system": "Data Warehouse / File"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n_src",
+      "to": "n_cte_0",
+      "transformation": "CTE: source_data",
+      "operation": "SELECT"
+    },
+    {
+      "from": "n_cte_0",
+      "to": "n_cte_1",
+      "transformation": "CTE: cleaned_data",
+      "operation": "SELECT"
+    },
+    {
+      "from": "n_cte_1",
+      "to": "n_cte_2",
+      "transformation": "CTE: aggregated",
+      "operation": "SELECT"
+    },
+    {
+      "from": "n_cte_2",
+      "to": "n_join_0",
+      "transformation": "c.signup_date = a.signup_date",
+      "operation": "JOIN"
+    },
+    {
+      "from": "n_join_0",
+      "to": "n_sink",
+      "transformation": "Write cleaned output",
+      "operation": "INSERT"
+    }
+  ],
+  "sources": [
+    "scenario_missing"
+  ],
+  "sinks": [
+    "healed_missing_values"
+  ],
+  "transformations": [
+    "source_data",
+    "cleaned_data",
+    "aggregated"
+  ],
+  "lineage_path": "scenario_missing \u2192 SQL transforms \u2192 healed_missing_values"
+}

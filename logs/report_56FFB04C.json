@@ -1,0 +1,209 @@
+{
+  "run_id": "56FFB04C",
+  "scenario": "users_schema_drift.csv",
+  "start_time": "2026-05-06T12:39:00.740435",
+  "end_time": "2026-05-06T12:39:01.852818",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "24efb265",
+      "type": "MISSING_VALUES",
+      "column": "name",
+      "null_count": 493,
+      "null_pct": 4.93,
+      "severity": "MEDIUM",
+      "detail": "Column 'name' has 493 missing values (4.93%)"
+    },
+    {
+      "issue_id": "fb4801dc",
+      "type": "MISSING_VALUES",
+      "column": "age",
+      "null_count": 1189,
+      "null_pct": 11.89,
+      "severity": "MEDIUM",
+      "detail": "Column 'age' has 1189 missing values (11.89%)"
+    },
+    {
+      "issue_id": "1d2691c3",
+      "type": "MISSING_VALUES",
+      "column": "location",
+      "null_count": 1504,
+      "null_pct": 15.04,
+      "severity": "MEDIUM",
+      "detail": "Column 'location' has 1504 missing values (15.04%)"
+    },
+    {
+      "issue_id": "a10ff45a",
+      "type": "MISSING_VALUES",
+      "column": "signup_date",
+      "null_count": 1966,
+      "null_pct": 19.66,
+      "severity": "MEDIUM",
+      "detail": "Column 'signup_date' has 1966 missing values (19.66%)"
+    },
+    {
+      "issue_id": "63778300",
+      "type": "MISSING_VALUES",
+      "column": "new_feature_flag",
+      "null_count": 3382,
+      "null_pct": 33.82,
+      "severity": "HIGH",
+      "detail": "Column 'new_feature_flag' has 3382 missing values (33.82%)"
+    },
+    {
+      "issue_id": "c9e2c212",
+      "type": "DATA_ANOMALY",
+      "column": "age",
+      "outlier_count": 1284,
+      "outlier_values": [
+        120.0,
+        120.0,
+        120.0,
+        120.0,
+        120.0
+      ],
+      "bounds": {
+        "lower": -48.0,
+        "upper": 106.0
+      },
+      "severity": "HIGH",
+      "detail": "Column 'age' has 1284 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "24efb265",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "fb4801dc",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "1d2691c3",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "a10ff45a",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "63778300",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "c9e2c212",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "24efb265",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "fb4801dc",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "1d2691c3",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "a10ff45a",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "63778300",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "c9e2c212",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -48.0,
+        "upper": 106.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "24efb265",
+      "action": "FILL_MODE",
+      "result": "Filled 493 nulls in 'name' with mode='AABCyljyTl'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "fb4801dc",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 1189 nulls in 'age' with median=30.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "1d2691c3",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric column 'location' \u2014 filled 1504 nulls with mode='Mumbai'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a10ff45a",
+      "action": "FILL_MODE",
+      "result": "Filled 1966 nulls in 'signup_date' with mode='bad_date'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "63778300",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 3382 nulls in 'new_feature_flag' with median=0.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "c9e2c212",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1284 outliers in 'age' to [-48.0, 106.0]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_users_schema_drift_csv.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 6 issue(s) in 'users_schema_drift.csv'. Types: ['MISSING_VALUES', 'DATA_ANOMALY']",
+    "[ClassificationAgent] Classified 6 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 24efb265: FILL_MODE | fb4801dc: FILL_MEDIAN | 1d2691c3: FILL_MEDIAN | a10ff45a: FILL_MODE | 63778300: FILL_MEDIAN | c9e2c212: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 6/6 fixes. Healed=data/healed_users_schema_drift_csv.csv"
+  ]
+}

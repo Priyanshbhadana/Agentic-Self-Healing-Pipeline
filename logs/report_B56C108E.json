@@ -1,0 +1,293 @@
+{
+  "run_id": "B56C108E",
+  "scenario": "data_anomaly",
+  "start_time": "2026-05-06T12:02:06.757410",
+  "end_time": "2026-05-06T12:02:06.826181",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "9edc7df1",
+      "type": "DTYPE_MISMATCH",
+      "column": "age",
+      "expected_dtype": "float64",
+      "actual_dtype": "int64",
+      "severity": "MEDIUM",
+      "detail": "Column 'age': expected float64, got int64"
+    },
+    {
+      "issue_id": "8a4ce80b",
+      "type": "DTYPE_MISMATCH",
+      "column": "salary",
+      "expected_dtype": "float64",
+      "actual_dtype": "int64",
+      "severity": "MEDIUM",
+      "detail": "Column 'salary': expected float64, got int64"
+    },
+    {
+      "issue_id": "61fd9b59",
+      "type": "DTYPE_MISMATCH",
+      "column": "email",
+      "expected_dtype": "object",
+      "actual_dtype": "str",
+      "severity": "MEDIUM",
+      "detail": "Column 'email': expected object, got str"
+    },
+    {
+      "issue_id": "d56c5744",
+      "type": "DTYPE_MISMATCH",
+      "column": "country",
+      "expected_dtype": "object",
+      "actual_dtype": "str",
+      "severity": "MEDIUM",
+      "detail": "Column 'country': expected object, got str"
+    },
+    {
+      "issue_id": "0e4ec106",
+      "type": "DTYPE_MISMATCH",
+      "column": "signup_date",
+      "expected_dtype": "object",
+      "actual_dtype": "str",
+      "severity": "MEDIUM",
+      "detail": "Column 'signup_date': expected object, got str"
+    },
+    {
+      "issue_id": "cacb2d3d",
+      "type": "DATA_ANOMALY",
+      "column": "age",
+      "outlier_count": 3,
+      "outlier_values": [
+        999,
+        200,
+        150
+      ],
+      "bounds": {
+        "lower": -59.0,
+        "upper": 137.0
+      },
+      "severity": "LOW",
+      "detail": "Column 'age' has 3 outlier(s) outside IQR bounds"
+    },
+    {
+      "issue_id": "fdc4366a",
+      "type": "DATA_ANOMALY",
+      "column": "salary",
+      "outlier_count": 1,
+      "outlier_values": [
+        99999999
+      ],
+      "bounds": {
+        "lower": -106388.75,
+        "upper": 260505.75
+      },
+      "severity": "LOW",
+      "detail": "Column 'salary' has 1 outlier(s) outside IQR bounds"
+    },
+    {
+      "issue_id": "e299cfc6",
+      "type": "DATA_ANOMALY",
+      "column": "score",
+      "outlier_count": 1,
+      "outlier_values": [
+        9999.9
+      ],
+      "bounds": {
+        "lower": -122.75,
+        "upper": 225.94
+      },
+      "severity": "LOW",
+      "detail": "Column 'score' has 1 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "9edc7df1",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "8a4ce80b",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "61fd9b59",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "d56c5744",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "0e4ec106",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "cacb2d3d",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    },
+    {
+      "issue_id": "fdc4366a",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    },
+    {
+      "issue_id": "e299cfc6",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "9edc7df1",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "float64"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "8a4ce80b",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "float64"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "61fd9b59",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "object"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "d56c5744",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "object"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "0e4ec106",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "object"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "cacb2d3d",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -59.0,
+        "upper": 137.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    },
+    {
+      "issue_id": "fdc4366a",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -106388.75,
+        "upper": 260505.75
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    },
+    {
+      "issue_id": "e299cfc6",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -122.75,
+        "upper": 225.94
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "9edc7df1",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'age' to float64",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "8a4ce80b",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'salary' to float64",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "61fd9b59",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'email' to object",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "d56c5744",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'country' to object",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "0e4ec106",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'signup_date' to object",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "cacb2d3d",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 3 outliers in 'age' to [-59.0, 137.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "fdc4366a",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1 outliers in 'salary' to [-106388.75, 260505.75]",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "e299cfc6",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1 outliers in 'score' to [-122.75, 225.94]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_data_anomaly.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 8 issue(s) in 'data_anomaly'. Types: ['DATA_ANOMALY', 'DTYPE_MISMATCH']",
+    "[ClassificationAgent] Classified 8 issues. Primary: SCHEMA_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 9edc7df1: CAST_DTYPE | 8a4ce80b: CAST_DTYPE | 61fd9b59: CAST_DTYPE | d56c5744: CAST_DTYPE | 0e4ec106: CAST_DTYPE | cacb2d3d: CLIP_OUTLIERS | fdc4366a: CLIP_OUTLIERS | e299cfc6: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 8/8 fixes. Output: data/healed_data_anomaly.csv"
+  ]
+}

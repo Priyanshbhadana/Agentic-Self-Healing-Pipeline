@@ -1,0 +1,9 @@
+{
+  "user_id": "int64",
+  "age": "float64",
+  "salary": "float64",
+  "email": "object",
+  "score": "float64",
+  "country": "object",
+  "signup_date": "object"
+}

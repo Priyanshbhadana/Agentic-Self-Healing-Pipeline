@@ -1,0 +1,446 @@
+{
+  "run_id": "A2BEFFAE",
+  "scenario": "stress_test_orders.csv",
+  "generated_at": "2026-05-09T12:17:11.167710",
+  "original_shape": {
+    "rows": 1062,
+    "cols": 13
+  },
+  "healed_shape": {
+    "rows": 1062,
+    "cols": 13
+  },
+  "removed_rows": 0,
+  "null_before": 89,
+  "null_after": 0,
+  "fixes_applied": [
+    {
+      "issue_id": "0fb97ff2",
+      "action": "FILL_MODE",
+      "result": "Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "c76c5070",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "733e237c",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "84fbec32",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "7d635c1b",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "da7b63db",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]",
+      "status": "SUCCESS"
+    }
+  ],
+  "ge_pre_validation": {
+    "suite": "custom_stress_test_orders.csv",
+    "total": 15,
+    "passed": 14,
+    "failed": 1,
+    "success_pct": 93.3,
+    "evaluated_at": "2026-05-09T12:17:11.128078",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "1062",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "order_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "customer_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "email",
+        "passed": "True",
+        "observed": "2.5% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "phone",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "order_amount",
+        "passed": "True",
+        "observed": "2.9% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "quantity",
+        "passed": "True",
+        "observed": "0.3% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "discount_pct",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "order_date",
+        "passed": "True",
+        "observed": "2.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "status",
+        "passed": "True",
+        "observed": "0.7% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "product_category",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "product_name",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "payment_type",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "shipping_country",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "discount_pct",
+        "passed": false,
+        "observed": "min=-20.0, max=200.0",
+        "expected": "[0.0, 75.0]",
+        "detail": "10 values outside range"
+      }
+    ]
+  },
+  "ge_post_validation": {
+    "suite": "custom_stress_test_orders.csv",
+    "total": 15,
+    "passed": 14,
+    "failed": 1,
+    "success_pct": 93.3,
+    "evaluated_at": "2026-05-09T12:17:11.144398",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "1062",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "order_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "customer_id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "email",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "phone",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "order_amount",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "quantity",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "discount_pct",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "order_date",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "status",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "product_category",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "product_name",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "payment_type",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "shipping_country",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "discount_pct",
+        "passed": false,
+        "observed": "min=-20.0, max=65.0",
+        "expected": "[0.0, 75.0]",
+        "detail": "2 values outside range"
+      }
+    ]
+  },
+  "column_profiles": {
+    "order_id": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 1050,
+      "sample": [
+        "ORD-10000",
+        "ORD-10001",
+        "ORD-10002"
+      ]
+    },
+    "customer_id": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 993,
+      "sample": [
+        "CUST-8359",
+        "CUST-6925",
+        "CUST-1916"
+      ]
+    },
+    "email": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 1022,
+      "sample": [
+        "  hulkly.zmmynu70@outlook.com  ",
+        "ccwp.snzj74@yahoo.com",
+        "@domain.com"
+      ]
+    },
+    "phone": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 1033,
+      "sample": [
+        "+1-206-877-3615",
+        "+1-921-171-1750",
+        "+1-523-510-5386"
+      ]
+    },
+    "order_amount": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 1015,
+      "sample": [
+        "3046.68",
+        "-5.86",
+        "4050.42"
+      ]
+    },
+    "quantity": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 14,
+      "sample": [
+        "9",
+        "9",
+        "6"
+      ]
+    },
+    "discount_pct": {
+      "dtype": "int64",
+      "null_count": 0,
+      "unique": 9,
+      "sample": [
+        25,
+        25,
+        0
+      ]
+    },
+    "order_date": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 669,
+      "sample": [
+        "2023-03-09",
+        "2025-07-16",
+        "2022-08-05"
+      ]
+    },
+    "status": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 37,
+      "sample": [
+        "Pending",
+        "Shipped",
+        "  Shipped  "
+      ]
+    },
+    "product_category": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 16,
+      "sample": [
+        "Clothing",
+        "Toys",
+        "Beauty"
+      ]
+    },
+    "product_name": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 40,
+      "sample": [
+        "Jacket",
+        "LEGO Set",
+        "Perfume"
+      ]
+    },
+    "payment_type": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 12,
+      "sample": [
+        "Debit Card",
+        "Debit Card",
+        "Barter"
+      ]
+    },
+    "shipping_country": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 10,
+      "sample": [
+        "DE",
+        "UK",
+        "SG"
+      ]
+    }
+  }
+}

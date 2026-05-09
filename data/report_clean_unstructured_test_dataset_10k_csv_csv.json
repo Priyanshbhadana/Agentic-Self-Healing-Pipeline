@@ -1,0 +1,334 @@
+{
+  "run_id": "C9413CAE",
+  "scenario": "clean_unstructured_test_dataset_10k.csv.csv",
+  "generated_at": "2026-05-08T17:32:51.897451",
+  "original_shape": {
+    "rows": 10000,
+    "cols": 8
+  },
+  "healed_shape": {
+    "rows": 10000,
+    "cols": 8
+  },
+  "removed_rows": 0,
+  "null_before": 0,
+  "null_after": 0,
+  "fixes_applied": [
+    {
+      "issue_id": "05043e30",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1284 outliers in 'age' to [-5.0, 65.0]",
+      "status": "SUCCESS"
+    }
+  ],
+  "ge_pre_validation": {
+    "suite": "custom_clean_unstructured_test_dataset_10k.csv.csv",
+    "total": 13,
+    "passed": 11,
+    "failed": 2,
+    "success_pct": 84.6,
+    "evaluated_at": "2026-05-08T17:32:51.829423",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "10000",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "name",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "age",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "salary",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "city",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "score",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "join_date",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "comment",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "id",
+        "passed": false,
+        "observed": "min=1.0, max=10000.0",
+        "expected": "[33.663333333333334, 29700.03]",
+        "detail": "33 values outside range"
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "age",
+        "passed": true,
+        "observed": "min=-5.0, max=100.0",
+        "expected": "[-15.0, 300.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "salary",
+        "passed": true,
+        "observed": "min=-100.0, max=270000.0",
+        "expected": "[-300.0, 810000.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "score",
+        "passed": false,
+        "observed": "min=0.01, max=99.96",
+        "expected": "[0.37333333333333335, 297.0]",
+        "detail": "34 values outside range"
+      }
+    ]
+  },
+  "ge_post_validation": {
+    "suite": "custom_clean_unstructured_test_dataset_10k.csv.csv",
+    "total": 13,
+    "passed": 11,
+    "failed": 2,
+    "success_pct": 84.6,
+    "evaluated_at": "2026-05-08T17:32:51.854089",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "10000",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "id",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "name",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "age",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "salary",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "city",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "score",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "join_date",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "comment",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "id",
+        "passed": false,
+        "observed": "min=1.0, max=10000.0",
+        "expected": "[33.663333333333334, 29700.03]",
+        "detail": "33 values outside range"
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "age",
+        "passed": true,
+        "observed": "min=-5.0, max=65.0",
+        "expected": "[-15.0, 195.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "salary",
+        "passed": true,
+        "observed": "min=-100.0, max=270000.0",
+        "expected": "[-300.0, 810000.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "score",
+        "passed": false,
+        "observed": "min=0.01, max=99.96",
+        "expected": "[0.37333333333333335, 297.0]",
+        "detail": "34 values outside range"
+      }
+    ]
+  },
+  "column_profiles": {
+    "id": {
+      "dtype": "int64",
+      "null_count": 0,
+      "unique": 10000,
+      "sample": [
+        1,
+        2,
+        3
+      ]
+    },
+    "name": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 9507,
+      "sample": [
+        "MmhfM",
+        "vblAbkHCl",
+        "Nivol"
+      ]
+    },
+    "age": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 7,
+      "sample": [
+        30.0,
+        35.0,
+        35.0
+      ]
+    },
+    "salary": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 6,
+      "sample": [
+        50000.0,
+        90000.0,
+        50000.0
+      ]
+    },
+    "city": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 9,
+      "sample": [
+        "Kolkata",
+        "NY",
+        "Mumbai"
+      ]
+    },
+    "score": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 5949,
+      "sample": [
+        61.87,
+        40.73,
+        85.1
+      ]
+    },
+    "join_date": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 4,
+      "sample": [
+        "2021-05-10",
+        "2021-05-10",
+        "bad_date"
+      ]
+    },
+    "comment": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 6,
+      "sample": [
+        "excellent!!!",
+        "good",
+        "excellent!!!"
+      ]
+    }
+  }
+}

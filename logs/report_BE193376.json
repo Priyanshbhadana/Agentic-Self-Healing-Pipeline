@@ -1,0 +1,64 @@
+{
+  "run_id": "BE193376",
+  "scenario": "clean_unstructured_test_dataset_10k.csv.csv",
+  "start_time": "2026-05-07T15:15:05.898550",
+  "end_time": "2026-05-07T15:15:05.998032",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "e0564f75",
+      "type": "DATA_ANOMALY",
+      "column": "age",
+      "outlier_count": 1284,
+      "outlier_values": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "bounds": {
+        "lower": -5.0,
+        "upper": 65.0
+      },
+      "severity": "HIGH",
+      "detail": "Column 'age' has 1284 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "e0564f75",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "e0564f75",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -5.0,
+        "upper": 65.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "e0564f75",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1284 outliers in 'age' to [-5.0, 65.0]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_clean_unstructured_test_dataset_10k_csv_csv.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 1 issue(s) in 'clean_unstructured_test_dataset_10k.csv.csv'. Types: ['DATA_ANOMALY']",
+    "[ClassificationAgent] Classified 1 issues. Primary: DATA_ANOMALY",
+    "[DecisionAgent] Fix plan \u2192 e0564f75: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 1/1 fixes. Healed=data/healed_clean_unstructured_test_dataset_10k_csv_csv.csv"
+  ]
+}

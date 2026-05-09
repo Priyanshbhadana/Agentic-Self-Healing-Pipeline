@@ -1,0 +1,15 @@
+{
+  "run_id": "296823CF",
+  "scenario": "clean_stress_test_orders.csv.csv",
+  "start_time": "2026-05-08T12:15:03.993031",
+  "end_time": "2026-05-08T12:15:04.046703",
+  "final_status": "RUNNING",
+  "issues_detected": [],
+  "classifications": [],
+  "fix_plan": [],
+  "fixes_applied": [],
+  "healed_path": "",
+  "agent_logs": [
+    "[DetectionAgent] Dataset passed all checks."
+  ]
+}

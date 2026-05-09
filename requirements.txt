@@ -1,0 +1,12 @@
+langgraph
+langchain
+langchain-core
+langchain-anthropic
+anthropic
+pandas
+numpy
+python-dotenv
+streamlit
+plotly
+duckdb
+typing_extensions

@@ -1,0 +1,360 @@
+{
+  "run_id": "16ED26BD",
+  "scenario": "missing_values",
+  "generated_at": "2026-05-09T12:19:37.589214",
+  "executive_summary": "Governance scan of 'missing_values': 5 PII columns identified across 7 total columns. GDPR compliance score: 100%. Masked dataset generated. 4 policy actions recommended.",
+  "lineage": {
+    "path": "scenario_missing \u2192 SQL transforms \u2192 healed_missing_values",
+    "total_nodes": 6,
+    "total_edges": 5,
+    "sources": [
+      "scenario_missing"
+    ],
+    "sinks": [
+      "healed_missing_values"
+    ],
+    "transformations": [
+      "source_data",
+      "cleaned_data",
+      "aggregated"
+    ],
+    "nodes": [
+      {
+        "id": "n_src",
+        "name": "scenario_missing",
+        "type": "SOURCE",
+        "description": "Raw ingestion source",
+        "system": "CSV / Database"
+      },
+      {
+        "id": "n_cte_0",
+        "name": "source_data",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: source_data",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_cte_1",
+        "name": "cleaned_data",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: cleaned_data",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_cte_2",
+        "name": "aggregated",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: aggregated",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_join_0",
+        "name": "JOIN aggregated",
+        "type": "TRANSFORMATION",
+        "description": "LEFT JOIN JOIN",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_sink",
+        "name": "healed_missing_values",
+        "type": "SINK",
+        "description": "Cleaned output dataset",
+        "system": "Data Warehouse / File"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n_src",
+        "to": "n_cte_0",
+        "transformation": "CTE: source_data",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_0",
+        "to": "n_cte_1",
+        "transformation": "CTE: cleaned_data",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_1",
+        "to": "n_cte_2",
+        "transformation": "CTE: aggregated",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_2",
+        "to": "n_join_0",
+        "transformation": "c.signup_date = a.signup_date",
+        "operation": "JOIN"
+      },
+      {
+        "from": "n_join_0",
+        "to": "n_sink",
+        "transformation": "Write cleaned output",
+        "operation": "INSERT"
+      }
+    ]
+  },
+  "pii_summary": {
+    "total_pii_columns": 5,
+    "critical_columns": [],
+    "high_columns": [
+      "user_id",
+      "salary",
+      "email",
+      "signup_date"
+    ],
+    "masked_data_path": "data/b2_masked_missing_values.csv",
+    "tags": [
+      {
+        "column": "user_id",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 100,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "salary",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 80,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "email",
+        "pii_type": "EMAIL",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f) - Integrity & Confidentiality",
+        "masking_strategy": "PARTIAL_MASK",
+        "values_affected": 90,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "score",
+        "pii_type": "DERIVED_DATA",
+        "sensitivity": "LOW",
+        "gdpr_article": "Art.4(1) - Derived/Inferred",
+        "masking_strategy": "NONE",
+        "values_affected": 87,
+        "requires_consent": false,
+        "retention_policy": "Duration of service",
+        "access_level": "Internal use"
+      },
+      {
+        "column": "signup_date",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 100,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      }
+    ]
+  },
+  "catalogue": {
+    "total_columns": 7,
+    "pii_tagged": 5,
+    "domains": [
+      "Identity",
+      "Performance",
+      "Geography",
+      "Demographics",
+      "Finance",
+      "Temporal",
+      "Contact"
+    ],
+    "entries": [
+      {
+        "column": "user_id",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'user_id' stores user id information.",
+        "business_term": "User Id",
+        "data_steward": "Data Engineering Team",
+        "domain": "Identity",
+        "tags": [
+          "Identity",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "age",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'age' stores age information.",
+        "business_term": "Age",
+        "data_steward": "Data Engineering Team",
+        "domain": "Demographics",
+        "tags": [
+          "Demographics",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": false,
+        "classification": "INTERNAL"
+      },
+      {
+        "column": "salary",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'salary' stores salary information.",
+        "business_term": "Salary",
+        "data_steward": "Data Engineering Team",
+        "domain": "Finance",
+        "tags": [
+          "Finance",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "email",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'email' stores email information.",
+        "business_term": "Email",
+        "data_steward": "Data Engineering Team",
+        "domain": "Contact",
+        "tags": [
+          "Contact",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "EMAIL",
+        "gdpr_article": "Art.5(1)(f) - Integrity & Confidentiality",
+        "masking_strategy": "PARTIAL_MASK",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "score",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'score' stores score information.",
+        "business_term": "Score",
+        "data_steward": "Data Engineering Team",
+        "domain": "Performance",
+        "tags": [
+          "Performance",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "INTERNAL",
+        "pii_type": "DERIVED_DATA",
+        "gdpr_article": "Art.4(1) - Derived/Inferred",
+        "masking_strategy": "NONE",
+        "retention_policy": "Duration of service",
+        "access_level": "Internal use"
+      },
+      {
+        "column": "country",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'country' stores country information.",
+        "business_term": "Country",
+        "data_steward": "Data Engineering Team",
+        "domain": "Geography",
+        "tags": [
+          "Geography",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": false,
+        "classification": "INTERNAL"
+      },
+      {
+        "column": "signup_date",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'signup_date' stores signup date information.",
+        "business_term": "Signup Date",
+        "data_steward": "Data Engineering Team",
+        "domain": "Temporal",
+        "tags": [
+          "Temporal",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      }
+    ]
+  },
+  "gdpr_compliance": {
+    "score": 100,
+    "checks": {
+      "Data Minimisation (Art.5.1.c)": true,
+      "PII Identified (Art.4.1)": true,
+      "Masking Applied (Art.25)": true,
+      "Retention Policy Defined (Art.5.1.e)": true,
+      "Lineage Documented (Art.30)": true
+    },
+    "status": "COMPLIANT"
+  },
+  "policy_recommendations": [
+    {
+      "priority": "HIGH",
+      "area": "Data Masking",
+      "action": "Apply masking strategies to HIGH sensitivity columns: ['user_id', 'salary', 'email', 'signup_date']",
+      "rationale": "High sensitivity PII requires encryption or pseudonymisation",
+      "gdpr_ref": "Art.5(1)(f) \u2014 Integrity & Confidentiality"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Data Catalogue",
+      "action": "Register all columns in enterprise data catalogue with stewardship assignments",
+      "rationale": "Enables data governance, access control, and compliance auditing",
+      "gdpr_ref": "Art.30 \u2014 Records of Processing Activities"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Lineage Tracking",
+      "action": "Automate lineage capture in CI/CD pipeline to track all data transformations",
+      "rationale": "Data lineage is required for impact analysis and compliance audits",
+      "gdpr_ref": "Art.30 \u2014 Records of Processing Activities"
+    },
+    {
+      "priority": "LOW",
+      "area": "Access Control",
+      "action": "Implement role-based access: Authorized personnel with signed DPA for HIGH-sensitivity data",
+      "rationale": "Principle of least privilege reduces breach risk",
+      "gdpr_ref": "Art.32 \u2014 Security of Processing"
+    }
+  ],
+  "final_status": "SUCCESS"
+}

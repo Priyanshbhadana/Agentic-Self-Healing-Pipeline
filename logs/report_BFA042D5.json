@@ -1,0 +1,231 @@
+{
+  "run_id": "BFA042D5",
+  "scenario": "missing_values",
+  "start_time": "2026-05-06T12:02:06.520281",
+  "end_time": "2026-05-06T12:02:06.567051",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "955a63eb",
+      "type": "MISSING_VALUES",
+      "column": "age",
+      "null_count": 15,
+      "null_pct": 15.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'age' has 15 missing values (15.0%)"
+    },
+    {
+      "issue_id": "7613a94e",
+      "type": "MISSING_VALUES",
+      "column": "salary",
+      "null_count": 20,
+      "null_pct": 20.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'salary' has 20 missing values (20.0%)"
+    },
+    {
+      "issue_id": "9454ffbd",
+      "type": "MISSING_VALUES",
+      "column": "email",
+      "null_count": 10,
+      "null_pct": 10.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'email' has 10 missing values (10.0%)"
+    },
+    {
+      "issue_id": "a236a412",
+      "type": "MISSING_VALUES",
+      "column": "score",
+      "null_count": 13,
+      "null_pct": 13.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'score' has 13 missing values (13.0%)"
+    },
+    {
+      "issue_id": "413d17bc",
+      "type": "DTYPE_MISMATCH",
+      "column": "email",
+      "expected_dtype": "object",
+      "actual_dtype": "str",
+      "severity": "MEDIUM",
+      "detail": "Column 'email': expected object, got str"
+    },
+    {
+      "issue_id": "1854af07",
+      "type": "DTYPE_MISMATCH",
+      "column": "country",
+      "expected_dtype": "object",
+      "actual_dtype": "str",
+      "severity": "MEDIUM",
+      "detail": "Column 'country': expected object, got str"
+    },
+    {
+      "issue_id": "9041f7ec",
+      "type": "DTYPE_MISMATCH",
+      "column": "signup_date",
+      "expected_dtype": "object",
+      "actual_dtype": "str",
+      "severity": "MEDIUM",
+      "detail": "Column 'signup_date': expected object, got str"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "955a63eb",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "7613a94e",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "9454ffbd",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "a236a412",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "413d17bc",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "1854af07",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "9041f7ec",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "955a63eb",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "7613a94e",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "9454ffbd",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "a236a412",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "413d17bc",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "object"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "1854af07",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "object"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "9041f7ec",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "object"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "955a63eb",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 15 nulls in 'age' with median=40.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "7613a94e",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 20 nulls in 'salary' with median=78954.5",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "9454ffbd",
+      "action": "FILL_MODE",
+      "result": "Filled 10 nulls in 'email' with mode='user11@example.com'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a236a412",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 13 nulls in 'score' with median=51.78",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "413d17bc",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'email' to object",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "1854af07",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'country' to object",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "9041f7ec",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'signup_date' to object",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_missing_values.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 7 issue(s) in 'missing_values'. Types: ['MISSING_VALUES', 'DTYPE_MISMATCH']",
+    "[ClassificationAgent] Classified 7 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 955a63eb: FILL_MEDIAN | 7613a94e: FILL_MEDIAN | 9454ffbd: FILL_MODE | a236a412: FILL_MEDIAN | 413d17bc: CAST_DTYPE | 1854af07: CAST_DTYPE | 9041f7ec: CAST_DTYPE",
+    "[HealingAgent] Applied 7/7 fixes. Output: data/healed_missing_values.csv"
+  ]
+}
