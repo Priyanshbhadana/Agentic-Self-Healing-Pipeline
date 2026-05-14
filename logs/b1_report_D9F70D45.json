@@ -1,0 +1,137 @@
+{
+  "run_id": "D9F70D45",
+  "scenario": "data_anomaly",
+  "generated_at": "2026-05-14T17:36:43.482932",
+  "profile_summary": "Dataset: 60 rows \u00d7 7 cols | Nulls: 0 (0.0%) | Duplicates: 0",
+  "rules_generated": 6,
+  "violations_found": 4,
+  "validation_score": 33.3,
+  "heals_applied": 4,
+  "heals_ok": 4,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_data_anomaly.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "user_id",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 1.0,
+        "max": 60.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'user_id' values must be between 1.0 and 60.0"
+    },
+    {
+      "rule_id": "R002",
+      "column": "age",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 999.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'age' values must be between 0 and 999.0"
+    },
+    {
+      "rule_id": "R003",
+      "column": "salary",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 99999999.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'salary' values must be between 0 and 99999999.0"
+    },
+    {
+      "rule_id": "R004",
+      "column": "score",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 9999.9
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'score' values must be between 0 and 9999.9"
+    },
+    {
+      "rule_id": "R005",
+      "column": "email",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "EMAIL"
+      },
+      "severity": "HIGH",
+      "description": "Column 'email' contains PII (EMAIL) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R006",
+      "column": "signup_date",
+      "rule_type": "DATE_FORMAT",
+      "params": {},
+      "severity": "HIGH",
+      "description": "Column 'signup_date' must be a valid date format"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R002",
+      "column": "age",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1,
+      "detail": "1 values outside [0,999.0]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R003",
+      "column": "salary",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1,
+      "detail": "1 values outside [0,99999999.0]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R004",
+      "column": "score",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1,
+      "detail": "1 values outside [0,9999.9]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R005",
+      "column": "email",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 60,
+      "detail": "Column 'email' contains unmasked EMAIL data",
+      "severity": "HIGH"
+    }
+  ],
+  "heals": [
+    {
+      "column": "age",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1 values to [0,999.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "salary",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1 values to [0,99999999.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "score",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1 values to [0,9999.9]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "email",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'email' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    }
+  ]
+}

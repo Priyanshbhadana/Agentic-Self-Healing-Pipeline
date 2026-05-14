@@ -1,22 +1,18 @@
 """
 agents/b2_lineage_governance_agent.py
 ──────────────────────────────────────
-B2: Lineage & Governance Agent
-Flow: SQL → extract_lineage → tag_pii → enrich_catalogue
+B2: Lineage & Governance Agent (with Memory + Tool Use)
+Flow: SQL → tool_query → extract_lineage → tag_pii → enrich_catalogue → report
 
 LangGraph Nodes:
   1. sql_parser_node       — parse SQL / data path → extract table/column refs
-  2. lineage_extractor_node— LLM extracts full data lineage graph
-  3. pii_tagger_node       — detect & tag PII columns with sensitivity levels
-  4. catalogue_enricher_node— LLM enriches data catalogue with descriptions
-  5. governance_report_node — final governance report + policy recommendations
+  2. tool_query_node       — MCP tool: query MockDB for existing records
+  3. lineage_extractor_node— LLM extracts full data lineage graph
+  4. pii_tagger_node       — detect & tag PII columns with sensitivity levels
+  5. catalogue_enricher_node— LLM enriches data catalogue with descriptions
+  6. governance_report_node — final governance report + policy recommendations
 
-What it produces:
-  • Lineage graph (sources → transformations → outputs)
-  • PII tag map per column with masking strategy
-  • Enriched data catalogue (column descriptions, business terms)
-  • Governance policy report (GDPR, data retention, access control)
-  • All stored in SQLite catalogue table
+Memory: MemorySaver checkpointer for cross-run state persistence
 """
 
 import pandas as pd
@@ -31,13 +27,14 @@ import sqlite3
 import hashlib
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils.helpers import PipelineLogger
+from utils.helpers import PipelineLogger, numpy_safe
 
 logger = PipelineLogger("B2-LineageGovernance")
 
 from typing import TypedDict, Annotated
 import operator
 from langgraph.graph import StateGraph, END
+from langgraph.checkpoint.memory import MemorySaver
 
 
 # ──────────────────────────────────────────────────────────────
@@ -70,6 +67,9 @@ class B2State(TypedDict):
     # Governance Report outputs
     governance_report: dict
     policy_recommendations: list
+
+    # Tool outputs
+    tool_results:    dict      # results from MCP tool calls
 
     # Final
     final_status:    str
@@ -274,7 +274,8 @@ Make it realistic for a data pipeline that:
 Return ONLY valid JSON. No markdown."""
 
     try:
-        import anthropic
+        # pyrefly: ignore [missing-import]
+        import anthropic   
         client = anthropic.Anthropic()
         resp = client.messages.create(
             model="claude-sonnet-4-20250514",
@@ -654,6 +655,7 @@ For EACH column, create a data catalogue entry. Return a JSON array where each i
 Return ONLY valid JSON array. No markdown."""
 
     try:
+        # pyrefly: ignore [missing-import]
         import anthropic
         client = anthropic.Anthropic()
         resp = client.messages.create(
@@ -933,29 +935,118 @@ def governance_report_node(state: B2State) -> B2State:
 # ──────────────────────────────────────────────────────────────
 #  BUILD + RUN
 # ──────────────────────────────────────────────────────────────
+#  TOOL NODE (MCP Integration)
+# ──────────────────────────────────────────────────────────────
+def tool_query_node(state: B2State) -> B2State:
+    """MCP Tool: Query MockDB for existing governance records & quality scores."""
+    logger.info("[B2] 🔧 Tool Call: query_database_tool (existing records)")
+    tool_results = state.get("tool_results", {})
+    try:
+        from mcp_server.pipeline_mcp_server import get_mcp_server
+        mcp = get_mcp_server()
+        # Query existing governance data
+        db_result = mcp.call_tool("query_database_tool", {
+            "sql": "SELECT scenario_name, status, quality_score FROM pipeline_runs ORDER BY started_at DESC LIMIT 5",
+            "limit": 5
+        })
+        tool_results["recent_runs"] = db_result
+        logger.success(f"[B2] ✓ Loaded recent pipeline runs from MockDB")
+
+        # Query quality score trends
+        logger.info("[B2] 🔧 Tool Call: get_quality_scores_tool")
+        scores_result = mcp.call_tool("get_quality_scores_tool", {})
+        tool_results["quality_trends"] = scores_result
+        logger.success(f"[B2] ✓ Quality score trends loaded")
+    except Exception as e:
+        logger.warn(f"[B2] Tool call failed (non-fatal): {e}")
+        tool_results["recent_runs"] = {}
+        tool_results["quality_trends"] = {}
+
+    return {
+        **state,
+        "tool_results": tool_results,
+        "logs": ["[B2-Tool] MockDB query + quality score trends"],
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+#  MEMORY RECALL NODE
+# ──────────────────────────────────────────────────────────────
+def b2_memory_recall_node(state: B2State) -> B2State:
+    """Recall past governance runs to inform current analysis."""
+    logger.info("[B2] 🧠 Memory Recall: checking for past governance data...")
+    tool_results = state.get("tool_results", {})
+    past_context = {}
+
+    try:
+        pipeline = build_b2_pipeline()
+        scenario = state["scenario_name"]
+        recall_config = {"configurable": {"thread_id": f"b2_{scenario}"}}
+        past_state = pipeline.get_state(recall_config)
+
+        if past_state and past_state.values:
+            pv = past_state.values
+            past_context = {
+                "had_prior_run": True,
+                "prior_run_id": pv.get("run_id", ""),
+                "prior_pii_count": len(pv.get("pii_tags", [])),
+                "prior_catalogue_count": len(pv.get("data_catalogue", [])),
+                "prior_status": pv.get("final_status", ""),
+            }
+            logger.success(
+                f"[B2] 🧠 Recalled prior run {past_context['prior_run_id']} | "
+                f"PII={past_context['prior_pii_count']} | "
+                f"catalogue={past_context['prior_catalogue_count']}"
+            )
+        else:
+            past_context = {"had_prior_run": False}
+            logger.info("[B2] 🧠 No prior governance run found — first run")
+    except Exception as e:
+        past_context = {"had_prior_run": False, "recall_error": str(e)}
+        logger.warn(f"[B2] 🧠 Memory recall failed (non-fatal): {e}")
+
+    tool_results["memory_recall"] = past_context
+    return {
+        **state,
+        "tool_results": tool_results,
+        "logs": [f"[B2-Memory] Recall: {past_context}"],
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+#  BUILD + RUN (with Memory + Tools + Recall)
+# ──────────────────────────────────────────────────────────────
+_b2_memory = MemorySaver()
+
 def build_b2_pipeline():
     graph = StateGraph(B2State)
-    graph.add_node("sql_parser",         sql_parser_node)
-    graph.add_node("lineage_extractor",  lineage_extractor_node)
-    graph.add_node("pii_tagger",         pii_tagger_node)
-    graph.add_node("catalogue_enricher", catalogue_enricher_node)
-    graph.add_node("governance_report",  governance_report_node)
+    graph.add_node("memory_recall",      numpy_safe(b2_memory_recall_node))
+    graph.add_node("sql_parser",         numpy_safe(sql_parser_node))
+    graph.add_node("tool_query",         numpy_safe(tool_query_node))
+    graph.add_node("lineage_extractor",  numpy_safe(lineage_extractor_node))
+    graph.add_node("pii_tagger",         numpy_safe(pii_tagger_node))
+    graph.add_node("catalogue_enricher", numpy_safe(catalogue_enricher_node))
+    graph.add_node("governance_report",  numpy_safe(governance_report_node))
 
-    graph.set_entry_point("sql_parser")
-    graph.add_edge("sql_parser",        "lineage_extractor")
+    graph.set_entry_point("memory_recall")
+    graph.add_edge("memory_recall",     "sql_parser")
+    graph.add_edge("sql_parser",        "tool_query")
+    graph.add_edge("tool_query",        "lineage_extractor")
     graph.add_edge("lineage_extractor", "pii_tagger")
     graph.add_edge("pii_tagger",        "catalogue_enricher")
     graph.add_edge("catalogue_enricher","governance_report")
     graph.add_edge("governance_report",  END)
 
-    return graph.compile()
+    return graph.compile(checkpointer=_b2_memory)
 
 
 def run_b2_pipeline(scenario_name: str, data_path: str,
                      sql_query: str = "") -> dict:
     run_id = str(uuid.uuid4())[:8].upper()
+    thread_id = f"b2_{scenario_name}"  # shared per scenario
     print(f"\n{'━'*60}")
     print(f"  🏛️  B2 LINEAGE & GOVERNANCE AGENT | {scenario_name} | {run_id}")
+    print(f"  🧠 Memory thread: {thread_id} (shared across runs)")
     print(f"{'━'*60}\n")
 
     initial: B2State = {
@@ -975,8 +1066,10 @@ def run_b2_pipeline(scenario_name: str, data_path: str,
         "catalogue_summary":"",
         "governance_report":{},
         "policy_recommendations":[],
+        "tool_results":    {},
         "final_status":    "RUNNING",
         "logs":            [],
     }
+    config = {"configurable": {"thread_id": thread_id}}
     pipeline = build_b2_pipeline()
-    return pipeline.invoke(initial)
+    return pipeline.invoke(initial, config=config)

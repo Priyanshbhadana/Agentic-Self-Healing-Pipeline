@@ -10,9 +10,40 @@ Shared utilities used across all agents:
 
 import json
 import datetime
+import numpy as np
 from typing import TypedDict, Optional, Any
 from typing_extensions import Annotated
 import operator
+
+
+# ──────────────────────────────────────────────────────────────
+#  Numpy → Python native converter (for MemorySaver serialization)
+# ──────────────────────────────────────────────────────────────
+def sanitize_numpy(obj):
+    """Recursively convert numpy types to Python natives."""
+    if isinstance(obj, dict):
+        return {k: sanitize_numpy(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return type(obj)(sanitize_numpy(v) for v in obj)
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.bool_):
+        return bool(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    return obj
+
+
+def numpy_safe(func):
+    """Decorator: sanitize node output so MemorySaver can serialize it."""
+    def wrapper(state):
+        result = func(state)
+        return sanitize_numpy(result)
+    wrapper.__name__ = func.__name__
+    wrapper.__doc__ = func.__doc__
+    return wrapper
 
 
 # ──────────────────────────────────────────────────────────────

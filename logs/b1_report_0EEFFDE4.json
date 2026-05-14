@@ -1,0 +1,16 @@
+{
+  "run_id": "0EEFFDE4",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-14T17:25:14.493400",
+  "profile_summary": "Load error: [Errno 2] No such file or directory: 'data/unstructured_test_dataset_10k.csv'",
+  "rules_generated": 0,
+  "violations_found": 0,
+  "validation_score": 0,
+  "heals_applied": 0,
+  "heals_ok": 0,
+  "final_status": "SUCCESS",
+  "healed_path": "",
+  "quality_rules": [],
+  "violations": [],
+  "heals": []
+}

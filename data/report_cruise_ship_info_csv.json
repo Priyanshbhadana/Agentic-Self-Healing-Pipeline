@@ -1,0 +1,408 @@
+{
+  "run_id": "81A8E040",
+  "scenario": "cruise_ship_info.csv",
+  "generated_at": "2026-05-14T22:28:44.476333",
+  "original_shape": {
+    "rows": 158,
+    "cols": 9
+  },
+  "healed_shape": {
+    "rows": 158,
+    "cols": 9
+  },
+  "removed_rows": 0,
+  "null_before": 0,
+  "null_after": 0,
+  "fixes_applied": [
+    {
+      "issue_id": "b79bde20",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1 outliers in 'cabins' to [-8.12, 25.14]",
+      "status": "SUCCESS"
+    }
+  ],
+  "ge_pre_validation": {
+    "suite": "custom_cruise_ship_info.csv",
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "success_pct": 100.0,
+    "evaluated_at": "2026-05-14T22:28:44.162992",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "158",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Ship_name",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Cruise_line",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Age",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Tonnage",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "passengers",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "length",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "cabins",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "passenger_density",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "crew",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "Age",
+        "passed": true,
+        "observed": "min=4.0, max=48.0",
+        "expected": "[1.6666666666666667, 125.16000000000008]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "Tonnage",
+        "passed": true,
+        "observed": "min=2.33, max=220.0",
+        "expected": "[1.1136666666666668, 476.58000000000004]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "passengers",
+        "passed": true,
+        "observed": "min=0.66, max=54.0",
+        "expected": "[0.2732, 131.10000000000002]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "length",
+        "passed": true,
+        "observed": "min=2.79, max=11.82",
+        "expected": "[0.9637333333333333, 33.8403]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "cabins",
+        "passed": true,
+        "observed": "min=0.33, max=27.0",
+        "expected": "[0.1328, 54.219300000000004]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "passenger_density",
+        "passed": true,
+        "observed": "min=17.7, max=71.43",
+        "expected": "[7.988966666666666, 199.2456]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "crew",
+        "passed": true,
+        "observed": "min=0.59, max=21.0",
+        "expected": "[0.19856666666666667, 47.89500000000012]",
+        "detail": ""
+      }
+    ]
+  },
+  "ge_post_validation": {
+    "suite": "custom_cruise_ship_info.csv",
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "success_pct": 100.0,
+    "evaluated_at": "2026-05-14T22:28:44.431854",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "158",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Ship_name",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Cruise_line",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Age",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Tonnage",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "passengers",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "length",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "cabins",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "passenger_density",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "crew",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "Age",
+        "passed": true,
+        "observed": "min=4.0, max=48.0",
+        "expected": "[1.6666666666666667, 125.16000000000008]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "Tonnage",
+        "passed": true,
+        "observed": "min=2.33, max=220.0",
+        "expected": "[1.1136666666666668, 476.58000000000004]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "passengers",
+        "passed": true,
+        "observed": "min=0.66, max=54.0",
+        "expected": "[0.2732, 131.10000000000002]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "length",
+        "passed": true,
+        "observed": "min=2.79, max=11.82",
+        "expected": "[0.9637333333333333, 33.8403]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "cabins",
+        "passed": true,
+        "observed": "min=0.33, max=25.14",
+        "expected": "[0.1328, 54.219300000000004]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "passenger_density",
+        "passed": true,
+        "observed": "min=17.7, max=71.43",
+        "expected": "[7.988966666666666, 199.2456]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "crew",
+        "passed": true,
+        "observed": "min=0.59, max=21.0",
+        "expected": "[0.19856666666666667, 47.89500000000012]",
+        "detail": ""
+      }
+    ]
+  },
+  "column_profiles": {
+    "Ship_name": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 138,
+      "sample": [
+        "Journey",
+        "Quest",
+        "Celebration"
+      ]
+    },
+    "Cruise_line": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 20,
+      "sample": [
+        "Azamara",
+        "Azamara",
+        "Carnival"
+      ]
+    },
+    "Age": {
+      "dtype": "int64",
+      "null_count": 0,
+      "unique": 31,
+      "sample": [
+        6,
+        6,
+        26
+      ]
+    },
+    "Tonnage": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 94,
+      "sample": [
+        30.276999999999997,
+        30.276999999999997,
+        47.262
+      ]
+    },
+    "passengers": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 104,
+      "sample": [
+        6.94,
+        6.94,
+        14.86
+      ]
+    },
+    "length": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 80,
+      "sample": [
+        5.94,
+        5.94,
+        7.22
+      ]
+    },
+    "cabins": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 98,
+      "sample": [
+        3.55,
+        3.55,
+        7.43
+      ]
+    },
+    "passenger_density": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 109,
+      "sample": [
+        42.64,
+        42.64,
+        31.8
+      ]
+    },
+    "crew": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 91,
+      "sample": [
+        3.55,
+        3.55,
+        6.7
+      ]
+    }
+  }
+}

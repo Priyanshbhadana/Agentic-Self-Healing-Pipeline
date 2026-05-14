@@ -1,0 +1,137 @@
+{
+  "run_id": "2F0A24D5",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-14T23:41:29.387534",
+  "profile_summary": "Dataset: 10000 rows \u00d7 8 cols | Nulls: 0 (0.0%) | Duplicates: 0",
+  "rules_generated": 6,
+  "violations_found": 4,
+  "validation_score": 33.3,
+  "heals_applied": 4,
+  "heals_ok": 4,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_custom_upload.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "id",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 1.0,
+        "max": 10000.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'id' values must be between 1.0 and 10000.0"
+    },
+    {
+      "rule_id": "R002",
+      "column": "name",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "NAME"
+      },
+      "severity": "HIGH",
+      "description": "Column 'name' contains PII (NAME) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R003",
+      "column": "age",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 100.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'age' values must be between 0 and 100.0"
+    },
+    {
+      "rule_id": "R004",
+      "column": "salary",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 270000.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'salary' values must be between 0 and 270000.0"
+    },
+    {
+      "rule_id": "R005",
+      "column": "score",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.01,
+        "max": 99.96
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'score' values must be between 0.01 and 99.96"
+    },
+    {
+      "rule_id": "R006",
+      "column": "join_date",
+      "rule_type": "DATE_FORMAT",
+      "params": {},
+      "severity": "HIGH",
+      "description": "Column 'join_date' must be a valid date format"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R002",
+      "column": "name",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 10000,
+      "detail": "Column 'name' contains unmasked NAME data",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R003",
+      "column": "age",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1215,
+      "detail": "1215 values outside [0,100.0]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R004",
+      "column": "salary",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1392,
+      "detail": "1392 values outside [0,270000.0]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R006",
+      "column": "join_date",
+      "violation_type": "INVALID_DATE",
+      "rows_affected": 3985,
+      "detail": "3985 invalid date formats in 'join_date'",
+      "severity": "HIGH"
+    }
+  ],
+  "heals": [
+    {
+      "column": "name",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'name' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "age",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1215 values to [0,100.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "salary",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1392 values to [0,270000.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "join_date",
+      "action": "COERCE_DATE",
+      "result": "Coerced 3985 invalid dates to empty/null",
+      "status": "SUCCESS"
+    }
+  ]
+}

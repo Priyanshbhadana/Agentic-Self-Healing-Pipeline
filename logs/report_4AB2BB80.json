@@ -1,0 +1,138 @@
+{
+  "run_id": "4AB2BB80",
+  "scenario": "missing_values",
+  "start_time": "2026-05-14T17:18:41.029801",
+  "end_time": "2026-05-14T17:18:42.283470",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "78747a4a",
+      "type": "MISSING_VALUES",
+      "column": "age",
+      "null_count": 15,
+      "null_pct": 15.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'age' has 15 missing values (15.0%)"
+    },
+    {
+      "issue_id": "598e573d",
+      "type": "MISSING_VALUES",
+      "column": "salary",
+      "null_count": 20,
+      "null_pct": 20.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'salary' has 20 missing values (20.0%)"
+    },
+    {
+      "issue_id": "d607e3b3",
+      "type": "MISSING_VALUES",
+      "column": "email",
+      "null_count": 10,
+      "null_pct": 10.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'email' has 10 missing values (10.0%)"
+    },
+    {
+      "issue_id": "1fef3c2c",
+      "type": "MISSING_VALUES",
+      "column": "score",
+      "null_count": 13,
+      "null_pct": 13.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'score' has 13 missing values (13.0%)"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "78747a4a",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "598e573d",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "d607e3b3",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "1fef3c2c",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "78747a4a",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "598e573d",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "d607e3b3",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "1fef3c2c",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "78747a4a",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 15 nulls in 'age' with median=40.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "598e573d",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 20 nulls in 'salary' with median=78954.5",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "d607e3b3",
+      "action": "FILL_MODE",
+      "result": "Filled 10 nulls in 'email' with mode='user11@example.com'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "1fef3c2c",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 13 nulls in 'score' with median=51.78",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_missing_values.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 4 issue(s) in 'missing_values'. Types: ['MISSING_VALUES']",
+    "[ClassificationAgent] Classified 4 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 78747a4a: FILL_MEDIAN | 598e573d: FILL_MEDIAN | d607e3b3: FILL_MODE | 1fef3c2c: FILL_MEDIAN",
+    "[HealingAgent] Applied 4/4 fixes. Healed=data/healed_missing_values.csv Removed=data/removed_missing_values.csv"
+  ]
+}

@@ -1,15 +1,19 @@
 """
 agents/b1_ingestion_quality_agent.py
 ─────────────────────────────────────
-B1: Ingestion Quality Agent
-Flow: profile → generate_rules → validate → self_heal
+B1: Ingestion Quality Agent (with Memory + Tool Use)
+Flow: profile → tool_pre_validate → generate_rules → validate → heal → tool_post_validate → report
 
 Nodes:
-  1. profiler_node       — statistical profiling of incoming data
-  2. rule_generator_node — LLM generates quality rules from profile
-  3. validator_node      — validates data against generated rules
-  4. healer_node         — auto-heals violations found
-  5. b1_report_node      — final structured report
+  1. profiler_node           — statistical profiling of incoming data
+  2. tool_pre_validate_node  — MCP tool: GE pre-healing validation
+  3. rule_generator_node     — LLM generates quality rules from profile
+  4. validator_node          — validates data against generated rules
+  5. healer_node             — auto-heals violations found
+  6. tool_post_validate_node — MCP tool: GE post-healing validation
+  7. b1_report_node          — final structured report
+
+Memory: MemorySaver checkpointer for cross-run state persistence
 """
 
 import pandas as pd
@@ -21,13 +25,14 @@ import datetime
 import uuid
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils.helpers import PipelineLogger
+from utils.helpers import PipelineLogger, numpy_safe
 
 logger = PipelineLogger("B1-IngestionQuality")
 
 from typing import TypedDict, Annotated
 import operator
 from langgraph.graph import StateGraph, END
+from langgraph.checkpoint.memory import MemorySaver
 
 
 # ── B1 State ─────────────────────────────────────────────────
@@ -40,6 +45,9 @@ class B1State(TypedDict):
     # Profiler outputs
     profile:         dict      # statistical profile per column
     profile_summary: str       # human-readable summary
+
+    # Tool outputs
+    tool_results:    dict      # results from MCP tool calls
 
     # Rule generator outputs
     quality_rules:   list      # [{rule_id, column, rule_type, params, description}]
@@ -552,38 +560,165 @@ def b1_report_node(state: B1State) -> B1State:
 
 
 # ──────────────────────────────────────────────────────────────
-#  BUILD + RUN
+#  TOOL NODES (MCP Integration)
 # ──────────────────────────────────────────────────────────────
+def tool_pre_validate_node(state: B1State) -> B1State:
+    """MCP Tool: Run GE pre-healing validation on raw data."""
+    logger.info("[B1] 🔧 Tool Call: validate_data_tool (pre-healing)")
+    tool_results = state.get("tool_results", {})
+    try:
+        from mcp_server.pipeline_mcp_server import get_mcp_server
+        mcp = get_mcp_server()
+        ge_result = mcp.call_tool("validate_data_tool", {
+            "csv_path": state["raw_data_path"],
+            "suite_type": "pre_healing",
+            "scenario": state["scenario_name"]
+        })
+        tool_results["pre_healing_ge"] = ge_result
+        logger.success(f"[B1] ✓ GE pre-healing: {ge_result.get('passed',0)}/{ge_result.get('total',0)} passed")
+
+        # Also query historical patterns from MockDB
+        logger.info("[B1] 🔧 Tool Call: query_database_tool (historical patterns)")
+        hist_result = mcp.call_tool("query_database_tool", {
+            "sql": "SELECT issue_type, COUNT(*) as cnt FROM issue_registry GROUP BY issue_type ORDER BY cnt DESC LIMIT 10",
+            "limit": 10
+        })
+        tool_results["historical_patterns"] = hist_result
+        logger.success(f"[B1] ✓ Historical patterns loaded")
+    except Exception as e:
+        logger.warn(f"[B1] Tool call failed (non-fatal): {e}")
+        tool_results["pre_healing_ge"] = {}
+        tool_results["historical_patterns"] = {}
+
+    return {
+        **state,
+        "tool_results": tool_results,
+        "logs": [f"[B1-Tool] Pre-healing GE validation + historical pattern query"],
+    }
+
+
+def tool_post_validate_node(state: B1State) -> B1State:
+    """MCP Tool: Run GE post-healing validation on healed data."""
+    logger.info("[B1] 🔧 Tool Call: validate_data_tool (post-healing)")
+    tool_results = state.get("tool_results", {})
+    healed_path = state.get("healed_data_path", "")
+    if not healed_path or not os.path.exists(healed_path):
+        logger.warn("[B1] No healed data to validate")
+        return {**state, "logs": ["[B1-Tool] Skipped post-healing GE (no healed file)"]}
+    try:
+        from mcp_server.pipeline_mcp_server import get_mcp_server
+        mcp = get_mcp_server()
+        ge_result = mcp.call_tool("validate_data_tool", {
+            "csv_path": healed_path,
+            "suite_type": "post_healing",
+            "scenario": state["scenario_name"]
+        })
+        tool_results["post_healing_ge"] = ge_result
+        logger.success(f"[B1] ✓ GE post-healing: {ge_result.get('passed',0)}/{ge_result.get('total',0)} passed")
+    except Exception as e:
+        logger.warn(f"[B1] Post-healing tool call failed: {e}")
+        tool_results["post_healing_ge"] = {}
+
+    return {
+        **state,
+        "tool_results": tool_results,
+        "logs": [f"[B1-Tool] Post-healing GE validation"],
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+#  MEMORY RECALL NODE
+# ──────────────────────────────────────────────────────────────
+def memory_recall_node(state: B1State) -> B1State:
+    """Recall past runs from memory to inform current pipeline decisions."""
+    logger.info("[B1] 🧠 Memory Recall: checking for past run data...")
+    tool_results = state.get("tool_results", {})
+    past_context = {}
+
+    try:
+        pipeline = build_b1_pipeline()
+        # Use shared scenario thread to find past state
+        scenario = state["scenario_name"]
+        recall_config = {"configurable": {"thread_id": f"b1_{scenario}"}}
+        past_state = pipeline.get_state(recall_config)
+
+        if past_state and past_state.values:
+            pv = past_state.values
+            past_context = {
+                "had_prior_run": True,
+                "prior_run_id": pv.get("run_id", ""),
+                "prior_score": pv.get("validation_score", 0),
+                "prior_violations_count": len(pv.get("violations", [])),
+                "prior_heals_count": len(pv.get("heals_applied", [])),
+                "prior_rules_count": len(pv.get("quality_rules", [])),
+                "prior_status": pv.get("final_status", ""),
+            }
+            logger.success(
+                f"[B1] 🧠 Recalled prior run {past_context['prior_run_id']} | "
+                f"score={past_context['prior_score']}% | "
+                f"violations={past_context['prior_violations_count']} | "
+                f"status={past_context['prior_status']}"
+            )
+        else:
+            past_context = {"had_prior_run": False}
+            logger.info("[B1] 🧠 No prior run found — first run for this scenario")
+    except Exception as e:
+        past_context = {"had_prior_run": False, "recall_error": str(e)}
+        logger.warn(f"[B1] 🧠 Memory recall failed (non-fatal): {e}")
+
+    tool_results["memory_recall"] = past_context
+    return {
+        **state,
+        "tool_results": tool_results,
+        "logs": [f"[B1-Memory] Recall: {past_context}"],
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+#  BUILD + RUN (with Memory + Tools + Recall)
+# ──────────────────────────────────────────────────────────────
+_b1_memory = MemorySaver()
+
 def build_b1_pipeline():
     graph = StateGraph(B1State)
-    graph.add_node("profiler",      profiler_node)
-    graph.add_node("rule_generator",rule_generator_node)
-    graph.add_node("validator",     validator_node)
-    graph.add_node("healer",        healer_node)
-    graph.add_node("b1_report",     b1_report_node)
-    graph.set_entry_point("profiler")
-    graph.add_edge("profiler",      "rule_generator")
-    graph.add_edge("rule_generator","validator")
-    graph.add_edge("validator",     "healer")
-    graph.add_edge("healer",        "b1_report")
-    graph.add_edge("b1_report",     END)
-    return graph.compile()
+    graph.add_node("memory_recall",       numpy_safe(memory_recall_node))
+    graph.add_node("profiler",            numpy_safe(profiler_node))
+    graph.add_node("tool_pre_validate",   numpy_safe(tool_pre_validate_node))
+    graph.add_node("rule_generator",      numpy_safe(rule_generator_node))
+    graph.add_node("validator",           numpy_safe(validator_node))
+    graph.add_node("healer",              numpy_safe(healer_node))
+    graph.add_node("tool_post_validate",  numpy_safe(tool_post_validate_node))
+    graph.add_node("b1_report",           numpy_safe(b1_report_node))
+    graph.set_entry_point("memory_recall")
+    graph.add_edge("memory_recall",       "profiler")
+    graph.add_edge("profiler",            "tool_pre_validate")
+    graph.add_edge("tool_pre_validate",   "rule_generator")
+    graph.add_edge("rule_generator",      "validator")
+    graph.add_edge("validator",           "healer")
+    graph.add_edge("healer",              "tool_post_validate")
+    graph.add_edge("tool_post_validate",  "b1_report")
+    graph.add_edge("b1_report",           END)
+    return graph.compile(checkpointer=_b1_memory)
 
 
 def run_b1_pipeline(scenario_name: str, data_path: str) -> dict:
     run_id = str(uuid.uuid4())[:8].upper()
+    thread_id = f"b1_{scenario_name}"  # shared per scenario — enables cross-run memory
     print(f"\n{'━'*60}")
     print(f"  🔍 B1 INGESTION QUALITY AGENT | {scenario_name} | {run_id}")
+    print(f"  🧠 Memory thread: {thread_id} (shared across runs)")
     print(f"{'━'*60}\n")
 
     initial: B1State = {
         "run_id": run_id, "scenario_name": scenario_name,
         "raw_data_path": data_path, "start_time": datetime.datetime.now().isoformat(),
         "profile": {}, "profile_summary": "",
+        "tool_results": {},
         "quality_rules": [], "rules_rationale": "",
         "violations": [], "validation_score": 0.0,
         "healed_data_path": "", "heals_applied": [],
         "b1_report": {}, "final_status": "RUNNING", "logs": [],
     }
+    config = {"configurable": {"thread_id": thread_id}}
     pipeline = build_b1_pipeline()
-    return pipeline.invoke(initial)
+    return pipeline.invoke(initial, config=config)

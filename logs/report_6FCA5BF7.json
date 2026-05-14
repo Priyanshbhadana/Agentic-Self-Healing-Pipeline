@@ -1,0 +1,145 @@
+{
+  "run_id": "6FCA5BF7",
+  "scenario": "missing_values",
+  "start_time": "2026-05-14T18:30:50.741272",
+  "end_time": "2026-05-14T18:30:52.481508",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "7ff4203a",
+      "type": "MISSING_VALUES",
+      "column": "age",
+      "null_count": 15,
+      "null_pct": 15.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'age' has 15 missing values (15.0%)"
+    },
+    {
+      "issue_id": "23675ef7",
+      "type": "MISSING_VALUES",
+      "column": "salary",
+      "null_count": 20,
+      "null_pct": 20.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'salary' has 20 missing values (20.0%)"
+    },
+    {
+      "issue_id": "e5706151",
+      "type": "MISSING_VALUES",
+      "column": "email",
+      "null_count": 10,
+      "null_pct": 10.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'email' has 10 missing values (10.0%)"
+    },
+    {
+      "issue_id": "3a2ae4f1",
+      "type": "MISSING_VALUES",
+      "column": "score",
+      "null_count": 13,
+      "null_pct": 13.0,
+      "severity": "MEDIUM",
+      "detail": "Column 'score' has 13 missing values (13.0%)"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "7ff4203a",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "23675ef7",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "e5706151",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "3a2ae4f1",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "7ff4203a",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "23675ef7",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "e5706151",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "3a2ae4f1",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "7ff4203a",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 15 nulls in 'age' with median=40.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "23675ef7",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 20 nulls in 'salary' with median=78954.5",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "e5706151",
+      "action": "FILL_MODE",
+      "result": "Filled 10 nulls in 'email' with mode='user11@example.com'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "3a2ae4f1",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 13 nulls in 'score' with median=51.78",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_missing_values.csv",
+  "agent_logs": [
+    "[B3-Memory] Recall: {'had_prior_run': True, 'prior_run_id': 'CBA368E3', 'prior_issues': 0, 'prior_fixes': 0, 'prior_status': 'RUNNING'}",
+    "[DetectionAgent] Found 4 issue(s) in 'missing_values'. Types: ['MISSING_VALUES']",
+    "[ClassificationAgent] Classified 4 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 2efbca74: FILL_MEDIAN | cd8c7c2f: FILL_MEDIAN | 969c0b8a: FILL_MODE | 2a0cc8b4: FILL_MEDIAN",
+    "[HealingAgent] Applied 4/4 fixes. Healed=data/healed_missing_values.csv Removed=data/removed_missing_values.csv",
+    "[LoggingAgent] Report saved: logs/report_CBA368E3.json",
+    "[B3-Memory] Recall: {'had_prior_run': True, 'prior_run_id': '6FCA5BF7', 'prior_issues': 0, 'prior_fixes': 0, 'prior_status': 'RUNNING'}",
+    "[DetectionAgent] Found 4 issue(s) in 'missing_values'. Types: ['MISSING_VALUES']",
+    "[ClassificationAgent] Classified 4 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 7ff4203a: FILL_MEDIAN | 23675ef7: FILL_MEDIAN | e5706151: FILL_MODE | 3a2ae4f1: FILL_MEDIAN",
+    "[HealingAgent] Applied 4/4 fixes. Healed=data/healed_missing_values.csv Removed=data/removed_missing_values.csv"
+  ]
+}

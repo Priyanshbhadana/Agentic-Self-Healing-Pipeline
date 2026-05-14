@@ -1,7 +1,7 @@
 {
-  "run_id": "C9413CAE",
+  "run_id": "A680BA1D",
   "scenario": "clean_unstructured_test_dataset_10k.csv.csv",
-  "generated_at": "2026-05-08T17:32:51.897451",
+  "generated_at": "2026-05-14T23:41:21.473146",
   "original_shape": {
     "rows": 10000,
     "cols": 8
@@ -15,7 +15,7 @@
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "05043e30",
+      "issue_id": "9da7a318",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 1284 outliers in 'age' to [-5.0, 65.0]",
       "status": "SUCCESS"
@@ -27,7 +27,7 @@
     "passed": 11,
     "failed": 2,
     "success_pct": 84.6,
-    "evaluated_at": "2026-05-08T17:32:51.829423",
+    "evaluated_at": "2026-05-14T23:41:21.396045",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
@@ -141,7 +141,7 @@
     "passed": 11,
     "failed": 2,
     "success_pct": 84.6,
-    "evaluated_at": "2026-05-08T17:32:51.854089",
+    "evaluated_at": "2026-05-14T23:41:21.425215",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",

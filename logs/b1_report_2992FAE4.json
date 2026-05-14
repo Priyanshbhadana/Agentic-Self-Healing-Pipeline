@@ -1,0 +1,120 @@
+{
+  "run_id": "2992FAE4",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-14T22:28:57.503586",
+  "profile_summary": "Dataset: 158 rows \u00d7 9 cols | Nulls: 0 (0.0%) | Duplicates: 0",
+  "rules_generated": 8,
+  "violations_found": 1,
+  "validation_score": 87.5,
+  "heals_applied": 1,
+  "heals_ok": 1,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_custom_upload.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "Ship_name",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "NAME"
+      },
+      "severity": "HIGH",
+      "description": "Column 'Ship_name' contains PII (NAME) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R002",
+      "column": "Age",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 4.0,
+        "max": 48.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'Age' values must be between 4.0 and 48.0"
+    },
+    {
+      "rule_id": "R003",
+      "column": "Tonnage",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 2.329,
+        "max": 220.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'Tonnage' values must be between 2.329 and 220.0"
+    },
+    {
+      "rule_id": "R004",
+      "column": "passengers",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.66,
+        "max": 54.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'passengers' values must be between 0.66 and 54.0"
+    },
+    {
+      "rule_id": "R005",
+      "column": "length",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 2.79,
+        "max": 11.82
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'length' values must be between 2.79 and 11.82"
+    },
+    {
+      "rule_id": "R006",
+      "column": "cabins",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.33,
+        "max": 27.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'cabins' values must be between 0.33 and 27.0"
+    },
+    {
+      "rule_id": "R007",
+      "column": "passenger_density",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 17.7,
+        "max": 71.43
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'passenger_density' values must be between 17.7 and 71.43"
+    },
+    {
+      "rule_id": "R008",
+      "column": "crew",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.59,
+        "max": 21.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'crew' values must be between 0.59 and 21.0"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R001",
+      "column": "Ship_name",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 158,
+      "detail": "Column 'Ship_name' contains unmasked NAME data",
+      "severity": "HIGH"
+    }
+  ],
+  "heals": [
+    {
+      "column": "Ship_name",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'Ship_name' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    }
+  ]
+}

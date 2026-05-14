@@ -1,0 +1,61 @@
+{
+  "run_id": "81A8E040",
+  "scenario": "cruise_ship_info.csv",
+  "start_time": "2026-05-14T22:28:41.487314",
+  "end_time": "2026-05-14T22:28:44.480246",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "b79bde20",
+      "type": "DATA_ANOMALY",
+      "column": "cabins",
+      "outlier_count": 1,
+      "outlier_values": [
+        27.0
+      ],
+      "bounds": {
+        "lower": -8.12,
+        "upper": 25.14
+      },
+      "severity": "LOW",
+      "detail": "Column 'cabins' has 1 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "b79bde20",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "b79bde20",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -8.12,
+        "upper": 25.14
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "b79bde20",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1 outliers in 'cabins' to [-8.12, 25.14]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_cruise_ship_info_csv.csv",
+  "agent_logs": [
+    "[B3-Memory] Recall: {'had_prior_run': True, 'prior_run_id': '81A8E040', 'prior_issues': 0, 'prior_fixes': 0, 'prior_status': 'RUNNING'}",
+    "[DetectionAgent] Found 1 issue(s) in 'cruise_ship_info.csv'. Types: ['DATA_ANOMALY']",
+    "[ClassificationAgent] Classified 1 issues. Primary: DATA_ANOMALY",
+    "[DecisionAgent] Fix plan \u2192 b79bde20: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 1/1 fixes. Healed=data/healed_cruise_ship_info_csv.csv Removed=data/removed_cruise_ship_info_csv.csv"
+  ]
+}

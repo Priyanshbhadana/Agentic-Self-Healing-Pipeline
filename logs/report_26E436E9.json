@@ -1,0 +1,309 @@
+{
+  "run_id": "26E436E9",
+  "scenario": "custom_upload",
+  "start_time": "2026-05-14T17:18:01.220047",
+  "end_time": "2026-05-14T17:18:02.521128",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "1f6380fa",
+      "type": "MISSING_VALUES",
+      "column": "name",
+      "null_count": 493,
+      "null_pct": 4.93,
+      "severity": "MEDIUM",
+      "detail": "Column 'name' has 493 missing values (4.93%)"
+    },
+    {
+      "issue_id": "ea87be4e",
+      "type": "MISSING_VALUES",
+      "column": "age",
+      "null_count": 1189,
+      "null_pct": 11.89,
+      "severity": "MEDIUM",
+      "detail": "Column 'age' has 1189 missing values (11.89%)"
+    },
+    {
+      "issue_id": "0f4a9dd0",
+      "type": "MISSING_VALUES",
+      "column": "salary",
+      "null_count": 1432,
+      "null_pct": 14.32,
+      "severity": "MEDIUM",
+      "detail": "Column 'salary' has 1432 missing values (14.32%)"
+    },
+    {
+      "issue_id": "a234b385",
+      "type": "MISSING_VALUES",
+      "column": "city",
+      "null_count": 959,
+      "null_pct": 9.59,
+      "severity": "MEDIUM",
+      "detail": "Column 'city' has 959 missing values (9.59%)"
+    },
+    {
+      "issue_id": "b1036351",
+      "type": "MISSING_VALUES",
+      "column": "score",
+      "null_count": 986,
+      "null_pct": 9.86,
+      "severity": "MEDIUM",
+      "detail": "Column 'score' has 986 missing values (9.86%)"
+    },
+    {
+      "issue_id": "cc6dff70",
+      "type": "MISSING_VALUES",
+      "column": "join_date",
+      "null_count": 2012,
+      "null_pct": 20.12,
+      "severity": "HIGH",
+      "detail": "Column 'join_date' has 2012 missing values (20.12%)"
+    },
+    {
+      "issue_id": "712dee7c",
+      "type": "MISSING_VALUES",
+      "column": "comment",
+      "null_count": 1437,
+      "null_pct": 14.37,
+      "severity": "MEDIUM",
+      "detail": "Column 'comment' has 1437 missing values (14.37%)"
+    },
+    {
+      "issue_id": "bc70edd9",
+      "type": "DATA_ANOMALY",
+      "column": "age",
+      "outlier_count": 1284,
+      "outlier_values": [
+        999.0,
+        999.0,
+        999.0,
+        999.0,
+        999.0
+      ],
+      "bounds": {
+        "lower": -40.0,
+        "upper": 100.0
+      },
+      "severity": "HIGH",
+      "detail": "Column 'age' has 1284 outlier(s) outside IQR bounds"
+    },
+    {
+      "issue_id": "b75193a7",
+      "type": "DATA_ANOMALY",
+      "column": "salary",
+      "outlier_count": 1359,
+      "outlier_values": [
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0
+      ],
+      "bounds": {
+        "lower": -150000.0,
+        "upper": 270000.0
+      },
+      "severity": "HIGH",
+      "detail": "Column 'salary' has 1359 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "1f6380fa",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "ea87be4e",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "0f4a9dd0",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "a234b385",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "b1036351",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "cc6dff70",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "712dee7c",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "bc70edd9",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    },
+    {
+      "issue_id": "b75193a7",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "1f6380fa",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "ea87be4e",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "0f4a9dd0",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "a234b385",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "b1036351",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "cc6dff70",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "712dee7c",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "bc70edd9",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -40.0,
+        "upper": 100.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    },
+    {
+      "issue_id": "b75193a7",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -150000.0,
+        "upper": 270000.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "1f6380fa",
+      "action": "FILL_MODE",
+      "result": "Filled 493 nulls in 'name' with mode='AABCyljyTl'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "ea87be4e",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 1189 nulls in 'age' with median=30.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "0f4a9dd0",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 1432 nulls in 'salary' with median=50000.0",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a234b385",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'city' \u2014 filled 959 nulls with mode='Kolkata'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "b1036351",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 986 nulls in 'score' with median=50.895",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "cc6dff70",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'join_date' \u2014 filled 2012 nulls with mode='2021-05-10'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "712dee7c",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'comment' \u2014 filled 1437 nulls with mode='good'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "bc70edd9",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1284 outliers in 'age' to [-40.0, 100.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "b75193a7",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1359 outliers in 'salary' to [-150000.0, 270000.0]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_custom_upload.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 9 issue(s) in 'custom_upload'. Types: ['DATA_ANOMALY', 'MISSING_VALUES']",
+    "[ClassificationAgent] Classified 9 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 1f6380fa: FILL_MODE | ea87be4e: FILL_MEDIAN | 0f4a9dd0: FILL_MEDIAN | a234b385: FILL_MEDIAN | b1036351: FILL_MEDIAN | cc6dff70: FILL_MEDIAN | 712dee7c: FILL_MEDIAN | bc70edd9: CLIP_OUTLIERS | b75193a7: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 9/9 fixes. Healed=data/healed_custom_upload.csv Removed=data/removed_custom_upload.csv"
+  ]
+}
