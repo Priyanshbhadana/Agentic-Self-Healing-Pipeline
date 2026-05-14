@@ -1,0 +1,209 @@
+{
+  "run_id": "DAAA6D23",
+  "scenario": "stress_test_orders.csv",
+  "start_time": "2026-05-13T12:17:13.896364",
+  "end_time": "2026-05-13T12:17:15.520677",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "bb8d9a71",
+      "type": "MISSING_VALUES",
+      "column": "email",
+      "null_count": 27,
+      "null_pct": 2.54,
+      "severity": "MEDIUM",
+      "detail": "Column 'email' has 27 missing values (2.54%)"
+    },
+    {
+      "issue_id": "87473c94",
+      "type": "MISSING_VALUES",
+      "column": "order_amount",
+      "null_count": 31,
+      "null_pct": 2.92,
+      "severity": "MEDIUM",
+      "detail": "Column 'order_amount' has 31 missing values (2.92%)"
+    },
+    {
+      "issue_id": "2af89985",
+      "type": "MISSING_VALUES",
+      "column": "quantity",
+      "null_count": 3,
+      "null_pct": 0.28,
+      "severity": "MEDIUM",
+      "detail": "Column 'quantity' has 3 missing values (0.28%)"
+    },
+    {
+      "issue_id": "54a61a6a",
+      "type": "MISSING_VALUES",
+      "column": "order_date",
+      "null_count": 21,
+      "null_pct": 1.98,
+      "severity": "MEDIUM",
+      "detail": "Column 'order_date' has 21 missing values (1.98%)"
+    },
+    {
+      "issue_id": "8fdaeb2f",
+      "type": "MISSING_VALUES",
+      "column": "status",
+      "null_count": 7,
+      "null_pct": 0.66,
+      "severity": "MEDIUM",
+      "detail": "Column 'status' has 7 missing values (0.66%)"
+    },
+    {
+      "issue_id": "69d5ba97",
+      "type": "DATA_ANOMALY",
+      "column": "discount_pct",
+      "outlier_count": 8,
+      "outlier_values": [
+        101,
+        150,
+        200,
+        200,
+        101
+      ],
+      "bounds": {
+        "lower": -40.0,
+        "upper": 65.0
+      },
+      "severity": "HIGH",
+      "detail": "Column 'discount_pct' has 8 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "bb8d9a71",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "87473c94",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "2af89985",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "54a61a6a",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "8fdaeb2f",
+      "category": "DATA_QUALITY_ISSUE",
+      "subcategory": "Null Values",
+      "confidence": 0.9,
+      "reasoning": "Rule-based fallback for issue type MISSING_VALUES"
+    },
+    {
+      "issue_id": "69d5ba97",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "bb8d9a71",
+      "action": "FILL_MODE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "87473c94",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "2af89985",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "54a61a6a",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "8fdaeb2f",
+      "action": "FILL_MEDIAN",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_QUALITY_ISSUE"
+    },
+    {
+      "issue_id": "69d5ba97",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -40.0,
+        "upper": 65.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "bb8d9a71",
+      "action": "FILL_MODE",
+      "result": "Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "87473c94",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "2af89985",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "54a61a6a",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "8fdaeb2f",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "69d5ba97",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_stress_test_orders_csv.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 6 issue(s) in 'stress_test_orders.csv'. Types: ['DATA_ANOMALY', 'MISSING_VALUES']",
+    "[ClassificationAgent] Classified 6 issues. Primary: DATA_QUALITY_ISSUE",
+    "[DecisionAgent] Fix plan \u2192 bb8d9a71: FILL_MODE | 87473c94: FILL_MEDIAN | 2af89985: FILL_MEDIAN | 54a61a6a: FILL_MEDIAN | 8fdaeb2f: FILL_MEDIAN | 69d5ba97: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 6/6 fixes. Healed=data/healed_stress_test_orders_csv.csv Removed=data/removed_stress_test_orders_csv.csv"
+  ]
+}

@@ -1,75 +1,93 @@
 {
-  "run_id": "67DDA9D3",
+  "run_id": "60A6D824",
   "scenario": "custom_upload",
-  "generated_at": "2026-05-09T16:23:01.716202",
+  "generated_at": "2026-05-14T15:31:14.236954",
   "original_shape": {
-    "rows": 1062,
-    "cols": 13
+    "rows": 10000,
+    "cols": 8
   },
   "healed_shape": {
-    "rows": 1062,
-    "cols": 13
+    "rows": 10000,
+    "cols": 8
   },
   "removed_rows": 0,
-  "null_before": 89,
+  "null_before": 8508,
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "695eb86a",
+      "issue_id": "c41dcab1",
       "action": "FILL_MODE",
-      "result": "Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '",
+      "result": "Filled 493 nulls in 'name' with mode='AABCyljyTl'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "ab5b875a",
+      "issue_id": "d305a717",
       "action": "FILL_MEDIAN",
-      "result": "Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'",
+      "result": "Filled 1189 nulls in 'age' with median=30.0",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "42536060",
+      "issue_id": "bc047e1d",
       "action": "FILL_MEDIAN",
-      "result": "Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'",
+      "result": "Filled 1432 nulls in 'salary' with median=50000.0",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "57ce7ab6",
+      "issue_id": "8b019ca9",
       "action": "FILL_MEDIAN",
-      "result": "Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'",
+      "result": "Non-numeric 'city' \u2014 filled 959 nulls with mode='Kolkata'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "a6c6f01e",
+      "issue_id": "419d6b83",
       "action": "FILL_MEDIAN",
-      "result": "Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'",
+      "result": "Filled 986 nulls in 'score' with median=50.895",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "dbb72575",
+      "issue_id": "b21a3020",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'join_date' \u2014 filled 2012 nulls with mode='2021-05-10'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "aa139453",
+      "action": "FILL_MEDIAN",
+      "result": "Non-numeric 'comment' \u2014 filled 1437 nulls with mode='good'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "cf0e86fb",
       "action": "CLIP_OUTLIERS",
-      "result": "Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]",
+      "result": "Clipped 1284 outliers in 'age' to [-40.0, 100.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "d375f0a1",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1359 outliers in 'salary' to [-150000.0, 270000.0]",
       "status": "SUCCESS"
     }
   ],
   "ge_pre_validation": {
     "suite": "custom_custom_upload",
-    "total": 15,
-    "passed": 14,
-    "failed": 1,
-    "success_pct": 93.3,
-    "evaluated_at": "2026-05-09T16:23:01.677844",
+    "total": 13,
+    "passed": 10,
+    "failed": 3,
+    "success_pct": 76.9,
+    "evaluated_at": "2026-05-14T15:31:14.151307",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
         "column": "__table__",
         "passed": true,
-        "observed": "1062",
+        "observed": "10000",
         "expected": "[1, 10000000]",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "order_id",
+        "column": "id",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -77,129 +95,113 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "customer_id",
+        "column": "name",
         "passed": "True",
-        "observed": "0.0% null",
+        "observed": "4.9% null",
         "expected": "\u226420.0% null",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "email",
+        "column": "age",
         "passed": "True",
-        "observed": "2.5% null",
+        "observed": "11.9% null",
         "expected": "\u226420.0% null",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "phone",
+        "column": "salary",
         "passed": "True",
-        "observed": "0.0% null",
+        "observed": "14.3% null",
         "expected": "\u226420.0% null",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "order_amount",
+        "column": "city",
         "passed": "True",
-        "observed": "2.9% null",
+        "observed": "9.6% null",
         "expected": "\u226420.0% null",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "quantity",
+        "column": "score",
         "passed": "True",
-        "observed": "0.3% null",
+        "observed": "9.9% null",
         "expected": "\u226420.0% null",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "discount_pct",
-        "passed": "True",
-        "observed": "0.0% null",
+        "column": "join_date",
+        "passed": "False",
+        "observed": "20.1% null",
         "expected": "\u226420.0% null",
-        "detail": ""
+        "detail": "Found 20.1% nulls \u2014 exceeds threshold"
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "order_date",
+        "column": "comment",
         "passed": "True",
-        "observed": "2.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "status",
-        "passed": "True",
-        "observed": "0.7% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "product_category",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "product_name",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "payment_type",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "shipping_country",
-        "passed": "True",
-        "observed": "0.0% null",
+        "observed": "14.4% null",
         "expected": "\u226420.0% null",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_be_between",
-        "column": "discount_pct",
+        "column": "id",
         "passed": false,
-        "observed": "min=-20.0, max=200.0",
-        "expected": "[0.0, 75.0]",
-        "detail": "10 values outside range"
+        "observed": "min=1.0, max=10000.0",
+        "expected": "[33.663333333333334, 29700.03]",
+        "detail": "33 values outside range"
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "age",
+        "passed": true,
+        "observed": "min=-5.0, max=999.0",
+        "expected": "[-15.0, 2997.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "salary",
+        "passed": true,
+        "observed": "min=-100.0, max=1000000.0",
+        "expected": "[-300.0, 3000000.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "score",
+        "passed": false,
+        "observed": "min=0.01, max=99.96",
+        "expected": "[0.3433333333333333, 297.17220000000003]",
+        "detail": "32 values outside range"
       }
     ]
   },
   "ge_post_validation": {
     "suite": "custom_custom_upload",
-    "total": 15,
-    "passed": 14,
-    "failed": 1,
-    "success_pct": 93.3,
-    "evaluated_at": "2026-05-09T16:23:01.693289",
+    "total": 13,
+    "passed": 11,
+    "failed": 2,
+    "success_pct": 84.6,
+    "evaluated_at": "2026-05-14T15:31:14.188058",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
         "column": "__table__",
         "passed": true,
-        "observed": "1062",
+        "observed": "10000",
         "expected": "[1, 10000000]",
         "detail": ""
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "order_id",
+        "column": "id",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -207,7 +209,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "customer_id",
+        "column": "name",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -215,7 +217,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "email",
+        "column": "age",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -223,7 +225,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "phone",
+        "column": "salary",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -231,7 +233,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "order_amount",
+        "column": "city",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -239,7 +241,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "quantity",
+        "column": "score",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -247,7 +249,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "discount_pct",
+        "column": "join_date",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -255,47 +257,7 @@
       },
       {
         "expectation": "expect_column_values_to_not_be_null",
-        "column": "order_date",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "status",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "product_category",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "product_name",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "payment_type",
-        "passed": "True",
-        "observed": "0.0% null",
-        "expected": "\u226420.0% null",
-        "detail": ""
-      },
-      {
-        "expectation": "expect_column_values_to_not_be_null",
-        "column": "shipping_country",
+        "column": "comment",
         "passed": "True",
         "observed": "0.0% null",
         "expected": "\u226420.0% null",
@@ -303,143 +265,117 @@
       },
       {
         "expectation": "expect_column_values_to_be_between",
-        "column": "discount_pct",
+        "column": "id",
         "passed": false,
-        "observed": "min=-20.0, max=65.0",
-        "expected": "[0.0, 75.0]",
-        "detail": "2 values outside range"
+        "observed": "min=1.0, max=10000.0",
+        "expected": "[33.663333333333334, 29700.03]",
+        "detail": "33 values outside range"
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "age",
+        "passed": true,
+        "observed": "min=-5.0, max=100.0",
+        "expected": "[-15.0, 300.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "salary",
+        "passed": true,
+        "observed": "min=-100.0, max=270000.0",
+        "expected": "[-300.0, 810000.0]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_be_between",
+        "column": "score",
+        "passed": false,
+        "observed": "min=0.01, max=99.96",
+        "expected": "[0.37333333333333335, 297.0]",
+        "detail": "34 values outside range"
       }
     ]
   },
   "column_profiles": {
-    "order_id": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 1050,
-      "sample": [
-        "ORD-10000",
-        "ORD-10001",
-        "ORD-10002"
-      ]
-    },
-    "customer_id": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 993,
-      "sample": [
-        "CUST-8359",
-        "CUST-6925",
-        "CUST-1916"
-      ]
-    },
-    "email": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 1022,
-      "sample": [
-        "  hulkly.zmmynu70@outlook.com  ",
-        "ccwp.snzj74@yahoo.com",
-        "@domain.com"
-      ]
-    },
-    "phone": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 1033,
-      "sample": [
-        "+1-206-877-3615",
-        "+1-921-171-1750",
-        "+1-523-510-5386"
-      ]
-    },
-    "order_amount": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 1015,
-      "sample": [
-        "3046.68",
-        "-5.86",
-        "4050.42"
-      ]
-    },
-    "quantity": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 14,
-      "sample": [
-        "9",
-        "9",
-        "6"
-      ]
-    },
-    "discount_pct": {
+    "id": {
       "dtype": "int64",
+      "null_count": 0,
+      "unique": 10000,
+      "sample": [
+        1,
+        2,
+        3
+      ]
+    },
+    "name": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 9507,
+      "sample": [
+        "MmhfM",
+        "vblAbkHCl",
+        "Nivol"
+      ]
+    },
+    "age": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 7,
+      "sample": [
+        30.0,
+        35.0,
+        35.0
+      ]
+    },
+    "salary": {
+      "dtype": "float64",
+      "null_count": 0,
+      "unique": 6,
+      "sample": [
+        50000.0,
+        90000.0,
+        50000.0
+      ]
+    },
+    "city": {
+      "dtype": "object",
       "null_count": 0,
       "unique": 9,
       "sample": [
-        25,
-        25,
-        0
+        "Kolkata",
+        "NY",
+        "Mumbai"
       ]
     },
-    "order_date": {
-      "dtype": "object",
+    "score": {
+      "dtype": "float64",
       "null_count": 0,
-      "unique": 669,
+      "unique": 5949,
       "sample": [
-        "2023-03-09",
-        "2025-07-16",
-        "2022-08-05"
+        61.87,
+        40.73,
+        85.1
       ]
     },
-    "status": {
+    "join_date": {
       "dtype": "object",
       "null_count": 0,
-      "unique": 37,
+      "unique": 4,
       "sample": [
-        "Pending",
-        "Shipped",
-        "  Shipped  "
+        "2021-05-10",
+        "2021-05-10",
+        "bad_date"
       ]
     },
-    "product_category": {
+    "comment": {
       "dtype": "object",
       "null_count": 0,
-      "unique": 16,
+      "unique": 6,
       "sample": [
-        "Clothing",
-        "Toys",
-        "Beauty"
-      ]
-    },
-    "product_name": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 40,
-      "sample": [
-        "Jacket",
-        "LEGO Set",
-        "Perfume"
-      ]
-    },
-    "payment_type": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 12,
-      "sample": [
-        "Debit Card",
-        "Debit Card",
-        "Barter"
-      ]
-    },
-    "shipping_country": {
-      "dtype": "object",
-      "null_count": 0,
-      "unique": 10,
-      "sample": [
-        "DE",
-        "UK",
-        "SG"
+        "excellent!!!",
+        "good",
+        "excellent!!!"
       ]
     }
   }

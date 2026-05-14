@@ -1,7 +1,7 @@
 {
-  "run_id": "6AAE5FD3",
+  "run_id": "0A80483E",
   "scenario": "stress_test_orders.csv",
-  "generated_at": "2026-05-09T16:21:14.758484",
+  "generated_at": "2026-05-13T15:28:04.442429",
   "original_shape": {
     "rows": 1062,
     "cols": 13
@@ -15,37 +15,37 @@
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "1d917f0a",
+      "issue_id": "5b9940f9",
       "action": "FILL_MODE",
       "result": "Filled 27 nulls in 'email' with mode='  hulkly.zmmynu70@outlook.com  '",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "d244c1b8",
+      "issue_id": "f69e477f",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'order_amount' \u2014 filled 31 nulls with mode='MISSING'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "df5b0076",
+      "issue_id": "74577591",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'quantity' \u2014 filled 3 nulls with mode='7'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "4359e78d",
+      "issue_id": "f8de8623",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'order_date' \u2014 filled 21 nulls with mode='2023-03-16'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "a149f595",
+      "issue_id": "2196fbbe",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'status' \u2014 filled 7 nulls with mode='Pending'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "b9d6f0d1",
+      "issue_id": "af3fe5f4",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 8 outliers in 'discount_pct' to [-40.0, 65.0]",
       "status": "SUCCESS"
@@ -57,7 +57,7 @@
     "passed": 14,
     "failed": 1,
     "success_pct": 93.3,
-    "evaluated_at": "2026-05-09T16:21:14.703396",
+    "evaluated_at": "2026-05-13T15:28:04.368960",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
@@ -187,7 +187,7 @@
     "passed": 14,
     "failed": 1,
     "success_pct": 93.3,
-    "evaluated_at": "2026-05-09T16:21:14.731455",
+    "evaluated_at": "2026-05-13T15:28:04.406635",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",

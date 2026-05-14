@@ -1,7 +1,7 @@
 {
-  "run_id": "5369B1C5",
+  "run_id": "F7A71433",
   "scenario": "missing_values",
-  "generated_at": "2026-05-09T16:19:09.140514",
+  "generated_at": "2026-05-13T15:28:43.065956",
   "original_shape": {
     "rows": 100,
     "cols": 7
@@ -15,25 +15,25 @@
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "031bdfb5",
+      "issue_id": "c1256567",
       "action": "FILL_MEDIAN",
       "result": "Filled 15 nulls in 'age' with median=40.0",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "7205879e",
+      "issue_id": "3c2f0692",
       "action": "FILL_MEDIAN",
       "result": "Filled 20 nulls in 'salary' with median=78954.5",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "0ecc3ec8",
+      "issue_id": "d3e54c06",
       "action": "FILL_MODE",
       "result": "Filled 10 nulls in 'email' with mode='user11@example.com'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "8644cf4a",
+      "issue_id": "ddbb6653",
       "action": "FILL_MEDIAN",
       "result": "Filled 13 nulls in 'score' with median=51.78",
       "status": "SUCCESS"
@@ -45,7 +45,7 @@
     "passed": 17,
     "failed": 4,
     "success_pct": 81.0,
-    "evaluated_at": "2026-05-09T16:19:09.103818",
+    "evaluated_at": "2026-05-13T15:28:43.027110",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
@@ -223,7 +223,7 @@
     "passed": 12,
     "failed": 0,
     "success_pct": 100.0,
-    "evaluated_at": "2026-05-09T16:19:09.118823",
+    "evaluated_at": "2026-05-13T15:28:43.044127",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",

@@ -1,0 +1,87 @@
+{
+  "run_id": "2E42CFD2",
+  "scenario": "schema_mismatch",
+  "generated_at": "2026-05-13T12:18:05.878456",
+  "profile_summary": "Dataset: 80 rows \u00d7 9 cols | Nulls: 0 (0.0%) | Duplicates: 0",
+  "rules_generated": 5,
+  "violations_found": 1,
+  "validation_score": 80.0,
+  "heals_applied": 1,
+  "heals_ok": 1,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_schema_mismatch.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "uid",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 1.0,
+        "max": 80.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'uid' values must be between 1.0 and 80.0"
+    },
+    {
+      "rule_id": "R002",
+      "column": "usr_age",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 18.0,
+        "max": 68.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'usr_age' values must be between 18.0 and 68.0"
+    },
+    {
+      "rule_id": "R003",
+      "column": "annual_salary",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 32235.0,
+        "max": 148619.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'annual_salary' values must be between 32235.0 and 148619.0"
+    },
+    {
+      "rule_id": "R004",
+      "column": "email_address",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "EMAIL"
+      },
+      "severity": "HIGH",
+      "description": "Column 'email_address' contains PII (EMAIL) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R005",
+      "column": "risk_score",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.037,
+        "max": 0.995
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'risk_score' values must be between 0.037 and 0.995"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R004",
+      "column": "email_address",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 80,
+      "detail": "Column 'email_address' contains unmasked EMAIL data",
+      "severity": "HIGH"
+    }
+  ],
+  "heals": [
+    {
+      "column": "email_address",
+      "action": "MASK_PII",
+      "result": "Masked 80 email addresses",
+      "status": "SUCCESS"
+    }
+  ]
+}

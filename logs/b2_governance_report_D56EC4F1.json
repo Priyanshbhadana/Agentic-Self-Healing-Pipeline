@@ -1,0 +1,555 @@
+{
+  "run_id": "D56EC4F1",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-13T12:42:17.801250",
+  "executive_summary": "Governance scan of 'custom_upload': 11 PII columns identified across 13 total columns. GDPR compliance score: 100%. Masked dataset generated. 4 policy actions recommended.",
+  "lineage": {
+    "path": "custom_upload \u2192 SQL transforms \u2192 healed_custom_upload",
+    "total_nodes": 6,
+    "total_edges": 5,
+    "sources": [
+      "custom_upload"
+    ],
+    "sinks": [
+      "healed_custom_upload"
+    ],
+    "transformations": [
+      "source_data",
+      "cleaned_data",
+      "aggregated"
+    ],
+    "nodes": [
+      {
+        "id": "n_src",
+        "name": "custom_upload",
+        "type": "SOURCE",
+        "description": "Raw ingestion source",
+        "system": "CSV / Database"
+      },
+      {
+        "id": "n_cte_0",
+        "name": "source_data",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: source_data",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_cte_1",
+        "name": "cleaned_data",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: cleaned_data",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_cte_2",
+        "name": "aggregated",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: aggregated",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_join_0",
+        "name": "JOIN aggregated",
+        "type": "TRANSFORMATION",
+        "description": "LEFT JOIN JOIN",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_sink",
+        "name": "healed_custom_upload",
+        "type": "SINK",
+        "description": "Cleaned output dataset",
+        "system": "Data Warehouse / File"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n_src",
+        "to": "n_cte_0",
+        "transformation": "CTE: source_data",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_0",
+        "to": "n_cte_1",
+        "transformation": "CTE: cleaned_data",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_1",
+        "to": "n_cte_2",
+        "transformation": "CTE: aggregated",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_2",
+        "to": "n_join_0",
+        "transformation": "c.shipping_country = a.shipping_country",
+        "operation": "JOIN"
+      },
+      {
+        "from": "n_join_0",
+        "to": "n_sink",
+        "transformation": "Write cleaned output",
+        "operation": "INSERT"
+      }
+    ]
+  },
+  "pii_summary": {
+    "total_pii_columns": 11,
+    "critical_columns": [],
+    "high_columns": [
+      "order_id",
+      "email",
+      "phone",
+      "order_amount",
+      "quantity",
+      "discount_pct",
+      "order_date",
+      "product_name",
+      "payment_type"
+    ],
+    "masked_data_path": "data/b2_masked_custom_upload.csv",
+    "tags": [
+      {
+        "column": "order_id",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 1062,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "customer_id",
+        "pii_type": "IDENTIFIER",
+        "sensitivity": "LOW",
+        "gdpr_article": "Art.4(1)",
+        "masking_strategy": "PSEUDONYMIZE",
+        "values_affected": 1062,
+        "requires_consent": false,
+        "retention_policy": "Duration of service",
+        "access_level": "Internal use"
+      },
+      {
+        "column": "email",
+        "pii_type": "EMAIL",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f) - Integrity & Confidentiality",
+        "masking_strategy": "PARTIAL_MASK",
+        "values_affected": 1035,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "phone",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 1062,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "order_amount",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 1031,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "quantity",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 1059,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "discount_pct",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 1062,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "order_date",
+        "pii_type": "PHONE_NUMBER",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "values_affected": 1041,
+        "requires_consent": true,
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "product_name",
+        "pii_type": "PERSONAL_NAME",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.4(1) - Personal Data",
+        "masking_strategy": "INITIAL_ONLY",
+        "values_affected": 1062,
+        "requires_consent": true,
+        "retention_policy": "Duration of contract + 7 years",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "payment_type",
+        "pii_type": "FINANCIAL_DATA",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.9",
+        "masking_strategy": "RANGE_BUCKET",
+        "values_affected": 1062,
+        "requires_consent": true,
+        "retention_policy": "7 years (tax/audit requirements)",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "shipping_country",
+        "pii_type": "IP_ADDRESS",
+        "sensitivity": "MEDIUM",
+        "gdpr_article": "Art.4(1)",
+        "masking_strategy": "SUBNET_ONLY",
+        "values_affected": 1062,
+        "requires_consent": false,
+        "retention_policy": "6 months (GDPR recital 49)",
+        "access_level": "Internal teams with need-to-know"
+      }
+    ]
+  },
+  "catalogue": {
+    "total_columns": 13,
+    "pii_tagged": 11,
+    "domains": [
+      "Contact",
+      "Temporal",
+      "Identity",
+      "Operations",
+      "Geography"
+    ],
+    "entries": [
+      {
+        "column": "order_id",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'order_id' stores order id information.",
+        "business_term": "Order Id",
+        "data_steward": "Data Engineering Team",
+        "domain": "Identity",
+        "tags": [
+          "Identity",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "customer_id",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'customer_id' stores customer id information.",
+        "business_term": "Customer Id",
+        "data_steward": "Data Engineering Team",
+        "domain": "Identity",
+        "tags": [
+          "Identity",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "INTERNAL",
+        "pii_type": "IDENTIFIER",
+        "gdpr_article": "Art.4(1)",
+        "masking_strategy": "PSEUDONYMIZE",
+        "retention_policy": "Duration of service",
+        "access_level": "Internal use"
+      },
+      {
+        "column": "email",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'email' stores email information.",
+        "business_term": "Email",
+        "data_steward": "Data Engineering Team",
+        "domain": "Contact",
+        "tags": [
+          "Contact",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "EMAIL",
+        "gdpr_article": "Art.5(1)(f) - Integrity & Confidentiality",
+        "masking_strategy": "PARTIAL_MASK",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "phone",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'phone' stores phone information.",
+        "business_term": "Phone",
+        "data_steward": "Data Engineering Team",
+        "domain": "Contact",
+        "tags": [
+          "Contact",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "order_amount",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'order_amount' stores order amount information.",
+        "business_term": "Order Amount",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "quantity",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'quantity' stores quantity information.",
+        "business_term": "Quantity",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "discount_pct",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'discount_pct' stores discount pct information.",
+        "business_term": "Discount Pct",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "order_date",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'order_date' stores order date information.",
+        "business_term": "Order Date",
+        "data_steward": "Data Engineering Team",
+        "domain": "Temporal",
+        "tags": [
+          "Temporal",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PHONE_NUMBER",
+        "gdpr_article": "Art.5(1)(f)",
+        "masking_strategy": "LAST_4_VISIBLE",
+        "retention_policy": "3 years after last interaction",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "status",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'status' stores status information.",
+        "business_term": "Status",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": false,
+        "classification": "INTERNAL"
+      },
+      {
+        "column": "product_category",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'product_category' stores product category information.",
+        "business_term": "Product Category",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": false,
+        "classification": "INTERNAL"
+      },
+      {
+        "column": "product_name",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'product_name' stores product name information.",
+        "business_term": "Product Name",
+        "data_steward": "Data Engineering Team",
+        "domain": "Identity",
+        "tags": [
+          "Identity",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PERSONAL_NAME",
+        "gdpr_article": "Art.4(1) - Personal Data",
+        "masking_strategy": "INITIAL_ONLY",
+        "retention_policy": "Duration of contract + 7 years",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "payment_type",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'payment_type' stores payment type information.",
+        "business_term": "Payment Type",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "FINANCIAL_DATA",
+        "gdpr_article": "Art.9",
+        "masking_strategy": "RANGE_BUCKET",
+        "retention_policy": "7 years (tax/audit requirements)",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "shipping_country",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'shipping_country' stores shipping country information.",
+        "business_term": "Shipping Country",
+        "data_steward": "Data Engineering Team",
+        "domain": "Geography",
+        "tags": [
+          "Geography",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "INTERNAL",
+        "pii_type": "IP_ADDRESS",
+        "gdpr_article": "Art.4(1)",
+        "masking_strategy": "SUBNET_ONLY",
+        "retention_policy": "6 months (GDPR recital 49)",
+        "access_level": "Internal teams with need-to-know"
+      }
+    ]
+  },
+  "gdpr_compliance": {
+    "score": 100,
+    "checks": {
+      "Data Minimisation (Art.5.1.c)": true,
+      "PII Identified (Art.4.1)": true,
+      "Masking Applied (Art.25)": true,
+      "Retention Policy Defined (Art.5.1.e)": true,
+      "Lineage Documented (Art.30)": true
+    },
+    "status": "COMPLIANT"
+  },
+  "policy_recommendations": [
+    {
+      "priority": "HIGH",
+      "area": "Data Masking",
+      "action": "Apply masking strategies to HIGH sensitivity columns: ['order_id', 'email', 'phone', 'order_amount', 'quantity', 'discount_pct', 'order_date', 'product_name', 'payment_type']",
+      "rationale": "High sensitivity PII requires encryption or pseudonymisation",
+      "gdpr_ref": "Art.5(1)(f) \u2014 Integrity & Confidentiality"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Data Catalogue",
+      "action": "Register all columns in enterprise data catalogue with stewardship assignments",
+      "rationale": "Enables data governance, access control, and compliance auditing",
+      "gdpr_ref": "Art.30 \u2014 Records of Processing Activities"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Lineage Tracking",
+      "action": "Automate lineage capture in CI/CD pipeline to track all data transformations",
+      "rationale": "Data lineage is required for impact analysis and compliance audits",
+      "gdpr_ref": "Art.30 \u2014 Records of Processing Activities"
+    },
+    {
+      "priority": "LOW",
+      "area": "Access Control",
+      "action": "Implement role-based access: Authorized personnel with signed DPA for HIGH-sensitivity data",
+      "rationale": "Principle of least privilege reduces breach risk",
+      "gdpr_ref": "Art.32 \u2014 Security of Processing"
+    }
+  ],
+  "final_status": "SUCCESS"
+}

@@ -1,0 +1,236 @@
+{
+  "run_id": "B41104A8",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-13T15:28:57.125004",
+  "profile_summary": "Dataset: 1062 rows \u00d7 13 cols | Nulls: 89 (0.64%) | Duplicates: 8",
+  "rules_generated": 10,
+  "violations_found": 9,
+  "validation_score": 10.0,
+  "heals_applied": 9,
+  "heals_ok": 9,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_custom_upload.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "email",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'email' should not contain nulls"
+    },
+    {
+      "rule_id": "R002",
+      "column": "email",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "EMAIL"
+      },
+      "severity": "HIGH",
+      "description": "Column 'email' contains PII (EMAIL) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R003",
+      "column": "phone",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "PHONE"
+      },
+      "severity": "HIGH",
+      "description": "Column 'phone' contains PII (PHONE) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R004",
+      "column": "order_amount",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'order_amount' should not contain nulls"
+    },
+    {
+      "rule_id": "R005",
+      "column": "quantity",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'quantity' should not contain nulls"
+    },
+    {
+      "rule_id": "R006",
+      "column": "discount_pct",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": -20.0,
+        "max": 200.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'discount_pct' values must be between -20.0 and 200.0"
+    },
+    {
+      "rule_id": "R007",
+      "column": "order_date",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'order_date' should not contain nulls"
+    },
+    {
+      "rule_id": "R008",
+      "column": "status",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'status' should not contain nulls"
+    },
+    {
+      "rule_id": "R009",
+      "column": "product_name",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "NAME"
+      },
+      "severity": "HIGH",
+      "description": "Column 'product_name' contains PII (NAME) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R010",
+      "column": "shipping_country",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "IP"
+      },
+      "severity": "HIGH",
+      "description": "Column 'shipping_country' contains PII (IP) \u2014 must be masked"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R001",
+      "column": "email",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 27,
+      "detail": "27 null values found in 'email'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R002",
+      "column": "email",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 1035,
+      "detail": "Column 'email' contains unmasked EMAIL data",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R003",
+      "column": "phone",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 1062,
+      "detail": "Column 'phone' contains unmasked PHONE data",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R004",
+      "column": "order_amount",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 31,
+      "detail": "31 null values found in 'order_amount'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R005",
+      "column": "quantity",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 3,
+      "detail": "3 null values found in 'quantity'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R007",
+      "column": "order_date",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 21,
+      "detail": "21 null values found in 'order_date'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R008",
+      "column": "status",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 7,
+      "detail": "7 null values found in 'status'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R009",
+      "column": "product_name",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 1062,
+      "detail": "Column 'product_name' contains unmasked NAME data",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R010",
+      "column": "shipping_country",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 1062,
+      "detail": "Column 'shipping_country' contains unmasked IP data",
+      "severity": "HIGH"
+    }
+  ],
+  "heals": [
+    {
+      "column": "email",
+      "action": "FILL_MODE",
+      "result": "Filled 27 nulls with mode='  hulkly.zmmynu70@outlook.com  '",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "email",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'email' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "phone",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'phone' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "order_amount",
+      "action": "FILL_MODE",
+      "result": "Filled 31 nulls with mode='MISSING'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "quantity",
+      "action": "FILL_MODE",
+      "result": "Filled 3 nulls with mode='7'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "order_date",
+      "action": "FILL_MODE",
+      "result": "Filled 21 nulls with mode='2023-03-16'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "status",
+      "action": "FILL_MODE",
+      "result": "Filled 7 nulls with mode='Pending'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "product_name",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'product_name' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "shipping_country",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'shipping_country' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    }
+  ]
+}

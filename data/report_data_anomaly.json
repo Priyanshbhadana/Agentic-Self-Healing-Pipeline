@@ -1,7 +1,7 @@
 {
-  "run_id": "4A257232",
+  "run_id": "98D24E6E",
   "scenario": "data_anomaly",
-  "generated_at": "2026-05-09T16:19:09.399641",
+  "generated_at": "2026-05-13T11:51:33.785158",
   "original_shape": {
     "rows": 60,
     "cols": 7
@@ -15,31 +15,31 @@
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "8863956d",
+      "issue_id": "21c0d554",
       "action": "CAST_DTYPE",
       "result": "Cast 'age' to float64",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "d35538e9",
+      "issue_id": "ffca32e1",
       "action": "CAST_DTYPE",
       "result": "Cast 'salary' to float64",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "5579af46",
+      "issue_id": "9b0f5c9f",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 3 outliers in 'age' to [-59.0, 137.0]",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "76602377",
+      "issue_id": "57aa70fe",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 1 outliers in 'salary' to [-106388.75, 260505.75]",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "7a6c2207",
+      "issue_id": "8ec895d7",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 1 outliers in 'score' to [-122.75, 225.94]",
       "status": "SUCCESS"
@@ -51,7 +51,7 @@
     "passed": 16,
     "failed": 5,
     "success_pct": 76.2,
-    "evaluated_at": "2026-05-09T16:19:09.370787",
+    "evaluated_at": "2026-05-13T11:51:33.736761",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
@@ -229,7 +229,7 @@
     "passed": 9,
     "failed": 3,
     "success_pct": 75.0,
-    "evaluated_at": "2026-05-09T16:19:09.381963",
+    "evaluated_at": "2026-05-13T11:51:33.760772",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",

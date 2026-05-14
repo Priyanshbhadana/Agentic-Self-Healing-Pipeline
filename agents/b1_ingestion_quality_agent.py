@@ -204,9 +204,12 @@ Return a JSON array of rules. Each rule must have:
 - severity: "HIGH", "MEDIUM", or "LOW"
 - description: one sentence explaining the rule
 
+CRITICAL INSTRUCTION: Do NOT blindly copy 'min' and 'max' values from the profile if they represent illogical anomalies (e.g., negative values for age, salary, price, or quantity). Instead, infer and enforce strict logical bounds (e.g., min: 0).
+
 Return ONLY valid JSON array. No markdown, no explanation."""
 
     try:
+         # pyrefly: ignore [missing-import]
         import anthropic
         client = anthropic.Anthropic()
         response = client.messages.create(
@@ -246,11 +249,24 @@ def _fallback_rules(cols: dict) -> list:
             rule_id += 1
         if profile.get("dtype") in ("float64","int64"):
             mn, mx = profile.get("min",0), profile.get("max",9999)
+            # Infer strict logical bounds to catch anomalies
+            col_low = col.lower()
+            if any(k in col_low for k in ("age", "salary", "price", "amount", "qty", "quantity", "score")):
+                if mn < 0:
+                    mn = 0
             rules.append({"rule_id": f"R{rule_id:03d}", "column": col,
                 "rule_type": "RANGE_CHECK", "params": {"min": mn, "max": mx},
                 "severity": "MEDIUM",
                 "description": f"Column '{col}' values must be between {mn} and {mx}"})
             rule_id += 1
+        elif profile.get("dtype") == "object":
+            col_low = col.lower()
+            if "date" in col_low or "time" in col_low:
+                rules.append({"rule_id": f"R{rule_id:03d}", "column": col,
+                    "rule_type": "DATE_FORMAT", "params": {},
+                    "severity": "HIGH",
+                    "description": f"Column '{col}' must be a valid date format"})
+                rule_id += 1
         if profile.get("contains_pii") not in ("NONE", None):
             rules.append({"rule_id": f"R{rule_id:03d}", "column": col,
                 "rule_type": "PII_DETECTED", "params": {"pii_type": profile["contains_pii"]},
@@ -359,6 +375,21 @@ def validator_node(state: B1State) -> B1State:
                         "severity": rule.get("severity","MEDIUM"),
                     })
 
+            elif rule_type == "DATE_FORMAT":
+                if col in df.columns:
+                    # Parse to datetime, coercion turns invalid into NaT
+                    parsed = pd.to_datetime(df[col], errors='coerce')
+                    bad_mask = df[col].notna() & parsed.isna()
+                    n_bad = int(bad_mask.sum())
+                    if n_bad > 0:
+                        violations.append({
+                            "rule_id": rule_id, "column": col,
+                            "violation_type": "INVALID_DATE",
+                            "rows_affected": n_bad,
+                            "detail": f"{n_bad} invalid date formats in '{col}'",
+                            "severity": rule.get("severity","HIGH"),
+                        })
+
         except Exception as e:
             logger.warn(f"[B1] Rule {rule_id} validation error: {e}")
 
@@ -432,15 +463,28 @@ def healer_node(state: B1State) -> B1State:
                               "result": f"Clipped {n} outliers to IQR bounds", "status": "SUCCESS"})
 
             elif vtype == "PII_EXPOSURE" and col in df.columns:
-                df, mask_result = _mask_pii_column(df, col, v)
-                heals.append({"column": col, "action": "MASK_PII",
-                              "result": mask_result, "status": "SUCCESS"})
+                # PII masking is handled by B2 (Lineage & Governance Agent)
+                # with full GDPR-compliant strategies — skip here to avoid duplication
+                heals.append({"column": col, "action": "PII_DEFER_TO_B2",
+                              "result": f"PII detected in '{col}' — masking deferred to B2 Governance Agent",
+                              "status": "SUCCESS"})
 
             elif vtype == "DUPLICATE_VALUES":
                 before = len(df)
                 df = df.drop_duplicates()
                 heals.append({"column": col, "action": "REMOVE_DUPLICATES",
                               "result": f"Removed {before - len(df)} duplicate rows", "status": "SUCCESS"})
+
+            elif vtype == "INVALID_DATE" and col in df.columns:
+                parsed = pd.to_datetime(df[col], errors='coerce')
+                bad_mask = df[col].notna() & parsed.isna()
+                n = int(bad_mask.sum())
+                if n > 0:
+                    df[col] = parsed
+                    # Convert valid dates back to string format
+                    df[col] = df[col].dt.strftime('%Y-%m-%d')
+                    heals.append({"column": col, "action": "COERCE_DATE",
+                                  "result": f"Coerced {n} invalid dates to empty/null", "status": "SUCCESS"})
 
         except Exception as e:
             heals.append({"column": col, "action": vtype, "result": str(e), "status": "FAILED"})
@@ -464,37 +508,6 @@ def healer_node(state: B1State) -> B1State:
     }
 
 
-def _mask_pii_column(df: pd.DataFrame, col: str, violation: dict):
-    """Mask PII values based on detected PII type. Returns (df, message) tuple."""
-    import re, hashlib
-    pii_type = violation.get("detail","").split("unmasked ")[-1].split(" data")[0]
-
-    if "EMAIL" in pii_type:
-        def mask_email(v):
-            if pd.isna(v): return v
-            parts = str(v).split("@")
-            if len(parts) == 2:
-                return f"{str(parts[0])[:2]}***@{parts[1]}"
-            return "***@***.***"
-        df[col] = df[col].apply(mask_email)
-        return df, f"Masked {len(df[col].dropna())} email addresses"
-
-    elif "PHONE" in pii_type:
-        df[col] = df[col].apply(lambda v: "***-***-" + str(v)[-4:] if not pd.isna(v) else v)
-        return df, f"Masked {len(df[col].dropna())} phone numbers"
-
-    elif "NAME" in pii_type:
-        df[col] = df[col].apply(lambda v: str(v)[0] + "***" if not pd.isna(v) and len(str(v)) > 0 else v)
-        return df, f"Masked {len(df[col].dropna())} names"
-
-    elif "SSN" in pii_type:
-        df[col] = df[col].apply(lambda v: "***-**-" + str(v)[-4:] if not pd.isna(v) else v)
-        return df, f"Masked {len(df[col].dropna())} SSNs"
-
-    else:
-        # Generic hash-based masking
-        df[col] = df[col].apply(lambda v: "MASKED_" + hashlib.md5(str(v).encode()).hexdigest()[:8] if not pd.isna(v) else v)
-        return df, f"Hash-masked {len(df[col].dropna())} PII values"
 
 
 # ──────────────────────────────────────────────────────────────

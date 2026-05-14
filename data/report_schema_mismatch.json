@@ -1,7 +1,7 @@
 {
-  "run_id": "61FCDB7D",
+  "run_id": "60400EA7",
   "scenario": "schema_mismatch",
-  "generated_at": "2026-05-09T16:19:09.265633",
+  "generated_at": "2026-05-13T11:51:32.401813",
   "original_shape": {
     "rows": 80,
     "cols": 9
@@ -15,99 +15,99 @@
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "d6faf0b9",
-      "action": "RENAME_COLUMN",
-      "result": "SKIP: source column 'user_id' not found",
-      "status": "SUCCESS"
-    },
-    {
-      "issue_id": "43857641",
-      "action": "RENAME_COLUMN",
-      "result": "SKIP: source column 'signup_date' not found",
-      "status": "SUCCESS"
-    },
-    {
-      "issue_id": "fdb7a22e",
-      "action": "RENAME_COLUMN",
-      "result": "SKIP: source column 'score' not found",
-      "status": "SUCCESS"
-    },
-    {
-      "issue_id": "1608555d",
+      "issue_id": "006a4e21",
       "action": "RENAME_COLUMN",
       "result": "SKIP: source column 'age' not found",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "66db712d",
+      "issue_id": "814afbad",
       "action": "RENAME_COLUMN",
-      "result": "SKIP: source column 'email' not found",
+      "result": "SKIP: source column 'signup_date' not found",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "a63d1da1",
-      "action": "RENAME_COLUMN",
-      "result": "SKIP: source column 'country' not found",
-      "status": "SUCCESS"
-    },
-    {
-      "issue_id": "fcbf2743",
+      "issue_id": "43fa0c26",
       "action": "RENAME_COLUMN",
       "result": "SKIP: source column 'salary' not found",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "52af0aaf",
-      "action": "DROP_COLUMN",
-      "result": "Dropped extra column 'uid'",
+      "issue_id": "bc0582c1",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'score' not found",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "0574100f",
+      "issue_id": "3a61b6c5",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'email' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "e8fc120d",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'user_id' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "ff754577",
+      "action": "RENAME_COLUMN",
+      "result": "SKIP: source column 'country' not found",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "9e07c5a3",
       "action": "DROP_COLUMN",
       "result": "Dropped extra column 'usr_age'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "5ef4c529",
-      "action": "DROP_COLUMN",
-      "result": "Dropped extra column 'risk_score'",
-      "status": "SUCCESS"
-    },
-    {
-      "issue_id": "36b2471e",
-      "action": "DROP_COLUMN",
-      "result": "Dropped extra column 'email_address'",
-      "status": "SUCCESS"
-    },
-    {
-      "issue_id": "16450835",
+      "issue_id": "b30e4097",
       "action": "DROP_COLUMN",
       "result": "Dropped extra column 'registered_on'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "c56640fb",
+      "issue_id": "6ebdaf3c",
       "action": "DROP_COLUMN",
-      "result": "Dropped extra column 'annual_salary'",
+      "result": "Dropped extra column 'email_address'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "9b640efc",
+      "issue_id": "b4c19cb3",
       "action": "DROP_COLUMN",
-      "result": "Dropped extra column 'geo'",
+      "result": "Dropped extra column 'risk_score'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "0a682b17",
+      "issue_id": "6e4b5521",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'legacy_id'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "ac680172",
       "action": "DROP_COLUMN",
       "result": "Dropped extra column 'extra_flag'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "d358c508",
+      "issue_id": "64acc37c",
       "action": "DROP_COLUMN",
-      "result": "Dropped extra column 'legacy_id'",
+      "result": "Dropped extra column 'uid'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "a6630d10",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'annual_salary'",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "b4148751",
+      "action": "DROP_COLUMN",
+      "result": "Dropped extra column 'geo'",
       "status": "SUCCESS"
     }
   ],
@@ -117,7 +117,7 @@
     "passed": 10,
     "failed": 7,
     "success_pct": 58.8,
-    "evaluated_at": "2026-05-09T16:19:09.236970",
+    "evaluated_at": "2026-05-13T11:51:32.344061",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
@@ -263,7 +263,7 @@
     "passed": 1,
     "failed": 0,
     "success_pct": 100.0,
-    "evaluated_at": "2026-05-09T16:19:09.249312",
+    "evaluated_at": "2026-05-13T11:51:32.375586",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",

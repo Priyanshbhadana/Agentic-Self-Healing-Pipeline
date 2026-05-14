@@ -1,0 +1,200 @@
+{
+  "run_id": "98D24E6E",
+  "scenario": "data_anomaly",
+  "start_time": "2026-05-13T11:51:32.509576",
+  "end_time": "2026-05-13T11:51:33.790720",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "21c0d554",
+      "type": "DTYPE_MISMATCH",
+      "column": "age",
+      "expected_dtype": "float64",
+      "actual_dtype": "int64",
+      "severity": "MEDIUM",
+      "detail": "Column 'age': expected float64, got int64"
+    },
+    {
+      "issue_id": "ffca32e1",
+      "type": "DTYPE_MISMATCH",
+      "column": "salary",
+      "expected_dtype": "float64",
+      "actual_dtype": "int64",
+      "severity": "MEDIUM",
+      "detail": "Column 'salary': expected float64, got int64"
+    },
+    {
+      "issue_id": "9b0f5c9f",
+      "type": "DATA_ANOMALY",
+      "column": "age",
+      "outlier_count": 3,
+      "outlier_values": [
+        999,
+        200,
+        150
+      ],
+      "bounds": {
+        "lower": -59.0,
+        "upper": 137.0
+      },
+      "severity": "LOW",
+      "detail": "Column 'age' has 3 outlier(s) outside IQR bounds"
+    },
+    {
+      "issue_id": "57aa70fe",
+      "type": "DATA_ANOMALY",
+      "column": "salary",
+      "outlier_count": 1,
+      "outlier_values": [
+        99999999
+      ],
+      "bounds": {
+        "lower": -106388.75,
+        "upper": 260505.75
+      },
+      "severity": "LOW",
+      "detail": "Column 'salary' has 1 outlier(s) outside IQR bounds"
+    },
+    {
+      "issue_id": "8ec895d7",
+      "type": "DATA_ANOMALY",
+      "column": "score",
+      "outlier_count": 1,
+      "outlier_values": [
+        9999.9
+      ],
+      "bounds": {
+        "lower": -122.75,
+        "upper": 225.94
+      },
+      "severity": "LOW",
+      "detail": "Column 'score' has 1 outlier(s) outside IQR bounds"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "21c0d554",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "ffca32e1",
+      "category": "SCHEMA_ISSUE",
+      "subcategory": "Type Mismatch",
+      "confidence": 0.85,
+      "reasoning": "Rule-based fallback for issue type DTYPE_MISMATCH"
+    },
+    {
+      "issue_id": "9b0f5c9f",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    },
+    {
+      "issue_id": "57aa70fe",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    },
+    {
+      "issue_id": "8ec895d7",
+      "category": "DATA_ANOMALY",
+      "subcategory": "Statistical Outlier",
+      "confidence": 0.8,
+      "reasoning": "Rule-based fallback for issue type DATA_ANOMALY"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "21c0d554",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "float64"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "ffca32e1",
+      "action": "CAST_DTYPE",
+      "params": {
+        "dtype": "float64"
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SCHEMA_ISSUE"
+    },
+    {
+      "issue_id": "9b0f5c9f",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -59.0,
+        "upper": 137.0
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    },
+    {
+      "issue_id": "57aa70fe",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -106388.75,
+        "upper": 260505.75
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    },
+    {
+      "issue_id": "8ec895d7",
+      "action": "CLIP_OUTLIERS",
+      "params": {
+        "lower": -122.75,
+        "upper": 225.94
+      },
+      "confidence": 0.7,
+      "rationale": "Fallback rule for DATA_ANOMALY"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "21c0d554",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'age' to float64",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "ffca32e1",
+      "action": "CAST_DTYPE",
+      "result": "Cast 'salary' to float64",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "9b0f5c9f",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 3 outliers in 'age' to [-59.0, 137.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "57aa70fe",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1 outliers in 'salary' to [-106388.75, 260505.75]",
+      "status": "SUCCESS"
+    },
+    {
+      "issue_id": "8ec895d7",
+      "action": "CLIP_OUTLIERS",
+      "result": "Clipped 1 outliers in 'score' to [-122.75, 225.94]",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_data_anomaly.csv",
+  "agent_logs": [
+    "[DetectionAgent] Found 5 issue(s) in 'data_anomaly'. Types: ['DATA_ANOMALY', 'DTYPE_MISMATCH']",
+    "[ClassificationAgent] Classified 5 issues. Primary: DATA_ANOMALY",
+    "[DecisionAgent] Fix plan \u2192 21c0d554: CAST_DTYPE | ffca32e1: CAST_DTYPE | 9b0f5c9f: CLIP_OUTLIERS | 57aa70fe: CLIP_OUTLIERS | 8ec895d7: CLIP_OUTLIERS",
+    "[HealingAgent] Applied 5/5 fixes. Healed=data/healed_data_anomaly.csv Removed=data/removed_data_anomaly.csv"
+  ]
+}
