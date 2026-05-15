@@ -1,0 +1,291 @@
+{
+  "run_id": "0432146D",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-15T08:08:12.683708",
+  "profile_summary": "Dataset: 10000 rows \u00d7 8 cols | Nulls: 8508 (10.64%) | Duplicates: 0",
+  "rules_generated": 13,
+  "violations_found": 11,
+  "validation_score": 15.4,
+  "heals_applied": 11,
+  "heals_ok": 11,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_custom_upload.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "id",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 1.0,
+        "max": 10000.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'id' values must be between 1.0 and 10000.0"
+    },
+    {
+      "rule_id": "R002",
+      "column": "name",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'name' should not contain nulls"
+    },
+    {
+      "rule_id": "R003",
+      "column": "name",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "NAME"
+      },
+      "severity": "HIGH",
+      "description": "Column 'name' contains PII (NAME) \u2014 must be masked"
+    },
+    {
+      "rule_id": "R004",
+      "column": "age",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'age' should not contain nulls"
+    },
+    {
+      "rule_id": "R005",
+      "column": "age",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 999.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'age' values must be between 0 and 999.0"
+    },
+    {
+      "rule_id": "R006",
+      "column": "salary",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'salary' should not contain nulls"
+    },
+    {
+      "rule_id": "R007",
+      "column": "salary",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0,
+        "max": 1000000.0
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'salary' values must be between 0 and 1000000.0"
+    },
+    {
+      "rule_id": "R008",
+      "column": "city",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'city' should not contain nulls"
+    },
+    {
+      "rule_id": "R009",
+      "column": "score",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'score' should not contain nulls"
+    },
+    {
+      "rule_id": "R010",
+      "column": "score",
+      "rule_type": "RANGE_CHECK",
+      "params": {
+        "min": 0.01,
+        "max": 99.96
+      },
+      "severity": "MEDIUM",
+      "description": "Column 'score' values must be between 0.01 and 99.96"
+    },
+    {
+      "rule_id": "R011",
+      "column": "join_date",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "HIGH",
+      "description": "Column 'join_date' should not contain nulls"
+    },
+    {
+      "rule_id": "R012",
+      "column": "join_date",
+      "rule_type": "DATE_FORMAT",
+      "params": {},
+      "severity": "HIGH",
+      "description": "Column 'join_date' must be a valid date format"
+    },
+    {
+      "rule_id": "R013",
+      "column": "comment",
+      "rule_type": "NOT_NULL",
+      "params": {},
+      "severity": "MEDIUM",
+      "description": "Column 'comment' should not contain nulls"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R002",
+      "column": "name",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 493,
+      "detail": "493 null values found in 'name'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R003",
+      "column": "name",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 9507,
+      "detail": "Column 'name' contains unmasked NAME data",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R004",
+      "column": "age",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 1189,
+      "detail": "1189 null values found in 'age'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R005",
+      "column": "age",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1215,
+      "detail": "1215 values outside [0,999.0]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R006",
+      "column": "salary",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 1432,
+      "detail": "1432 null values found in 'salary'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R007",
+      "column": "salary",
+      "violation_type": "OUT_OF_RANGE",
+      "rows_affected": 1392,
+      "detail": "1392 values outside [0,1000000.0]",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R008",
+      "column": "city",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 959,
+      "detail": "959 null values found in 'city'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R009",
+      "column": "score",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 986,
+      "detail": "986 null values found in 'score'",
+      "severity": "MEDIUM"
+    },
+    {
+      "rule_id": "R011",
+      "column": "join_date",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 2012,
+      "detail": "2012 null values found in 'join_date'",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R012",
+      "column": "join_date",
+      "violation_type": "INVALID_DATE",
+      "rows_affected": 3985,
+      "detail": "3985 invalid date formats in 'join_date'",
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "R013",
+      "column": "comment",
+      "violation_type": "NULL_VALUES",
+      "rows_affected": 1437,
+      "detail": "1437 null values found in 'comment'",
+      "severity": "MEDIUM"
+    }
+  ],
+  "heals": [
+    {
+      "column": "name",
+      "action": "FILL_MODE",
+      "result": "Filled 493 nulls with mode='AABCyljyTl'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "name",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'name' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "age",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 1189 nulls with median=30.0",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "age",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1215 values to [0,999.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "salary",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 1432 nulls with median=50000.0",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "salary",
+      "action": "CLIP_RANGE",
+      "result": "Clipped 1392 values to [0,1000000.0]",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "city",
+      "action": "FILL_MODE",
+      "result": "Filled 959 nulls with mode='Kolkata'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "score",
+      "action": "FILL_MEDIAN",
+      "result": "Filled 986 nulls with median=50.895",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "join_date",
+      "action": "FILL_MODE",
+      "result": "Filled 2012 nulls with mode='2021-05-10'",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "join_date",
+      "action": "COERCE_DATE",
+      "result": "Coerced 3985 invalid dates to empty/null",
+      "status": "SUCCESS"
+    },
+    {
+      "column": "comment",
+      "action": "FILL_MODE",
+      "result": "Filled 1437 nulls with mode='good'",
+      "status": "SUCCESS"
+    }
+  ]
+}

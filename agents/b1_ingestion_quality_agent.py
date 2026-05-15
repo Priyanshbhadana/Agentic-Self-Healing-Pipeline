@@ -218,14 +218,13 @@ Return ONLY valid JSON array. No markdown, no explanation."""
 
     try:
          # pyrefly: ignore [missing-import]
-        import anthropic
-        client = anthropic.Anthropic()
-        response = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=2000,
-            messages=[{"role": "user", "content": prompt}]
+        from google import genai
+        client = genai.Client()
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
         )
-        raw = response.content[0].text.strip()
+        raw = response.text.strip()
         if raw.startswith("```"): raw = "\n".join(raw.split("\n")[1:-1])
         quality_rules = json.loads(raw)
         rationale = f"LLM generated {len(quality_rules)} rules from profile analysis."

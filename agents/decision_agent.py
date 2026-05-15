@@ -27,14 +27,13 @@ logger = PipelineLogger("DecisionAgent")
 
 
 def _call_llm(prompt: str) -> str:
-    import anthropic
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model="claude-sonnet-4-20250514",
-        max_tokens=3000,
-        messages=[{"role": "user", "content": prompt}],
+    from google import genai
+    client = genai.Client()
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
     )
-    return response.content[0].text
+    return response.text
 
 
 def _build_decision_prompt(issues: list, classifications: list) -> str:

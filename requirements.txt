@@ -1,8 +1,8 @@
 langgraph
 langchain
 langchain-core
-langchain-anthropic
-anthropic
+langchain-google-genai
+google-genai
 pandas
 numpy
 python-dotenv

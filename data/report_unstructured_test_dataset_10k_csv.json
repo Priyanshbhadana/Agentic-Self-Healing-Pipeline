@@ -1,7 +1,7 @@
 {
-  "run_id": "D7A5485E",
+  "run_id": "55C0EDAF",
   "scenario": "unstructured_test_dataset_10k.csv",
-  "generated_at": "2026-05-15T07:49:47.501435",
+  "generated_at": "2026-05-15T08:07:59.050018",
   "original_shape": {
     "rows": 10000,
     "cols": 8
@@ -15,55 +15,55 @@
   "null_after": 0,
   "fixes_applied": [
     {
-      "issue_id": "16c6d2ae",
+      "issue_id": "94e99dbd",
       "action": "FILL_MODE",
       "result": "Filled 493 nulls in 'name' with mode='AABCyljyTl'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "f573779e",
+      "issue_id": "9dd3871d",
       "action": "FILL_MEDIAN",
       "result": "Filled 1189 nulls in 'age' with median=30.0",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "48f280b3",
+      "issue_id": "6c8dca60",
       "action": "FILL_MEDIAN",
       "result": "Filled 1432 nulls in 'salary' with median=50000.0",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "0f669399",
+      "issue_id": "faf46f69",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'city' \u2014 filled 959 nulls with mode='Kolkata'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "2a09757e",
+      "issue_id": "f614fd9a",
       "action": "FILL_MEDIAN",
       "result": "Filled 986 nulls in 'score' with median=50.895",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "1cd95277",
+      "issue_id": "6daae45b",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'join_date' \u2014 filled 2012 nulls with mode='2021-05-10'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "da9de867",
+      "issue_id": "4e222237",
       "action": "FILL_MEDIAN",
       "result": "Non-numeric 'comment' \u2014 filled 1437 nulls with mode='good'",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "28723678",
+      "issue_id": "9e7a1676",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 1284 outliers in 'age' to [-40.0, 100.0]",
       "status": "SUCCESS"
     },
     {
-      "issue_id": "9ef7ef62",
+      "issue_id": "4f31ff4b",
       "action": "CLIP_OUTLIERS",
       "result": "Clipped 1359 outliers in 'salary' to [-150000.0, 270000.0]",
       "status": "SUCCESS"
@@ -75,7 +75,7 @@
     "passed": 10,
     "failed": 3,
     "success_pct": 76.9,
-    "evaluated_at": "2026-05-15T07:49:47.401752",
+    "evaluated_at": "2026-05-15T08:07:58.928272",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",
@@ -189,7 +189,7 @@
     "passed": 11,
     "failed": 2,
     "success_pct": 84.6,
-    "evaluated_at": "2026-05-15T07:49:47.450768",
+    "evaluated_at": "2026-05-15T08:07:58.997806",
     "results": [
       {
         "expectation": "expect_table_row_count_to_be_between",

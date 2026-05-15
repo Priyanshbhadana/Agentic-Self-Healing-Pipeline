@@ -13,7 +13,7 @@ import sys
 import time
 from dotenv import load_dotenv
 
-# Load ANTHROPIC_API_KEY from .env
+# Load GEMINI_API_KEY from .env
 load_dotenv()
 
 # Add project root to path
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print("\n" + "█" * 70)
     print("   AGENTIC DE AUTOMATION — FULL PIPELINE")
     print("   B3: Self-Healing | B1: Ingestion Quality | B2: Lineage & Governance")
-    print("   Powered by LangGraph + Claude (Anthropic)")
+    print("   Powered by LangGraph + Gemini (Google)")
     print("█" * 70)
 
     b3_results = []

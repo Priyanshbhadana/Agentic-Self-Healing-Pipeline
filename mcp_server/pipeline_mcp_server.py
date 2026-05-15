@@ -3,7 +3,7 @@ mcp_server/pipeline_mcp_server.py
 ──────────────────────────────────
 MCP (Model Context Protocol) Server
 Exposes the Self-Healing Pipeline as callable tools that any
-MCP-compatible client (Claude Desktop, etc.) can invoke.
+MCP-compatible client (Gemini/Claude Desktop, etc.) can invoke.
 
 Tools exposed:
   run_pipeline_tool        — run a scenario end-to-end

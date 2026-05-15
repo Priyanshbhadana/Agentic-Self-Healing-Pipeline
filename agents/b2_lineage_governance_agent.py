@@ -275,14 +275,13 @@ Return ONLY valid JSON. No markdown."""
 
     try:
         # pyrefly: ignore [missing-import]
-        import anthropic   
-        client = anthropic.Anthropic()
-        resp = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=2000,
-            messages=[{"role": "user", "content": prompt}]
+        from google import genai
+        client = genai.Client()
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
         )
-        raw = resp.content[0].text.strip()
+        raw = response.text.strip()
         if raw.startswith("```"): raw = "\n".join(raw.split("\n")[1:-1])
         lineage_graph = json.loads(raw)
         summary = lineage_graph.get("lineage_path", "LLM lineage extracted")
@@ -656,14 +655,13 @@ Return ONLY valid JSON array. No markdown."""
 
     try:
         # pyrefly: ignore [missing-import]
-        import anthropic
-        client = anthropic.Anthropic()
-        resp = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=3000,
-            messages=[{"role": "user", "content": prompt}]
+        from google import genai
+        client = genai.Client()
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
         )
-        raw = resp.content[0].text.strip()
+        raw = response.text.strip()
         if raw.startswith("```"): raw = "\n".join(raw.split("\n")[1:-1])
         catalogue = json.loads(raw)
 

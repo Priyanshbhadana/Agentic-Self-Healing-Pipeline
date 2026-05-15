@@ -159,7 +159,7 @@ with st.sidebar:
     st.markdown("""
 <div style='text-align:center;padding:8px 0 4px'>
   <div style='font-size:22px;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent'>🔧 Pipeline Agent</div>
-  <div style='font-size:10px;color:#6b7280;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px'>v4 · B1+B2+B3 · LangGraph · Claude · MCP</div>
+  <div style='font-size:10px;color:#6b7280;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px'>v4 · B1+B2+B3 · LangGraph · Gemini · MCP</div>
 </div>""", unsafe_allow_html=True)
 
     _dot = '🟢' if DB_AVAILABLE else '🔴'
@@ -173,11 +173,11 @@ with st.sidebar:
 </div>""", unsafe_allow_html=True)
 
     st.divider()
-    api_key = st.text_input("🔑 Anthropic API Key", type="password",
-                             placeholder="sk-ant-...",
-                             value=os.environ.get("ANTHROPIC_API_KEY",""))
+    api_key = st.text_input("🔑 Gemini API Key", type="password",
+                             placeholder="AIzaSy...",
+                             value=os.environ.get("GEMINI_API_KEY",""))
     if api_key:
-        os.environ["ANTHROPIC_API_KEY"] = api_key
+        os.environ["GEMINI_API_KEY"] = api_key
 
     st.divider()
     st.markdown("""
@@ -233,7 +233,7 @@ with st.sidebar:
 <div style='background:rgba(15,20,35,0.5);border-radius:12px;border:1px solid rgba(99,130,255,0.08);padding:14px;font-size:12px;line-height:2.2'>
   <div style='color:#9ca3af;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px'>Tech Stack</div>
   <div style='color:#60a5fa'>🔗 LangGraph 15-node orchestration</div>
-  <div style='color:#a78bfa'>🧠 Claude LLM reasoning</div>
+  <div style='color:#a78bfa'>🧠 Gemini LLM reasoning</div>
   <div style='color:#fbbf24'>🗄️ DuckDB MockDB warehouse</div>
   <div style='color:#34d399'>✅ Great Expectations GE</div>
   <div style='color:#c084fc'>🔌 MCP tool server (8 tools)</div>
@@ -256,7 +256,7 @@ st.markdown("""
   </h1>
   <p style='color:#4b5c75;font-size:12px;margin-top:4px'>
     <span style='color:#60a5fa'>LangGraph</span> ·
-    <span style='color:#a78bfa'>Claude LLM</span> ·
+    <span style='color:#a78bfa'>Gemini LLM</span> ·
     <span style='color:#fbbf24'>DuckDB</span> ·
     <span style='color:#34d399'>Great Expectations</span> ·
     <span style='color:#c084fc'>MCP Server</span>
@@ -805,7 +805,7 @@ with tab_infra:
           <div style='font-size:10px;color:#6b7280'>6 callable tools</div>
         </div>
         <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
-          <div style='font-size:13px;font-weight:600;color:#60a5fa'>🧠 Claude LLM</div>
+          <div style='font-size:13px;font-weight:600;color:#60a5fa'>🧠 Gemini LLM</div>
           <div style='font-size:10px;color:#6b7280'>Classification + Decision</div>
         </div>
         <div style='background:rgba(30,37,53,0.8);border:1px solid rgba(99,130,255,0.15);border-radius:10px;padding:12px 18px;text-align:center'>
@@ -822,7 +822,7 @@ with tab_infra:
         with arch_t1:
             b1_nodes = [
                 ("1. Profiler","profiler_node","Stats per column: dtype, nulls, IQR outliers, PII heuristics","📊","#3b82f6"),
-                ("2. Rule Generator","rule_generator_node","Claude LLM generates NOT_NULL, RANGE, OUTLIER, PII rules from profile","📋","#8b5cf6"),
+                ("2. Rule Generator","rule_generator_node","Gemini LLM generates NOT_NULL, RANGE, OUTLIER, PII rules from profile","📋","#8b5cf6"),
                 ("3. Validator","validator_node","Checks every row against generated rules, flags violations","✅","#f59e0b"),
                 ("4. Healer","healer_node","Auto-fills nulls, clips ranges, masks PII, removes duplicates","🔨","#10b981"),
                 ("5. Report","b1_report_node","Generates validation score and JSON report","📄","#ef4444"),
@@ -832,9 +832,9 @@ with tab_infra:
         with arch_t2:
             b2_nodes = [
                 ("1. SQL Parser","sql_parser_node","Parses SQL or auto-generates from CSV schema; extracts tables, CTEs, joins","🔍","#3b82f6"),
-                ("2. Lineage Extractor","lineage_extractor_node","Claude LLM builds full lineage graph: sources → transforms → sinks","🕸️","#8b5cf6"),
+                ("2. Lineage Extractor","lineage_extractor_node","Gemini LLM builds full lineage graph: sources → transforms → sinks","🕸️","#8b5cf6"),
                 ("3. PII Tagger","pii_tagger_node","Detects 11 PII types, assigns GDPR articles, applies 9 masking strategies","🔴","#ef4444"),
-                ("4. Catalogue Enricher","catalogue_enricher_node","Claude LLM writes business descriptions, stewardship, quality SLAs","📚","#10b981"),
+                ("4. Catalogue Enricher","catalogue_enricher_node","Gemini LLM writes business descriptions, stewardship, quality SLAs","📚","#10b981"),
                 ("5. Governance Report","governance_report_node","GDPR compliance scoring, policy recommendations, full audit trail","📋","#f59e0b"),
             ]
             for name,func,desc,icon,color in b2_nodes:
@@ -842,8 +842,8 @@ with tab_infra:
         with arch_t3:
             b3_nodes = [
                 ("1. Detection","detection_agent","Scans for nulls, schema mismatches, dtype errors, IQR outliers","🔍","#3b82f6"),
-                ("2. Classification","classification_agent","Claude LLM classifies issues into DATA_QUALITY / SCHEMA / ANOMALY / SYSTEM_FAILURE","🏷️","#8b5cf6"),
-                ("3. Decision","decision_agent","Claude LLM decides optimal fix: FILL_MEDIAN, CLIP_OUTLIERS, DROP_COLUMN, etc.","🧠","#f59e0b"),
+                ("2. Classification","classification_agent","Gemini LLM classifies issues into DATA_QUALITY / SCHEMA / ANOMALY / SYSTEM_FAILURE","🏷️","#8b5cf6"),
+                ("3. Decision","decision_agent","Gemini LLM decides optimal fix: FILL_MEDIAN, CLIP_OUTLIERS, DROP_COLUMN, etc.","🧠","#f59e0b"),
                 ("4. Healing","healing_agent","Executes 11 fix actions, runs GE pre/post, writes MockDB snapshots","🔨","#10b981"),
                 ("5. Logging","logging_agent","Structured summary, JSON report, mock alerts for HIGH severity","📋","#ef4444"),
             ]
@@ -861,7 +861,7 @@ with tab_infra:
     - TypedDict state schemas""")
         with tc2:
             st.markdown("""**🧠 LLM Integration**
-    - Claude claude-sonnet-4-20250514 (Anthropic)
+    - Gemini gemini-2.5-flash (Google)
     - Classification + Decision + Rules
     - Lineage + Catalogue enrichment
     - Rule-based fallback if no API key""")
@@ -976,7 +976,7 @@ with tab_b1:
         data_path = st.session_state.get("uploaded_path", "")
         with st.status(f"🔬 Running B1 on **{b1_scenario}**...", expanded=True) as b1_status:
             st.write("📊 Step 1/4 — Profiling dataset (statistics per column)...")
-            st.write("📋 Step 2/4 — Generating quality rules via Claude LLM...")
+            st.write("📋 Step 2/4 — Generating quality rules via Gemini LLM...")
             st.write("✅ Step 3/4 — Validating data against all rules...")
             st.write("🔨 Step 4/4 — Auto-healing violations found...")
             try:
@@ -1061,7 +1061,7 @@ with tab_b1:
                 st.markdown("#### LLM-Generated Quality Rules")
                 rules = b1_result.get("quality_rules",[])
                 if rules:
-                    st.info(f"Claude generated {len(rules)} rules from the statistical profile.")
+                    st.info(f"Gemini generated {len(rules)} rules from the statistical profile.")
                     df_rules = pd.DataFrame([{
                         "ID":          r.get("rule_id",""),
                         "Column":      r.get("column",""),
@@ -1206,7 +1206,7 @@ with tab_b1:
 | Step | Agent Node | What it does |
 |------|-----------|--------------|
 | 1 | **Profiler** | Statistical analysis of every column (min, max, nulls, outliers, PII) |
-| 2 | **Rule Generator** | Claude LLM generates quality rules from the profile |
+| 2 | **Rule Generator** | Gemini LLM generates quality rules from the profile |
 | 3 | **Validator** | Checks data against every rule — flags violations |
 | 4 | **Self-Healer** | Auto-fixes violations (fill nulls, clip outliers, mask PII) |
 | 5 | **Reporter** | Generates final quality report with score |
@@ -1429,7 +1429,7 @@ with tab_b2:
             # ── Data Catalogue ────────────────────────────────
             with b2t3:
                 st.markdown("#### Enterprise Data Catalogue")
-                st.caption("Enriched by Claude LLM — business descriptions, stewardship, GDPR tags")
+                st.caption("Enriched by Gemini LLM — business descriptions, stewardship, GDPR tags")
                 if catalogue:
                     df_cat = pd.DataFrame([{
                         "Column":       e.get("column",""),
@@ -1536,9 +1536,9 @@ padding:14px 18px;margin-bottom:10px'>
 | Step | Agent Node | What it does |
 |------|-----------|--------------|
 | 1 | **SQL Parser** | Parse SQL or auto-generate from CSV schema → extract tables, columns, joins |
-| 2 | **Lineage Extractor** | Claude LLM builds full lineage graph (sources → transforms → sinks) |
+| 2 | **Lineage Extractor** | Gemini LLM builds full lineage graph (sources → transforms → sinks) |
 | 3 | **PII Tagger** | Detects 11 PII types, assigns GDPR articles, applies 9 masking strategies |
-| 4 | **Catalogue Enricher** | Claude LLM writes business descriptions, stewardship, quality SLAs |
+| 4 | **Catalogue Enricher** | Gemini LLM writes business descriptions, stewardship, quality SLAs |
 | 5 | **Governance Report** | GDPR compliance score, policy recommendations, full audit trail |
 """)
         col_a, col_b, col_c = st.columns(3)
