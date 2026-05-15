@@ -1,0 +1,49 @@
+{
+  "run_id": "5E7FF1EC",
+  "scenario": "custom_upload",
+  "start_time": "2026-05-15T07:43:39.539558",
+  "end_time": "2026-05-15T07:43:40.552394",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "657c0c6a",
+      "type": "LOW_ROW_COUNT",
+      "severity": "MEDIUM",
+      "detail": "Dataset has only 5 rows \u2014 possible upstream truncation"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "657c0c6a",
+      "category": "SYSTEM_FAILURE",
+      "subcategory": "Row Truncation",
+      "confidence": 0.75,
+      "reasoning": "Rule-based fallback for issue type LOW_ROW_COUNT"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "657c0c6a",
+      "action": "RETRY_PIPELINE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SYSTEM_FAILURE"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "657c0c6a",
+      "action": "RETRY_PIPELINE",
+      "result": "Retry signal sent to upstream pipeline (simulated)",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_custom_upload.csv",
+  "agent_logs": [
+    "[B3-Memory] Recall: {'had_prior_run': True, 'prior_run_id': '5E7FF1EC', 'prior_issues': 0, 'prior_fixes': 0, 'prior_status': 'RUNNING'}",
+    "[DetectionAgent] Found 1 issue(s) in 'custom_upload'. Types: ['LOW_ROW_COUNT']",
+    "[ClassificationAgent] Classified 1 issues. Primary: SYSTEM_FAILURE",
+    "[DecisionAgent] Fix plan \u2192 657c0c6a: RETRY_PIPELINE",
+    "[HealingAgent] Applied 1/1 fixes. Healed=data/healed_custom_upload.csv Removed=data/removed_custom_upload.csv"
+  ]
+}

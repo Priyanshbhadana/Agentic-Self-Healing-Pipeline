@@ -1,0 +1,43 @@
+{
+  "run_id": "5B0EC6E1",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-15T07:42:53.552705",
+  "profile_summary": "Dataset: 5 rows \u00d7 3 cols | Nulls: 0 (0.0%) | Duplicates: 0",
+  "rules_generated": 1,
+  "violations_found": 1,
+  "validation_score": 0.0,
+  "heals_applied": 1,
+  "heals_ok": 1,
+  "final_status": "SUCCESS",
+  "healed_path": "data/b1_healed_custom_upload.csv",
+  "quality_rules": [
+    {
+      "rule_id": "R001",
+      "column": "CustomerName",
+      "rule_type": "PII_DETECTED",
+      "params": {
+        "pii_type": "NAME"
+      },
+      "severity": "HIGH",
+      "description": "Column 'CustomerName' contains PII (NAME) \u2014 must be masked"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "R001",
+      "column": "CustomerName",
+      "violation_type": "PII_EXPOSURE",
+      "rows_affected": 5,
+      "detail": "Column 'CustomerName' contains unmasked NAME data",
+      "severity": "HIGH"
+    }
+  ],
+  "heals": [
+    {
+      "column": "CustomerName",
+      "action": "PII_DEFER_TO_B2",
+      "result": "PII detected in 'CustomerName' \u2014 masking deferred to B2 Governance Agent",
+      "status": "SUCCESS"
+    }
+  ]
+}

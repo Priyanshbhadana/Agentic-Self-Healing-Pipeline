@@ -1,0 +1,140 @@
+{
+  "run_id": "BA83CA0E",
+  "scenario": "customers.csv",
+  "generated_at": "2026-05-15T07:42:43.834277",
+  "original_shape": {
+    "rows": 5,
+    "cols": 3
+  },
+  "healed_shape": {
+    "rows": 5,
+    "cols": 3
+  },
+  "removed_rows": 0,
+  "null_before": 0,
+  "null_after": 0,
+  "fixes_applied": [
+    {
+      "issue_id": "28307a1b",
+      "action": "RETRY_PIPELINE",
+      "result": "Retry signal sent to upstream pipeline (simulated)",
+      "status": "SUCCESS"
+    }
+  ],
+  "ge_pre_validation": {
+    "suite": "custom_customers.csv",
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "success_pct": 100.0,
+    "evaluated_at": "2026-05-15T07:42:43.784951",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "5",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "CustomerID",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "CustomerName",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Segment",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      }
+    ]
+  },
+  "ge_post_validation": {
+    "suite": "custom_customers.csv",
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "success_pct": 100.0,
+    "evaluated_at": "2026-05-15T07:42:43.806570",
+    "results": [
+      {
+        "expectation": "expect_table_row_count_to_be_between",
+        "column": "__table__",
+        "passed": true,
+        "observed": "5",
+        "expected": "[1, 10000000]",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "CustomerID",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "CustomerName",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      },
+      {
+        "expectation": "expect_column_values_to_not_be_null",
+        "column": "Segment",
+        "passed": "True",
+        "observed": "0.0% null",
+        "expected": "\u226420.0% null",
+        "detail": ""
+      }
+    ]
+  },
+  "column_profiles": {
+    "CustomerID": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 5,
+      "sample": [
+        "C101",
+        "C102",
+        "C103"
+      ]
+    },
+    "CustomerName": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 5,
+      "sample": [
+        "Amit",
+        "Riya",
+        "Rahul"
+      ]
+    },
+    "Segment": {
+      "dtype": "object",
+      "null_count": 0,
+      "unique": 3,
+      "sample": [
+        "Corporate",
+        "Home Office",
+        "Corporate"
+      ]
+    }
+  }
+}

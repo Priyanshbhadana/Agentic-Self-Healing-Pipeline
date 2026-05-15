@@ -1,0 +1,224 @@
+{
+  "run_id": "48410F9A",
+  "scenario": "custom_upload",
+  "generated_at": "2026-05-15T07:43:26.331844",
+  "executive_summary": "Governance scan of 'custom_upload': 1 PII columns identified across 3 total columns. GDPR compliance score: 100%. Masked dataset generated. 4 policy actions recommended.",
+  "lineage": {
+    "path": "custom_upload \u2192 SQL transforms \u2192 healed_custom_upload",
+    "total_nodes": 6,
+    "total_edges": 5,
+    "sources": [
+      "custom_upload"
+    ],
+    "sinks": [
+      "healed_custom_upload"
+    ],
+    "transformations": [
+      "source_data",
+      "cleaned_data",
+      "aggregated"
+    ],
+    "nodes": [
+      {
+        "id": "n_src",
+        "name": "custom_upload",
+        "type": "SOURCE",
+        "description": "Raw ingestion source",
+        "system": "CSV / Database"
+      },
+      {
+        "id": "n_cte_0",
+        "name": "source_data",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: source_data",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_cte_1",
+        "name": "cleaned_data",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: cleaned_data",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_cte_2",
+        "name": "aggregated",
+        "type": "TRANSFORMATION",
+        "description": "CTE transformation: aggregated",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_join_0",
+        "name": "JOIN aggregated",
+        "type": "TRANSFORMATION",
+        "description": "LEFT JOIN JOIN",
+        "system": "SQL Engine"
+      },
+      {
+        "id": "n_sink",
+        "name": "healed_custom_upload",
+        "type": "SINK",
+        "description": "Cleaned output dataset",
+        "system": "Data Warehouse / File"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n_src",
+        "to": "n_cte_0",
+        "transformation": "CTE: source_data",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_0",
+        "to": "n_cte_1",
+        "transformation": "CTE: cleaned_data",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_1",
+        "to": "n_cte_2",
+        "transformation": "CTE: aggregated",
+        "operation": "SELECT"
+      },
+      {
+        "from": "n_cte_2",
+        "to": "n_join_0",
+        "transformation": "c.Segment = a.Segment",
+        "operation": "JOIN"
+      },
+      {
+        "from": "n_join_0",
+        "to": "n_sink",
+        "transformation": "Write cleaned output",
+        "operation": "INSERT"
+      }
+    ]
+  },
+  "pii_summary": {
+    "total_pii_columns": 1,
+    "critical_columns": [],
+    "high_columns": [
+      "CustomerName"
+    ],
+    "masked_data_path": "data/b2_masked_custom_upload.csv",
+    "tags": [
+      {
+        "column": "CustomerName",
+        "pii_type": "PERSONAL_NAME",
+        "sensitivity": "HIGH",
+        "gdpr_article": "Art.4(1) - Personal Data",
+        "masking_strategy": "INITIAL_ONLY",
+        "values_affected": 5,
+        "requires_consent": true,
+        "retention_policy": "Duration of contract + 7 years",
+        "access_level": "Authorized personnel with signed DPA"
+      }
+    ]
+  },
+  "catalogue": {
+    "total_columns": 3,
+    "pii_tagged": 1,
+    "domains": [
+      "Identity",
+      "Operations"
+    ],
+    "entries": [
+      {
+        "column": "CustomerID",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'CustomerID' stores CustomerID information.",
+        "business_term": "Customerid",
+        "data_steward": "Data Engineering Team",
+        "domain": "Identity",
+        "tags": [
+          "Identity",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": false,
+        "classification": "INTERNAL"
+      },
+      {
+        "column": "CustomerName",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'CustomerName' stores CustomerName information.",
+        "business_term": "Customername",
+        "data_steward": "Data Engineering Team",
+        "domain": "Identity",
+        "tags": [
+          "Identity",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": true,
+        "classification": "CONFIDENTIAL",
+        "pii_type": "PERSONAL_NAME",
+        "gdpr_article": "Art.4(1) - Personal Data",
+        "masking_strategy": "INITIAL_ONLY",
+        "retention_policy": "Duration of contract + 7 years",
+        "access_level": "Authorized personnel with signed DPA"
+      },
+      {
+        "column": "Segment",
+        "data_type": "VARCHAR",
+        "business_description": "Field 'Segment' stores Segment information.",
+        "business_term": "Segment",
+        "data_steward": "Data Engineering Team",
+        "domain": "Operations",
+        "tags": [
+          "Operations",
+          "raw_data"
+        ],
+        "quality_sla": "95% non-null",
+        "example_values": [],
+        "is_pii": false,
+        "classification": "INTERNAL"
+      }
+    ]
+  },
+  "gdpr_compliance": {
+    "score": 100,
+    "checks": {
+      "Data Minimisation (Art.5.1.c)": true,
+      "PII Identified (Art.4.1)": true,
+      "Masking Applied (Art.25)": true,
+      "Retention Policy Defined (Art.5.1.e)": true,
+      "Lineage Documented (Art.30)": true
+    },
+    "status": "COMPLIANT"
+  },
+  "policy_recommendations": [
+    {
+      "priority": "HIGH",
+      "area": "Data Masking",
+      "action": "Apply masking strategies to HIGH sensitivity columns: ['CustomerName']",
+      "rationale": "High sensitivity PII requires encryption or pseudonymisation",
+      "gdpr_ref": "Art.5(1)(f) \u2014 Integrity & Confidentiality"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Data Catalogue",
+      "action": "Register all columns in enterprise data catalogue with stewardship assignments",
+      "rationale": "Enables data governance, access control, and compliance auditing",
+      "gdpr_ref": "Art.30 \u2014 Records of Processing Activities"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Lineage Tracking",
+      "action": "Automate lineage capture in CI/CD pipeline to track all data transformations",
+      "rationale": "Data lineage is required for impact analysis and compliance audits",
+      "gdpr_ref": "Art.30 \u2014 Records of Processing Activities"
+    },
+    {
+      "priority": "LOW",
+      "area": "Access Control",
+      "action": "Implement role-based access: Authorized personnel with signed DPA for HIGH-sensitivity data",
+      "rationale": "Principle of least privilege reduces breach risk",
+      "gdpr_ref": "Art.32 \u2014 Security of Processing"
+    }
+  ],
+  "final_status": "SUCCESS"
+}

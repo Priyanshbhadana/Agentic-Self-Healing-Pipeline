@@ -1,0 +1,49 @@
+{
+  "run_id": "BA83CA0E",
+  "scenario": "customers.csv",
+  "start_time": "2026-05-15T07:42:42.115401",
+  "end_time": "2026-05-15T07:42:43.835822",
+  "final_status": "SUCCESS",
+  "issues_detected": [
+    {
+      "issue_id": "28307a1b",
+      "type": "LOW_ROW_COUNT",
+      "severity": "MEDIUM",
+      "detail": "Dataset has only 5 rows \u2014 possible upstream truncation"
+    }
+  ],
+  "classifications": [
+    {
+      "issue_id": "28307a1b",
+      "category": "SYSTEM_FAILURE",
+      "subcategory": "Row Truncation",
+      "confidence": 0.75,
+      "reasoning": "Rule-based fallback for issue type LOW_ROW_COUNT"
+    }
+  ],
+  "fix_plan": [
+    {
+      "issue_id": "28307a1b",
+      "action": "RETRY_PIPELINE",
+      "params": {},
+      "confidence": 0.7,
+      "rationale": "Fallback rule for SYSTEM_FAILURE"
+    }
+  ],
+  "fixes_applied": [
+    {
+      "issue_id": "28307a1b",
+      "action": "RETRY_PIPELINE",
+      "result": "Retry signal sent to upstream pipeline (simulated)",
+      "status": "SUCCESS"
+    }
+  ],
+  "healed_path": "data/healed_customers_csv.csv",
+  "agent_logs": [
+    "[B3-Memory] Recall: {'had_prior_run': True, 'prior_run_id': 'BA83CA0E', 'prior_issues': 0, 'prior_fixes': 0, 'prior_status': 'RUNNING'}",
+    "[DetectionAgent] Found 1 issue(s) in 'customers.csv'. Types: ['LOW_ROW_COUNT']",
+    "[ClassificationAgent] Classified 1 issues. Primary: SYSTEM_FAILURE",
+    "[DecisionAgent] Fix plan \u2192 28307a1b: RETRY_PIPELINE",
+    "[HealingAgent] Applied 1/1 fixes. Healed=data/healed_customers_csv.csv Removed=data/removed_customers_csv.csv"
+  ]
+}

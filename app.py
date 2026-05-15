@@ -1023,9 +1023,9 @@ with tab_b1:
             st.plotly_chart(fig_gauge, use_container_width=True)
 
             # Sub-tabs
-            b1t1,b1t2,b1t3,b1t4,b1t5,b1t6 = st.tabs([
+            b1t1,b1t2,b1t3,b1t4,b1t5 = st.tabs([
                 "📊 Profile","📋 Quality Rules","⚠️ Violations",
-                "🔨 Heals Applied","🔴 PII Detection","🔄 Before / After"
+                "🔨 Heals Applied","🔄 Before / After"
             ])
 
             with b1t1:
@@ -1141,40 +1141,8 @@ with tab_b1:
                             data=df_h.to_csv(index=False).encode(),
                             file_name=f"b1_healed_{b1_scenario}.csv", mime="text/csv")
 
-            # ── PII Detection tab ────────────────────────────
-            with b1t5:
-                st.markdown("#### 🔴 PII Detection & Awareness")
-                profile = b1_result.get("profile",{})
-                pii_cols = []
-                for col, p in profile.items():
-                    if col == "__table__": continue
-                    pii_type = p.get("contains_pii","NONE")
-                    if pii_type and pii_type != "NONE":
-                        pii_cols.append({"Column": col, "Detected Type": pii_type,
-                            "Sensitivity": "HIGH" if pii_type in ("EMAIL","SSN","PHONE","CREDIT_CARD") else "MEDIUM",
-                            "Action": "DEFER_TO_B2", "Status": "Flagged for Governance"})
-
-                if not pii_cols:
-                    st.success("✅ No PII detected in this dataset during ingestion profiling.")
-                else:
-                    st.warning(f"⚠️ {len(pii_cols)} PII column(s) detected during ingestion profiling.")
-                    st.info("💡 **Architectural Note:** Ingestion Quality Agent (B1) detects PII presence for early awareness, but actual masking execution, strategy selection, and catalogue logging are deferred to the **Lineage & Governance Agent (B2)** to ensure centralized, enterprise-grade data protection without duplicate processing.")
-                    df_pii = pd.DataFrame(pii_cols)
-                    st.dataframe(df_pii, use_container_width=True, hide_index=True)
-
-                    # Show deferral log info
-                    pii_heals = [h for h in b1_result.get("heals_applied",[]) if h.get("action")=="PII_DEFER_TO_B2"]
-                    if pii_heals:
-                        st.markdown("#### Detection Log")
-                        for h in pii_heals:
-                            st.markdown(f"""
-<div style='background:rgba(76,5,25,0.4);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:12px 16px;margin-bottom:8px'>
-  <div style='color:#fca5a5;font-weight:600;font-size:13px'>🚩 {h['column']}</div>
-  <div style='color:#9ca3af;font-size:12px;margin-top:4px'>{h['result']}</div>
-</div>""", unsafe_allow_html=True)
-
             # ── Before / After tab ───────────────────────────
-            with b1t6:
+            with b1t5:
                 st.markdown("#### 🔄 Before / After Comparison")
                 data_path = st.session_state.get("uploaded_path", "")
                 healed_path = b1_result.get("healed_data_path","")
